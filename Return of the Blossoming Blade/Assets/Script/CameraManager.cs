@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    static public CameraManager instance;
+
     public GameObject target;
     public float moveSpeed;
     private Vector3 targetPosition;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame
