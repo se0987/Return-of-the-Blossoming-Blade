@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 137708530}
   - component: {fileID: 137708529}
   m_Layer: 0
-  m_Name: GoToTheCeongJinRoad
+  m_Name: GoToTheCheongJinRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
