@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bf9bdec201bbe409ef6630ed6d401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: BlossomingBladeHospital
+  SceneName: BlossomingBlade
 --- !u!114 &450200441
 MonoBehaviour:
   m_ObjectHideFlags: 0
