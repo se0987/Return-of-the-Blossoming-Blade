@@ -36,7 +36,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animSprite;
     public Animator animDialogueWindow;
 
-    private bool talking = false;
+    public bool talking = false;
+    private bool keyActivated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +81,9 @@ public class DialogueManager : MonoBehaviour
         {
             if (listDialogueWindows[count] != listDialogueWindows[count - 1])
             {
+                yield return new WaitForSeconds(0.2f);
                 animSprite.SetBool("Change", true);
                 animDialogueWindow.SetBool("Appear", false);
-                yield return new WaitForSeconds(0.2f);
                 rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
                 rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
                 animDialogueWindow.SetBool("Appear", true);
@@ -92,8 +93,8 @@ public class DialogueManager : MonoBehaviour
             {
                 if (listSprites[count] != listSprites[count - 1])
                 {
-                    animSprite.SetBool("Change", true);
                     yield return new WaitForSeconds(0.1f);
+                    animSprite.SetBool("Change", true);
                     rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
                     animSprite.SetBool("Change", false);
                 }
@@ -108,7 +109,7 @@ public class DialogueManager : MonoBehaviour
             rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
             rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
         }
-
+        keyActivated = true;
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];//1글자씩 출력
@@ -119,10 +120,11 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talking)
+        if (talking && keyActivated)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                keyActivated = false;
                 count++;
                 text.text = "";
                 if (count == listSentences.Count)
