@@ -12,15 +12,13 @@ public class PlayerManager : MovingObject
 
     private bool canMove = true;
 
+    public bool notMove = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
         if (instance == null)
         {
             DontDestroyOnLoad(this.gameObject);
-            boxCollider = GetComponent<BoxCollider2D>();
-            animator = GetComponent<Animator>();
             instance = this;
         }
         else
@@ -29,30 +27,32 @@ public class PlayerManager : MovingObject
         }
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        queue = new Queue<string>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+    }
+
     IEnumerator MoveCoroutine()
     {
-        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
+        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0 && !notMove)
         {
             vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
 
             animator.SetFloat("DirX", vector.x);
             animator.SetFloat("DirY", vector.y);
 
-            RaycastHit2D hit;
-
-            Vector2 start = transform.position;
-            Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);
-
-            boxCollider.enabled = false;
-            hit = Physics2D.Linecast(start, end, layerMask);
-            boxCollider.enabled = true;
-
-            if (hit.transform != null)
+            bool checkCollsionFlag = base.CheckCollsion();
+            if (checkCollsionFlag)
             {
                 break;
             }
 
             animator.SetBool("Walking", true);
+
+            boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 
             while (currentWalkCount < walkCount)
             {
@@ -65,6 +65,10 @@ public class PlayerManager : MovingObject
                     transform.Translate(0, vector.y * speed, 0);
                 }
                 currentWalkCount++;
+                if (currentWalkCount == 12)
+                {
+                    boxCollider.offset = Vector2.zero;
+                }
                 yield return new WaitForSeconds(0.01f);
             }
             currentWalkCount = 0;
@@ -76,7 +80,7 @@ public class PlayerManager : MovingObject
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
