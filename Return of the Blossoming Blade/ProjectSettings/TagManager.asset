@@ -47,6 +47,26 @@ TagManager:
   - name: character
     uniqueID: 1604933539
     locked: 0
+  - name: ground1
+    uniqueID: 2516715151
+    locked: 0
+  - name: ground2
+    uniqueID: 93517499
+    locked: 0
+  - name: flower
+    uniqueID: 4106427221
+    locked: 0
+  - name: rock
+    uniqueID: 1181465709
+    locked: 0
+  - name: tree
+    uniqueID: 2883488705
+    locked: 0
+  - name: tree2
+    uniqueID: 2531074951
+    locked: 0
+  - name: tree3
+    uniqueID: 208271681
   - name: object
     uniqueID: 2801527695
     locked: 0
