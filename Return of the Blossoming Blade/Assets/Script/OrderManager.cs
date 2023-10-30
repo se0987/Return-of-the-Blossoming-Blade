@@ -79,6 +79,36 @@ public class OrderManager : MonoBehaviour
         }
     }
 
+    public void Appear(string _name, bool _dir)
+    {
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (_name == characters[i].characterName)
+            {
+                characters[i].animator.SetBool("Appear", _dir);
+                characters[i].boxCollider.enabled = _dir;
+            }
+        }
+    }
+
+    public void Action(string _name, string _dir)
+    {//추후 청명이 액션 명령 넣기
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (_name == characters[i].characterName)
+            {
+                characters[i].animator.SetFloat("DirY", 0f);
+                characters[i].animator.SetFloat("DirX", 0f);
+                switch (_dir)
+                {
+                    case "1":
+                        characters[i].animator.SetFloat("DirY", 1f);
+                        break;
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
