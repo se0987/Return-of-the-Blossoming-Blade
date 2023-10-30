@@ -7,6 +7,7 @@ public class Dialogue
 {
     [TextArea(1,2)]
     public string[] sentences;
+    public string[] names;
     public Sprite[] sprites;
     public Sprite[] dialogueWindows;
 }
