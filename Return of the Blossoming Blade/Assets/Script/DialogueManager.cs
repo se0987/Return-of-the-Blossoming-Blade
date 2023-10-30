@@ -24,10 +24,12 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     public TextMeshProUGUI text;
+    public TextMeshProUGUI name;
     public SpriteRenderer rendererSprite;
     public SpriteRenderer rendererDialogueWindow;
 
     private List<string> listSentences;
+    private List<string> listName;
     private List<Sprite> listSprites;
     private List<Sprite> listDialogueWindows;
 
@@ -44,7 +46,9 @@ public class DialogueManager : MonoBehaviour
     {
         count = 0;
         text.text = "";
+        name.text = "";
         listSentences = new List<string>();
+        listName = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
     }
@@ -55,6 +59,7 @@ public class DialogueManager : MonoBehaviour
         for(int i=0; i<dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
+            listName.Add(dialogue.names[i]);
             listSprites.Add(dialogue.sprites[i]);
             listDialogueWindows.Add(dialogue.dialogueWindows[i]);
         }
@@ -68,10 +73,12 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         listSentences.Clear();
+        listName.Clear();
         listSprites.Clear();
         listDialogueWindows.Clear();
         count = 0;
         text.text = "";
+        name.text = "";
         talking = false;
     }
 
@@ -109,6 +116,7 @@ public class DialogueManager : MonoBehaviour
             rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
             rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
         }
+        name.text = listName[count];
         keyActivated = true;
         for (int i = 0; i < listSentences[count].Length; i++)
         {
@@ -127,6 +135,7 @@ public class DialogueManager : MonoBehaviour
                 keyActivated = false;
                 count++;
                 text.text = "";
+                name.text = "";
                 if (count == listSentences.Count)
                 {
                     StopAllCoroutines();

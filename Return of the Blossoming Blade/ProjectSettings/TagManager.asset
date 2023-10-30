@@ -44,9 +44,6 @@ TagManager:
   - name: background
     uniqueID: 1425695265
     locked: 0
-  - name: character
-    uniqueID: 1604933539
-    locked: 0
   - name: ground1
     uniqueID: 2516715151
     locked: 0
@@ -59,6 +56,9 @@ TagManager:
   - name: rock
     uniqueID: 1181465709
     locked: 0
+  - name: character
+    uniqueID: 1604933539
+    locked: 0
   - name: tree
     uniqueID: 2883488705
     locked: 0
@@ -67,6 +67,7 @@ TagManager:
     locked: 0
   - name: tree3
     uniqueID: 208271681
+    locked: 0
   - name: object
     uniqueID: 2801527695
     locked: 0
