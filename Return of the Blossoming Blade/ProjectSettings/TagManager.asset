@@ -15,7 +15,7 @@ TagManager:
   - 
   - NoPassing
   - 
-  - 
+  - Dialogue
   - 
   - 
   - 
@@ -72,4 +72,7 @@ TagManager:
     locked: 0
   - name: top
     uniqueID: 1763135725
+    locked: 0
+  - name: UI
+    uniqueID: 2656560691
     locked: 0

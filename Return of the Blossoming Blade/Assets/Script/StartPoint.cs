@@ -5,13 +5,13 @@ using UnityEngine;
 public class StartPoint : MonoBehaviour
 {
     public string startPoint;
-    private MovingObject thePlayer;
+    private PlayerManager thePlayer;
     private CameraManager theCamera;
     // Start is called before the first frame update
     void Start()
     {
         theCamera = FindObjectOfType<CameraManager>();
-        thePlayer = FindObjectOfType<MovingObject>();
+        thePlayer = FindObjectOfType<PlayerManager>();
 
         if(startPoint == thePlayer.currentMapName)
         {
