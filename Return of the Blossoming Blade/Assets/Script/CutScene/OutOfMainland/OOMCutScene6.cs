@@ -22,7 +22,15 @@ public class OOMCutScene6 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
-        StartCoroutine(EventCoroutine());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (one)
+        {
+            one = false;
+            StartCoroutine(EventCoroutine());
+        }
     }
 
     IEnumerator EventCoroutine()
