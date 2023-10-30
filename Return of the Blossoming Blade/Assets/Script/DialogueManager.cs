@@ -24,10 +24,12 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     public TextMeshProUGUI text;
+    public TextMeshProUGUI name;
     public SpriteRenderer rendererSprite;
     public SpriteRenderer rendererDialogueWindow;
 
     private List<string> listSentences;
+    private List<string> listName;
     private List<Sprite> listSprites;
     private List<Sprite> listDialogueWindows;
 
@@ -36,14 +38,17 @@ public class DialogueManager : MonoBehaviour
     public Animator animSprite;
     public Animator animDialogueWindow;
 
-    private bool talking = false;
+    public bool talking = false;
+    private bool keyActivated = false;
 
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
         text.text = "";
+        name.text = "";
         listSentences = new List<string>();
+        listName = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
     }
@@ -54,6 +59,7 @@ public class DialogueManager : MonoBehaviour
         for(int i=0; i<dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
+            listName.Add(dialogue.names[i]);
             listSprites.Add(dialogue.sprites[i]);
             listDialogueWindows.Add(dialogue.dialogueWindows[i]);
         }
@@ -67,10 +73,12 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         listSentences.Clear();
+        listName.Clear();
         listSprites.Clear();
         listDialogueWindows.Clear();
         count = 0;
         text.text = "";
+        name.text = "";
         talking = false;
     }
 
@@ -80,9 +88,9 @@ public class DialogueManager : MonoBehaviour
         {
             if (listDialogueWindows[count] != listDialogueWindows[count - 1])
             {
+                yield return new WaitForSeconds(0.2f);
                 animSprite.SetBool("Change", true);
                 animDialogueWindow.SetBool("Appear", false);
-                yield return new WaitForSeconds(0.2f);
                 rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
                 rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
                 animDialogueWindow.SetBool("Appear", true);
@@ -92,8 +100,8 @@ public class DialogueManager : MonoBehaviour
             {
                 if (listSprites[count] != listSprites[count - 1])
                 {
-                    animSprite.SetBool("Change", true);
                     yield return new WaitForSeconds(0.1f);
+                    animSprite.SetBool("Change", true);
                     rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
                     animSprite.SetBool("Change", false);
                 }
@@ -108,7 +116,8 @@ public class DialogueManager : MonoBehaviour
             rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
             rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
         }
-
+        name.text = listName[count];
+        keyActivated = true;
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];//1글자씩 출력
@@ -119,12 +128,14 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talking)
+        if (talking && keyActivated)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                keyActivated = false;
                 count++;
                 text.text = "";
+                name.text = "";
                 if (count == listSentences.Count)
                 {
                     StopAllCoroutines();
