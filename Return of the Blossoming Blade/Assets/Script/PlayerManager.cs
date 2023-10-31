@@ -52,7 +52,7 @@ public class PlayerManager : MovingObject
 
             animator.SetBool("Walking", true);
 
-            boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
+            //sboxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 
             while (currentWalkCount < walkCount)
             {
@@ -82,7 +82,7 @@ public class PlayerManager : MovingObject
     {
         if (canMove && !notMove)
         {
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 canMove = false;
                 StartCoroutine(MoveCoroutine());

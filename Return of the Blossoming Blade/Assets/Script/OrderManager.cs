@@ -101,7 +101,10 @@ public class OrderManager : MonoBehaviour
                 characters[i].animator.SetFloat("DirX", 0f);
                 switch (_dir)
                 {
-                    case "1":
+                    case "ACTION1"://청명 액션
+                        characters[i].animator.SetFloat("DirY", 1f);
+                        break;
+                    case "DIE"://무당 캐릭터 쓰러지는거
                         characters[i].animator.SetFloat("DirY", 1f);
                         break;
                 }
