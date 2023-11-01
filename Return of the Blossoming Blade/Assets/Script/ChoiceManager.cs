@@ -39,6 +39,8 @@ public class ChoiceManager : MonoBehaviour
 
     private int nowChoice= 1;
 
+    private int saveN = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +48,9 @@ public class ChoiceManager : MonoBehaviour
         choice2.text = "";
     }
 
-    public void ShowChoice(Choice choice)
+    public void ShowChoice(Choice choice, int n)
     {
+        saveN = n;
         talking = true;
         choice_1 = choice.answer1;
         choice1.text = "<color=#ef538b>" + choice_1 + "</color>";
@@ -68,7 +71,7 @@ public class ChoiceManager : MonoBehaviour
         choice2.text = "";
         animFlower1.SetBool("Choice", false);
         animFlower2.SetBool("Choice", false);
-        PlayerPrefs.SetInt("choice1", nowChoice);
+        PlayerPrefs.SetInt("choice" + saveN.ToString(), nowChoice);
         PlayerPrefs.Save();
     }
 

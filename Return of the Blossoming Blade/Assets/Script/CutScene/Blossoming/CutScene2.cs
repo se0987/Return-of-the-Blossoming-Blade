@@ -77,7 +77,7 @@ public class CutScene2 : MonoBehaviour
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
 
-        theChoice.ShowChoice(choice_1);
+        theChoice.ShowChoice(choice_1, 1);
         yield return new WaitUntil(() => !theChoice.talking);
         
         if (PlayerPrefs.HasKey("choice1"))
