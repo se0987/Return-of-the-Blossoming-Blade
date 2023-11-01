@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OOMCutScene7 : MonoBehaviour
+public class DCutScene2 : MonoBehaviour
 {
     public Dialogue dialogue_1;
     public Dialogue dialogue_2;
@@ -14,11 +14,7 @@ public class OOMCutScene7 : MonoBehaviour
 
     //private bool flag;
     private bool can = false;
-    private bool oneFace2 = true;
-    private bool oneEnd = true;
-
-    public bool face2 = false;
-    public bool end = false;
+    private bool one = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,20 +27,11 @@ public class OOMCutScene7 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (face2 && oneFace2)
+        if (one)
         {
-            oneFace2 = false;
-            StartCoroutine(EventCoroutine());
-        }else if (end && oneEnd)
-        {
-            oneEnd = false;
+            one = false;
             StartCoroutine(EventCoroutine());
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        can = false;
     }
 
     IEnumerator EventCoroutine()
@@ -53,18 +40,20 @@ public class OOMCutScene7 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
 
-        if (face2)
-        {
-            theDM.ShowDialogue(dialogue_1);
-            yield return new WaitUntil(() => !theDM.talking);
-            face2 = false;
-        }
-        else if(end)
-        {
-            theDM.ShowDialogue(dialogue_2);
-            yield return new WaitUntil(() => !theDM.talking);
-            end = false;
-        }
+        theOrder.Appear("BlackScreen", true);
+        yield return new WaitForSeconds(4f);
+
+        theDM.ShowDialogue(dialogue_1);
+        yield return new WaitUntil(() => !theDM.talking);
+        yield return new WaitForSeconds(1f);
+
+        theOrder.Appear("BlackScreen", false);
+        theOrder.Move("Player", "RIGHT");
+        theOrder.Move("Player", "RIGHT");
+        theOrder.Move("Player", "RIGHT");
+
+        theDM.ShowDialogue(dialogue_2);
+        yield return new WaitUntil(() => !theDM.talking);
 
         theOrder.Move();
     }
