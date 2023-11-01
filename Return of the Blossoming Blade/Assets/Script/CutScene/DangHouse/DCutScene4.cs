@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OOMCutScene7 : MonoBehaviour
+public class DCutScene4 : MonoBehaviour
 {
     public Dialogue dialogue_1;
     public Dialogue dialogue_2;
+    public Dialogue dialogue_3;
 
     private DialogueManager theDM;
     private OrderManager theOrder;
@@ -14,9 +15,12 @@ public class OOMCutScene7 : MonoBehaviour
 
     //private bool flag;
     private bool can = false;
+
+    private bool oneStart = true;
     private bool oneFace2 = true;
     private bool oneEnd = true;
 
+    public bool start = false;
     public bool face2 = false;
     public bool end = false;
 
@@ -31,11 +35,16 @@ public class OOMCutScene7 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (face2 && oneFace2)
+        if(oneStart && start)
+        {
+            oneStart = false;
+            StartCoroutine(EventCoroutine());
+        }
+        else if (face2 && oneFace2)
         {
             oneFace2 = false;
             StartCoroutine(EventCoroutine());
-        }else if (end && oneEnd)
+        }else if (oneEnd && end)
         {
             oneEnd = false;
             StartCoroutine(EventCoroutine());
@@ -53,15 +62,21 @@ public class OOMCutScene7 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
 
-        if (face2)
+        if (start)
         {
             theDM.ShowDialogue(dialogue_1);
+            yield return new WaitUntil(() => !theDM.talking);
+            start = false;
+        }
+        else if (face2)
+        {
+            theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
             face2 = false;
         }
         else if(end)
         {
-            theDM.ShowDialogue(dialogue_2);
+            theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
         }
