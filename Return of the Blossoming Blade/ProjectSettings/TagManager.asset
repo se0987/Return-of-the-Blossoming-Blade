@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapon
+  - Enemy
+  - EnemyAttack
+  - PlayerCombatCol
   layers:
   - Default
   - TransparentFX
@@ -76,4 +80,10 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2656560691
+    locked: 0
+  - name: UI+1
+    uniqueID: 4169728473
+    locked: 0
+  - name: UI+2
+    uniqueID: 3431266733
     locked: 0
