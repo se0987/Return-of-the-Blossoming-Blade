@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4430203010589186363}
   - component: {fileID: 1918473395789901297}
   - component: {fileID: 2108874903902260737}
+  - component: {fileID: -9164363680571121815}
   m_Layer: 0
   m_Name: LoadingPart
   m_TagString: Untagged
@@ -29,6 +30,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,3 +100,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _innerMaterialRef: {fileID: 2100000, guid: a85fb7cf145446245b84ecf7d4295fcc, type: 2}
   _outerMaterialRef: {fileID: 2100000, guid: 5d6baf1bd1e392547817430435e44187, type: 2}
+--- !u!210 &-9164363680571121815
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116870473835842596}
+  m_Enabled: 1
+  m_SortingLayerID: -125238823
+  m_SortingLayer: 13
+  m_SortingOrder: 0
