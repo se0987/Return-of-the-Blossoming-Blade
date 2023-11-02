@@ -64,6 +64,16 @@ public class OOMCutScene7 : MonoBehaviour
             theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
+
+            TransferMap[] temp = FindObjectsOfType<TransferMap>();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (temp[i].gateName.Equals("GoToOuter3"))
+                {
+                    temp[i].move = true;
+                    break;
+                }
+            }
         }
 
         theOrder.Move();

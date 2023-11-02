@@ -2773,10 +2773,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.000000014901161}
+  m_Offset: {x: 0, y: -0.10522461}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2787,7 +2787,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31, y: 0.75}
+  m_Size: {x: 0.31, y: 0.5395508}
   m_EdgeRadius: 0
 --- !u!114 &39128264
 MonoBehaviour:
@@ -16987,7 +16987,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 100.88023, y: 16.06845}
+  m_Offset: {x: 91.72037, y: 24.312332}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16998,7 +16998,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 479.70938, y: 446.29022}
+  m_Size: {x: 758.17, y: 689.94336}
   m_EdgeRadius: 0
 --- !u!4 &1032787164
 Transform:
@@ -27177,6 +27177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Jongnam
+  move: 0
+  gateName: 
 --- !u!61 &1171205418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28954,6 +28956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: CheongJin
+  move: 0
+  gateName: 
 --- !u!61 &1325009529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29440,7 +29444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 300}
+  m_AnchoredPosition: {x: 7, y: 254}
   m_SizeDelta: {x: 666.6616, y: 61.968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396250593
@@ -29472,8 +29476,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281872055
+  m_fontColor: {r: 0.7169812, g: 0.17856887, b: 0.22121538, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -30000,6 +30004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Jongnam
+  move: 0
+  gateName: 
 --- !u!61 &1481894557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30498,6 +30504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: Mudang
+  move: 0
+  gateName: 
 --- !u!61 &1527952947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35445,7 +35453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2090043641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35660,7 +35668,7 @@ GameObject:
   - component: {fileID: 2122874035}
   - component: {fileID: 2122874034}
   m_Layer: 0
-  m_Name: GoToTheOutOfMainland
+  m_Name: GoToOutOfMainland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35679,6 +35687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: OutOfMainland
+  move: 0
+  gateName: GoToOutOfMainland
 --- !u!61 &2122874035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35692,7 +35702,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2140.477, y: 797.47986}
+  m_Offset: {x: -2141.9785, y: 246.00708}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -35703,7 +35713,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160.06348, y: 65.22583}
+  m_Size: {x: 157.06079, y: 1168.1714}
   m_EdgeRadius: 0
 --- !u!4 &2122874036
 Transform:
@@ -35713,7 +35723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122874033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1694, y: -2299, z: -6.8344803}
+  m_LocalPosition: {x: 3372, y: -3082, z: -6.8344803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

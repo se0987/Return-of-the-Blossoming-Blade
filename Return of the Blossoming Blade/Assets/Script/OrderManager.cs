@@ -93,6 +93,11 @@ public class OrderManager : MonoBehaviour
 
     public void Action(string _name, string _dir)
     {//추후 청명이 액션 명령 넣기
+        StartCoroutine(StartChapterCoroutine(_name, _dir));
+    }
+
+    IEnumerator StartChapterCoroutine(string _name, string _dir)
+    {
         for (int i = 0; i < characters.Count; i++)
         {
             if (_name == characters[i].characterName)
@@ -101,8 +106,10 @@ public class OrderManager : MonoBehaviour
                 characters[i].animator.SetFloat("DirX", 0f);
                 switch (_dir)
                 {
-                    case "ACTION1"://청명 액션
-                        characters[i].animator.SetFloat("DirY", 1f);
+                    case "AttackH"://청명 액션
+                        characters[i].animator.SetBool("AttackH", true);
+                        yield return new WaitForSeconds(1f);
+                        characters[i].animator.SetBool("AttackH", false);
                         break;
                     case "DIE"://무당 캐릭터 쓰러지는거
                         characters[i].animator.SetFloat("DirY", 1f);

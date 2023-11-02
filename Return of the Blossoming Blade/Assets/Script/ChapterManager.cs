@@ -41,7 +41,7 @@ public class ChapterManager : MonoBehaviour
     IEnumerator StartChapterCoroutine()
     {
         anim.SetBool("Appear", true);
-        yield return new WaitForSeconds(130f);
+        yield return new WaitForSeconds(10f);
         anim.SetBool("Appear", false);
     }
 

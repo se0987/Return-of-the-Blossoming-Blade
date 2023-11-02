@@ -50,14 +50,16 @@ public class OOMCutScene2 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        theOrder.Turn("Master1", "DOWN");
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        theOrder.Action("Player", "1");//Ã»¸íÀÌ Ä®À» ÈÖµÎ¸§
-        yield return new WaitForSeconds(0.4f);
+        theOrder.Action("Player", "AttackH");//Ã»¸íÀÌ Ä®À» ÈÖµÎ¸§
+        yield return new WaitForSeconds(1f);
         theOrder.Appear("Fire1", false);//ºÒÀÌ ²¨Áü
         theOrder.Appear("Fire2", false);
         theOrder.Appear("Fire3", false);
+        theOrder.Turn("Master1", "UP");
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitForSeconds(0.4f);
@@ -65,6 +67,16 @@ public class OOMCutScene2 : MonoBehaviour
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToOuter2"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }

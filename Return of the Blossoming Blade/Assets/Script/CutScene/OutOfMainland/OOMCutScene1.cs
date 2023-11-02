@@ -10,6 +10,7 @@ public class OOMCutScene1 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private ChapterManager theChapter;
 
     //private bool flag;
     private bool can = false;
@@ -22,6 +23,7 @@ public class OOMCutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
         StartCoroutine(EventCoroutine());
     }
 
@@ -30,6 +32,7 @@ public class OOMCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        theChapter.ShowChapter("Chpater2\n새외 방문");
 
         theDM.ShowDialogue(dialogue_1);
         theOrder.Turn("Player", "UP");

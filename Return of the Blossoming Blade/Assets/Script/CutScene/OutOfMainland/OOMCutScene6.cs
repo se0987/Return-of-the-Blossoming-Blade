@@ -15,6 +15,8 @@ public class OOMCutScene6 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public bool enable = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class OOMCutScene6 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (one)
+        if (one && enable)
         {
             one = false;
             StartCoroutine(EventCoroutine());
@@ -38,9 +40,18 @@ public class OOMCutScene6 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
-
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("ReturnBlossoming"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }
