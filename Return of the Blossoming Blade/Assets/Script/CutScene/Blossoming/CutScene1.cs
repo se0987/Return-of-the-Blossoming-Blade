@@ -10,6 +10,7 @@ public class CutScene1 : MonoBehaviour
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
+    private ChapterManager theChapter;
 
     //private bool flag;
     private bool can = false;
@@ -21,6 +22,7 @@ public class CutScene1 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
         StartCoroutine(EventCoroutine());
     }
 
@@ -29,6 +31,7 @@ public class CutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         theOrder.Turn("CheongJin", "LEFT");
+        theChapter.ShowChapter("Chapter 1\nΩ√¿€");
 
         theDM.ShowDialogue(dialogue_1);
 

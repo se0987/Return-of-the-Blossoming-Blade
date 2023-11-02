@@ -10,6 +10,8 @@ public class TransferScene : MonoBehaviour
     private PlayerManager thePlayer;
     private CameraManager theCamera;
 
+    private bool move = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class TransferScene : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if(collision.gameObject.name == "Player" && move)
         {
             thePlayer.currentMapName = transferMapName;
             SceneManager.LoadScene(transferMapName);

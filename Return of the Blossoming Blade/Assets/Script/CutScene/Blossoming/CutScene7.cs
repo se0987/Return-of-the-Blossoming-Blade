@@ -44,13 +44,27 @@ public class CutScene7 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Turn("Player", "LEFT");
+        theOrder.Turn("Player", "LEFT");
         yield return new WaitForSeconds(0.4f);
+        theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("DangBo", "DOWN");
         theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
@@ -66,10 +80,24 @@ public class CutScene7 : MonoBehaviour
         theOrder.Move("Player", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
+        theOrder.Appear("CheongJin", false);
 
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("ReturnBlossoming"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }

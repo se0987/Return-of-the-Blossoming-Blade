@@ -50,7 +50,7 @@ public class PlayerManager : MovingObject
                 break;
             }
 
-            animator.SetBool("Walking", true);
+            animator.SetBool("Running", true);
 
             //sboxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 
@@ -73,7 +73,7 @@ public class PlayerManager : MovingObject
             }
             currentWalkCount = 0;
         }
-        animator.SetBool("Walking", false);
+        animator.SetBool("Running", false);
         canMove = true;
     }
 

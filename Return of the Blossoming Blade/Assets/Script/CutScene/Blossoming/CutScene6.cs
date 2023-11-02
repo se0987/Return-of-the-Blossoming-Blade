@@ -68,8 +68,9 @@ public class CutScene6 : MonoBehaviour
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_2);
-                yield return new WaitForSeconds(0.3f);
-                theOrder.Move("Poor", "RIGHT");
+                yield return new WaitForSeconds(2f);
+                theOrder.Appear("Poor", true);
+                yield return new WaitForSeconds(0.2f);
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
@@ -81,13 +82,13 @@ public class CutScene6 : MonoBehaviour
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_3);
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_4);
@@ -119,7 +120,7 @@ public class CutScene6 : MonoBehaviour
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_9);
-                theOrder.Move("Poor", "RIGHT");
+                theOrder.Appear("Poor", true);
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
@@ -131,15 +132,12 @@ public class CutScene6 : MonoBehaviour
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_3);
-                yield return new WaitForSeconds(1f);
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
-                theOrder.Move("Player", "LEFT");
                 yield return new WaitUntil(() => !theDM.talking);
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
+                theOrder.Move("Player", "LEFT", "Running");
 
                 theDM.ShowDialogue(dialogue_4);
                 yield return new WaitUntil(() => !theDM.talking);
@@ -148,6 +146,16 @@ public class CutScene6 : MonoBehaviour
         else
         {
             Debug.Log("choice1 값이 없음");
+        }
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToForest"))
+            {
+                temp[i].move = true;
+                break;
+            }
         }
 
 

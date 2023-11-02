@@ -41,13 +41,13 @@ public class OrderManager : MonoBehaviour
         thePlayer.notMove = false;
     }
 
-    public void Move(string _name, string _dir)
+    public void Move(string _name, string _dir, string _state = "Walking")
     {
         for (int i = 0; i < characters.Count; i++)
         {
             if (_name == characters[i].characterName)
             {
-                characters[i].Move(_dir);
+                characters[i].Move(_dir, 5, _state);
             }
         }
     }
