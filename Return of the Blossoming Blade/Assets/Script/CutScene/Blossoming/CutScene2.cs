@@ -18,6 +18,9 @@ public class CutScene2 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private CutScene3 cutScene3;
+
+    private List<TransferMap> transferGates = new List<TransferMap>();
 
     //private bool flag;
     private bool can = false;
@@ -30,6 +33,7 @@ public class CutScene2 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        cutScene3 = FindObjectOfType<CutScene3>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -97,19 +101,45 @@ public class CutScene2 : MonoBehaviour
                 theOrder.Move("CheongJin", "UP");
                 yield return new WaitForSeconds(1.4f);
                 theOrder.Appear("CheongJin", false);
+                theOrder.Appear("BlackScreen", true);
+                yield return new WaitForSeconds(3f);
+                theOrder.Appear("BlackScreen", false);
                 yield return new WaitUntil(() => !theDM.talking);
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitUntil(() => !theDM.talking);
+                theOrder.Appear("CheongMun", true);
             }
             else
             {
                 theDM.ShowDialogue(dialogue_7);
                 yield return new WaitUntil(() => !theDM.talking);
+
+                TransferMap[] temp1 = FindObjectsOfType<TransferMap>();
+                for (int i = 0; i < temp1.Length; i++)
+                {
+                    if (temp1[i].gateName.Equals("GoToTown"))
+                    {
+                        temp1[i].move = true;
+                        break;
+                    }
+                }
+                theOrder.Appear("CheongMun", false);
+                cutScene3.enable = false;
             }
         }
         else
         {
                 Debug.Log("choice1 값이 없음");
+        }
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GetOutInTheRoom") || temp[i].gateName.Equals("GoToTheRoom"))
+            {
+                temp[i].move = true;
+                break;
+            }
         }
 
         theOrder.Move();

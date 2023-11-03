@@ -17,6 +17,8 @@ public class CutScene3 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public bool enable = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,21 +50,34 @@ public class CutScene3 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
-        theOrder.PreLoadCharacter();
-        theOrder.NotMove();
-        yield return new WaitForSeconds(0.2f);
+        if (enable)
+        {
+            theOrder.PreLoadCharacter();
+            theOrder.NotMove();
+            yield return new WaitForSeconds(0.2f);
 
-        theDM.ShowDialogue(dialogue_1);
-        theOrder.Turn("CheongMun", "LEFT");
-        yield return new WaitUntil(() => !theDM.talking);
+            theDM.ShowDialogue(dialogue_1);
+            theOrder.Turn("CheongMun", "LEFT");
+            yield return new WaitUntil(() => !theDM.talking);
 
-        theDM.ShowDialogue(dialogue_2);
-        yield return new WaitUntil(() => !theDM.talking);
-        theOrder.Turn("CheongMun", "UP");
-        
-        theDM.ShowDialogue(dialogue_3);
-        yield return new WaitUntil(() => !theDM.talking);
+            theDM.ShowDialogue(dialogue_2);
+            yield return new WaitUntil(() => !theDM.talking);
+            theOrder.Turn("CheongMun", "UP");
+
+            theDM.ShowDialogue(dialogue_3);
+            yield return new WaitUntil(() => !theDM.talking);
+
+            TransferMap[] temp = FindObjectsOfType<TransferMap>();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (temp[i].gateName.Equals("GoToTown"))
+                {
+                    temp[i].move = true;
+                    break;
+                }
+            }
 
         theOrder.Move();
+        }
     }
 }

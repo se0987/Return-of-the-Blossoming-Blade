@@ -43,18 +43,34 @@ public class OOMCutScene4 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Move("Player", "DOWN");
+        theOrder.Move("Player", "DOWN");
+        theOrder.Move("Player", "DOWN");
         //theOrder.Move("OOMMaster", "SURPRISE"); //±ôÂ¦ ³î¶ó´Â ¸ð¼Ç
 
         theDM.ShowDialogue(dialogue_2);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1f);
+        theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "DOWN");
         theOrder.Move("Player", "DOWN");
-        yield return new WaitForSeconds(0.5f);
-        /*theOrder.Move("OOMMaster", "DOWN");//¾ß¼ö±ÃÀ¸·Î ¾È³»
-        theOrder.Move("OOMMaster", "DOWN");
-        theOrder.Move("OOMMaster", "DOWN");
-        theOrder.Move("OOMMaster", "DOWN");*/
+        theOrder.Move("Player", "DOWN");
+        yield return new WaitForSeconds(3f);
+        theOrder.Turn("Player", "RIGHT");
+        theOrder.Move("Master2", "DOWN");//¾ß¼ö±ÃÀ¸·Î ¾È³»
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Appear("Master2", false);
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToTheRoom"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }

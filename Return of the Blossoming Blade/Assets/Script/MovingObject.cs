@@ -19,17 +19,17 @@ public class MovingObject : MonoBehaviour
     private bool notCoroutine = false;
     public Queue<string> queue;
 
-    public void Move(string _dir, int _frequency = 5)
+    public void Move(string _dir, int _frequency = 5, string _state = "Walking")
     {
         queue.Enqueue(_dir);
         if (!notCoroutine)
         {
             notCoroutine = true;
-            StartCoroutine(MoveCoroutine(_dir, _frequency));
+            StartCoroutine(MoveCoroutine(_dir, _frequency, _state));
         }
     }
 
-    IEnumerator MoveCoroutine(string _dir, int _frequency)
+    IEnumerator MoveCoroutine(string _dir, int _frequency, string _state)
     {
         while(queue.Count != 0)
         {
@@ -87,7 +87,7 @@ public class MovingObject : MonoBehaviour
                 bool checkCollsionFlag = CheckCollsion();
                 if (checkCollsionFlag)
                 {
-                    animator.SetBool("Walking", false);
+                    animator.SetBool(_state, false);
                     yield return new WaitForSeconds(1f);
                 }
                 else
@@ -96,7 +96,7 @@ public class MovingObject : MonoBehaviour
                 }
             }
 
-            animator.SetBool("Walking", true);
+            animator.SetBool(_state, true);
 
             while (currentWalkCount < walkCount)
             {
@@ -110,9 +110,9 @@ public class MovingObject : MonoBehaviour
             }
             currentWalkCount = 0;
             if (_frequency != 5)
-                animator.SetBool("Walking", false);
+                animator.SetBool(_state, false);
         }
-        animator.SetBool("Walking", false);
+        animator.SetBool(_state, false);
         notCoroutine = false;
     }
 

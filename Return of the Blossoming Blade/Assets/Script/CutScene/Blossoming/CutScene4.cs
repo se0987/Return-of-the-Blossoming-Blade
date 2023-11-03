@@ -41,6 +41,16 @@ public class CutScene4 : MonoBehaviour
 
         yield return new WaitUntil(() => !theDM.talking);
 
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToTown"))
+            {
+                temp[i].move = false;
+                break;
+            }
+        }
+
         theOrder.Move();
     }
 }
