@@ -52,6 +52,16 @@ public class MCutScene4 : MonoBehaviour
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
 
+        TransferScene[] temp = FindObjectsOfType<TransferScene>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToJongnam"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
+
         theOrder.Move();
     }
 }

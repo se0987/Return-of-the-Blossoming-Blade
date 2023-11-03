@@ -43,10 +43,12 @@ public class OOMCutScene6 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
 
-        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        theOrder.Turn("DangBo", "DOWN");
+
+        TransferScene[] temp = FindObjectsOfType<TransferScene>();
         for (int i = 0; i < temp.Length; i++)
         {
-            if (temp[i].gateName.Equals("ReturnBlossoming"))
+            if (temp[i].gateName.Equals("GoToMudang"))
             {
                 temp[i].move = true;
                 break;

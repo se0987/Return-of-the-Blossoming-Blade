@@ -54,6 +54,8 @@ public class OOMCutScene2 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "UP");
         theOrder.Action("Player", "AttackH");//Ã»¸íÀÌ Ä®À» ÈÖµÎ¸§
         yield return new WaitForSeconds(1f);
         theOrder.Appear("Fire1", false);//ºÒÀÌ ²¨Áü
