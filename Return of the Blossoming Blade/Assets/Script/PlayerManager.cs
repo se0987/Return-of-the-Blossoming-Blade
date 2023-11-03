@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MovingObject
 {
-    static public PlayerManager instance;
+    public static PlayerManager instance;
 
     public string currentMapName;
 
