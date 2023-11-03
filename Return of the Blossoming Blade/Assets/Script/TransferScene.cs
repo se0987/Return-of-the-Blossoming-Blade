@@ -10,7 +10,8 @@ public class TransferScene : MonoBehaviour
     private PlayerManager thePlayer;
     private CameraManager theCamera;
 
-    private bool move = false;
+    public bool move = false;
+    public string gateName;
 
     // Start is called before the first frame update
     void Start()

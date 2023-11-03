@@ -95,6 +95,16 @@ public class JCutScene1 : MonoBehaviour
             yield return new WaitUntil(() => !theDM.talking);
         }
 
+        TransferScene[] temp = FindObjectsOfType<TransferScene>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToDangHouse"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
+
         theOrder.Move();
     }
 }
