@@ -190,30 +190,49 @@ public class EnemyAI : MonoBehaviour
 
     private Vector2 GetDirectionToPlayer()
     {
-        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        Vector2 directionToPlayer = playerTransform.position - transform.position;
 
-        // 대쉬 중인 경우 바로 플레이어를 향한 방향을 반환
-        if (currentState == EnemyState.Dashing)
+        // Determine primary direction based on the magnitude of x and y difference.
+        if (Mathf.Abs(directionToPlayer.x) > Mathf.Abs(directionToPlayer.y))
         {
-            return directionToPlayer;
-        }
-
-        // 우선적으로 플레이어를 향한 방향으로 움직일 것인지 확인합니다.
-        if (!IsObstacleInDirection(directionToPlayer))
-        {
-            return directionToPlayer;
-        }
-
-        // 플레이어를 향한 방향에 장애물이 있다면, 다른 가능한 방향으로 움직입니다.
-        foreach (Vector2 dir in directions)
-        {
-            if (!IsObstacleInDirection(dir))
+            // Move horizontally.
+            if (directionToPlayer.x > 0)
             {
-                return dir;
+                // Check for obstacle on the right.
+                if (!IsObstacleInDirection(Vector2.right))
+                    return Vector2.right;
+                else
+                    return Vector2.up; // or Vector2.down based on some other logic
+            }
+            else
+            {
+                // Check for obstacle on the left.
+                if (!IsObstacleInDirection(Vector2.left))
+                    return Vector2.left;
+                else
+                    return Vector2.up; // or Vector2.down based on some other logic
             }
         }
-
-        return Vector2.zero;  // 만약 모든 방향에 장애물이 있다면 움직이지 않습니다.
+        else
+        {
+            // Move vertically.
+            if (directionToPlayer.y > 0)
+            {
+                // Check for obstacle above.
+                if (!IsObstacleInDirection(Vector2.up))
+                    return Vector2.up;
+                else
+                    return Vector2.right; // or Vector2.left based on some other logic
+            }
+            else
+            {
+                // Check for obstacle below.
+                if (!IsObstacleInDirection(Vector2.down))
+                    return Vector2.down;
+                else
+                    return Vector2.right; // or Vector2.left based on some other logic
+            }
+        }
     }
 
     private bool IsObstacleInDirection(Vector2 direction)

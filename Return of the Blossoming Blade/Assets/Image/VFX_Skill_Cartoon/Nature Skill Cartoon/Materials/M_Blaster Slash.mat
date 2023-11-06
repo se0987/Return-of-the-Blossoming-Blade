@@ -21,10 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Blaster Slash
-  m_Shader: {fileID: -6465566751694194690, guid: c38a13c2301c9c64892dba3f60b1aa03,
-    type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
+  m_Shader: {fileID: -6465566751694194690, guid: c38a13c2301c9c64892dba3f60b1aa03, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -33,7 +30,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -138,7 +134,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.07929868, g: 0.6226415, b: 0.15049528, a: 1}
+    - _Color: {r: 0.62352943, g: 0.07843135, b: 0.107129455, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Size_1: {r: 1, g: 1, b: 0, a: 0}
     - _Size_2: {r: 1, g: 1, b: 0, a: 0}
