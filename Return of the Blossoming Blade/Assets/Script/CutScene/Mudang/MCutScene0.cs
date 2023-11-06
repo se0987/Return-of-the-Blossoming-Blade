@@ -42,6 +42,8 @@ public class MCutScene0 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
 
+        theOrder.Turn("DangBo", "DOWN");
+
         theChapter.ShowChapter("Chapter 3\n¹«´ç»ê");
 
         theOrder.Move();

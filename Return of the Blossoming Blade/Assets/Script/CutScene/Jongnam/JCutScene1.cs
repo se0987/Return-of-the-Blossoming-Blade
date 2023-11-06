@@ -71,6 +71,7 @@ public class JCutScene1 : MonoBehaviour
             theOrder.Move("JTeacher", "DOWN");
             theOrder.Move("JTeacher", "DOWN");
             theOrder.Move("JTeacher", "DOWN");
+            theOrder.Move("JTeacher", "DOWN");
 
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);

@@ -27,12 +27,24 @@ public class DCutScene2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (one)
+        can = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        can = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (one && can && Input.GetKeyDown(KeyCode.C))
         {
             one = false;
             StartCoroutine(EventCoroutine());
         }
     }
+
 
     IEnumerator EventCoroutine()
     {
@@ -53,7 +65,31 @@ public class DCutScene2 : MonoBehaviour
         theOrder.Move("Player", "RIGHT");
 
         theDM.ShowDialogue(dialogue_2);
+        theOrder.Move("JoPeong", "LEFT");
+        theOrder.Move("JoPeong", "LEFT");
+        theOrder.Move("JoPeong", "LEFT");
+        theOrder.Move("JoPeong", "LEFT");
+        theOrder.Move("JoPeong", "LEFT");
+        theOrder.Move("JoPeong", "LEFT");
+        yield return new WaitForSeconds(0.5f);
+        theOrder.Appear("Poor", true);
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToDangBo"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }

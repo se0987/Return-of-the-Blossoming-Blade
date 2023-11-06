@@ -70,7 +70,6 @@ public class CutScene6 : MonoBehaviour
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitForSeconds(2f);
                 theOrder.Appear("Poor", true);
-                yield return new WaitForSeconds(0.2f);
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
@@ -121,6 +120,7 @@ public class CutScene6 : MonoBehaviour
 
                 theDM.ShowDialogue(dialogue_9);
                 theOrder.Appear("Poor", true);
+                theOrder.Turn("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");

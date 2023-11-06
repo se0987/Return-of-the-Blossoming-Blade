@@ -44,10 +44,27 @@ public class MCutScene4 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
 
+        theOrder.Appear("Poor", true);
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);

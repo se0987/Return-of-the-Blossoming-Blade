@@ -20,7 +20,15 @@ public class CJCutScene1 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
-        StartCoroutine(EventCoroutine());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (one)
+        {
+            one = false;
+            StartCoroutine(EventCoroutine());
+        }
     }
 
     IEnumerator EventCoroutine()
@@ -31,6 +39,16 @@ public class CJCutScene1 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToCheongJinRoad"))
+            {
+                temp[i].move = false;
+                break;
+            }
+        }
 
         theOrder.Move();
     }
