@@ -132,8 +132,8 @@ TextureImporter:
       name: "\uB2F9\uBCF4-\uAE30\uBCF8_0"
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2
+        x: 10
+        y: 14
         width: 33
         height: 75
       alignment: 0
@@ -153,8 +153,8 @@ TextureImporter:
       name: "\uB2F9\uBCF4-\uAE30\uBCF8_1"
       rect:
         serializedVersion: 2
-        x: 135
-        y: 2
+        x: 68
+        y: 14
         width: 31
         height: 75
       alignment: 0
@@ -174,8 +174,8 @@ TextureImporter:
       name: "\uB2F9\uBCF4-\uAE30\uBCF8_2"
       rect:
         serializedVersion: 2
-        x: 237
-        y: 2
+        x: 130
+        y: 14
         width: 31
         height: 75
       alignment: 0
@@ -195,8 +195,8 @@ TextureImporter:
       name: "\uB2F9\uBCF4-\uAE30\uBCF8_3"
       rect:
         serializedVersion: 2
-        x: 336
-        y: 2
+        x: 187
+        y: 12
         width: 31
         height: 75
       alignment: 0
@@ -208,6 +208,69 @@ TextureImporter:
       bones: []
       spriteID: 6396ac4df05616e48b8cf551f3d9ac9f
       internalID: 161961406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uB2F9\uBCF4-\uAE30\uBCF8_4"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 12
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c308ae2704f0a71438a2d4e9e1ab54c4
+      internalID: 86933069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uB2F9\uBCF4-\uAE30\uBCF8_5"
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 9
+        width: 80
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f04638aebf94024ab6ffc1dced26c68
+      internalID: 953902046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uB2F9\uBCF4-\uAE30\uBCF8_6"
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 5
+        width: 87
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71f2a6a57adaa14da6229e5428fe396
+      internalID: -1809855879
       vertices: []
       indices: 
       edges: []
@@ -227,6 +290,9 @@ TextureImporter:
       "\uB2F9\uBCF4-\uAE30\uBCF8_1": 950410140
       "\uB2F9\uBCF4-\uAE30\uBCF8_2": -464162348
       "\uB2F9\uBCF4-\uAE30\uBCF8_3": 161961406
+      "\uB2F9\uBCF4-\uAE30\uBCF8_4": 86933069
+      "\uB2F9\uBCF4-\uAE30\uBCF8_5": 953902046
+      "\uB2F9\uBCF4-\uAE30\uBCF8_6": -1809855879
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

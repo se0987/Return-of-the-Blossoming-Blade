@@ -17,6 +17,7 @@ public class CJCutScene2 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private ChapterManager theChapter;
 
     //private bool flag;
     private bool can = false;
@@ -29,6 +30,7 @@ public class CJCutScene2 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +44,7 @@ public class CJCutScene2 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
+        theChapter.ShowChapter("Chapter6\nÃ»Áø");
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
@@ -59,6 +62,16 @@ public class CJCutScene2 : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitUntil(() => !theDM.talking);
+
+                TransferMap[] temp = FindObjectsOfType<TransferMap>();
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    if (temp[i].gateName.Equals("GoToCheongJinRoad"))
+                    {
+                        temp[i].move = true;
+                        break;
+                    }
+                }
             }
             else
             {
@@ -76,12 +89,32 @@ public class CJCutScene2 : MonoBehaviour
                         yield return new WaitForSeconds(0.2f);
                         theDM.ShowDialogue(dialogue_4);
                         yield return new WaitUntil(() => !theDM.talking);
+
+                        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+                        for (int i = 0; i < temp.Length; i++)
+                        {
+                            if (temp[i].gateName.Equals("GoToCheongJinRoad"))
+                            {
+                                temp[i].move = true;
+                                break;
+                            }
+                        }
                     }
                     else
                     {
                         yield return new WaitForSeconds(0.2f);
                         theDM.ShowDialogue(dialogue_5);
                         yield return new WaitUntil(() => !theDM.talking);
+
+                        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+                        for (int i = 0; i < temp.Length; i++)
+                        {
+                            if (temp[i].gateName.Equals("GoToChunma"))
+                            {
+                                temp[i].move = true;
+                                break;
+                            }
+                        }
                     }
                 }
             }

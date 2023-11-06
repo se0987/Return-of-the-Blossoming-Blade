@@ -111,8 +111,34 @@ public class OrderManager : MonoBehaviour
                         yield return new WaitForSeconds(1f);
                         characters[i].animator.SetBool("AttackH", false);
                         break;
-                    case "DIE"://무당 캐릭터 쓰러지는거
-                        characters[i].animator.SetFloat("DirY", 1f);
+                    case "DIE":
+                        characters[i].animator.SetBool("Die", true);
+                        break;
+                    case "NOTDIE":
+                        characters[i].animator.SetBool("Die", false);
+                        break;
+                    case "WAKEUP":
+                        characters[i].animator.SetBool("WakeUp", true);
+                        break;
+                    case "NOTWAKEUP":
+                        characters[i].animator.SetBool("WakeUp", false);
+                        break;
+                    case "LAST":
+                        characters[i].animator.SetBool("Last", true);
+                        characters[i].speed = 1;
+                        characters[i].walkCount = 20;
+                        break;
+                    case "COUPLETOGETHER":
+                        characters[i].animator.SetBool("Together", true);
+                        break;
+                    case "COUPLEALONE":
+                        characters[i].animator.SetBool("Alone", true);
+                        break;
+                    case "NOTCOUPLEALONE":
+                        characters[i].animator.SetBool("Alone", false);
+                        break;
+                    case "COUPLEWITH":
+                        characters[i].animator.SetBool("With", true);
                         break;
                 }
             }
