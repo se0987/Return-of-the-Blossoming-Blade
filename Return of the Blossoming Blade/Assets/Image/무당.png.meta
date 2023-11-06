@@ -674,6 +674,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "\uBB34\uB2F9_26"
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 26
+        width: 99
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc28000e2b0695d47ae9a2bdc9345d98
+      internalID: 541508090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -704,6 +725,7 @@ TextureImporter:
       "\uBB34\uB2F9_23": -1561775284
       "\uBB34\uB2F9_24": -732347373
       "\uBB34\uB2F9_25": -2024206333
+      "\uBB34\uB2F9_26": 541508090
       "\uBB34\uB2F9_3": -1520993931
       "\uBB34\uB2F9_4": -766809928
       "\uBB34\uB2F9_5": -1112821486

@@ -61,11 +61,16 @@ public class CutScene6 : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("choice1") == 1)
             {
+                theOrder.Appear("FatherAndSon", true);
+                theOrder.Appear("Couple", true);
+                theOrder.Action("Couple", "COUPLETOGETHER");
+
                 theDM.ShowDialogue(dialogue_1);
-                theOrder.Move("CheongJin2", "UP");
-                theOrder.Move("CheongJin2", "UP");
-                theOrder.Move("CheongJin2", "UP");
                 yield return new WaitUntil(() => !theDM.talking);
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
 
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitForSeconds(2f);
@@ -95,25 +100,29 @@ public class CutScene6 : MonoBehaviour
             }
             else
             {
+                theOrder.Appear("Couple", true);
+                theOrder.Action("Couple", "COUPLEALONE");
+
                 theDM.ShowDialogue(dialogue_5);
+                theOrder.Move("CheongJin2", "RIGHT");
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_6);
-                theOrder.Move("Citizen", "LEFT");
-                theOrder.Move("Citizen", "LEFT");
-                theOrder.Move("Citizen", "LEFT");
                 yield return new WaitForSeconds(0.3f);
                 theOrder.Move("Player", "UP");
                 yield return new WaitUntil(() => !theDM.talking);
+                theOrder.Action("Couple", "COUPLEWITH");
 
                 theDM.ShowDialogue(dialogue_7);
                 yield return new WaitUntil(() => !theDM.talking);
-                theOrder.Move("Citizen2", "RIGHT");
-                theOrder.Move("Citizen2", "RIGHT");
-                theOrder.Move("Citizen2", "RIGHT");
+                theOrder.Appear("Father", true);
+                yield return new WaitForSeconds(0.3f);
+                theOrder.Move("Father", "RIGHT");
+                theOrder.Move("Father", "RIGHT");
+                theOrder.Move("Father", "RIGHT");
 
                 theDM.ShowDialogue(dialogue_8);
                 yield return new WaitUntil(() => !theDM.talking);

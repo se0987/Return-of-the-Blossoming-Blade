@@ -128,6 +128,18 @@ public class OrderManager : MonoBehaviour
                         characters[i].speed = 1;
                         characters[i].walkCount = 20;
                         break;
+                    case "COUPLETOGETHER":
+                        characters[i].animator.SetBool("Together", true);
+                        break;
+                    case "COUPLEALONE":
+                        characters[i].animator.SetBool("Alone", true);
+                        break;
+                    case "NOTCOUPLEALONE":
+                        characters[i].animator.SetBool("Alone", false);
+                        break;
+                    case "COUPLEWITH":
+                        characters[i].animator.SetBool("With", true);
+                        break;
                 }
             }
         }
