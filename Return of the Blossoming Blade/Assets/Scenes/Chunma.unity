@@ -226,9 +226,10 @@ GameObject:
   m_Component:
   - component: {fileID: 136386411}
   - component: {fileID: 136386413}
-  - component: {fileID: 136386412}
+  - component: {fileID: 136386414}
+  - component: {fileID: 136386415}
   m_Layer: 0
-  m_Name: Event(2)
+  m_Name: End1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,30 +248,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 892575353}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &136386412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136386410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97b1e9de19a3214891f5e237e596637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue_1:
-    sentences:
-    - "(\uCCAD\uBA85\uC740 \uB354 \uC774\uC0C1 \uC774 \uC138\uC0C1\uC758 \uC874\uC7AC\uAC00
-      \uC544\uB2CC \uCC9C\uB9C8\uB97C \uB9C8\uC8FC\uD588\uB2E4.)"
-    names:
-    - "\uCCAD\uB9C8"
-    sprites:
-    - {fileID: 1577124322, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    dialogueWindows:
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
 --- !u!61 &136386413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -297,6 +276,433 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1088.6124, y: 742.54895}
   m_EdgeRadius: 0
+--- !u!114 &136386414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136386410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa7e79442d651142b0d2127ee8a3b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uBD89\uB2E4. \uB208\uC5D0 \uBCF4\uC774\uB294 \uBAA8\uB4E0 \uAC83\uC774 \uAC80\uBD89\uC740
+      \uD54F\uBE5B\uC73C\uB85C \uBB3C\uB4E4\uC5B4\uC788\uC5C8\uB2E4. \uC774\uC81C
+      \uC774\uACF3\uC5D0 \uB0A8\uC740 \uAC83\uC740 \uC8FD\uC74C \uBFD0\uC774\uC5C8\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC721\uC2E0\uC758 \uACE0\uD1B5\uB530\uC704\uB294
+      \uAC08\uAE30\uAC08\uAE30 \uCC22\uAE30\uB294 \uC2EC\uC801 \uACE0\uD1B5\uC5D0
+      \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4 \uC544\uB2C8\uC5C8\uB2E4.)"
+    - "(\uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uC8FD\uC740 \uC0AC\uD615\uC81C\uB4E4\uC758
+      \uBAA8\uC2B5\uC774 \uB208\uC5D0 \uB4E4\uC5B4\uC654\uB2E4.)"
+    - "(\uC815\uC608\uC911\uC758 \uC815\uC608\uB4E4\uB9CC\uC73C\uB85C \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uC640 \uCC9C\uB9C8\uC758 \uACA9\uB3CC\uC740
+      \uACB0\uAD6D \uACF5\uBA78\uC774\uB77C\uB294 \uACB0\uB9D0\uC744 \uB0B3\uC558\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uADF8\uC800 \uC804\uC2E0\uC744 \uBD88\uC0AC\uB97C \uAC83
+      \uAC19\uC774 \uB053\uC5B4\uC624\uB974\uB294 \uC99D\uC624\uC640 \uBD84\uB178\uB97C
+      \uB2E4\uC2A4\uB9AC\uB294 \uAC83 \uBC16\uC5D0 \uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    - "\u2026.\uD654\uC0B0."
+    - "(\uD22C\uBA85\uD558\uAC8C \uBE44\uC5B4\uC788\uB294 \uCC9C\uB9C8\uC758 \uB208\uB3D9\uC790\uAC00
+      \uCCAD\uBA85\uC744 \uC751\uC2DC\uD55C\uB2E4.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uC774\uACF3\uC5D0\uC11C
+      \uC0B4\uC544 \uB3CC\uC544\uAC08 \uC218 \uC788\uB2E4\uBA74 \uB098\uB97C \uC8FD\uC600\uB2E4\uB294
+      \uC601\uAD11\uC744 \uC77C\uD3C9\uC0DD \uB204\uB9B4\uD150\uB370."
+    - "\uC8FC\uB465\uC544\uB9AC \uB2E5\uCCD0."
+    - "\uB108\uB294 \uCDA9\uBD84\uD788 \uC790\uB791\uC2A4\uB7EC\uC6CC\uD574\uB3C4
+      \uB41C\uB2E4. \uC218\uB9CE\uC740 \uC774\uB4E4\uC758 \uB3C4\uC6C0\uC774 \uC788\uC5C8\uB2E4\uACE0\uB294
+      \uD558\uB098, \uB108\uC758 \uAC80\uC740 \uACB0\uAD6D \uB098\uC5D0\uAC8C \uB2FF\uC558\uB2E4.
+      \uB098\uB294 \uCC9C\uB9C8\uC758 \uC774\uB984\uC73C\uB85C \uB108\uC758 \uAC80\uC774,
+      \uD654\uC0B0\uC758 \uAC80\uC774 \uCC9C\uD558\uC81C\uC77C\uC784\uC744 \uC778\uC815\uD55C\uB2E4."
+    - "\uB2E5\uCE58\uB77C\uACE0!"
+    - "(\uCCAD\uBA85\uC740 \uC5B4\uAE68\uC5D0\uC11C \uBF51\uC544\uB0B8 \uAC80\uB0A0\uC744
+      \uD798\uAECF \uC6C0\uCF1C\uC7A1\uC558\uB2E4. \uB0A0\uCE74\uB86D\uAC8C \uBCBC\uB9B0
+      \uB0A0\uC774 \uC190\uBC14\uB2E5\uC744 \uD30C\uACE0\uB4E4\uC5C8\uC9C0\uB9CC
+      \uADF8\uB534 \uAC74 \uC544\uBB34\uB798\uB3C4 \uC88B\uC558\uB2E4.)"
+    - "\uB0B4\uAC8C \uD558\uB8E8\uC758 \uC2DC\uAC04\uC774 \uB354 \uC8FC\uC5B4\uC84C\uB2E4\uBA74,
+      \uC9C4\uC815 \uCC9C\uB9C8\uB77C\uB294 \uC774\uB984\uC5D0 \uAC78\uB9DE\uC740
+      \uC874\uC7AC\uAC00 \uB418\uC5C8\uC744\uAC83\uC744. \uD558\uC9C0\uB9CC \uC774\uAC83
+      \uC5ED\uC2DC \uB0B4\uAC8C \uC8FC\uC5B4\uC9C4 \uC6B4\uBA85\uC774\uACA0\uC9C0."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 0}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uAE38\uACE0 \uB054\uCC0D\uD588\uB358 \uC804\uC7C1\uC758 \uC885\uACB0\uC744
+      \uD5A5\uD574, \uCC9C\uB9C8\uB97C \uD5A5\uD574 \uCCAD\uBA85\uC740 \uC808\uB69D\uC774\uBA70
+      \uB2E4\uAC00\uAC14\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "\uB9C8\uB294 \uB2E4\uC2DC \uB3CC\uC544\uC62C \uAC83\uC774\uB2E4. \uADF8\uB9AC\uACE0
+      \uADF8\uB54C\uB294 \uC9C4\uC815\uC73C\uB85C \uB9C8\uB3C4\uCC9C\uD558\uAC00
+      \uC5F4\uB9B4 \uAC83\uC774\uB2E4. \uB204\uAD6C\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294
+      \uB9C8\uB3C4\u2026."
+    names:
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uACE0\uC694\uD55C \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD37C\uC84C\uB2E4.
+      \uC798\uB824\uB098\uAC04 \uCC9C\uB9C8\uC758 \uBAA9\uC774 \uBC14\uB2E5\uC73C\uB85C
+      \uAD74\uB7EC \uB5A8\uC5B4\uC9C0\uACE0 \uCCAD\uBA85\uC740 \uADF8 \uBA38\uB9AC\uB97C
+      \uC9D3\uBC1F\uC558\uB2E4.)"
+    - "(\uC804\uC7C1\uC740 \uB05D\uB0AC\uB2E4. \uC138\uC0C1\uC740 \uC774 \uC804\uC7C1\uC744
+      \uACB0\uC0AC\uB300\uC758 \uC2B9\uB9AC\uB85C \uAE30\uC5B5\uD560 \uAC83\uC774\uB2E4.
+      \uD558\uC9C0\uB9CC \uC774\uACF3\uC5D0 \uC2B9\uB9AC \uB530\uC704\uB294 \uC5C6\uB2E4.
+      \uADF8 \uB204\uAD6C\uB3C4 \uC2B9\uB9AC\uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_5:
+    sentences:
+    - "(\uBD80\uC9C8\uC5C6\uB2E4. \uB0A8\uC740\uAC83\uC740 \uADF8\uC800 \uD6C4\uD68C,
+      \uADF8\uB9AC\uACE0 \uC0AC\uBB38\uC5D0 \uB300\uD55C \uAC71\uC815 \uBFD0\uC774\uB2E4.)\r"
+    - "\uD654\uC0B0\uC774\uC5EC."
+    names:
+    - "\uCCAD\uBA85"
+    - ' '
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_6:
+    sentences:
+    - "(\uB300\uD654\uC0B0\uD30C \uC2ED\uC0BC \uB300 \uC81C\uC790. \uCC9C\uD558\uC0BC\uB300\uAC80\uC218
+      \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
+      \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
+      \uCE58\uACE0 \uC2ED\uB9CC\uB300\uC0B0\uC758 \uC815\uC0C1\uC5D0\uC11C \uC601\uBA85.)"
+    names: []
+    sprites: []
+    dialogueWindows: []
+  end: 0
+--- !u!114 &136386415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136386410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End1
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint1
+  move: 0
+--- !u!1 &163269606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163269607}
+  - component: {fileID: 163269608}
+  - component: {fileID: 163269609}
+  - component: {fileID: 163269610}
+  m_Layer: 0
+  m_Name: End2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &163269607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163269606}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -188, y: 1228, z: -1.8883095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &163269608
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163269606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 161.7414, y: -1247.4119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1088.6124, y: 742.54895}
+  m_EdgeRadius: 0
+--- !u!114 &163269609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163269606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414cd465f55691e4a8df15b9cdd789a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uBD89\uB2E4. \uB208\uC5D0 \uBCF4\uC774\uB294 \uBAA8\uB4E0 \uAC83\uC774 \uAC80\uBD89\uC740
+      \uD54F\uBE5B\uC73C\uB85C \uBB3C\uB4E4\uC5B4\uC788\uC5C8\uB2E4. \uC774\uC81C
+      \uC774\uACF3\uC5D0 \uB0A8\uC740 \uAC83\uC740 \uC8FD\uC74C \uBFD0\uC774\uC5C8\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC721\uC2E0\uC758 \uACE0\uD1B5\uB530\uC704\uB294
+      \uAC08\uAE30\uAC08\uAE30 \uCC22\uAE30\uB294 \uC2EC\uC801 \uACE0\uD1B5\uC5D0
+      \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4 \uC544\uB2C8\uC5C8\uB2E4.)"
+    - "(\uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uC8FD\uC740 \uC0AC\uD615\uC81C\uB4E4\uC758
+      \uBAA8\uC2B5\uC774 \uB208\uC5D0 \uB4E4\uC5B4\uC654\uB2E4.)"
+    - "(\uC815\uC608\uC911\uC758 \uC815\uC608\uB4E4\uB9CC\uC73C\uB85C \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uC640 \uCC9C\uB9C8\uC758 \uACA9\uB3CC\uC740
+      \uACB0\uAD6D \uACF5\uBA78\uC774\uB77C\uB294 \uACB0\uB9D0\uC744 \uB0B3\uC558\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uADF8\uC800 \uC804\uC2E0\uC744 \uBD88\uC0AC\uB97C \uAC83
+      \uAC19\uC774 \uB053\uC5B4\uC624\uB974\uB294 \uC99D\uC624\uC640 \uBD84\uB178\uB97C
+      \uB2E4\uC2A4\uB9AC\uB294 \uAC83 \uBC16\uC5D0 \uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    - "\u2026.\uD654\uC0B0."
+    - "(\uD22C\uBA85\uD558\uAC8C \uBE44\uC5B4\uC788\uB294 \uCC9C\uB9C8\uC758 \uB208\uB3D9\uC790\uAC00
+      \uCCAD\uBA85\uC744 \uC751\uC2DC\uD55C\uB2E4.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uC774\uACF3\uC5D0\uC11C
+      \uC0B4\uC544 \uB3CC\uC544\uAC08 \uC218 \uC788\uB2E4\uBA74 \uB098\uB97C \uC8FD\uC600\uB2E4\uB294
+      \uC601\uAD11\uC744 \uC77C\uD3C9\uC0DD \uB204\uB9B4\uD150\uB370."
+    - "\uC8FC\uB465\uC544\uB9AC \uB2E5\uCCD0."
+    - "\uB108\uB294 \uCDA9\uBD84\uD788 \uC790\uB791\uC2A4\uB7EC\uC6CC\uD574\uB3C4
+      \uB41C\uB2E4. \uC218\uB9CE\uC740 \uC774\uB4E4\uC758 \uB3C4\uC6C0\uC774 \uC788\uC5C8\uB2E4\uACE0\uB294
+      \uD558\uB098, \uB108\uC758 \uAC80\uC740 \uACB0\uAD6D \uB098\uC5D0\uAC8C \uB2FF\uC558\uB2E4.
+      \uB098\uB294 \uCC9C\uB9C8\uC758 \uC774\uB984\uC73C\uB85C \uB108\uC758 \uAC80\uC774,
+      \uD654\uC0B0\uC758 \uAC80\uC774 \uCC9C\uD558\uC81C\uC77C\uC784\uC744 \uC778\uC815\uD55C\uB2E4."
+    - "\uB2E5\uCE58\uB77C\uACE0!"
+    - "(\uCCAD\uBA85\uC740 \uC5B4\uAE68\uC5D0\uC11C \uBF51\uC544\uB0B8 \uAC80\uB0A0\uC744
+      \uD798\uAECF \uC6C0\uCF1C\uC7A1\uC558\uB2E4. \uB0A0\uCE74\uB86D\uAC8C \uBCBC\uB9B0
+      \uB0A0\uC774 \uC190\uBC14\uB2E5\uC744 \uD30C\uACE0\uB4E4\uC5C8\uC9C0\uB9CC
+      \uADF8\uB534 \uAC74 \uC544\uBB34\uB798\uB3C4 \uC88B\uC558\uB2E4.)"
+    - "\uB0B4\uAC8C \uD558\uB8E8\uC758 \uC2DC\uAC04\uC774 \uB354 \uC8FC\uC5B4\uC84C\uB2E4\uBA74,
+      \uC9C4\uC815 \uCC9C\uB9C8\uB77C\uB294 \uC774\uB984\uC5D0 \uAC78\uB9DE\uC740
+      \uC874\uC7AC\uAC00 \uB418\uC5C8\uC744\uAC83\uC744. \uD558\uC9C0\uB9CC \uC774\uAC83
+      \uC5ED\uC2DC \uB0B4\uAC8C \uC8FC\uC5B4\uC9C4 \uC6B4\uBA85\uC774\uACA0\uC9C0."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uAE38\uACE0 \uB054\uCC0D\uD588\uB358 \uC804\uC7C1\uC758 \uC885\uACB0\uC744
+      \uD5A5\uD574, \uCC9C\uB9C8\uB97C \uD5A5\uD574 \uCCAD\uBA85\uC740 \uC808\uB69D\uC774\uBA70
+      \uB2E4\uAC00\uAC14\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "\uB9C8\uB294 \uB2E4\uC2DC \uB3CC\uC544\uC62C \uAC83\uC774\uB2E4. \uADF8\uB9AC\uACE0
+      \uADF8\uB54C\uB294 \uC9C4\uC815\uC73C\uB85C \uB9C8\uB3C4\uCC9C\uD558\uAC00
+      \uC5F4\uB9B4 \uAC83\uC774\uB2E4. \uB204\uAD6C\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294
+      \uB9C8\uB3C4\u2026."
+    names:
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uACE0\uC694\uD55C \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD37C\uC84C\uB2E4.
+      \uC798\uB824\uB098\uAC04 \uCC9C\uB9C8\uC758 \uBAA9\uC774 \uBC14\uB2E5\uC73C\uB85C
+      \uAD74\uB7EC \uB5A8\uC5B4\uC9C0\uACE0 \uCCAD\uBA85\uC740 \uADF8 \uBA38\uB9AC\uB97C
+      \uC9D3\uBC1F\uC558\uB2E4.)"
+    - "(\uC804\uC7C1\uC740 \uB05D\uB0AC\uB2E4. \uC138\uC0C1\uC740 \uC774 \uC804\uC7C1\uC744
+      \uACB0\uC0AC\uB300\uC758 \uC2B9\uB9AC\uB85C \uAE30\uC5B5\uD560 \uAC83\uC774\uB2E4.)"
+    - "(\uC774\uD1A0\uB85D \uB9CE\uC740 \uD53C\uAC00 \uD750\uB974\uACE0, \uC774\uD1A0\uB85D
+      \uB9CE\uC740 \uC774\uB4E4\uC774 \uC8FD\uC5B4 \uAC14\uC74C\uC5D0\uB3C4 \uD558\uB298\uC740
+      \uC5EC\uC804\uD788 \uBB34\uC2EC\uD560 \uB9CC\uD07C \uD478\uB974\uB800\uB2E4.)"
+    - "(\uC870\uAE08 \uB354 \uBB34\uC5D0 \uC815\uC9C4\uD588\uB2E4\uBA74 \uD558\uB098\uB77C\uB3C4
+      \uC0B4\uB9B4 \uC218 \uC788\uC9C0 \uC54A\uC558\uC744\uAE4C? \uC2A4\uC2B9\uACFC
+      \uC0AC\uD615\uC758 \uB9D0\uC744 \uADD3\uB4F1\uC73C\uB85C \uB4E3\uACE0, \uBB38\uD30C
+      \uBC16\uC73C\uB85C \uB098\uB3C4\uB294 \uBA4D\uCCAD\uD55C \uC0B6\uC744 \uC0B4\uC9C0
+      \uC54A\uC558\uB354\uB77C\uBA74 \uACB0\uACFC\uB294 \uC870\uAE08 \uB2EC\uB790\uC744\uAE4C.)"
+    - "\uB3CC\uC544\uAC00\uC790. \uD654\uC0B0\uC73C\uB85C."
+    - "(\uD798\uC774 \uD480\uB9B4\uAC83 \uAC19\uC740 \uB2E4\uB9AC\uC5D0 \uD798\uC744
+      \uC8FC\uACE0 \uCCAD\uBA85\uC740 \uC77C\uC5B4\uC130\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_5:
+    sentences:
+    - "(\uB300\uD654\uC0B0\uD30C \uC2ED\uC0BC \uB300 \uC81C\uC790. \uCC9C\uD558\uC0BC\uB300\uAC80\uC218
+      \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
+      \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
+      \uCE58\uACE0 \uD654\uC0B0\uC73C\uB85C \uADC0\uD658.)"
+    names:
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  end: 0
+--- !u!114 &163269610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163269606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End2
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint2
+  move: 0
 --- !u!1 &307820756
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +761,164 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 88.11752, y: 160.37352}
   m_EdgeRadius: 0
+--- !u!1 &440517608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440517613}
+  - component: {fileID: 440517612}
+  - component: {fileID: 440517611}
+  - component: {fileID: 440517610}
+  - component: {fileID: 440517609}
+  m_Layer: 0
+  m_Name: BlackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &440517609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440517608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 1.92}
+    newSize: {x: 3.2, y: 1.92}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2, y: 1.92}
+  m_EdgeRadius: 0
+--- !u!95 &440517610
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440517608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cb5e3d2da0d63b4ca0636fa10e073a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &440517611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440517608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b801f2ca9412dd4298cbb169ee75956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 440517609}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  speed: 0
+  characterName: BlackScreen
+  walkCount: 0
+  animator: {fileID: 440517610}
+  npc:
+    NPCmove: 0
+    direction: []
+    frequency: 0
+--- !u!212 &440517612
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440517608}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1638406605
+  m_SortingLayer: 12
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.2, y: 1.92}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &440517613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440517608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.6146, y: 4.7236, z: 0}
+  m_LocalScale: {x: 325.0602, y: 401.15213, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &489560041
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +930,7 @@ GameObject:
   - component: {fileID: 489560043}
   - component: {fileID: 489560042}
   m_Layer: 0
-  m_Name: GoToChunma
+  m_Name: GoToChunmaPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,6 +964,196 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &568930627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568930628}
+  - component: {fileID: 568930629}
+  - component: {fileID: 568930630}
+  - component: {fileID: 568930631}
+  m_Layer: 0
+  m_Name: End6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568930628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568930627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -188, y: 1228, z: -1.8883095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &568930629
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568930627}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 161.7414, y: -1247.4119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1088.6124, y: 742.54895}
+  m_EdgeRadius: 0
+--- !u!114 &568930630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568930627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End6
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint6
+  move: 0
+--- !u!114 &568930631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568930627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca642b39d44e434994172a457306479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uBD89\uB2E4.)"
+    - "(\uB179\uC74C\uC73C\uB85C \uD478\uB974\uB974\uB358 \uC774 \uC0B0\uBD09\uC6B0\uB9AC\uB294
+      \uD558\uB8E8\uB9CC\uC5D0 \uC778\uAC04\uC758 \uD53C\uB85C \uB4A4\uB36E\uC5EC
+      \uADF8 \uC0C9\uC774 \uBC14\uB00C\uC5B4\uBC84\uB838\uB2E4.)"
+    - "(\uB9CE\uC740 \uC8FD\uC74C\uC774 \uC774\uACF3\uC5D0 \uB0A8\uC558\uC9C0\uB9CC
+      \uADF8\uB7FC\uC5D0\uB3C4 \uC0B6\uC774 \uC874\uC7AC\uD588\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC67C\uD314\uC740 \uB72F\uACA8\uB098\uAC00
+      \uC18C\uB9F7\uC790\uB77D\uB9CC \uD384\uB7ED\uC600\uC9C0\uB9CC \uADF8\uB7FC\uC5D0\uB3C4
+      \uCCAD\uBA85\uC740 \uACE0\uD1B5\uC744 \uB290\uB07C\uC9C0 \uC54A\uC558\uB2E4.)"
+    - "(\uC544\uC9C1 \uC0B4\uC544\uC788\uB294 \uC0AC\uD615\uC81C\uB4E4\uC774 \uC8FC\uBCC0\uC5D0
+      \uC788\uACE0, \uCC9C\uB9C8\uAC00 \uC0B4\uC544\uC788\uC5C8\uC73C\uB2C8\uAE4C.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uB0B4\uAC8C \uD558\uB8E8\uC758 \uC2DC\uAC04\uC774
+      \uB354 \uC8FC\uC5B4\uC84C\uB2E4\uBA74, \uC9C4\uC815 \uCC9C\uB9C8\uB77C\uB294
+      \uC774\uB984\uC5D0 \uAC78\uB9DE\uB294 \uC874\uC7AC\uAC00 \uB418\uC5C8\uC744\uAC83\uC744.
+      \uD558\uC9C0\uB9CC \uC774\uAC83 \uC5ED\uC2DC \uB0B4\uAC8C \uC8FC\uC5B4\uC9C4
+      \uC6B4\uBA85\uC774\uACA0\uC9C0."
+    - "\uC309\uC18C\uB9AC \uC9C0\uAEC4\uC774\uC9C0 \uB9D0\uACE0 \uB2E5\uCCD0."
+    - "\uCCAD\uBA85\uC544! \uB9C8\uC9C0\uB9C9\uAE4C\uC9C0 \uAE34\uC7A5\uC744 \uD480\uC9C0
+      \uB9C8\uB77C!"
+    - "\uAE30\uC5B5\uD574\uB77C, \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uC774\uAC83\uC744
+      \uB05D\uC774 \uC544\uB2C8\uB2E4. \uB9C8\uB294 \uB2E4\uC2DC \uB3CC\uC544\uC62C
+      \uAC83\uC774\uB2E4. \uADF8\uB9AC\uACE0 \uADF8\uB54C\uB294 \uC9C4\uC815\uC73C\uB85C
+      \uB9C8\uB3C4\uCC9C\uD558\uAC00 \uC5F4\uB9B4 \uAC83\uC774\uB2E4. \uB204\uAD6C\uB3C4
+      \uB9C9\uC744 \uC218 \uC5C6\uB294 \uB9C8\uB3C4\u2026"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBB38"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD3B4\uC84C\uB2E4. \uC798\uB824\uB098\uAC04
+      \uCC9C\uB9C8\uC758 \uBAA9\uC774 \uBC14\uB2E5\uC73C\uB85C \uB5A8\uC5B4\uC84C\uB2E4.)"
+    - "\uB9C8\uC9C0\uB9C9\uAE4C\uC9C0 \uC9C0\uB784\uC740."
+    - "(\uCC38\uD639\uD588\uB358 \uC804\uC7C1\uC758 \uB05D\uC774\uC5C8\uB2E4. \uD658\uD638\uC18C\uB9AC\uC5D0
+      \uCC9C\uD558\uAC00 \uD754\uB4E4\uB9AC\uB294\uB4EF \uD588\uB2E4.)"
+    - "(\uC138\uC0C1\uC740 \uC774 \uC804\uC7C1\uC744 \uACB0\uC0AC\uB300\uC758 \uC2B9\uB9AC\uB85C
+      \uAE30\uC5B5\uD560 \uAC83\uC774\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - ' '
+    - ' '
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "(\uB300\uD654\uC0B0\uD30C \uC2ED\uC0BC \uB300 \uC81C\uC790. \uCC9C\uD558\uC0BC\uB300\uAC80\uC218
+      \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
+      \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
+      \uCE58\uACE0 \uD654\uC0B0\uC73C\uB85C \uADC0\uD658.)"
+    - "(\uB9CE\uC740 \uC774\uB4E4\uC774 \uC8FD\uC5C8\uC9C0\uB9CC \uB9CE\uC740 \uC774\uB4E4\uC774
+      \uC0DD\uC874\uD588\uACE0, \uADF8\uB4E4\uC740 \uC601\uC6C5\uC774\uB77C \uBD88\uB9AC\uC5C8\uB2E4.)"
+    names:
+    - ' '
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  end: 0
 --- !u!1 &635650438
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +1299,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1188168661}
+  - {fileID: 1961863558}
   - {fileID: 136386411}
+  - {fileID: 163269607}
+  - {fileID: 1638927803}
+  - {fileID: 2069409605}
+  - {fileID: 1055883768}
+  - {fileID: 568930628}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -607,6 +1367,240 @@ Transform:
   m_Father: {fileID: 20400744}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1055883767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055883768}
+  - component: {fileID: 1055883769}
+  - component: {fileID: 1055883771}
+  - component: {fileID: 1055883770}
+  m_Layer: 0
+  m_Name: End5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1055883768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055883767}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -188, y: 1228, z: -1.8883095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1055883769
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055883767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 161.7414, y: -1247.4119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1088.6124, y: 742.54895}
+  m_EdgeRadius: 0
+--- !u!114 &1055883770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055883767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6a31c29bb970f409eddbe652f507cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uBD89\uB2E4. \uB208\uC5D0 \uBCF4\uC774\uB294 \uBAA8\uB4E0 \uAC83\uC774 \uAC80\uBD89\uC740
+      \uD54F\uBE5B\uC73C\uB85C \uBB3C\uB4E4\uC5B4\uC788\uC5C8\uB2E4. \uC774\uC81C
+      \uC774\uACF3\uC5D0 \uB0A8\uC740 \uAC83\uC740 \uC8FD\uC74C \uBFD0\uC774\uC5C8\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC721\uC2E0\uC758 \uACE0\uD1B5\uB530\uC704\uB294
+      \uAC08\uAE30\uAC08\uAE30 \uCC22\uAE30\uB294 \uC2EC\uC801 \uACE0\uD1B5\uC5D0
+      \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4 \uC544\uB2C8\uC5C8\uB2E4.)"
+    - "(\uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uC8FD\uC740 \uC0AC\uD615\uC81C\uB4E4\uC758
+      \uBAA8\uC2B5\uC774 \uB208\uC5D0 \uB4E4\uC5B4\uC654\uB2E4.)"
+    - "(\uC815\uC608\uC911\uC758 \uC815\uC608\uB4E4\uB9CC\uC73C\uB85C \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uC640 \uCC9C\uB9C8\uC758 \uACA9\uB3CC\uC740
+      \uACB0\uAD6D \uACF5\uBA78\uC774\uB77C\uB294 \uACB0\uB9D0\uC744 \uB0B3\uC558\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uADF8\uC800 \uC804\uC2E0\uC744 \uBD88\uC0AC\uB97C \uAC83
+      \uAC19\uC774 \uB053\uC5B4\uC624\uB974\uB294 \uC99D\uC624\uC640 \uBD84\uB178\uB97C
+      \uB2E4\uC2A4\uB9AC\uB294 \uAC83 \uBC16\uC5D0 \uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    - "\u2026.\uD654\uC0B0."
+    - "(\uD22C\uBA85\uD558\uAC8C \uBE44\uC5B4\uC788\uB294 \uCC9C\uB9C8\uC758 \uB208\uB3D9\uC790\uAC00
+      \uCCAD\uBA85\uC744 \uC751\uC2DC\uD55C\uB2E4.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uB124\uAC8C
+      \uC870\uAE08 \uB354 \uD798\uC774 \uC788\uC5C8\uB2E4\uBA74 \uB098\uB97C \uC8FD\uC77C
+      \uC218 \uC788\uC5C8\uC744\uD150\uB370."
+    - "\uC8FC\uB465\uC544\uB9AC \uB2E5\uCCD0."
+    - "\uB108\uB294 \uCDA9\uBD84\uD788 \uC790\uB791\uC2A4\uB7EC\uC6CC\uD574\uB3C4
+      \uB41C\uB2E4. \uC218\uB9CE\uC740 \uC774\uB4E4\uC758 \uB3C4\uC6C0\uC774 \uC788\uC5C8\uB2E4\uACE0\uB294
+      \uD558\uB098, \uB108\uC758 \uAC80\uC740 \uB098\uC5D0\uAC8C \uB2FF\uC558\uB2E4.
+      \uB098\uB294 \uCC9C\uB9C8\uC758 \uC774\uB984\uC73C\uB85C \uB108\uC758 \uAC80\uC774,
+      \uD654\uC0B0\uC758 \uAC80\uC774 \uCC9C\uD558\uC81C\uC77C\uC784\uC744 \uC778\uC815\uD55C\uB2E4."
+    - "\uB2E5\uCE58\uB77C\uACE0!"
+    - "(\uCCAD\uBA85\uC740 \uC5B4\uAE68\uC5D0\uC11C \uBF51\uC544\uB0B8 \uAC80\uB0A0\uC744
+      \uD798\uAECF \uC6C0\uCF1C\uC7A1\uC558\uB2E4. \uB0A0\uCE74\uB86D\uAC8C \uBCBC\uB9B0
+      \uB0A0\uC774 \uC190\uBC14\uB2E5\uC744 \uD30C\uACE0\uB4E4\uC5C8\uC9C0\uB9CC
+      \uADF8\uB534 \uAC74 \uC544\uBB34\uB798\uB3C4 \uC88B\uC558\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uAE38\uACE0 \uB054\uCC0D\uD588\uB358 \uC804\uC7C1\uC758 \uC885\uACB0\uC744
+      \uD5A5\uD574, \uCC9C\uB9C8\uB97C \uD5A5\uD574 \uCCAD\uBA85\uC740 \uC808\uB69D\uC774\uBA70
+      \uB2E4\uAC00\uAC14\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uACE0\uC694\uD55C \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD37C\uC84C\uB2E4.
+      \uD558\uC9C0\uB9CC \uAC80\uC740 \uCC9C\uB9C8\uC758 \uBAA9\uC744 \uBCA0\uC9C0
+      \uBABB\uD558\uACE0 \uC2A4\uB7EC\uC84C\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4:
+    sentences:
+    - "(\uC804\uC7C1\uC740 \uB05D\uB0AC\uB2E4. \uB9C8\uAD50\uC758 \uC2B9\uB9AC\uB85C
+      \uB05D\uC774\uB0AC\uB2E4.)"
+    - "(\uC758\uBBF8\uAC00 \uC788\uC5C8\uC744\uAE4C? \uD654\uC0B0\uC774 \uC774\uACF3\uC5D0\uC11C
+      \uD758\uB9B0 \uD53C\uAC00 \uACFC\uC5F0 \uC758\uBBF8\uAC00 \uC788\uC5C8\uC744\uAE4C?)"
+    - "(\uC870\uAE08 \uB354 \uBB34\uC5D0 \uC815\uC9C4\uD588\uB2E4\uBA74, \uC2A4\uC2B9\uACFC
+      \uC0AC\uD615\uC758 \uB9D0\uC744 \uB4B7\uB4F1\uC73C\uB85C \uB4E4\uC73C\uBA70
+      \uBB38\uD30C \uBC16\uC73C\uB85C \uB098\uB3C4\uB294 \uBA4D\uCCAD\uD55C \uC0B6\uC744
+      \uC0B4\uC9C0 \uC54A\uC558\uB2E4\uBA74.)"
+    - "(\uACB0\uACFC\uB294 \uC870\uAE08 \uB2EC\uB790\uC744\uAE4C?)"
+    - "\uB204\uAD6C\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294 \uB9C8\uB3C4 \uCC9C\uD558\uAC00
+      \uC5F4\uB9B4 \uAC83\uC774\uB2E4."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_5:
+    sentences:
+    - "(\uCC9C\uD558\uB97C \uD63C\uB780\uC5D0 \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8
+      \uCC9C\uB9C8. \uAD6C\uD30C\uC77C\uBC29\uC744 \uBE44\uB86F\uD55C \uC774\uC2ED\uC5EC\uAC1C\uC758
+      \uBB38\uD30C, \uC815\uC608 \uC911\uC758 \uC815\uC608\uB4E4\uB85C\uB9CC \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uB97C \uBAB0\uC0B4.)"
+    - "(\uCC9C\uB9C8\uB294 \uB9C8\uAD50\uC778\uB4E4\uC744 \uC774\uB04C\uACE0 \uBD81\uC0C1.)"
+    names:
+    - ' '
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  end: 0
+--- !u!114 &1055883771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055883767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End5
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint5
+  move: 0
 --- !u!1 &1112813516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,3 +2043,545 @@ Transform:
   m_Father: {fileID: 20400744}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1638927802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638927803}
+  - component: {fileID: 1638927804}
+  - component: {fileID: 1638927805}
+  - component: {fileID: 1638927806}
+  m_Layer: 0
+  m_Name: End3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1638927803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638927802}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -188, y: 1228, z: -1.8883095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1638927804
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638927802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 161.7414, y: -1247.4119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1088.6124, y: 742.54895}
+  m_EdgeRadius: 0
+--- !u!114 &1638927805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638927802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41d3e618560e42458a1d39d8f11ff18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uBD89\uB2E4. \uB208\uC5D0 \uBCF4\uC774\uB294 \uBAA8\uB4E0 \uAC83\uC774 \uAC80\uBD89\uC740
+      \uD54F\uBE5B\uC73C\uB85C \uBB3C\uB4E4\uC5B4\uC788\uC5C8\uB2E4. \uC774\uC81C
+      \uC774\uACF3\uC5D0 \uB0A8\uC740 \uAC83\uC740 \uC8FD\uC74C \uBFD0\uC774\uC5C8\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC721\uC2E0\uC758 \uACE0\uD1B5\uB530\uC704\uB294
+      \uAC08\uAE30\uAC08\uAE30 \uCC22\uAE30\uB294 \uC2EC\uC801 \uACE0\uD1B5\uC5D0
+      \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4 \uC544\uB2C8\uC5C8\uB2E4.)"
+    - "(\uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uC8FD\uC740 \uC0AC\uD615\uC81C\uB4E4\uC758
+      \uBAA8\uC2B5\uC774 \uB208\uC5D0 \uB4E4\uC5B4\uC654\uB2E4.)"
+    - "(\uC815\uC608\uC911\uC758 \uC815\uC608\uB4E4\uB9CC\uC73C\uB85C \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uC640 \uCC9C\uB9C8\uC758 \uACA9\uB3CC\uC740
+      \uACB0\uAD6D \uACF5\uBA78\uC774\uB77C\uB294 \uACB0\uB9D0\uC744 \uB0B3\uC558\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uADF8\uC800 \uC804\uC2E0\uC744 \uBD88\uC0AC\uB97C \uAC83
+      \uAC19\uC774 \uB053\uC5B4\uC624\uB974\uB294 \uC99D\uC624\uC640 \uBD84\uB178\uB97C
+      \uB2E4\uC2A4\uB9AC\uB294 \uAC83 \uBC16\uC5D0 \uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    - "\u2026.\uD654\uC0B0."
+    - "(\uD22C\uBA85\uD558\uAC8C \uBE44\uC5B4\uC788\uB294 \uCC9C\uB9C8\uC758 \uB208\uB3D9\uC790\uAC00
+      \uCCAD\uBA85\uC744 \uC751\uC2DC\uD55C\uB2E4.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uC774\uACF3\uC5D0\uC11C
+      \uC0B4\uC544 \uB3CC\uC544\uAC08 \uC218 \uC788\uB2E4\uBA74 \uB098\uB97C \uC8FD\uC600\uB2E4\uB294
+      \uC601\uAD11\uC744 \uC77C\uD3C9\uC0DD \uB204\uB9B4\uD150\uB370."
+    - "\uC8FC\uB465\uC544\uB9AC \uB2E5\uCCD0."
+    - "\uB108\uB294 \uCDA9\uBD84\uD788 \uC790\uB791\uC2A4\uB7EC\uC6CC\uD574\uB3C4
+      \uB41C\uB2E4. \uC218\uB9CE\uC740 \uC774\uB4E4\uC758 \uB3C4\uC6C0\uC774 \uC788\uC5C8\uB2E4\uACE0\uB294
+      \uD558\uB098, \uB108\uC758 \uAC80\uC740 \uACB0\uAD6D \uB098\uC5D0\uAC8C \uB2FF\uC558\uB2E4.
+      \uB098\uB294 \uCC9C\uB9C8\uC758 \uC774\uB984\uC73C\uB85C \uB108\uC758 \uAC80\uC774,
+      \uD654\uC0B0\uC758 \uAC80\uC774 \uCC9C\uD558\uC81C\uC77C\uC784\uC744 \uC778\uC815\uD55C\uB2E4."
+    - "\uB2E5\uCE58\uB77C\uACE0!"
+    - "(\uCCAD\uBA85\uC740 \uC5B4\uAE68\uC5D0\uC11C \uBF51\uC544\uB0B8 \uAC80\uB0A0\uC744
+      \uD798\uAECF \uC6C0\uCF1C\uC7A1\uC558\uB2E4. \uB0A0\uCE74\uB86D\uAC8C \uBCBC\uB9B0
+      \uB0A0\uC774 \uC190\uBC14\uB2E5\uC744 \uD30C\uACE0\uB4E4\uC5C8\uC9C0\uB9CC
+      \uADF8\uB534 \uAC74 \uC544\uBB34\uB798\uB3C4 \uC88B\uC558\uB2E4.)"
+    - "\uB0B4\uAC8C \uD558\uB8E8\uC758 \uC2DC\uAC04\uC774 \uB354 \uC8FC\uC5B4\uC84C\uB2E4\uBA74,
+      \uC9C4\uC815 \uCC9C\uB9C8\uB77C\uB294 \uC774\uB984\uC5D0 \uAC78\uB9DE\uC740
+      \uC874\uC7AC\uAC00 \uB418\uC5C8\uC744\uAC83\uC744. \uD558\uC9C0\uB9CC \uC774\uAC83
+      \uC5ED\uC2DC \uB0B4\uAC8C \uC8FC\uC5B4\uC9C4 \uC6B4\uBA85\uC774\uACA0\uC9C0."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uB204\uAD6C\uC758 \uAC83\uC778\uC9C0 \uBAA8\uB97C, \uAEBC\uC9C8\uAC83 \uAC19\uC740
+      \uC0DD\uBA85\uC744 \uB290\uB07C\uBA70 \uAE38\uACE0 \uB054\uCC0D\uD588\uB358
+      \uC804\uC7C1\uC758 \uC885\uACB0\uC744 \uD5A5\uD574, \uCC9C\uB9C8\uB97C \uD5A5\uD574
+      \uCCAD\uBA85\uC740 \uC808\uB69D\uC774\uBA70 \uB2E4\uAC00\uAC14\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "\uB9C8\uB294 \uB2E4\uC2DC \uB3CC\uC544\uC62C \uAC83\uC774\uB2E4. \uADF8\uB9AC\uACE0
+      \uADF8\uB54C\uB294 \uC9C4\uC815\uC73C\uB85C \uB9C8\uB3C4\uCC9C\uD558\uAC00
+      \uC5F4\uB9B4 \uAC83\uC774\uB2E4. \uB204\uAD6C\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294
+      \uB9C8\uB3C4\u2026."
+    names:
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uACE0\uC694\uD55C \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD37C\uC84C\uB2E4.
+      \uC798\uB824\uB098\uAC04 \uCC9C\uB9C8\uC758 \uBAA9\uC774 \uBC14\uB2E5\uC73C\uB85C
+      \uAD74\uB7EC \uB5A8\uC5B4\uC9C0\uACE0 \uCCAD\uBA85\uC740 \uADF8 \uBA38\uB9AC\uB97C
+      \uC9D3\uBC1F\uC558\uB2E4.)"
+    - "(\uC804\uC7C1\uC740 \uB05D\uB0AC\uB2E4. \uC138\uC0C1\uC740 \uC774 \uC804\uC7C1\uC744
+      \uACB0\uC0AC\uB300\uC758 \uC2B9\uB9AC\uB85C \uAE30\uC5B5\uD560 \uAC83\uC774\uB2E4.
+      \uD558\uC9C0\uB9CC \uC774\uACF3\uC5D0 \uC2B9\uB9AC \uB530\uC704\uB294 \uC5C6\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_5:
+    sentences:
+    - "(\uBD80\uC9C8\uC5C6\uB2E4. \uB0A8\uC740\uAC83\uC740 \uADF8\uC800 \uD6C4\uD68C,
+      \uADF8\uB9AC\uACE0 \uC0AC\uBB38\uC5D0 \uB300\uD55C \uAC71\uC815 \uBFD0\uC774\uB2E4.)"
+    - "\uD654\uC0B0\uC774\uC5EC."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_6:
+    sentences:
+    - "(\uB300\uD654\uC0B0\uD30C \uC2ED\uC0BC \uB300 \uC81C\uC790. \uCC9C\uD558\uC0BC\uB300\uAC80\uC218
+      \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
+      \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
+      \uCE58\uACE0 \uC2ED\uB9CC\uB300\uC0B0\uC758 \uC815\uC0C1\uC5D0\uC11C \uC601\uBA85.)"
+    - "(\uB2E8 \uD55C\uBA85\uC758 \uC0DD\uC874\uC790\uB97C \uC81C\uC678\uD55C \uBAA8\uB4E0
+      \uACB0\uC0AC\uB300\uC6D0 \uC0AC\uB9DD.)"
+    names:
+    - ' '
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  end: 0
+--- !u!114 &1638927806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638927802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End3
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint3
+  move: 0
+--- !u!1 &1961863557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961863558}
+  - component: {fileID: 1961863559}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1961863558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961863557}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.284904, y: -225.98933, z: -0.017748833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961863559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961863557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2b1f7f821a93048ad264aef29d3ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: EndPoint
+--- !u!1 &2069409604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069409605}
+  - component: {fileID: 2069409606}
+  - component: {fileID: 2069409608}
+  - component: {fileID: 2069409607}
+  m_Layer: 0
+  m_Name: End4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069409605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069409604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -188, y: 1228, z: -1.8883095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 892575353}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2069409606
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069409604}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 161.7414, y: -1247.4119}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1088.6124, y: 742.54895}
+  m_EdgeRadius: 0
+--- !u!114 &2069409607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069409604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29c49b9d30c6c143905fae8ab50cf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_1:
+    sentences:
+    - "(\uCCAD\uBA85\uC740 \uC790\uC2E0\uC758 \uC5B4\uAE68\uC5D0 \uC464\uC154\uBC15\uD78C
+      \uAC80\uB0A0\uC744 \uC6C0\uCF1C\uC7A1\uC544 \uBD80\uB7EC\uC9C4 \uB9E4\uD654\uAC80\uC758
+      \uB0A0\uC744 \uBF51\uC544\uB0C8\uB2E4. \uC721\uC2E0\uC758 \uACE0\uD1B5\uB530\uC704\uB294
+      \uAC08\uAE30\uAC08\uAE30 \uCC22\uAE30\uB294 \uC2EC\uC801 \uACE0\uD1B5\uC5D0
+      \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4 \uC544\uB2C8\uC5C8\uB2E4.)"
+    - "(\uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uC8FD\uC740 \uC0AC\uD615\uC81C\uB4E4\uACFC
+      \uC228\uC740 \uBD99\uC5B4\uC788\uB294 \uB2F9\uBCF4\uC758 \uBAA8\uC2B5\uC774
+      \uB208\uC5D0 \uB4E4\uC5B4\uC654\uB2E4.)"
+    - "(\uC815\uC608\uC911\uC758 \uC815\uC608\uB4E4\uB9CC\uC73C\uB85C \uAD6C\uC131\uB41C
+      \uCD5C\uD6C4\uC758 \uACB0\uC0AC\uB300\uC640 \uCC9C\uB9C8\uC758 \uACA9\uB3CC\uC740
+      \uACB0\uAD6D \uACF5\uBA78\uC774\uB77C\uB294 \uACB0\uB9D0\uC744 \uB0B3\uC558\uB2E4.)"
+    - "(\uCCAD\uBA85\uC740 \uADF8\uC800 \uC804\uC2E0\uC744 \uBD88\uC0AC\uB97C \uAC83
+      \uAC19\uC774 \uB053\uC5B4\uC624\uB974\uB294 \uC99D\uC624\uC640 \uBD84\uB178\uB97C
+      \uB2E4\uC2A4\uB9AC\uB294 \uAC83 \uBC16\uC5D0 \uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    - "\u2026.\uD654\uC0B0."
+    - "(\uD22C\uBA85\uD558\uAC8C \uBE44\uC5B4\uC788\uB294 \uCC9C\uB9C8\uC758 \uB208\uB3D9\uC790\uAC00
+      \uCCAD\uBA85\uC744 \uC751\uC2DC\uD55C\uB2E4.)"
+    - "\uC544\uC27D\uAD6C\uB098. \uD654\uC0B0\uC758 \uC81C\uC790\uC5EC. \uC774\uACF3\uC5D0\uC11C
+      \uC0B4\uC544 \uB3CC\uC544\uAC08 \uC218 \uC788\uB2E4\uBA74 \uB098\uB97C \uC8FD\uC600\uB2E4\uB294
+      \uC601\uAD11\uC744 \uC77C\uD3C9\uC0DD \uB204\uB9B4\uD150\uB370."
+    - "\uC8FC\uB465\uC544\uB9AC \uB2E5\uCCD0."
+    - "\uB108\uB294 \uCDA9\uBD84\uD788 \uC790\uB791\uC2A4\uB7EC\uC6CC\uD574\uB3C4
+      \uB41C\uB2E4. \uC218\uB9CE\uC740 \uC774\uB4E4\uC758 \uB3C4\uC6C0\uC774 \uC788\uC5C8\uB2E4\uACE0\uB294
+      \uD558\uB098, \uB108\uC758 \uAC80\uC740 \uACB0\uAD6D \uB098\uC5D0\uAC8C \uB2FF\uC558\uB2E4.
+      \uB098\uB294 \uCC9C\uB9C8\uC758 \uC774\uB984\uC73C\uB85C \uB108\uC758 \uAC80\uC774,
+      \uD654\uC0B0\uC758 \uAC80\uC774 \uCC9C\uD558\uC81C\uC77C\uC784\uC744 \uC778\uC815\uD55C\uB2E4."
+    - "\uB2E5\uCE58\uB77C\uACE0!"
+    - "(\uCCAD\uBA85\uC740 \uC5B4\uAE68\uC5D0\uC11C \uBF51\uC544\uB0B8 \uAC80\uB0A0\uC744
+      \uD798\uAECF \uC6C0\uCF1C\uC7A1\uC558\uB2E4. \uB0A0\uCE74\uB86D\uAC8C \uBCBC\uB9B0
+      \uB0A0\uC774 \uC190\uBC14\uB2E5\uC744 \uD30C\uACE0\uB4E4\uC5C8\uC9C0\uB9CC
+      \uADF8\uB534 \uAC74 \uC544\uBB34\uB798\uB3C4 \uC88B\uC558\uB2E4.)"
+    - "\uB0B4\uAC8C \uD558\uB8E8\uC758 \uC2DC\uAC04\uC774 \uB354 \uC8FC\uC5B4\uC84C\uB2E4\uBA74,
+      \uC9C4\uC815 \uCC9C\uB9C8\uB77C\uB294 \uC774\uB984\uC5D0 \uAC78\uB9DE\uC740
+      \uC874\uC7AC\uAC00 \uB418\uC5C8\uC744\uAC83\uC744. \uD558\uC9C0\uB9CC \uC774\uAC83
+      \uC5ED\uC2DC \uB0B4\uAC8C \uC8FC\uC5B4\uC9C4 \uC6B4\uBA85\uC774\uACA0\uC9C0."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_2:
+    sentences:
+    - "(\uAE38\uACE0 \uB054\uCC0D\uD588\uB358 \uC804\uC7C1\uC758 \uC885\uACB0\uC744
+      \uD5A5\uD574, \uCC9C\uB9C8\uB97C \uD5A5\uD574 \uCCAD\uBA85\uC740 \uC808\uB69D\uC774\uBA70
+      \uB2E4\uAC00\uAC14\uB2E4.)"
+    names:
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_3:
+    sentences:
+    - "\uB9C8\uB294 \uB2E4\uC2DC \uB3CC\uC544\uC62C \uAC83\uC774\uB2E4. \uADF8\uB9AC\uACE0
+      \uADF8\uB54C\uB294 \uC9C4\uC815\uC73C\uB85C \uB9C8\uB3C4\uCC9C\uD558\uAC00
+      \uC5F4\uB9B4 \uAC83\uC774\uB2E4. \uB204\uAD6C\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294
+      \uB9C8\uB3C4\u2026."
+    names:
+    - "\uCC9C\uB9C8"
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4:
+    sentences:
+    - "(\uAC80\uC774 \uACF5\uAE30\uB97C \uAC00\uB974\uB294 \uD30C\uACF5\uC74C\uC774
+      \uACE0\uC694\uD55C \uC0B0 \uC815\uC0C1\uC5D0 \uC6B8\uB824\uD37C\uC84C\uB2E4.
+      \uC798\uB824\uB098\uAC04 \uCC9C\uB9C8\uC758 \uBAA9\uC774 \uBC14\uB2E5\uC73C\uB85C
+      \uAD74\uB7EC \uB5A8\uC5B4\uC9C0\uACE0 \uCCAD\uBA85\uC740 \uADF8 \uBA38\uB9AC\uB97C
+      \uC9D3\uBC1F\uC558\uB2E4.)"
+    - "(\uC804\uC7C1\uC740 \uB05D\uB0AC\uB2E4. \uC138\uC0C1\uC740 \uC774 \uC804\uC7C1\uC744
+      \uACB0\uC0AC\uB300\uC758 \uC2B9\uB9AC\uB85C \uAE30\uC5B5\uD560 \uAC83\uC774\uB2E4.
+      \uD558\uC9C0\uB9CC \uC774\uACF3\uC5D0 \uC2B9\uB9AC \uB530\uC704\uB294 \uC5C6\uB2E4.
+      \uADF8 \uB204\uAD6C\uB3C4 \uC2B9\uB9AC\uD558\uC9C0 \uBABB\uD588\uB2E4.)"
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_5:
+    sentences:
+    - "(\uD654\uC0B0\uC758 \uBAA8\uB4E0 \uCCAD\uC790\uBC30\uC640 \uADF8\uB97C \uB530\uB978
+      \uBA85\uC790\uBC30\uB3C4 \uBAA8\uB450 \uC8FD\uC5C8\uB2E4. \uB0A8\uC740 \uAC83\uC740
+      \uC804\uB825\uC774 \uB418\uC9C0 \uC54A\uB294 \uC544\uC774\uB4E4 \uBFD0.)"
+    - "(\uC870\uAE08 \uB354 \uBB34\uC5D0 \uC815\uC9C4\uD588\uB2E4\uBA74 \uD558\uB098\uB77C\uB3C4
+      \uB354 \uC0B4\uB9B4 \uC218 \uC788\uC9C0 \uC54A\uC558\uC744\uAE4C.)"
+    - "(\uBD80\uC9C8\uC5C6\uB2E4. \uB0A8\uC740\uAC83\uC740 \uADF8\uC800 \uD6C4\uD68C,
+      \uADF8\uB9AC\uACE0 \uC0AC\uBB38\uC5D0 \uB300\uD55C \uAC71\uC815 \uBFD0\uC774\uB2E4.)"
+    - "\uD654\uC0B0\uC774\uC5EC."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_6:
+    sentences:
+    - "(\uB300\uD654\uC0B0\uD30C \uC2ED\uC0BC \uB300 \uC81C\uC790. \uCC9C\uD558\uC0BC\uB300\uAC80\uC218
+      \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
+      \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
+      \uCE58\uACE0 \uC2ED\uB9CC\uB300\uC0B0\uC758 \uC815\uC0C1\uC5D0\uC11C \uC601\uBA85.)"
+    - "(\uC0AC\uCC9C \uB2F9\uAC00 \uD0DC\uC0C1\uC7A5\uB85C \uC554\uC874 \uB2F9\uBCF4.
+      \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0 \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8
+      \uCC9C\uB9C8\uC758 \uBAA9\uC744 \uB4E4\uACE0 \uADC0\uD658.)"
+    names:
+    - ' '
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  end: 0
+--- !u!114 &2069409608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069409604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be172f112507e4449bd9a2915a88685f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: End4
+  target: {fileID: 1961863558}
+  targetBound: {fileID: 1296556952}
+  gateName: EndPoint4
+  move: 0

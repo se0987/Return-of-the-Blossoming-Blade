@@ -12,6 +12,7 @@ public class DCutScene4 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private DCutScene5 dCutScene5;
 
     //private bool flag;
     private bool can = false;
@@ -24,6 +25,8 @@ public class DCutScene4 : MonoBehaviour
     public bool face2 = false;
     public bool end = false;
 
+    public float time = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class DCutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        dCutScene5 = FindObjectOfType<DCutScene5>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,8 +83,14 @@ public class DCutScene4 : MonoBehaviour
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
+            PlayerPrefs.SetFloat("ChunSalTime", time);
+            if(time > 10)
+            {
+                theOrder.Action("DangBo", "DIE");
+                dCutScene5.first = false;
+            }
+            dCutScene5.enable = true;
         }
-
         theOrder.Move();
     }
 }

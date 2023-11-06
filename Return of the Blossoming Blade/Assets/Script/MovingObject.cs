@@ -31,7 +31,7 @@ public class MovingObject : MonoBehaviour
 
     IEnumerator MoveCoroutine(string _dir, int _frequency, string _state)
     {
-        while(queue.Count != 0)
+        while (queue.Count != 0)
         {
             switch (_frequency)
             {

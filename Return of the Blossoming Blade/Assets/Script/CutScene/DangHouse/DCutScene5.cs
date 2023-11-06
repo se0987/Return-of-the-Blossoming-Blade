@@ -19,6 +19,10 @@ public class DCutScene5 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public bool first = true;
+
+    public bool enable = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +45,7 @@ public class DCutScene5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (can && one && Input.GetKeyDown(KeyCode.C))
+        if (can && one && Input.GetKeyDown(KeyCode.C) && enable)
         {
             one = false;
             StartCoroutine(EventCoroutine());
@@ -54,45 +58,102 @@ public class DCutScene5 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
 
-        if (PlayerPrefs.HasKey("ChunSalTime"))
+        /*        if (PlayerPrefs.HasKey("ChunSalTime"))
+                {
+                    if (PlayerPrefs.GetInt("ChunSalTime") < 10)//당보 생존
+                    {
+                        theDM.ShowDialogue(dialogue_1);
+                        yield return new WaitUntil(() => !theDM.talking);
+
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+
+                        theDM.ShowDialogue(dialogue_2);
+                        yield return new WaitUntil(() => !theDM.talking);
+
+                        theOrder.Move("Player", "DOWN");
+                        theOrder.Move("Player", "DOWN");
+                        theOrder.Move("Player", "DOWN");
+                        theOrder.Move("Player", "DOWN");
+
+                        theDM.ShowDialogue(dialogue_3);
+                        yield return new WaitUntil(() => !theDM.talking);
+                    }
+                    else//당보 죽음
+                    {
+                        theDM.ShowDialogue(dialogue_4);
+                        yield return new WaitUntil(() => !theDM.talking);
+                        theOrder.Appear("Player", false);
+                        theOrder.Action("DangBo", "WAKEUP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+                        theOrder.Move("Poor", "UP");
+
+                        theDM.ShowDialogue(dialogue_5);
+                        yield return new WaitUntil(() => !theDM.talking);
+                    }
+                }*/
+        if (first)//당보 생존
         {
-            if (PlayerPrefs.GetInt("ChunSalTime") < 10)
+            theDM.ShowDialogue(dialogue_1);
+            yield return new WaitUntil(() => !theDM.talking);
+
+            theOrder.Appear("Poor2", true);
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Turn("Poor2", "LEFT");
+
+            theDM.ShowDialogue(dialogue_2);
+            yield return new WaitUntil(() => !theDM.talking);
+
+            theOrder.Move("Player", "DOWN");
+            theOrder.Move("Player", "DOWN");
+            theOrder.Move("Player", "DOWN");
+            theOrder.Move("Player", "DOWN");
+
+            theDM.ShowDialogue(dialogue_3);
+            yield return new WaitUntil(() => !theDM.talking);
+        }
+        else//당보 죽음
+        {
+            theOrder.Appear("Player", false);
+            theOrder.Action("DangBo", "NOTDIE");
+            theOrder.Action("DangBo", "WAKEUP");
+            theDM.ShowDialogue(dialogue_4);
+            yield return new WaitUntil(() => !theDM.talking);
+            theOrder.Appear("Poor2", true);
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Move("Poor2", "UP");
+            theOrder.Turn("Poor2", "LEFT");
+
+            theDM.ShowDialogue(dialogue_5);
+            yield return new WaitUntil(() => !theDM.talking);
+            theOrder.Action("DangBo", "NOTWAKEUP");
+            theOrder.Action("DangBo", "DIE");
+            theOrder.Appear("Player", true);
+        }
+
+        TransferScene[] temp = FindObjectsOfType<TransferScene>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToCheongJin"))
             {
-                theDM.ShowDialogue(dialogue_1);
-                yield return new WaitUntil(() => !theDM.talking);
-
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-
-                theDM.ShowDialogue(dialogue_2);
-                yield return new WaitUntil(() => !theDM.talking);
-
-                theOrder.Move("Player", "DOWN");
-                theOrder.Move("Player", "DOWN");
-                theOrder.Move("Player", "DOWN");
-                theOrder.Move("Player", "DOWN");
-
-                theDM.ShowDialogue(dialogue_3);
-                yield return new WaitUntil(() => !theDM.talking);
-            }
-            else
-            {
-                theDM.ShowDialogue(dialogue_4);
-                yield return new WaitUntil(() => !theDM.talking);
-
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-                theOrder.Move("Poor", "UP");
-
-                theDM.ShowDialogue(dialogue_5);
-                yield return new WaitUntil(() => !theDM.talking);
+                temp[i].move = true;
+                break;
             }
         }
+
         theOrder.Move();
     }
 }

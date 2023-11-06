@@ -16,6 +16,8 @@ public class CJCutScene4 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public bool enable = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class CJCutScene4 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (one)
+        if (one && enable)
         {
             one = false;
             StartCoroutine(EventCoroutine());
@@ -58,6 +60,16 @@ public class CJCutScene4 : MonoBehaviour
             }
         }
         theOrder.Appear("BlackScreen", false);
+
+        TransferScene[] temp = FindObjectsOfType<TransferScene>();
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("GoToChunma"))
+            {
+                temp[i].move = true;
+                break;
+            }
+        }
 
         theOrder.Move();
     }
