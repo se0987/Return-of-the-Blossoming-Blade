@@ -14,6 +14,8 @@ public class PlayerManager : MovingObject
 
     public bool notMove = false;
 
+    private Vector2 lastInputDirection;
+
     public void Awake()
     {
         if (instance == null)
@@ -89,4 +91,10 @@ public class PlayerManager : MovingObject
             }
         }
     }
+
+    public void MovePlayer(Vector2 newPosition)
+    {
+        transform.position = newPosition;
+    }
+
 }
