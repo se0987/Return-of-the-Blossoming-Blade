@@ -9,7 +9,6 @@ public class LoadScenes : MonoBehaviour
     //public BTNType currentType;
     public void OnBtnClick()
     {
-        Debug.Log(SceneName);
         SceneManager.LoadScene(SceneName);
     }
 }
