@@ -10,6 +10,7 @@ public class CMCutScene1 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private PlayerStatus playerStatus;
 
     //private bool flag;
     private bool can = false;
@@ -22,6 +23,7 @@ public class CMCutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +56,13 @@ public class CMCutScene1 : MonoBehaviour
             {
                 theDM.ShowDialogue(dialogue_1);
                 yield return new WaitUntil(() => !theDM.talking);
+            }
+        }
+        if(PlayerPrefs.HasKey("choice2") && PlayerPrefs.HasKey("choice3"))
+        {
+            if(PlayerPrefs.GetInt("choice2") == 0 && PlayerPrefs.GetInt("choice3") == 0)
+            {
+                playerStatus.UpgradeMaxPosion();
             }
         }
         theOrder.Appear("BlackScreen", false);

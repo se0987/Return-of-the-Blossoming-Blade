@@ -18,6 +18,7 @@ public class CJCutScene2 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private ChapterManager theChapter;
+    private PlayerStatus playerStatus;
 
     //private bool flag;
     private bool can = false;
@@ -31,6 +32,9 @@ public class CJCutScene2 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
+        PlayerPrefs.SetInt("choice2", 0);
+        PlayerPrefs.SetInt("choice3", 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,10 +48,13 @@ public class CJCutScene2 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
-        theChapter.ShowChapter("Chapter6\n청진");
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+
+        theChapter.ShowChapter("Chapter6\n청진");
+
+        playerStatus.UpgradeMaxPosion();
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);

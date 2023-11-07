@@ -10,6 +10,7 @@ public class DCutScene0 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private ChapterManager theChapter;
+    private PlayerStatus playerStatus;
 
     //private bool flag;
     private bool can = false;
@@ -23,6 +24,7 @@ public class DCutScene0 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +43,8 @@ public class DCutScene0 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         theChapter.ShowChapter("Chapter 5\n´ç°¡");
+
+        playerStatus.UpgradeMaxPosion();
 
         theOrder.Move();
     }
