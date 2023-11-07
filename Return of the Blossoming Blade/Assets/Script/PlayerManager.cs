@@ -14,7 +14,7 @@ public class PlayerManager : MovingObject
 
     public bool notMove = false;
 
-    private Vector2 lastInputDirection;
+    private PlayerStatus playerStatus;
 
     public void Awake()
     {
@@ -35,6 +35,7 @@ public class PlayerManager : MovingObject
         queue = new Queue<string>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
     }
 
     IEnumerator MoveCoroutine()
@@ -88,6 +89,13 @@ public class PlayerManager : MovingObject
             {
                 canMove = false;
                 StartCoroutine(MoveCoroutine());
+            }
+        }
+        if (!notMove)
+        {
+            if (Input.GetKeyDown(KeyCode.F))//Æ÷¼Ç
+            {
+                playerStatus.UsePosion();
             }
         }
     }
