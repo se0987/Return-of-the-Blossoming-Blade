@@ -99,4 +99,10 @@ public class PlayerManager : MovingObject
             }
         }
     }
+
+    public void MovePlayer(Vector2 newPosition)
+    {
+        transform.position = newPosition;
+    }
+
 }

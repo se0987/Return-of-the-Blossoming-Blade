@@ -8,6 +8,8 @@ public class SkillCooldownManager : MonoBehaviour
     public LoadingBarSegments QBar;
     public LoadingBarSegments WBar;
     public LoadingBarSegments EBar;
+    public LoadingBarSegments SpaceBar;
+
 
     public GameObject QSkillObject;
     public GameObject WSkillObject;
@@ -28,6 +30,7 @@ public class SkillCooldownManager : MonoBehaviour
     public float QSkillDuration = 1.9f;
     public float WSkillDuration = 1.9f;
     public float ESkillDuration = 4.4f;
+    public float SpaceDuration = 0.25f;
 
     public GameObject QSkillCol; // Q의 Skill Col 참조
 
@@ -39,11 +42,24 @@ public class SkillCooldownManager : MonoBehaviour
     public GameObject ESkillCol;
     public GameObject ESkillCol2;
 
+    public Animator playerAnimator; // 플레이어 애니메이터 참조
+    private bool isAttacking = false; // 공격 중인지 확인하는 변수
+
+    public Collider2D playerCollider1; // 플레이어 콜라이더 참조
+    public Collider2D playerCollider2; // 플레이어 콜라이더 참조
+
+    public float dashDistance = 150f; // 대쉬 거리
+
 
     private void Update()
     {
         // 스킬이 활성화 중인지 체크
         bool anySkillActive = isQActive || isWActive || isEActive;
+
+        if (Input.GetKeyDown(KeyCode.A) && !isAttacking && !anySkillActive)
+        {
+            StartCoroutine(Attack());
+        }
 
         // 플레이어의 마지막 방향을 추적합니다.
         if (Input.GetKeyDown(KeyCode.UpArrow)) lastDirection = Vector2.up;
@@ -71,7 +87,12 @@ public class SkillCooldownManager : MonoBehaviour
         {
             StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
             StartCoroutine(ESkillEffect());
-        } 
+        }
+        // 스페이스바 사용
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     private IEnumerator UseSkill(float cooldownTime, float skillDuration, LoadingBarSegments bar, GameObject skillObject, Action onStart, Action onEnd, Action onCooldownStart, Action onCooldownEnd)
@@ -104,6 +125,8 @@ public class SkillCooldownManager : MonoBehaviour
 
     private IEnumerator QSkillEffect()
     {
+        playerAnimator.SetBool("SkillQ", true);
+
         for (int i = 0; i < 3; i++) // 3번 반복
         {
             QSkillCol.SetActive(true);  // Skill Col 활성화
@@ -111,6 +134,7 @@ public class SkillCooldownManager : MonoBehaviour
             QSkillCol.SetActive(false); // Skill Col 비활성화
             yield return new WaitForSeconds(0.15f); // 0.1초 대기
         }
+        playerAnimator.SetBool("SkillQ", false);
     }
 
     private IEnumerator WSkillEffect()
@@ -136,7 +160,7 @@ public class SkillCooldownManager : MonoBehaviour
         {
             WSkillParticle.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
-
+        playerAnimator.SetBool("SkillW", true);
         float startTime = Time.time;
         float journeyLength = Vector2.Distance(originalPos, targetPos);
 
@@ -156,11 +180,15 @@ public class SkillCooldownManager : MonoBehaviour
         WSkillCol.transform.position = targetPos;  // 지속 시간이 끝나면 목표 지점으로 콜라이더 위치 설정
 
         WSkillCol.SetActive(false);  // 스킬 효과 종료 후 콜라이더 비활성화
+        playerAnimator.SetBool("SkillW", false);
+
 
         WSkillCol.transform.position = originalPos;  // 콜라이더를 원래의 위치로 재설정
     }
     private IEnumerator ESkillEffect()
     {
+        playerAnimator.SetBool("SkillE", true);
+
         ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
         ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
 
@@ -168,5 +196,66 @@ public class SkillCooldownManager : MonoBehaviour
 
         ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
         ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+
+        playerAnimator.SetBool("SkillE", false);
+
+    }
+
+    // 기본 공격 코루틴
+    private IEnumerator Attack()
+    {
+        isAttacking = true; // 공격 상태로 설정
+        PlayerManager.instance.notMove = true; // 플레이어의 이동 잠금
+
+        // 랜덤으로 AttackH 또는 AttackV 트리거 설정
+        if (UnityEngine.Random.value < 0.5f)
+        {
+            playerAnimator.SetBool("AttackH", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("AttackV", true);
+        }
+
+        // 공격 애니메이션 시간만큼 대기
+        yield return new WaitForSeconds(1.04f);
+
+        // 애니메이션 불린 값을 초기화
+        playerAnimator.SetBool("AttackH", false);
+        playerAnimator.SetBool("AttackV", false);
+
+        PlayerManager.instance.notMove = false; // 플레이어의 이동 잠금 해제
+        isAttacking = false; // 공격 상태 해제
+    }
+
+    private IEnumerator Dash()
+    {
+
+        PlayerManager.instance.notMove = true; // 이동 잠금
+        playerCollider1.enabled = false;
+        playerCollider2.enabled = false;// 콜라이더 비활성화
+
+        playerAnimator.SetBool("Dash", true); // Dash 애니메이션 활성화
+
+        Vector2 originalPosition = PlayerManager.instance.transform.position;
+        Vector2 targetPosition = originalPosition + lastDirection * dashDistance; // dashDistance는 이동할 거리를 정의해야 함
+
+        float startTime = Time.time;
+        while (Time.time - startTime < SpaceDuration)
+        {
+            float fractionOfJourney = (Time.time - startTime) / SpaceDuration;
+            // PlayerManager의 MovePlayer 함수를 사용해 플레이어 위치 업데이트
+            PlayerManager.instance.MovePlayer(Vector2.Lerp(originalPosition, targetPosition, fractionOfJourney));
+            yield return null;
+        }
+
+        // 최종 목적지에 도달했을 때 플레이어 위치 고정
+        PlayerManager.instance.MovePlayer(targetPosition);
+
+        playerCollider1.enabled = true;
+        playerCollider2.enabled = true; // 콜라이더 활성화
+        PlayerManager.instance.notMove = false; // 이동 잠금 해제
+        playerAnimator.SetBool("Dash", false); // Dash 애니메이션 비활성화
+
     }
 }
