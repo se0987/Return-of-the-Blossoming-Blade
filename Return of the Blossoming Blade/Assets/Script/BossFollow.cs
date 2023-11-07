@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// co
 public class BossFollow : MonoBehaviour
 {
     public Transform playerTransform;
