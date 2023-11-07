@@ -11,6 +11,7 @@ public class CutScene1 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChapterManager theChapter;
+    private PlayerStatus playerStatus;
 
     //private bool flag;
     private bool can = false;
@@ -23,6 +24,11 @@ public class CutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
+        PlayerPrefs.SetInt("havePosion", 0);
+        PlayerPrefs.SetInt("maxPosion", 1);
+        PlayerPrefs.SetFloat("playerHP", playerStatus.maxHP-30);
+        PlayerPrefs.SetFloat("playerMP", playerStatus.maxMP-10);
         StartCoroutine(EventCoroutine());
     }
 
@@ -46,6 +52,8 @@ public class CutScene1 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
+
+        playerStatus.GetPosion(1);
 
         theOrder.Move();
     }

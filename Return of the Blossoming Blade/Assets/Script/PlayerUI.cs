@@ -53,8 +53,8 @@ public class PlayerUI : MonoBehaviour
         if (playerStatus)
         {
             // HP, MP 비율 계산
-            float hpRatio = playerStatus.currentHP / playerStatus.maxHP;
-            float mpRatio = playerStatus.currentMP / playerStatus.maxMP;
+            float hpRatio = PlayerPrefs.GetInt("playerHP") / playerStatus.maxHP;
+            float mpRatio = PlayerPrefs.GetInt("playerMP") / playerStatus.maxMP;
 
             // UI 업데이트
             hpBar.fillAmount = hpRatio;
