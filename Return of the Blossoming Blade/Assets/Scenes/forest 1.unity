@@ -26630,7 +26630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &142311401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57067,7 +57067,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.051070284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5000011, y: 0.35819367}
     oldSize: {x: 0.29, y: 0.73}
     newSize: {x: 0.29, y: 0.73}
     adaptiveTilingThreshold: 0.5
@@ -67517,12 +67517,12 @@ GameObject:
   - component: {fileID: 1184017981}
   - component: {fileID: 1184017980}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Boss Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1184017979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -101482,7 +101482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842856942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -106506,7 +106506,7 @@ Transform:
   m_GameObject: {fileID: 1974042576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1824302146}

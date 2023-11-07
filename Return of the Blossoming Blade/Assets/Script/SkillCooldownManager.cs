@@ -125,6 +125,8 @@ public class SkillCooldownManager : MonoBehaviour
 
     private IEnumerator QSkillEffect()
     {
+        playerAnimator.SetBool("SkillQ", true);
+
         for (int i = 0; i < 3; i++) // 3번 반복
         {
             QSkillCol.SetActive(true);  // Skill Col 활성화
@@ -132,6 +134,7 @@ public class SkillCooldownManager : MonoBehaviour
             QSkillCol.SetActive(false); // Skill Col 비활성화
             yield return new WaitForSeconds(0.15f); // 0.1초 대기
         }
+        playerAnimator.SetBool("SkillQ", false);
     }
 
     private IEnumerator WSkillEffect()
@@ -157,7 +160,7 @@ public class SkillCooldownManager : MonoBehaviour
         {
             WSkillParticle.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
-
+        playerAnimator.SetBool("SkillW", true);
         float startTime = Time.time;
         float journeyLength = Vector2.Distance(originalPos, targetPos);
 
@@ -177,11 +180,15 @@ public class SkillCooldownManager : MonoBehaviour
         WSkillCol.transform.position = targetPos;  // 지속 시간이 끝나면 목표 지점으로 콜라이더 위치 설정
 
         WSkillCol.SetActive(false);  // 스킬 효과 종료 후 콜라이더 비활성화
+        playerAnimator.SetBool("SkillW", false);
+
 
         WSkillCol.transform.position = originalPos;  // 콜라이더를 원래의 위치로 재설정
     }
     private IEnumerator ESkillEffect()
     {
+        playerAnimator.SetBool("SkillE", true);
+
         ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
         ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
 
@@ -189,6 +196,9 @@ public class SkillCooldownManager : MonoBehaviour
 
         ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
         ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+
+        playerAnimator.SetBool("SkillE", false);
+
     }
 
     // 기본 공격 코루틴
@@ -200,11 +210,11 @@ public class SkillCooldownManager : MonoBehaviour
         // 랜덤으로 AttackH 또는 AttackV 트리거 설정
         if (UnityEngine.Random.value < 0.5f)
         {
-            playerAnimator.SetTrigger("AttackH");
+            playerAnimator.SetBool("AttackH", true);
         }
         else
         {
-            playerAnimator.SetTrigger("AttackV");
+            playerAnimator.SetBool("AttackV", true);
         }
 
         // 공격 애니메이션 시간만큼 대기
