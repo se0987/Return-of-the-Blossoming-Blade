@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d089e9aef9652c4e8a546b53a18f5c3
+guid: 56d256a70cbff174d94687768f76fa3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc61aa491fc824443b16c4475031ff41
-      internalID: 246874551
+      spriteID: 7f526fe3c33aef6478cf1f8cf0f2ccbd
+      internalID: -691416237
       vertices: []
       indices: 
       edges: []
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3acfa3a59d82386498fb3dcddae2a869
-      internalID: 907557614
+      spriteID: 37250172ebe833d49ad2534459558a95
+      internalID: 1239775577
       vertices: []
       indices: 
       edges: []
@@ -173,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4472ccd488428442b6590e0bf162e79
-      internalID: 1248684334
+      spriteID: 06df0641cc4978145af08773c4b1cdb3
+      internalID: -1500545015
       vertices: []
       indices: 
       edges: []
@@ -194,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 864cf1292efead14785a34d99cf43803
-      internalID: -307139928
+      spriteID: 3b91d4f42663af04588a1c8051fff1f6
+      internalID: 1110800881
       vertices: []
       indices: 
       edges: []
@@ -211,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arrow_0: 246874551
-      Arrow_1: 907557614
-      Arrow_2: 1248684334
-      Arrow_3: -307139928
+      Arrow_0: -691416237
+      Arrow_1: 1239775577
+      Arrow_2: -1500545015
+      Arrow_3: 1110800881
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
