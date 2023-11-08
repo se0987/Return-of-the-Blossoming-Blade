@@ -16,9 +16,11 @@ public class PlayerStatus : MonoBehaviour
     private AudioManager theAudio;
     public string posionSound;
 
+    private SpriteRenderer spriteRenderer;
     private void Start()
     {
         theAudio = FindObjectOfType<AudioManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         // 게임 시작시 플레이어의 HP와 MP를 최대치로 설정
         if (!PlayerPrefs.HasKey("playerHP"))
         {
@@ -74,6 +76,16 @@ public class PlayerStatus : MonoBehaviour
         }
         currentHP = PlayerPrefs.GetFloat("playerHP") - damage;
         PlayerPrefs.SetFloat("playerHP", currentHP);
+
+        StartCoroutine(FlashCoroutine()); // 피해 입은 효과
+    }
+    private IEnumerator FlashCoroutine()
+    {
+        float flashDuration = 0.1f;
+
+        spriteRenderer.color = Color.red; // 색상을 빨간색으로 변경
+        yield return new WaitForSeconds(flashDuration); // 지정된 시간 동안 기다림
+        spriteRenderer.color = Color.white; // 원래 색상으로 되돌림
     }
 
     // MP를 사용했을 때 호출되는 함수
@@ -125,12 +137,12 @@ public class PlayerStatus : MonoBehaviour
                 theAudio.Play(posionSound);
                 PlayerPrefs.SetInt("havePosion", havePosion - 1);
 
-                int playerHP = PlayerPrefs.GetInt("playerHP");
-                PlayerPrefs.SetInt("playerHP", playerHP + 30);
+                float playerHP = PlayerPrefs.GetFloat("playerHP");
+                PlayerPrefs.SetFloat("playerHP", playerHP + 30f);
                 currentHP = playerHP;
 
-                int playerMP = PlayerPrefs.GetInt("playerMP");
-                PlayerPrefs.SetInt("playerMP", playerMP + 10);
+                float playerMP = PlayerPrefs.GetFloat("playerMP");
+                PlayerPrefs.SetFloat("playerMP", playerMP + 10f);
                 currentMP = playerMP;
             }
         }

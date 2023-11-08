@@ -14,6 +14,8 @@ public class PlayerManager : MovingObject
 
     public bool notMove = false;
 
+    public bool skillNotMove = false;
+
     private PlayerStatus playerStatus;
 
     public string walkSound;
@@ -36,7 +38,7 @@ public class PlayerManager : MovingObject
 
     IEnumerator MoveCoroutine()
     {
-        while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove)
+        while ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !notMove && !skillNotMove)
         {
             vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
 
@@ -80,7 +82,7 @@ public class PlayerManager : MovingObject
     // Update is called once per frame
     void Update()
     {
-        if (canMove && !notMove)
+        if (canMove && !notMove && !skillNotMove)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -88,7 +90,7 @@ public class PlayerManager : MovingObject
                 StartCoroutine(MoveCoroutine());
             }
         }
-        if (!notMove)
+        if (!notMove && !skillNotMove)
         {
             if (Input.GetKeyDown(KeyCode.F))//Æ÷¼Ç
             {

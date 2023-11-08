@@ -17,6 +17,7 @@ public class CutScene5 : MonoBehaviour
     private bool one1 = true;
     private bool one2 = true;
     private bool one3 = true;
+    public bool enable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class CutScene5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (can)
+        if (can && enable)
         {
             if (one1 && Input.GetKeyDown(KeyCode.A))
             {
@@ -47,12 +48,10 @@ public class CutScene5 : MonoBehaviour
             }
             else if (one2 && Input.GetKeyDown(KeyCode.Q))
             {
-                one2 = false;
                 StartCoroutine(EventCoroutine());
             }
             else if (one3 && Input.GetKeyDown(KeyCode.W))
             {
-                one3 = false;
                 StartCoroutine(EventCoroutine());
             }
         }
