@@ -21,15 +21,7 @@ public class PlayerManager : MovingObject
 
     public void Awake()
     {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance = this;
     }
 
     // Start is called before the first frame update

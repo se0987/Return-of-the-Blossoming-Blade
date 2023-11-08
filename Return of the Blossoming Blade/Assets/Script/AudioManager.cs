@@ -49,20 +49,6 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     public Sound[] sounds;
-    public static AudioManager instance;
-
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
 
     // Start is called before the first frame update
     void Start()

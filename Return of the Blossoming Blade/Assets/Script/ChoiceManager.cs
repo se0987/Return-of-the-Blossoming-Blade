@@ -5,22 +5,6 @@ using TMPro;
 
 public class ChoiceManager : MonoBehaviour
 {
-    public static ChoiceManager instance;
-    #region Singleton
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    #endregion
-
     public TextMeshProUGUI choice1;
     public TextMeshProUGUI choice2;
     public SpriteRenderer rendererDialogueWindow;

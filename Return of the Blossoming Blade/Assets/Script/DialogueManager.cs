@@ -6,23 +6,6 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance;
-
-    #region Singleton
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    #endregion
-
     public TextMeshProUGUI text;
     public TextMeshProUGUI name;
     public SpriteRenderer rendererSprite;
