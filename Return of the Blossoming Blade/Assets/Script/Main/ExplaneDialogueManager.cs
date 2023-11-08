@@ -8,6 +8,8 @@ public class ExplaneDialogueManager : MonoBehaviour
 {
     public MainDialogue mainDialogue;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +30,13 @@ public class ExplaneDialogueManager : MonoBehaviour
         mainDialogue.btn4.interactable = false;
         yield return new WaitForSeconds(0.5f);
         mainDialogue.close.text = "´Ý±â";
+        anim.SetBool("Appear", true);
     }
 
     public void CloseDialogue()
     {
         mainDialogue.close.text = "";
+        anim.SetBool("Appear", false);
         mainDialogue.anim.SetBool("Appear", false);
         mainDialogue.btn1.interactable = true;
         mainDialogue.btn2.interactable = true;
