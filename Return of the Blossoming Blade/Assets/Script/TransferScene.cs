@@ -13,11 +13,20 @@ public class TransferScene : MonoBehaviour
     public bool move = false;
     public string gateName;
 
+    private AudioManager theAudio;
+
+    public string doorSound;
+
+    public bool stop;
+    private BGMManager bgmManager;
+
     // Start is called before the first frame update
     void Start()
     {
         theCamera = FindObjectOfType<CameraManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theAudio = FindObjectOfType<AudioManager>();
+        bgmManager = FindObjectOfType<BGMManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +36,11 @@ public class TransferScene : MonoBehaviour
         {
             thePlayer.currentMapName = transferMapName;
             SceneManager.LoadScene(transferMapName);
+            if (stop)
+            {
+                bgmManager.Stop();
+            }
+            theAudio.Play(doorSound);
         }
     }
 }

@@ -13,8 +13,12 @@ public class PlayerStatus : MonoBehaviour
     public int maxPosion = 1;
     public int currentPosion;
 
+    private AudioManager theAudio;
+    public string posionSound;
+
     private void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
         // 게임 시작시 플레이어의 HP와 MP를 최대치로 설정
         if (!PlayerPrefs.HasKey("playerHP"))
         {
@@ -118,6 +122,7 @@ public class PlayerStatus : MonoBehaviour
             int havePosion = PlayerPrefs.GetInt("havePosion");
             if (havePosion > 0)
             {
+                theAudio.Play(posionSound);
                 PlayerPrefs.SetInt("havePosion", havePosion - 1);
 
                 int playerHP = PlayerPrefs.GetInt("playerHP");

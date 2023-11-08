@@ -14,13 +14,21 @@ public class TransferMap : MonoBehaviour
     private PlayerManager thePlayer;
     private CameraManager theCamera;
 
+    private AudioManager theAudio;
+
     public bool move = false;
+    public string moveSound;
+
+    public bool stop;
+    private BGMManager bgmManager;
 
     // Start is called before the first frame update
     void Start()
     {
         theCamera = FindObjectOfType<CameraManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theAudio = FindObjectOfType<AudioManager>();
+        bgmManager = FindObjectOfType<BGMManager>();
     }
 
     // Update is called once per frame
@@ -28,6 +36,11 @@ public class TransferMap : MonoBehaviour
     {
         if(collision.gameObject.name == "Player" && move)
         {
+            theAudio.Play(moveSound);
+            if (stop)
+            {
+                bgmManager.Stop();
+            }
             thePlayer.currentMapName = transferMapName;
             theCamera.SetBound(targetBound);
             theCamera.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, theCamera.transform.position.z);

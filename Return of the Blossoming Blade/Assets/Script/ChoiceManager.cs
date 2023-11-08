@@ -37,15 +37,20 @@ public class ChoiceManager : MonoBehaviour
     public bool talking = false;
     private bool keyActivated = false;
 
+    private AudioManager theAudio;
+
     private int nowChoice= 1;
 
     private int saveN = 0;
+
+    public string clickSound;
 
     // Start is called before the first frame update
     void Start()
     {
         choice1.text = "";
         choice2.text = "";
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     public void ShowChoice(Choice choice, int n)
@@ -84,6 +89,7 @@ public class ChoiceManager : MonoBehaviour
             {
                 if(nowChoice != 1)
                 {
+                    theAudio.Play(clickSound);
                     nowChoice = 1;
 
                     choice1.text = "<color=#ef538b>" + choice_1 + "</color>";
@@ -96,6 +102,7 @@ public class ChoiceManager : MonoBehaviour
             {
                 if (nowChoice == 1)
                 {
+                    theAudio.Play(clickSound);
                     nowChoice = 2;
 
                     choice1.text = choice_1;
