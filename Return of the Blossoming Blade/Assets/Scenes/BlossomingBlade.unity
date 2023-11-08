@@ -27647,6 +27647,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 46dbf1f40d4aa478b9496d00baf858fc, type: 3}
   - {fileID: 8300000, guid: a828452b20b6a45349875811c113832f, type: 3}
   - {fileID: 8300000, guid: 3114dceb2289149dcba43042024c2abc, type: 3}
+  - {fileID: 8300000, guid: 553fc12256885485f9f571c322dac1ea, type: 3}
+  - {fileID: 8300000, guid: b4d234f615c3d4d709d16cdc6b9de280, type: 3}
 --- !u!82 &1171141276
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27796,6 +27798,7 @@ MonoBehaviour:
   move: 0
   gateName: 
   doorSound: 
+  stop: 0
 --- !u!61 &1171205418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29649,6 +29652,7 @@ MonoBehaviour:
   move: 0
   gateName: 
   doorSound: 
+  stop: 0
 --- !u!61 &1325009529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30856,6 +30860,7 @@ MonoBehaviour:
   move: 0
   gateName: 
   doorSound: 
+  stop: 0
 --- !u!61 &1481894557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31179,6 +31184,7 @@ MonoBehaviour:
   move: 0
   gateName: 
   doorSound: 
+  stop: 0
 --- !u!61 &1527952947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36715,6 +36721,7 @@ MonoBehaviour:
   move: 0
   gateName: GoToOutOfMainland
   doorSound: "\uB9F5\uC774\uB3D9"
+  stop: 1
 --- !u!61 &2122874035
 BoxCollider2D:
   m_ObjectHideFlags: 0

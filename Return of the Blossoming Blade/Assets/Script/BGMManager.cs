@@ -4,25 +4,11 @@ using UnityEngine;
 
 public class BGMManager : MonoBehaviour
 {
-    public static BGMManager instance;
-
     public AudioClip[] clips;
     private AudioSource source;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
     // Start is called before the first frame update
     void Start()
     {
