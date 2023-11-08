@@ -27,7 +27,7 @@ public class SkillCooldownManager : MonoBehaviour
     private bool isWActive = false;
     private bool isEActive = false;
 
-    public float QSkillDuration = 1.9f;
+    public float QSkillDuration = 1.6f;
     public float WSkillDuration = 1.9f;
     public float ESkillDuration = 4.4f;
     public float SpaceDuration = 0.25f;
@@ -89,7 +89,7 @@ public class SkillCooldownManager : MonoBehaviour
             StartCoroutine(ESkillEffect());
         }
         // 스페이스바 사용
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive)
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove)
         {
             StartCoroutine(Dash());
         }
@@ -100,12 +100,12 @@ public class SkillCooldownManager : MonoBehaviour
         onStart();
         skillObject.SetActive(true);
 
-        PlayerManager.instance.notMove = true; // 스킬이 활성화되면 이동을 막습니다.
+        PlayerManager.instance.skillNotMove = true; // 스킬이 활성화되면 이동을 막습니다.
 
         // 스킬 지속 시간 동안 활성화 상태 유지
         yield return new WaitForSeconds(skillDuration);
 
-        PlayerManager.instance.notMove = false; // 스킬 지속 시간이 끝나면 이동을 허용합니다.
+        PlayerManager.instance.skillNotMove = false; // 스킬 지속 시간이 끝나면 이동을 허용합니다.
 
         skillObject.SetActive(false);
         onEnd();
@@ -205,7 +205,7 @@ public class SkillCooldownManager : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true; // 공격 상태로 설정
-        PlayerManager.instance.notMove = true; // 플레이어의 이동 잠금
+        PlayerManager.instance.skillNotMove = true; // 플레이어의 이동 잠금
 
         // 랜덤으로 AttackH 또는 AttackV 트리거 설정
         if (UnityEngine.Random.value < 0.5f)
@@ -224,14 +224,14 @@ public class SkillCooldownManager : MonoBehaviour
         playerAnimator.SetBool("AttackH", false);
         playerAnimator.SetBool("AttackV", false);
 
-        PlayerManager.instance.notMove = false; // 플레이어의 이동 잠금 해제
+        PlayerManager.instance.skillNotMove = false; // 플레이어의 이동 잠금 해제
         isAttacking = false; // 공격 상태 해제
     }
 
     private IEnumerator Dash()
     {
 
-        PlayerManager.instance.notMove = true; // 이동 잠금
+        PlayerManager.instance.skillNotMove = true; // 이동 잠금
         playerCollider1.enabled = false;
         playerCollider2.enabled = false;// 콜라이더 비활성화
 
@@ -254,7 +254,7 @@ public class SkillCooldownManager : MonoBehaviour
 
         playerCollider1.enabled = true;
         playerCollider2.enabled = true; // 콜라이더 활성화
-        PlayerManager.instance.notMove = false; // 이동 잠금 해제
+        PlayerManager.instance.skillNotMove = false; // 이동 잠금 해제
         playerAnimator.SetBool("Dash", false); // Dash 애니메이션 비활성화
 
     }

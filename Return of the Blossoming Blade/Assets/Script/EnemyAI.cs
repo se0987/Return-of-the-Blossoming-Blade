@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 
@@ -62,6 +63,12 @@ public class EnemyAI : MonoBehaviour
 
     public float knockbackForce; // 원하는 힘의 크기를 설정합니다. (값은 조절 가능)
 
+    private PlayerManager playerManager; // 플레이어 매니저 참조
+
+    public MonoBehaviour targetScript; // Inspector에서 설정할 대상 적 카운트 감소할 스크립트
+
+    private bool isDead = false; // 적이 죽었는지를 나타내는 플래그
+
 
     private void Start()
     {
@@ -75,10 +82,15 @@ public class EnemyAI : MonoBehaviour
 
         enemyCollider = GetComponent<Collider2D>();  // 적의 콜라이더를 가져옵니다.
 
+        playerManager = PlayerManager.instance; // PlayerManager의 인스턴스를 가져옵니다.
+
     }
 
     private void Update()
     {
+        // PlayerManager의 notMove 변수가 true이면 아래 로직을 실행하지 않습니다.
+        if (playerManager.notMove)
+            return;
 
         distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position); // 플레이어와의 거리 계산
 
@@ -136,6 +148,11 @@ public class EnemyAI : MonoBehaviour
                 break;
             case EnemyState.Dead:
                 // 죽음 애니메이션 및 로직
+                if (!isDead)
+                {
+                    isDead = true;
+                    DecreaseEnemyCount();
+                }
                 break;
             case EnemyState.Dashing:
                 // 플레이어를 향해 도약(돌진)하는 로직
@@ -241,7 +258,9 @@ public class EnemyAI : MonoBehaviour
         if (hit.collider != null
             && hit.collider.tag != "Player"
             && hit.collider.tag != "Weapon"
-            && hit.collider.tag != "Enemy")  // Enemy 태그를 무시하는 조건을 추가합니다.
+            && hit.collider.tag != "Enemy"
+            && hit.collider.tag != "Bound"
+            && hit.collider.tag != "event")  // Enemy 태그를 무시하는 조건을 추가합니다.
         {
             return true;
         }
@@ -366,6 +385,52 @@ public class EnemyAI : MonoBehaviour
                 animator.SetInteger("State", 6);
                 enemyCollider.isTrigger = true;  // 돌진 중에는 콜라이더를 통과하도록 설정
                 break;
+        }
+    }
+    public void CutsceneMove(Vector2 direction, float distance, float duration)
+    {
+        StartCoroutine(CutsceneMoveCoroutine(direction, distance, duration));
+    }
+
+    private IEnumerator CutsceneMoveCoroutine(Vector2 direction, float distance, float duration)
+    {
+        float time = 0;
+        Vector2 startPosition = transform.position;
+        Vector2 endPosition = startPosition + (direction.normalized * distance);
+
+        animator.SetInteger("State", 2); // 달리는 애니메이션 활성화
+
+        while (time < duration)
+        {
+            transform.position = Vector2.Lerp(startPosition, endPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPosition; // 최종 위치 보정
+        animator.SetInteger("State", 0); // 달리는 애니메이션 비활성화, Idle 상태로 가정
+    }
+
+    // 컷씬 컨트롤러 스크립트 예시
+    // EnemyAI enemyAI = enemyGameObject.GetComponent<EnemyAI>();
+    // enemyAI.PerformCutsceneMove(new Vector2(1, 0), 5f, 1.5f); // 오른쪽으로 5 유닛을 1.5초 동안 이동
+    private void DecreaseEnemyCount()
+    {
+        // targetScript에서 "enemyCount"라는 변수를 찾습니다.
+        FieldInfo enemyCountField = targetScript.GetType().GetField("enemyCount", BindingFlags.Public | BindingFlags.Instance);
+
+        if (enemyCountField != null && enemyCountField.FieldType == typeof(int))
+        {
+            int currentCount = (int)enemyCountField.GetValue(targetScript);
+            if (currentCount > 0)
+            {
+                currentCount--; // 적의 수를 감소
+                enemyCountField.SetValue(targetScript, currentCount); // 변경된 값을 다시 설정
+            }
+        }
+        else
+        {
+            Debug.LogError("The target script does not have a public 'enemyCount' variable, or it is not an integer.");
         }
     }
 }

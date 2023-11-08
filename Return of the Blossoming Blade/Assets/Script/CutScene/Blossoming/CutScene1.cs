@@ -17,6 +17,8 @@ public class CutScene1 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,8 @@ public class CutScene1 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
+
+        arrow.SetActive(true);
 
         playerStatus.GetPosion(1);
 

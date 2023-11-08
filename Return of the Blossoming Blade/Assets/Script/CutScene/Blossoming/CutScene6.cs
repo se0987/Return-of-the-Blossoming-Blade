@@ -18,6 +18,8 @@ public class CutScene6 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
+    public int enemyCount = 8;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
@@ -44,7 +46,7 @@ public class CutScene6 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (can && one && Input.GetKeyDown(KeyCode.C))
+        if (can && one && Input.GetKeyDown(KeyCode.C) && enemyCount==0)
         {
             one = false;
             StartCoroutine(EventCoroutine());

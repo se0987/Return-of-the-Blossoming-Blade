@@ -26,6 +26,9 @@ public class CutScene2 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow1;
+    public GameObject arrow2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +68,8 @@ public class CutScene2 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
         //yield return new WaitForSeconds(1f);
+
+        arrow1.SetActive(false);
 
         theOrder.Move("CheongJin", "UP");
         theOrder.Move("CheongJin", "UP");
@@ -107,13 +112,14 @@ public class CutScene2 : MonoBehaviour
                 yield return new WaitUntil(() => !theDM.talking);
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitUntil(() => !theDM.talking);
+                arrow2.SetActive(true);
                 theOrder.Appear("CheongMun", true);
             }
             else
             {
                 theDM.ShowDialogue(dialogue_7);
                 yield return new WaitUntil(() => !theDM.talking);
-
+                arrow2.SetActive(true);
                 TransferMap[] temp1 = FindObjectsOfType<TransferMap>();
                 for (int i = 0; i < temp1.Length; i++)
                 {
