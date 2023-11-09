@@ -19,7 +19,7 @@ public class TransferMap : MonoBehaviour
     public bool move = false;
     public string moveSound;
 
-    public bool stop;
+    public bool BGMStop;
     private BGMManager bgmManager;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class TransferMap : MonoBehaviour
         if(collision.gameObject.name == "Player" && move)
         {
             theAudio.Play(moveSound);
-            if (stop)
+            if (BGMStop)
             {
                 bgmManager.Stop();
             }
