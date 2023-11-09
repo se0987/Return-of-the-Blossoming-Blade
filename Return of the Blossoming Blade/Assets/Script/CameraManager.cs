@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    static public CameraManager instance;
 
     public GameObject target;
     public float moveSpeed;
@@ -19,19 +18,6 @@ public class CameraManager : MonoBehaviour
     private float halfHeight;
 
     private Camera theCamera;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
 
     void Start()
     {

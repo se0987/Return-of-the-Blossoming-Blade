@@ -18,11 +18,13 @@ public class PlayerManager : MovingObject
 
     private PlayerStatus playerStatus;
 
+    public string walkSound;
+    private AudioManager theAudio;
+
     public void Awake()
     {
-        if (instance == null)
+        if(instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
         else
@@ -38,6 +40,7 @@ public class PlayerManager : MovingObject
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         playerStatus = FindObjectOfType<PlayerStatus>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     IEnumerator MoveCoroutine()
@@ -56,6 +59,7 @@ public class PlayerManager : MovingObject
             }
 
             animator.SetBool("Running", true);
+            theAudio.Play(walkSound);
 
             //sboxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
 

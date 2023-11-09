@@ -12,9 +12,13 @@ public class OOMCutScene2 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
 
+    private AudioManager theAudio;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
+
+    public string fireSound;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class OOMCutScene2 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,6 +63,7 @@ public class OOMCutScene2 : MonoBehaviour
         theOrder.Move("Player", "UP");
         theOrder.Action("Player", "AttackH");//√ª∏Ì¿Ã ƒÆ¿ª »÷µŒ∏ß
         yield return new WaitForSeconds(1f);
+        theAudio.Play(fireSound);
         theOrder.Appear("Fire1", false);//∫“¿Ã ≤®¡¸
         theOrder.Appear("Fire2", false);
         theOrder.Appear("Fire3", false);
