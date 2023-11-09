@@ -25,12 +25,17 @@ public class CutScene6 : MonoBehaviour
     private bool one = true;
     protected bool finish = false;
 
+    private AudioManager theAudio;
+
+    public string sadSound;
+
     // Start is called before the first frame update
     void Start()
     {
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +78,7 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
+                theAudio.Play(sadSound);
 
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitForSeconds(2f);

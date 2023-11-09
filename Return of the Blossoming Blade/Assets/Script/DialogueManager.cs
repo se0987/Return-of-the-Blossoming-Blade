@@ -6,23 +6,6 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance;
-
-    #region Singleton
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    #endregion
-
     public TextMeshProUGUI text;
     public TextMeshProUGUI name;
     public SpriteRenderer rendererSprite;
@@ -38,6 +21,11 @@ public class DialogueManager : MonoBehaviour
     public Animator animSprite;
     public Animator animDialogueWindow;
 
+    public string typeSound;
+    public string CSound;
+
+    private AudioManager theAudio;
+
     public bool talking = false;
     private bool keyActivated = false;
 
@@ -51,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         listName = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     public void ShowDialogue(Dialogue dialogue)
@@ -121,6 +110,10 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];//1글자씩 출력
+            if(i % 7 == 1)
+            {
+                theAudio.Play(typeSound);
+            }
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -136,6 +129,7 @@ public class DialogueManager : MonoBehaviour
                 count++;
                 text.text = "";
                 name.text = "";
+                theAudio.Play(CSound);
                 if (count == listSentences.Count)
                 {
                     StopAllCoroutines();
