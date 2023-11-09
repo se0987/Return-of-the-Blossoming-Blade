@@ -9,6 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/BlossomingBladeHospital.unity
+    path: Assets/Scenes/BlossomingBlade.unity
     guid: f282cd5efe14b9449976fb356ba1d3b6
+  - enabled: 1
+    path: Assets/Scenes/CheongJin.unity
+    guid: f4e12361b8e22854fa4d57a0f8ea61ae
+  - enabled: 1
+    path: Assets/Scenes/Chunma.unity
+    guid: 053e6c5859521de42a4a9fe0291b7d78
+  - enabled: 1
+    path: Assets/Scenes/OutOfMainland.unity
+    guid: 03e24f2153ac89c478b77564f2c04c5b
+  - enabled: 1
+    path: Assets/Scenes/Mudang.unity
+    guid: cbe7ca982531fe24eaf34b06b2289803
+  - enabled: 1
+    path: Assets/Scenes/Jongnam.unity
+    guid: be49f1a031d54a642a31f639db97cb9f
   m_configObjects: {}
