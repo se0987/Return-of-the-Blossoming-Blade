@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import blossoming from "./assets/blossoming.png"
 
 function App() {
   return (
     <div className="App">
-      <img className="MainImage" alt="main_image" src="./assets/blossoming.png" />
+      <img alt="main_image" src={blossoming} />
     </div>
   );
 }
