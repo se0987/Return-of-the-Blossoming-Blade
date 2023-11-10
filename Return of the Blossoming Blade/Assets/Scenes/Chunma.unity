@@ -970,13 +970,10 @@ MonoBehaviour:
     names:
     - "\uCCAD\uBA85"
     - "\uCCAD\uBA85"
-    - "\uCCAD\uBA85"
     sprites:
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     dialogueWindows:
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_5:
@@ -999,9 +996,15 @@ MonoBehaviour:
       \uB9E4\uD654\uAC80\uC874 \uCCAD\uBA85. \uCC9C\uD558\uB97C \uD63C\uB780\uC5D0
       \uBE60\uB728\uB9B0 \uACE0\uAE08\uC81C\uC77C\uB9C8 \uCC9C\uB9C8\uC758 \uBAA9\uC744
       \uCE58\uACE0 \uC2ED\uB9CC\uB300\uC0B0\uC758 \uC815\uC0C1\uC5D0\uC11C \uC601\uBA85.)"
-    names: []
-    sprites: []
-    dialogueWindows: []
+    names:
+    - ' '
+    sprites:
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack1: 3
+  playMusicTrack2: 2
+  swordSound: sword
   end: 0
 --- !u!114 &136386415
 MonoBehaviour:
@@ -1349,6 +1352,9 @@ MonoBehaviour:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack1: 3
+  playMusicTrack2: 4
+  swordSound: sword
   end: 0
 --- !u!114 &163269610
 MonoBehaviour:
@@ -2092,79 +2098,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
     Volumn: 1
     loop: 0
---- !u!1 &389430094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 389430095}
-  - component: {fileID: 389430097}
-  - component: {fileID: 389430096}
-  m_Layer: 0
-  m_Name: BGM4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &389430095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389430094}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 874, y: -2896, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 511417638}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &389430096
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389430094}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 891.2505, y: -35.81241}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 977.78467, y: 413.72626}
-  m_EdgeRadius: 0
---- !u!114 &389430097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389430094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 3
-  enable: 1
+  - name: sword
+    clip: {fileID: 8300000, guid: 80151380c0f818243b66a78ef69c9fcd, type: 3}
+    Volumn: 1
+    loop: 0
 --- !u!210 &396731104
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -2802,9 +2739,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 942751015}
-  - {fileID: 994310528}
-  - {fileID: 1467738483}
-  - {fileID: 389430095}
   m_Father: {fileID: 237091348}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2822,7 +2756,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2917,10 +2851,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 2340ed91edd3d754d839895031645513, type: 3}
-  - {fileID: 8300000, guid: 46dbf1f40d4aa478b9496d00baf858fc, type: 3}
-  - {fileID: 8300000, guid: a828452b20b6a45349875811c113832f, type: 3}
-  - {fileID: 8300000, guid: 3114dceb2289149dcba43042024c2abc, type: 3}
+  - {fileID: 8300000, guid: 247a4fd1957c64f2dacda97ece667b9a, type: 3}
+  - {fileID: 8300000, guid: d39171ec42e9a4facb48a1fdceed4e99, type: 3}
+  - {fileID: 8300000, guid: d5c397c183a924731959c21f6b6ebdbf, type: 3}
+  - {fileID: 8300000, guid: bdbd6ba4d8ad841cf9f349bf625566db, type: 3}
+  - {fileID: 8300000, guid: 1ec2652b77fd5314ba5b68eee311d0fa, type: 3}
+  - {fileID: 8300000, guid: 7aa47067287b24213ad27415122b72a6, type: 3}
+  - {fileID: 8300000, guid: 5022269bc956f4decaf06c658a4ac63b, type: 3}
 --- !u!210 &520121844
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -3390,6 +3327,7 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack: 6
   end: 0
 --- !u!1 &568962959
 GameObject:
@@ -4146,7 +4084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821930332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -179, y: 104, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4876,79 +4814,6 @@ SortingGroup:
   m_SortingLayerID: 208271681
   m_SortingLayer: 8
   m_SortingOrder: 0
---- !u!1 &994310527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 994310528}
-  - component: {fileID: 994310530}
-  - component: {fileID: 994310529}
-  m_Layer: 0
-  m_Name: BGM2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &994310528
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994310527}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -814, y: -3554, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 511417638}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &994310529
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994310527}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 105.69339, y: 85.275345}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 212.3869, y: 171.55078}
-  m_EdgeRadius: 0
---- !u!114 &994310530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994310527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 1
-  enable: 1
 --- !u!210 &997416513
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -5461,6 +5326,9 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack1: 3
+  playMusicTrack2: 5
+  swordSound: sword
   end: 0
 --- !u!114 &1055883771
 MonoBehaviour:
@@ -6168,6 +6036,7 @@ MonoBehaviour:
     - {fileID: 1577124322, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack: 1
 --- !u!1001 &1220159111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8421,79 +8290,6 @@ SortingGroup:
   m_SortingLayerID: 208271681
   m_SortingLayer: 8
   m_SortingOrder: 0
---- !u!1 &1467738482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1467738483}
-  - component: {fileID: 1467738485}
-  - component: {fileID: 1467738484}
-  m_Layer: 0
-  m_Name: BGM3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1467738483
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467738482}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1859, y: -2896, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 511417638}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1467738484
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467738482}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 540.4183, y: -35.81241}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1200.9393, y: 413.72626}
-  m_EdgeRadius: 0
---- !u!114 &1467738485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467738482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 2
-  enable: 0
 --- !u!1 &1473638324
 GameObject:
   m_ObjectHideFlags: 0
@@ -10169,6 +9965,9 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack1: 3
+  playMusicTrack2: 2
+  swordSound: sword
   end: 0
 --- !u!114 &1638927806
 MonoBehaviour:
@@ -12542,6 +12341,9 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  playMusicTrack1: 3
+  playMusicTrack2: 2
+  swordSound: sword
   end: 0
 --- !u!114 &2069409608
 MonoBehaviour:
