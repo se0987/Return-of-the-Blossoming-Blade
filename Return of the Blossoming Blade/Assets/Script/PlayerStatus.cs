@@ -139,10 +139,13 @@ public class PlayerStatus : MonoBehaviour
 
                 float playerHP = PlayerPrefs.GetFloat("playerHP");
                 PlayerPrefs.SetFloat("playerHP", playerHP + 30f);
+                playerHP = PlayerPrefs.GetFloat("playerHP");
+
                 currentHP = playerHP;
 
                 float playerMP = PlayerPrefs.GetFloat("playerMP");
                 PlayerPrefs.SetFloat("playerMP", playerMP + 10f);
+                playerMP = PlayerPrefs.GetFloat("playerMP");
                 currentMP = playerMP;
             }
         }

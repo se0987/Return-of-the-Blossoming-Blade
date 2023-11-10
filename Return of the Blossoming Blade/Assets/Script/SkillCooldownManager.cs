@@ -48,8 +48,17 @@ public class SkillCooldownManager : MonoBehaviour
     public Collider2D playerCollider1; // 플레이어 콜라이더 참조
     public Collider2D playerCollider2; // 플레이어 콜라이더 참조
 
-    public float dashDistance = 150f; // 대쉬 거리
+    public float dashDistance = 185f; // 대쉬 거리
 
+    public PlayerStatus playerStatus; // PlayerStatus 참조
+
+    public float QSkillMP = 5f;
+    public float WSkillMP = 5f;
+    public float ESkillMP = 15f;
+
+    public float SpaceCooldownTime = 3f; // 스페이스바 스킬의 쿨다운 시간
+
+    private bool isSpaceCooldown = false; // 스페이스바 스킬 쿨다운 상태
 
     private void Update()
     {
@@ -70,28 +79,41 @@ public class SkillCooldownManager : MonoBehaviour
         // Q 스킬 사용
         if (Input.GetKeyDown(KeyCode.Q) && !isQCooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(QCooldownTime, QSkillDuration, QBar, QSkillObject, () => isQActive = true, () => isQActive = false, () => isQCooldown = true, () => isQCooldown = false));
-            StartCoroutine(QSkillEffect()); // QSkillEffect 코루틴 호출
+           if (playerStatus.currentMP >= QSkillMP) // 충분한 MP가 있는지 확인
+            {
+                playerStatus.UseMP(QSkillMP); // MP 소모
+                StartCoroutine(UseSkill(QCooldownTime, QSkillDuration, QBar, QSkillObject, () => isQActive = true, () => isQActive = false, () => isQCooldown = true, () => isQCooldown = false));
+                StartCoroutine(QSkillEffect());
+            }
 
         }
 
         // W 스킬 사용
         if (Input.GetKeyDown(KeyCode.W) && !isWCooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(WCooldownTime, WSkillDuration, WBar, WSkillObject, () => isWActive = true, () => isWActive = false, () => isWCooldown = true, () => isWCooldown = false));
-            StartCoroutine(WSkillEffect());  // 파티클 효과 코루틴 호출
+            if (playerStatus.currentMP >= WSkillMP)
+            {
+                playerStatus.UseMP(WSkillMP);
+                StartCoroutine(UseSkill(WCooldownTime, WSkillDuration, WBar, WSkillObject, () => isWActive = true, () => isWActive = false, () => isWCooldown = true, () => isWCooldown = false));
+                StartCoroutine(WSkillEffect());
+            }
         }
 
         // E 스킬 사용
         if (Input.GetKeyDown(KeyCode.E) && !isECooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
-            StartCoroutine(ESkillEffect());
+            if (playerStatus.currentMP >= ESkillMP)
+            {
+                playerStatus.UseMP(ESkillMP);
+                StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
+                StartCoroutine(ESkillEffect());
+            }
         }
         // 스페이스바 사용
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove)
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove && !isSpaceCooldown)
         {
             StartCoroutine(Dash());
+            StartCoroutine(SpaceCooldown(SpaceCooldownTime, SpaceBar, () => isSpaceCooldown = true, () => isSpaceCooldown = false));
         }
     }
 
@@ -257,5 +279,19 @@ public class SkillCooldownManager : MonoBehaviour
         PlayerManager.instance.skillNotMove = false; // 이동 잠금 해제
         playerAnimator.SetBool("Dash", false); // Dash 애니메이션 비활성화
 
+    }
+    private IEnumerator SpaceCooldown(float cooldownTime, LoadingBarSegments bar, Action onStartCooldown, Action onEndCooldown)
+    {
+        onStartCooldown?.Invoke();
+        float timeElapsed = 0;
+        while (timeElapsed < cooldownTime)
+        {
+            timeElapsed += Time.deltaTime;
+            float percentage = timeElapsed / cooldownTime;
+            bar.SetPercentage(percentage);
+            yield return null;
+        }
+        bar.SetPercentage(0);
+        onEndCooldown?.Invoke();
     }
 }

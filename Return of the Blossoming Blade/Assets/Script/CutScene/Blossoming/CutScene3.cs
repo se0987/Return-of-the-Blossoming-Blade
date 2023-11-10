@@ -19,6 +19,9 @@ public class CutScene3 : MonoBehaviour
 
     public bool enable = true;
 
+    public GameObject arrow3;
+    public GameObject arrow4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class CutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        arrow4.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +48,7 @@ public class CutScene3 : MonoBehaviour
         if (one && can && Input.GetKeyDown(KeyCode.C))
         {
             one = false;
+            arrow3.SetActive(false);
             StartCoroutine(EventCoroutine());
         }
     }
@@ -66,6 +71,7 @@ public class CutScene3 : MonoBehaviour
 
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
+            arrow4.SetActive(true);
 
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
             for (int i = 0; i < temp.Length; i++)

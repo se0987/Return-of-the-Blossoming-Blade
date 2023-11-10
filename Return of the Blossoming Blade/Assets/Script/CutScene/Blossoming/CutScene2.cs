@@ -28,6 +28,8 @@ public class CutScene2 : MonoBehaviour
 
     public GameObject arrow1;
     public GameObject arrow2;
+    public GameObject arrow3;
+    public GameObject arrow4;
 
     // Start is called before the first frame update
     void Start()
@@ -113,6 +115,7 @@ public class CutScene2 : MonoBehaviour
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitUntil(() => !theDM.talking);
                 arrow2.SetActive(true);
+                arrow3.SetActive(true);
                 theOrder.Appear("CheongMun", true);
             }
             else
@@ -120,6 +123,7 @@ public class CutScene2 : MonoBehaviour
                 theDM.ShowDialogue(dialogue_7);
                 yield return new WaitUntil(() => !theDM.talking);
                 arrow2.SetActive(true);
+                arrow4.SetActive(true);
                 TransferMap[] temp1 = FindObjectsOfType<TransferMap>();
                 for (int i = 0; i < temp1.Length; i++)
                 {

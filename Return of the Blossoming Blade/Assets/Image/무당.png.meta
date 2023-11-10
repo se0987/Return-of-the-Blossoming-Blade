@@ -678,6 +678,27 @@ TextureImporter:
       name: "\uBB34\uB2F9_26"
       rect:
         serializedVersion: 2
+        x: 315
+        y: 73
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc28000e2b0695d47ae9a2bdc9345d98
+      internalID: 541508090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uBB34\uB2F9_27"
+      rect:
+        serializedVersion: 2
         x: 202
         y: 26
         width: 99
@@ -689,8 +710,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc28000e2b0695d47ae9a2bdc9345d98
-      internalID: 541508090
+      spriteID: f12301554eaa3fb4c9f6640c7744f985
+      internalID: -1515205028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uBB34\uB2F9_28"
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 26
+        width: 99
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c932bf7b19b8a41b5138ad0bfa236e
+      internalID: -558287089
       vertices: []
       indices: 
       edges: []
@@ -726,6 +768,8 @@ TextureImporter:
       "\uBB34\uB2F9_24": -732347373
       "\uBB34\uB2F9_25": -2024206333
       "\uBB34\uB2F9_26": 541508090
+      "\uBB34\uB2F9_27": -1515205028
+      "\uBB34\uB2F9_28": -558287089
       "\uBB34\uB2F9_3": -1520993931
       "\uBB34\uB2F9_4": -766809928
       "\uBB34\uB2F9_5": -1112821486
