@@ -3466,7 +3466,7 @@ GameObject:
   - component: {fileID: 88795879}
   m_Layer: 0
   m_Name: BGM2
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7277,7 +7277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 311.90018, y: 90.968}
+  m_AnchoredPosition: {x: 308, y: 31}
   m_SizeDelta: {x: 156.6641, y: 61.968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167410594
@@ -7406,7 +7406,7 @@ GameObject:
   - component: {fileID: 170502589}
   m_Layer: 0
   m_Name: BGM3
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7893,8 +7893,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -3, y: 7.830002}
-  m_SizeDelta: {x: 600, y: 200}
+  m_AnchoredPosition: {x: -3, y: 0.6000061}
+  m_SizeDelta: {x: 600, y: 220}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &194043348
 MonoBehaviour:
@@ -8669,7 +8669,8 @@ Transform:
   m_LocalPosition: {x: 755, y: -657, z: 2.3949785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1055294962}
   m_Father: {fileID: 590388222}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8687,70 +8688,97 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_1:
     sentences:
-    - "(\uADFC\uC2EC\uC5B4\uB9B0\_\uC5BC\uAD74\uB85C \uAF43\uC774 \uC9C4 \uB9E4\uD654\uB098\uBB34\uB97C
+    - "\uADFC\uC2EC\uC5B4\uB9B0\_\uC5BC\uAD74\uB85C \uAF43\uC774 \uC9C4 \uB9E4\uD654\uB098\uBB34\uB97C
       \uC62C\uB824\uB2E4\uBCF4\uB358 \uCCAD\uBB38\uC774 \uACE0\uAC1C\uB97C \uB3CC\uB824
-      \uCCAD\uBA85\uC744 \uBC14\uB77C\uBD24\uB2E4.)\uC77C\uC5B4\uB0AC\uAD6C\uB098.
-      \uBAB8\uC740 \uC5B4\uB5A0\uB0D0?"
+      \uCCAD\uBA85\uC744 \uBC14\uB77C\uBD24\uB2E4."
+    - "\uC77C\uC5B4\uB0AC\uAD6C\uB098. \uBAB8\uC740 \uC5B4\uB5A0\uB0D0?"
     names:
+    - 
     - "\uCCAD\uBB38"
     sprites:
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_2:
     sentences:
-    - "(\uC544\uBB34\uB807\uC9C0 \uC54A\uAC8C \uC5B4\uAE68\uB97C \uC73C\uC4F1\uC778\uB2E4.)\uC544\uC9C1
-      \uD314\uD314\uD558\uC8E0. \uC2DC\uD0AC \uC77C \uC788\uC8E0?"
-    - "(\uAF49 \uB2E4\uBB3C\uB9B0 \uC785\uC774 \uCC9C\uCC9C\uD788 \uC5F4\uB838\uB2E4.
+    - "\uC544\uBB34\uB807\uC9C0 \uC54A\uAC8C \uC5B4\uAE68\uB97C \uC73C\uC4F1\uC778\uB2E4."
+    - "\uC544\uC9C1 \uD314\uD314\uD558\uC8E0, \uBB50.."
+    - "\uADF8\uB798\uC11C, \uC2DC\uD0AC \uC77C \uC788\uC8E0?"
+    - "\uAF49 \uB2E4\uBB3C\uB9B0 \uC785\uC774 \uCC9C\uCC9C\uD788 \uC5F4\uB838\uB2E4.
       \uCEE4\uB2E4\uB780 \uBC14\uC704\uAC00\_\uC5B9\uC5B4\uC9C4 \uB4EF\_\uC7A0\uAE34
-      \uBAA9\uC18C\uB9AC\uAC00\_\uC5B4\uB461\uB2E4.)\u2026.\uB124\uAC8C\_\uD56D\uC0C1
-      \uBD80\uD0C1\uB9CC\_\uD558\uB294 \uAC70\_\uAC19\uAD6C\uB098."
-    - "(\uBD80\uB7EC \uAC00\uBCCD\uAC8C \uC6C3\uC74C\uC744 \uC790\uC544\uB0B8\uB2E4.)\uB410\uC2B5\uB2C8\uB2E4.
-      \uBC8C\uC368\_\uD5C8\uB9AC \uC544\uD508\_\uC0AC\uD615\uC774\uB791 \uC81C\uAC00
-      \uAC19\uC2B5\uB2C8\uAE4C?"
+      \uBAA9\uC18C\uB9AC\uAC00\_\uC5B4\uB461\uB2E4."
+    - "\u2026.\uB124\uAC8C\_\uD56D\uC0C1 \uBD80\uD0C1\uB9CC\_\uD558\uB294 \uAC70\_\uAC19\uAD6C\uB098."
+    - "\uBD80\uB7EC \uAC00\uBCCD\uAC8C \uC6C3\uC74C\uC744 \uC790\uC544\uB0B8\uB2E4."
+    - "\uB410\uC2B5\uB2C8\uB2E4. \uBC8C\uC368\_\uD5C8\uB9AC \uC544\uD508\_\uC0AC\uD615\uC774\uB791
+      \uC81C\uAC00 \uAC19\uC2B5\uB2C8\uAE4C?"
     names:
+    - 
     - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - 
     - "\uCCAD\uBB38"
+    - 
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 80d7f24b44f570b4b917302aff2bd306, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_3:
     sentences:
     - "\uADF8\uB798\u2026"
-    - "(\uACE0\uAC1C\uAC00 \uB2E4\uC2DC \uCC9C\uCC9C\uD788 \uB9E4\uD654\uB098\uBB34\uB85C
+    - "\uACE0\uAC1C\uAC00 \uB2E4\uC2DC \uCC9C\uCC9C\uD788 \uB9E4\uD654\uB098\uBB34\uB85C
       \uB3CC\uC544\uAC14\uC73C\uB098 \uCCAD\uBB38\uC740\_\uB354 \uC774\uC0C1\_\uB9E4\uD654\uB098\uBB34\uB97C
-      \uBC14\uB77C\uBCF4\uACE0 \uC788\uC9C0 \uC54A\uC558\uB2E4.)"
+      \uBC14\uB77C\uBCF4\uACE0 \uC788\uC9C0 \uC54A\uC558\uB2E4."
     - "\uAC15\uC11C\uC9C0\uBC29\uC73C\uB85C \uB9C8\uAD50\uAC00 \uC774\uB3D9\uD558\uACE0
-      \uC788\uB2E4. \uC124\uD654\uB2E8\uC744 \uC904 \uD14C\uB2C8 \uCCAD\uC9C4\uACFC
-      \uD568\uAED8 \uB2E4\uB140\uC624\uAC70\uB77C."
+      \uC788\uB2E4."
+    - "\uC124\uD654\uB2E8\uC744 \uC904 \uD14C\uB2C8 \uCCAD\uC9C4\uACFC \uD568\uAED8
+      \uB2E4\uB140\uC624\uAC70\uB77C."
     - "\uAD73\uC774 \uCCAD\uC9C4\uC774 \uB140\uC11D\uC774\uB791\uC694?"
-    - "(\uADF8 \uC5B4\uB290 \uB54C\uCC98\uB7FC \uB2E8\uB2E8\uD55C \uBAA9\uC18C\uB9AC\uAC00
-      \uCCAD\uBA85\uC5D0\uAC8C \uBA85\uB839\uC744 \uB0B4\uB9B0\uB2E4.)\uAC15\uC11C\uB85C
-      \uC774\uB3D9\uD558\uB294 \uB9C8\uAD50\uAC00 \uC5BC\uB9C8\uB098 \uB418\uB294\uC9C0
-      \uC544\uC9C1 \uBC1D\uD600\uC9C0\uC9C0 \uC54A\uC558\uC5B4. \uC794\uB9D0 \uB9D0\uACE0
+    - "\uADF8 \uC5B4\uB290 \uB54C\uCC98\uB7FC \uB2E8\uB2E8\uD55C \uBAA9\uC18C\uB9AC\uAC00
+      \uCCAD\uBA85\uC5D0\uAC8C \uBA85\uB839\uC744 \uB0B4\uB9B0\uB2E4."
+    - "\uAC15\uC11C\uB85C \uC774\uB3D9\uD558\uB294 \uB9C8\uAD50\uAC00 \uC5BC\uB9C8\uB098
+      \uB418\uB294\uC9C0 \uC544\uC9C1 \uBC1D\uD600\uC9C0\uC9C0 \uC54A\uC558\uC5B4. "
+    - "\uCE58\uB8CC \uBC1B\uC740 \uC9C1\uD6C4\uC774\uB2C8, \uC794\uB9D0 \uB9D0\uACE0
       \uCCAD\uC9C4\uC774\uB791 \uB2E4\uB140\uC624\uAC70\uB77C."
-    - "\uB24D\u2026"
+    - "... \uC608."
     names:
     - "\uCCAD\uBB38"
+    - 
     - "\uCCAD\uBB38"
     - "\uCCAD\uBB38"
     - "\uCCAD\uBA85"
+    - 
+    - "\uCCAD\uBB38"
     - "\uCCAD\uBB38"
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 80d7f24b44f570b4b917302aff2bd306, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -8877,7 +8905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c191d72ff5cab40866ce159e8db008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 30
+  damageAmount: 35
 --- !u!70 &292730051
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9098,7 +9126,7 @@ MonoBehaviour:
     names:
     - "\uCCAD\uC9C4"
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: 806b3ebc1b331ba4492bec6b83eb21bc, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_2:
@@ -9111,7 +9139,7 @@ MonoBehaviour:
     - "\uCCAD\uBA85"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -9129,8 +9157,8 @@ MonoBehaviour:
     - "\uCCAD\uC9C4"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -9142,7 +9170,7 @@ MonoBehaviour:
     names:
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_5:
@@ -9171,7 +9199,7 @@ MonoBehaviour:
     - "\uCCAD\uBA85"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -9204,15 +9232,15 @@ MonoBehaviour:
     - "\uCCAD\uC9C4"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 806b3ebc1b331ba4492bec6b83eb21bc, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
+    - {fileID: 21300000, guid: 4c647243a37aa4840b3fab31eec4e361, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: 806b3ebc1b331ba4492bec6b83eb21bc, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -12453,7 +12481,7 @@ GameObject:
   - component: {fileID: 523899912}
   m_Layer: 0
   m_Name: BGM1
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12911,33 +12939,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_1:
     sentences:
-    - "\uC0AC\uD615! (\uAE30\uC220\uBA85)\uC740 Q\uB85C \uC4F0\uC154\uC57C\uC8E0!"
+    - "\uC0AC\uD615! [\uB9E4\uD654\uB9CC\uAC1C]\uB294 Q\uB85C \uC4F0\uC154\uC57C\uC8E0!"
     names:
     - "\uCCAD\uC9C4"
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_2:
     sentences:
-    - "(\uAE30\uC220\uBA85)W\uB294 \uC5B4\uCA4C\uACE0 \uADF8\uB7EC\uACE0 \uC788\uC73C\uC2ED\uB2C8\uAE4C?"
+    - "[\uB9E4\uD654\uC870\uAD11] W\uB294 \uC5B4\uCA4C\uACE0 \uADF8\uB7EC\uACE0 \uC788\uC73C\uC2ED\uB2C8\uAE4C?"
     names:
     - "\uCCAD\uC9C4"
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: d116fc19942bcee4589183f2cdc4a860, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_3:
     sentences:
-    - "(\uAE30\uC220\uBA85)\uC744 \uADF8\uB807\uAC8C \uC4F8 \uAC70\uBA74 \uCC28\uB77C\uB9AC
+    - "[\uB9E4\uD654\uB9CC\uCC9C]\uC744 \uADF8\uB807\uAC8C \uC4F8 \uAC70\uBA74 \uCC28\uB77C\uB9AC
       E\uB97C \uC4F0\uC138\uC694!"
     - "\uC2DC\uB044\uB7EC!!"
     names:
     - "\uCCAD\uC9C4"
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: d116fc19942bcee4589183f2cdc4a860, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -16751,7 +16779,7 @@ GameObject:
   - component: {fileID: 759277726}
   m_Layer: 0
   m_Name: BGM4
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19753,7 +19781,7 @@ RectTransform:
   - {fileID: 828718603}
   - {fileID: 57087961}
   m_Father: {fileID: 914350694}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19920,6 +19948,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1440105499}
+  - {fileID: 1570990039}
   m_Father: {fileID: 965839814}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20117,7 +20146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c191d72ff5cab40866ce159e8db008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 35
+  damageAmount: 45
 --- !u!70 &880957783
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20754,10 +20783,10 @@ Transform:
   m_Children:
   - {fileID: 360095848}
   - {fileID: 1149756097}
-  - {fileID: 843936259}
   - {fileID: 935007456}
   - {fileID: 1614815791}
   - {fileID: 965839814}
+  - {fileID: 843936259}
   - {fileID: 1286900153}
   - {fileID: 174690756}
   m_Father: {fileID: 0}
@@ -20782,7 +20811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &935007452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20875,7 +20904,7 @@ RectTransform:
   - {fileID: 1462853023}
   - {fileID: 1927167141}
   m_Father: {fileID: 914350694}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21325,6 +21354,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 1149756093}
   playerCollider2: {fileID: 539110189}
   dashDistance: 150
+  playerStatus: {fileID: 1149756091}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!1 &951214974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467344172411, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -21591,7 +21625,7 @@ RectTransform:
   - {fileID: 646343170}
   - {fileID: 599249596}
   m_Father: {fileID: 914350694}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21717,7 +21751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367.4, y: 237.40002}
+  m_AnchoredPosition: {x: -350, y: 180.8}
   m_SizeDelta: {x: 156.6641, y: 61.968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980902911
@@ -22333,8 +22367,8 @@ MonoBehaviour:
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -22342,28 +22376,33 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_1:
     sentences:
+    - "\uC0C8\uAE4C\uB9CC \uC637\uC744 \uC785\uC740 \uB9C8\uAD50\uAC00 \uCC9C\uB9C8\uB97C
+      \uC678\uCE58\uBA70 \uC591\uBBFC\uC758 \uD53C\uB97C \uBC14\uB2E5\uC5D0 \uD769\uBFCC\uB9B0\uB2E4.
+      \uACE1\uC18C\uB9AC\uC640 \uC0B4\uB824\uB2EC\uB77C\uB294 \uC808\uADDC\uAC00
+      \uBC14\uB2E5\uC744 \uAE30\uC5B4 \uB9E4\uB2EC\uB9B0\uB2E4."
+    - "\uACE1\uC18C\uB9AC\uC640 \uC0B4\uB824\uB2EC\uB77C\uB294 \uC808\uADDC\uAC00
+      \uBC14\uB2E5\uC744 \uAE30\uC5B4 \uB9E4\uB2EC\uB9B0\uB2E4."
     - "\uB9C8\uAD50 \uB188\uB4E4...."
     - "\uC544\uC9C1 \uC0DD\uC874\uC790\uAC00! \uC5B4\uC11C \uAD6C\uD558\uB7EC \uAC11\uC2DC\uB2E4!"
     - "\uB10C \uC9C0\uCF1C\uB9CC \uBCF4\uACE0 \uC788\uC5B4."
-    - "(\uC0C8\uAE4C\uB9CC \uC637\uC744 \uC785\uC740 \uB9C8\uAD50\uAC00 \uCC9C\uB9C8\uB97C
-      \uC678\uCE58\uBA70 \uC591\uBBFC\uC758 \uD53C\uB97C \uBC14\uB2E5\uC5D0 \uD769\uBFCC\uB9B0\uB2E4.
-      \uACE1\uC18C\uB9AC\uC640 \uC0B4\uB824\uB2EC\uB77C\uB294 \uC808\uADDC\uAC00
-      \uBC14\uB2E5\uC744 \uAE30\uC5B4 \uB9E4\uB2EC\uB9B0\uB2E4.)"
     - "A\uB85C \uC801\uB4E4\uC744 \uBCA0\uC5B4\uBC84\uB9BD\uC2DC\uC624! (A = \uAE30\uBCF8
       \uACF5\uACA9)"
     names:
-    - ' '
+    - 
+    - 
+    - "\uCCAD\uBA85"
     - "\uCCAD\uC9C4"
     - "\uCCAD\uBA85"
-    - 
     - "\uCCAD\uC9C4"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
+    - {fileID: 21300000, guid: d116fc19942bcee4589183f2cdc4a860, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
+    - {fileID: 21300000, guid: d116fc19942bcee4589183f2cdc4a860, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -22739,6 +22778,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_1:
     sentences:
+    - "\uADF8\uB9AC\uACE0 \uC0AC\uD758\uC774 \uC9C0\uB09C \uD6C4, \uC5B4\uB290 \uC778\uADFC
+      \uC232 \uC18D\uC5D0\uC11C."
     - "(\uC774 \uC232\uC5D0\uC11C \uB300\uCCB4 \uC5BC\uB9C8 \uB3D9\uC548 \uC2F8\uC6B4
       \uAC74\uC9C0 \uC785\uAD6C\uBD80\uD130 \uC2DC\uCCB4\uAC00 \uC5B8\uB355\uC744
       \uC774\uB8E8\uACE0 \uC788\uACE0 \uD53C\uB294 \uAC15\uBB3C\uCC98\uB7FC \uD758\uB800\uB2E4.)"
@@ -25533,6 +25574,106 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 265, y: 180}
   m_EdgeRadius: 0
+--- !u!1 &1055294961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055294962}
+  - component: {fileID: 1055294964}
+  - component: {fileID: 1055294963}
+  m_Layer: 0
+  m_Name: arrow (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1055294962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055294961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -69.1, y: -139.5, z: 8.57301}
+  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 265185791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1055294963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055294961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d75a89e999ff124fb236cfe4665eacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 2
+  frequency: 4
+  shakeVertical: 1
+--- !u!212 &1055294964
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055294961}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 208271681
+  m_SortingLayer: 8
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5d641dba1c4964111b9f4328a4fdccfe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1056186354
 GameObject:
   m_ObjectHideFlags: 0
@@ -25654,7 +25795,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 31.5784, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -25702,7 +25843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 193.26003, y: 60.83}
+  m_AnchoredPosition: {x: 193.26003, y: 65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1070530585
@@ -25997,56 +26138,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_1:
     sentences:
-    - "(\uB9C8\uAD50\uB294 \uB2E4 \uC4F0\uB7EC\uB728\uB838\uC73C\uB098 \uACE1\uC18C\uB9AC\uB294
-      \uBA48\uCD94\uC9C0 \uC54A\uC558\uB2E4. \uCCAD\uC9C4\uC774 \uD53C\uD22C\uC131\uC774\uC758
-      \uB178\uC778\uC758 \uC55E\uC5D0\uC11C \uC8FC\uC800\uC549\uC740 \uC591\uBBFC\uC5D0\uAC8C
-      \uB2E4\uAC00\uAC14\uB2E4.)"
+    - "\uB9C8\uAD50\uB294 \uB2E4 \uC4F0\uB7EC\uB728\uB838\uC73C\uB098 \uACE1\uC18C\uB9AC\uB294
+      \uBA48\uCD94\uC9C0 \uC54A\uC558\uB2E4."
+    - "\uCCAD\uC9C4\uC774 \uD53C\uD22C\uC131\uC774\uC758 \uB178\uC778\uC758 \uC55E\uC5D0\uC11C
+      \uC8FC\uC800\uC549\uC740 \uC591\uBBFC\uC5D0\uAC8C \uB2E4\uAC00\uAC14\uB2E4."
     names:
-    - "\uCCAD\uC9C4"
+    - 
+    - 
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_2:
     sentences:
-    - " (\uC228\uB118\uC5B4\uAC08\uB4EF \uC6B8\uB358 \uC8FC\uBBFC\uC774 \uACE0\uAC1C\uB97C
-      \uB4E4\uC5C8\uB2E4. \uD53C\uC640 \uD759\uC73C\uB85C \uC5BC\uAD74\uC744 \uC54C\uC544\uBCFC
-      \uC218 \uC5C6\uC5C8\uC9C0\uB9CC, \uC5BC\uAD74\uC5D0 \uB2F4\uAE34 \uC6D0\uB9DD\uB9CC\uD07C\uC740
-      \uC120\uBA85\uD588\uB2E4.)"
+    - "\uC228\uB118\uC5B4\uAC08\uB4EF \uC6B8\uB358 \uC8FC\uBBFC\uC774 \uACE0\uAC1C\uB97C
+      \uB4E4\uC5C8\uB2E4."
+    - "\uD53C\uC640 \uD759\uC73C\uB85C \uC5BC\uAD74\uC744 \uC54C\uC544\uBCFC \uC218
+      \uC5C6\uC5C8\uC9C0\uB9CC, \uC5BC\uAD74\uC5D0 \uB2F4\uAE34 \uC6D0\uB9DD\uB9CC\uD07C\uC740
+      \uC120\uBA85\uD588\uB2E4."
     - "\uC65C, \uC65C \uC774\uB9AC \uB2A6\uC73C\uC168\uC5B4\uC694\u2026. \uC870\uAE08\uB9CC
       \uB354 \uC77C\uCC0D \uC624\uC168\uC73C\uBA74\u2026..\uC73C\uD751, \uC73C\uD750\uC73C\uC73D\u2026.."
-    - "(\uBA87 \uBC88 \uC785\uC744 \uB2EC\uC2F9\uC600\uC9C0\uB9CC \uB098\uC624\uB294
-      \uAC74 \uC0AC\uC8C4\uBFD0\uC774\uC5C8\uB2E4.) \u2026..\uBBF8\uC548\uD558\uC624."
-    - "(\uBA40\uB9AC\uC11C \uAC1C\uBC29\uC774 \uD5D0\uB808\uBC8C\uB5A1 \uB2EC\uB824\uC628\uB2E4)"
+    - "\uBA87 \uBC88 \uC785\uC744 \uB2EC\uC2F9\uC600\uC9C0\uB9CC \uB098\uC624\uB294
+      \uAC74 \uC0AC\uC8C4\uBFD0\uC774\uC5C8\uB2E4."
+    - " \u2026..\uBBF8\uC548\uD558\uC624."
+    - "\uBA40\uB9AC\uC11C \uAC1C\uBC29\uC774 \uD5D0\uB808\uBC8C\uB5A1 \uB2EC\uB824\uC628\uB2E4."
     names:
     - ' '
+    - 
     - "\uC8FC\uBBFC"
-    - "\uCCAD\uC9C4"
+    - ' '
+    - "\uCCAD\uBA85"
     - ' '
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_3:
     sentences:
-    - "(\uC228\uC744 \uBAB0\uC544\uC26C\uB358 \uAC70\uC9C0\uB294 \uB0A8\uC11C\uCABD\uC744
-      \uAC00\uB9AC\uD0A4\uBA70 \uB9D0\uD588\uB2E4.) \uD070\uC77C\uB0AC\uC2B5\uB2C8\uB2E4!
-      \uAD11\uC11C\uC5D0\uC11C \uB9C8\uAD50\uC758 \uBCC4\uB3D9\uB300\uAC00, \uC73C\uC545!"
-    - "(\uB3CC\uD48D\uCC98\uB7FC \uC3D8\uC544\uC838 \uB098\uAC04 \uCCAD\uBA85\uC5D0
-      \uAC70\uC9C0\uB294 \uC790\uB9AC\uC5D0\uC11C \uB118\uC5B4\uC84C\uB2E4.)"
+    - "\uC228\uC744 \uBAB0\uC544\uC26C\uB358 \uAC70\uC9C0\uB294 \uB0A8\uC11C\uCABD\uC744
+      \uAC00\uB9AC\uD0A4\uBA70 \uB9D0\uD588\uB2E4."
+    - "\uD070\uC77C\uB0AC\uC2B5\uB2C8\uB2E4! \uAD11\uC11C\uC5D0\uC11C \uB9C8\uAD50\uC758
+      \uBCC4\uB3D9\uB300\uAC00, \uC73C\uC545!"
+    - "\uB3CC\uD48D\uCC98\uB7FC \uC3D8\uC544\uC838 \uB098\uAC04 \uCCAD\uBA85\uC5D0
+      \uAC70\uC9C0\uB294 \uC790\uB9AC\uC5D0\uC11C \uB118\uC5B4\uC84C\uB2E4."
     names:
+    - 
     - "\uAC1C\uBC29"
     - ' '
     sprites:
     - {fileID: 1577124322, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_4:
@@ -26061,91 +26217,118 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_5:
     sentences:
-    - "(\uB9C8\uAD50\uB294 \uB2E4 \uC4F0\uB7EC\uB728\uB838\uC73C\uB098 \uACE1\uC18C\uB9AC\uB294
-      \uBA48\uCD94\uC9C0 \uC54A\uC558\uB2E4. \uCCAD\uC9C4\uC774 \uC0C1\uCC98\uB97C
-      \uC785\uC740 \uC591\uBBFC\uC5D0\uAC8C \uC11C\uB458\uB7EC \uB2E4\uAC00\uAC04\uB2E4...)"
+    - "\uB9C8\uAD50\uB294 \uB2E4 \uC4F0\uB7EC\uB728\uB838\uC73C\uB098 \uACE1\uC18C\uB9AC\uB294
+      \uBA48\uCD94\uC9C0 \uC54A\uC558\uB2E4."
+    - "\uCCAD\uC9C4\uC774 \uC0C1\uCC98\uB97C \uC785\uC740 \uC591\uBBFC\uC5D0\uAC8C
+      \uC11C\uB458\uB7EC \uB2E4\uAC00\uAC04\uB2E4..."
     names:
-    - "\uCCAD\uC9C4"
+    - 
+    - 
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_6:
     sentences:
-    - "(\uC605\uC740 \uC228\uC18C\uB9AC\uAC00 \uAEBC\uC9C0\uB294 \uAC74 \uD55C\uC21C\uAC04\uC774\uC5C8\uB2E4.
-      \uCC44 \uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uB5A0\uB098\uAC04 \uC774\uC758
+    - "\uC605\uC740 \uC228\uC18C\uB9AC\uAC00 \uAEBC\uC9C0\uB294 \uAC74 \uD55C\uC21C\uAC04\uC774\uC5C8\uB2E4."
+    - "\uCC44 \uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD558\uACE0 \uB5A0\uB098\uAC04 \uC774\uC758
       \uBA85\uBCF5\uC744 \uAE30\uB9AC\uBA70 \uB208\uC744 \uAC10\uACA8\uC8FC\uB824\uB358
       \uC21C\uAC04 \uBD88\uC465 \uC591\uBBFC \uD55C \uBA85\uC774 \uD280\uC5B4\uB098\uC640
-      \uCCAD\uC9C4\uC5D0\uAC8C \uB2EC\uB824\uB4E4\uC5C8\uB2E4.)"
+      \uCCAD\uC9C4\uC5D0\uAC8C \uB2EC\uB824\uB4E4\uC5C8\uB2E4."
     - "\uAC74\uB4E4\uC9C0 \uB9C8!!"
     names:
     - ' '
     - "\uC8FC\uBBFC"
+    - "\uC8FC\uBBFC"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_7:
     sentences:
-    - "(\uB9C8\uAD50\uC758 \uAE30\uC2B5\uC73C\uB85C \uCC29\uAC01\uC5D0 \uAC80\uC5D0
-      \uC190\uC744 \uC62C\uB838\uC9C0\uB9CC, \uADF8\uBCF4\uB2E8 \uCCAD\uBA85\uC774
-      \uBE60\uB974\uAC8C \uBAA9\uB35C\uBBF8\uC744 \uC7A1\uC544\uCC58\uB2E4.) \uC0AC\uD615!
-      \uC591\uBBFC\uC785\uB2C8\uB2E4!"
+    - "\uB9C8\uAD50\uC758 \uAE30\uC2B5\uC73C\uB85C \uCC29\uAC01\uD55C \uCCAD\uC9C4\uC740
+      \uAC80\uC5D0 \uC190\uC744 \uC62C\uB838\uC9C0\uB9CC, \uADF8\uBCF4\uB2E8 \uCCAD\uBA85\uC774
+      \uBE60\uB974\uAC8C \uBAA9\uB35C\uBBF8\uC744 \uC7A1\uC544\uCC58\uB2E4."
+    - "\uC0AC\uD615! \uC591\uBBFC\uC785\uB2C8\uB2E4!"
     - "\uC548\uB2E4. \uB0B4\uAC00 \uADF8\uAC83\uB3C4 \uAD6C\uBCC4 \uBABB\uD560\uAE4C."
-    - "\uC544\uC544\uC545...! \uB108\uD76C\uB4E4\uC774 \uB2A6\uC5B4\uC11C! \uB108\uD76C\uB4E4\uC774\u2026!!(\uC591\uBBFC\uC758
-      \uAD34\uC131\uC740 \uACE7 \uBAA9\uC744 \uAE01\uB294 \uC6B8\uC74C\uC18C\uB9AC\uAC00
+    - "\uC544\uC544\uC545...! \uB108\uD76C\uB4E4\uC774 \uB2A6\uC5B4\uC11C! \uB108\uD76C\uB4E4\uC774\u2026!!"
+    - "\uC591\uBBFC\uC758 \uAD34\uC131\uC740 \uACE7 \uBAA9\uC744 \uAE01\uB294 \uC6B8\uC74C\uC18C\uB9AC\uAC00
       \uB418\uC5C8\uB2E4. \uB0A8\uC790\uB294 \uD798\uC5C6\uC774 \uC4F0\uB7EC\uC838
-      \uC774\uBBF8 \uC228\uC744 \uC26C\uC9C0 \uC54A\uB294 \uC5EC\uC778\uC744 \uB04C\uC5B4\uC548\uC558\uB2E4.)"
+      \uC774\uBBF8 \uC228\uC744 \uC26C\uC9C0 \uC54A\uB294 \uC5EC\uC778\uC744 \uB04C\uC5B4\uC548\uC558\uB2E4."
     names:
+    - 
     - "\uCCAD\uC9C4"
     - "\uCCAD\uBA85"
     - "\uC8FC\uBBFC"
+    - 
     sprites:
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: d116fc19942bcee4589183f2cdc4a860, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_8:
     sentences:
-    - "(\uC808\uB69D\uC774\uBA70 \uAC78\uC5B4\uC628 \uB178\uC778\uC774 \uBB34\uB98E\uC744
-      \uAFC7\uC5C8\uB2E4.) \uB3C4\uC0AC\uB2D8\uB4E4, \uC8C4\uC1A1\uD569\uB2C8\uB2E4\u2026.
-      \uC80A\uC740\uC774\uC758 \uC2E4\uC218\uB97C \uB113\uC740 \uB9C8\uC74C\uC73C\uB85C
-      \uC6A9\uC11C\uD574\uC8FC\uC2ED\uC2DC\uC624\u2026.."
-    - "(\uD479 \uC219\uC774\uB294 \uACE0\uAC1C\uC5D0 \uCCAD\uC9C4\uC774 \uB2E4\uAC00\uAC00
-      \uB178\uC778\uC744 \uC77C\uC73C\uCF30\uB2E4.)\uBB34\uC2A8 \uB9C8\uC74C\uC778\uC9C0
-      \uC54C\uACE0 \uC788\uC18C. \uAC71\uC815\uD558\uC9C0 \uB9C8\uC2DC\uC624. "
-    - "(\uC228\uC744 \uAC70\uCE60\uAC8C \uB0B4\uC26C\uB358 \uB178\uC778\uC774 \uCCAD\uC9C4\uC758
-      \uC190\uC5D0 \uACE0\uAC1C\uB97C \uB4E4\uC5C8\uB2E4. \uB178\uC778\uC740 \uBC14\uB974\uB974
-      \uB5A8\uB9AC\uB294 \uC190\uC73C\uB85C \uCCAD\uC9C4\uC758 \uC190\uC744 \uBD99\uC7A1\uC558\uB2E4.)
-      \uAC10\uC0AC, \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uAD6C\uD574\uC8FC\uC154\uC11C
+    - "\uC808\uB69D\uC774\uBA70 \uAC78\uC5B4\uC628 \uB178\uC778\uC774 \uBB34\uB98E\uC744
+      \uAFC7\uC5C8\uB2E4."
+    - "\uB3C4\uC0AC\uB2D8\uB4E4, \uC8C4\uC1A1\uD569\uB2C8\uB2E4\u2026. \uC80A\uC740\uC774\uC758
+      \uC2E4\uC218\uB97C \uB113\uC740 \uB9C8\uC74C\uC73C\uB85C \uC6A9\uC11C\uD574\uC8FC\uC2ED\uC2DC\uC624\u2026.."
+    - "\uD479 \uC219\uC774\uB294 \uACE0\uAC1C\uC5D0 \uCCAD\uC9C4\uC774 \uB2E4\uAC00\uAC00
+      \uB178\uC778\uC744 \uC77C\uC73C\uCF30\uB2E4."
+    - "\uBB34\uC2A8 \uB9C8\uC74C\uC778\uC9C0 \uC54C\uACE0 \uC788\uC18C. \uAC71\uC815\uD558\uC9C0
+      \uB9C8\uC2DC\uC624. "
+    - "\uC228\uC744 \uAC70\uCE60\uAC8C \uB0B4\uC26C\uB358 \uB178\uC778\uC774 \uCCAD\uC9C4\uC758
+      \uC190\uC5D0 \uACE0\uAC1C\uB97C \uB4E4\uC5C8\uB2E4."
+    - "\uB178\uC778\uC740 \uBC14\uB974\uB974 \uB5A8\uB9AC\uB294 \uC190\uC73C\uB85C
+      \uCCAD\uC9C4\uC758 \uC190\uC744 \uBD99\uC7A1\uC558\uB2E4."
+    - "\uAC10\uC0AC, \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uAD6C\uD574\uC8FC\uC154\uC11C
       \uAC10\uC0AC\uD569\uB2C8\uB2E4\u2026."
-    - "(\uCCAD\uBA85\uACFC \uCCAD\uC9C4\uC740 \uBB34\uB108\uC9C4 \uAC74\uBB3C\uC758
+    - "\uCCAD\uBA85\uACFC \uCCAD\uC9C4\uC740 \uBB34\uB108\uC9C4 \uAC74\uBB3C\uC758
       \uC794\uD574\uB97C \uB4A4\uC9C0\uBA70 \uC2DC\uCCB4\uC640 \uC0DD\uC874\uC790\uB97C
       \uCC3E\uC558\uB2E4. \uB9CE\uC740 \uC774\uB4E4\uC774 \uC8FD\uC5C8\uC9C0\uB9CC
-      \uADF8\uB798\uB3C4 \uC0B4\uC544 \uC788\uC5C8\uB2E4.)"
+      \uADF8\uB798\uB3C4 \uC0B4\uC544 \uC788\uC5C8\uB2E4."
     names:
+    - ' '
     - "\uCD0C\uC7A5"
+    - ' '
     - "\uCCAD\uC9C4"
+    - ' '
+    - ' '
     - "\uCD0C\uC7A5"
     - ' '
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_9:
     sentences:
-    - "(\uBA40\uB9AC\uC11C \uAC1C\uBC29\uC774 \uD5D0\uB808\uBC8C\uB5A1 \uB2EC\uB824\uC628\uB2E4)"
+    - "\uBA40\uB9AC\uC11C \uAC1C\uBC29\uC774 \uD5D0\uB808\uBC8C\uB5A1 \uB2EC\uB824\uC628\uB2E4."
     names:
     - ' '
     sprites:
@@ -35386,9 +35569,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1763135725
-  m_SortingLayer: 11
-  m_SortingOrder: 10
+  m_SortingLayerID: -863700563
+  m_SortingLayer: 14
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a66d0374c57c8e14f930d6515a00dc31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -35400,21 +35583,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1299167527
-Transform:
+--- !u!224 &1299167527
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299167525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -369.1491, y: 237.70966, z: -99.09157}
-  m_LocalScale: {x: 110.101746, y: 110.101746, z: 1.1010174}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 90, y: 90, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 57087961}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -351.47, y: 181.29001}
+  m_SizeDelta: {x: 156.6641, y: 61.968}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1300162396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37264,8 +37452,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368475485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 320.9918, y: -175, z: 0}
-  m_LocalScale: {x: 211.87575, y: 211.87575, z: 1.0593787}
+  m_LocalPosition: {x: 337, y: -92, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 828718603}
@@ -37333,7 +37521,7 @@ SpriteRenderer:
   m_SortingLayerID: -1638406605
   m_SortingLayer: 12
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1577124322, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d521b575a4ae8e747b13e48f88d5eda5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -39448,6 +39636,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570385036}
   m_CullTransparentMesh: 1
+--- !u!1 &1570990038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1570990039}
+  - component: {fileID: 1570990041}
+  - component: {fileID: 1570990040}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1570990039
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570990038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 870415973}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6, y: 4}
+  m_SizeDelta: {x: 70, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1570990040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570990038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 63f005e5bb96c104b89eed9d0318e2d5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1570990041
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570990038}
+  m_CullTransparentMesh: 1
 --- !u!1 &1571178925
 GameObject:
   m_ObjectHideFlags: 0
@@ -39793,7 +40057,7 @@ RectTransform:
   - {fileID: 1302565934}
   - {fileID: 1070530584}
   m_Father: {fileID: 914350694}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -43695,7 +43959,7 @@ MonoBehaviour:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -43729,12 +43993,12 @@ MonoBehaviour:
     - 
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 806b3ebc1b331ba4492bec6b83eb21bc, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: b3aa8a15a60470143a35dd76197f512e, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -46028,7 +46292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c191d72ff5cab40866ce159e8db008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 35
+  damageAmount: 45
 --- !u!70 &2082664774
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
