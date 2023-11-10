@@ -14,4 +14,5 @@ services:
       - /var/www/backend:/var/www/backend
       - /var/www/frontend:/var/www/frontend
       - /var/www/Web/blossoming-blade:/var/www/Web/blossoming-blade
+      - /usr/bin/docker:/usr/bin/docker:shared
     user: root
