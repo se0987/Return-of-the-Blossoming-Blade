@@ -12,5 +12,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
       - /var/www/backend:/var/www/backend
-      - /var/www/frontend:/var/www/frontend     
+      - /var/www/frontend:/var/www/frontend
+      - /var/www/Web/blossoming-blade:/var/www/Web/blossoming-blade
     user: root
