@@ -6,11 +6,14 @@ public class CMCutScene1 : MonoBehaviour
 {
     public Dialogue dialogue_1;
 
+    public int playMusicTrack;
+
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private PlayerStatus playerStatus;
+    private BGMManager bgmManager;
 
     //private bool flag;
     private bool can = false;
@@ -24,6 +27,7 @@ public class CMCutScene1 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
+        bgmManager = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +70,8 @@ public class CMCutScene1 : MonoBehaviour
             }
         }
         theOrder.Appear("BlackScreen", false);
+        bgmManager.Stop();
+        bgmManager.Play(playMusicTrack);
 
         theOrder.Move();
     }

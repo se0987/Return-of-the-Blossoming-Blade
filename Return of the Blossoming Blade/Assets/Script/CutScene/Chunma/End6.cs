@@ -7,11 +7,15 @@ public class End6 : MonoBehaviour
     public Dialogue dialogue_1;
     public Dialogue dialogue_2;
     public Dialogue dialogue_3;
+    public int playMusicTrack;
 
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager bgmManager;
+    public string swordSound;
+    private AudioManager theAudio;
 
     //private bool flag;
     private bool can = false;
@@ -26,6 +30,8 @@ public class End6 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        bgmManager = FindObjectOfType<BGMManager>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +57,8 @@ public class End6 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        bgmManager.Stop();
+        bgmManager.Play(playMusicTrack);
 
         theOrder.Action("Player", "LAST");
 
@@ -61,6 +69,7 @@ public class End6 : MonoBehaviour
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Action("Player", "AttackH");
+        theAudio.Play(swordSound);
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
