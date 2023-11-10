@@ -48,7 +48,7 @@ public class SkillCooldownManager : MonoBehaviour
     public Collider2D playerCollider1; // 플레이어 콜라이더 참조
     public Collider2D playerCollider2; // 플레이어 콜라이더 참조
 
-    public float dashDistance = 150f; // 대쉬 거리
+    public float dashDistance = 185f; // 대쉬 거리
 
     public PlayerStatus playerStatus; // PlayerStatus 참조
 
