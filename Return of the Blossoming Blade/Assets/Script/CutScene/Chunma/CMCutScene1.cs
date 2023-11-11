@@ -14,6 +14,7 @@ public class CMCutScene1 : MonoBehaviour
     private ChoiceManager theChoice;
     private PlayerStatus playerStatus;
     private BGMManager bgmManager;
+    private ChapterManager theChapter;
 
     //private bool flag;
     private bool can = false;
@@ -28,6 +29,7 @@ public class CMCutScene1 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
         bgmManager = FindObjectOfType<BGMManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +46,8 @@ public class CMCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+
+        theChapter.ShowChapter("Chapter7\n°áÀü");
 
         theOrder.Appear("BlackScreen", true);
         if (PlayerPrefs.HasKey("choice2"))

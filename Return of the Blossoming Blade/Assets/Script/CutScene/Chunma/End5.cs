@@ -9,6 +9,7 @@ public class End5 : MonoBehaviour
     public Dialogue dialogue_3;
     public Dialogue dialogue_4;
     public Dialogue dialogue_5;
+
     private BGMManager bgmManager;
     public int playMusicTrack1;
     public int playMusicTrack2;
@@ -17,6 +18,8 @@ public class End5 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private ChapterManager theChapter;
+
     public string swordSound;
     private AudioManager theAudio;
 
@@ -35,6 +38,7 @@ public class End5 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,6 +98,8 @@ public class End5 : MonoBehaviour
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
+
+        theChapter.ShowChapter("결말 5\n천마천세 만마앙복");
 
         theOrder.Move();
     }

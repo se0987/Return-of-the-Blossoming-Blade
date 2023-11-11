@@ -14,6 +14,8 @@ public class End2 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private ChapterManager theChapter;
+
     public int playMusicTrack1;
     public int playMusicTrack2;
     private BGMManager bgmManager;
@@ -35,6 +37,7 @@ public class End2 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +96,8 @@ public class End2 : MonoBehaviour
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
+
+        theChapter.ShowChapter("결말 2\n매화검존 청명 생존");
 
         theOrder.Move();
     }

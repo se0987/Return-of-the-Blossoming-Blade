@@ -2858,6 +2858,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1ec2652b77fd5314ba5b68eee311d0fa, type: 3}
   - {fileID: 8300000, guid: 7aa47067287b24213ad27415122b72a6, type: 3}
   - {fileID: 8300000, guid: 5022269bc956f4decaf06c658a4ac63b, type: 3}
+  - {fileID: 8300000, guid: 749f56ac86c374cba953a07672be405e, type: 3}
 --- !u!210 &520121844
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -3327,7 +3328,8 @@ MonoBehaviour:
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-  playMusicTrack: 6
+  playMusicTrack1: 6
+  playMusicTrack2: 7
   swordSound: sword
   end: 0
 --- !u!1 &568962959
@@ -11969,6 +11971,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 1820202417}
   playerCollider2: {fileID: 2080922738}
   dashDistance: 150
+  playerStatus: {fileID: 0}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!210 &2032915886
 SortingGroup:
   m_ObjectHideFlags: 0
