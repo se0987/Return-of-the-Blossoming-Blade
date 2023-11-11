@@ -10,6 +10,7 @@ public class CJCutScene5 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private CJCutScene4 cjCutScene4;
 
     //private bool flag;
     private bool can = false;
@@ -21,6 +22,7 @@ public class CJCutScene5 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        cjCutScene4 = FindObjectOfType<CJCutScene4>();
         theChoice = FindObjectOfType<ChoiceManager>();
     }
 
@@ -44,6 +46,7 @@ public class CJCutScene5 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        theOrder.Appear("CheongJin", false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
@@ -53,10 +56,11 @@ public class CJCutScene5 : MonoBehaviour
         {
             if (temp[i].gateName.Equals("GoToCheongMun"))
             {
-                temp[i].move = false;
+                temp[i].move = true;
                 break;
             }
         }
+        cjCutScene4.enable = true;
         theOrder.Move();
     }
 }

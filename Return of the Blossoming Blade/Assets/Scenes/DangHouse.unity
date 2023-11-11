@@ -204,8 +204,8 @@ MonoBehaviour:
   transferMapName: CheongJin
   move: 0
   gateName: GoToCheongJin
-  doorSound: 
-  stop: 0
+  doorSound: transferMap
+  stop: 1
 --- !u!61 &30830745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -736,79 +736,6 @@ Canvas:
   m_SortingLayerID: -1378597243
   m_SortingOrder: 2
   m_TargetDisplay: 0
---- !u!1 &80102269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 80102270}
-  - component: {fileID: 80102272}
-  - component: {fileID: 80102271}
-  m_Layer: 0
-  m_Name: BGM2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &80102270
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80102269}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -814, y: -3554, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1369994909}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &80102271
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80102269}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 105.69339, y: 85.275345}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 212.3869, y: 171.55078}
-  m_EdgeRadius: 0
---- !u!114 &80102272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80102269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 1
-  enable: 1
 --- !u!1 &83332105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467262860130, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -7307,6 +7234,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  doorSound: door
 --- !u!1 &580651948 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467947223124, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -8871,79 +8799,6 @@ SortingGroup:
   m_SortingLayerID: 208271681
   m_SortingLayer: 8
   m_SortingOrder: 0
---- !u!1 &600908687
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600908688}
-  - component: {fileID: 600908690}
-  - component: {fileID: 600908689}
-  m_Layer: 0
-  m_Name: BGM4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &600908688
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600908687}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 874, y: -2896, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1369994909}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &600908689
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600908687}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 891.2505, y: -35.81241}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 977.78467, y: 413.72626}
-  m_EdgeRadius: 0
---- !u!114 &600908690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600908687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 3
-  enable: 1
 --- !u!1 &601666508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858466915377355, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -9103,7 +8958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621402190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -183, y: 55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9171,7 +9026,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3d1fc54a2f6df7840a89b832c0c32427, type: 3}
     Volumn: 1
     loop: 0
-  - name: hospitalDoor
+  - name: door
     clip: {fileID: 8300000, guid: 9de40af237a4d4543b7aef8d826802a9, type: 3}
     Volumn: 1
     loop: 0
@@ -9191,6 +9046,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
     Volumn: 1
     loop: 0
+  - name: heart
+    clip: {fileID: 8300000, guid: 5097d979d10384c48a3741fd4b28b992, type: 3}
+    Volumn: 1.5
+    loop: 1
 --- !u!1001 &638445291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9715,6 +9574,38 @@ MonoBehaviour:
       \uAC00\uBA74,"
     - "\uD615\uB2D8\u22EF\u22EF. \uB2F9\uAC00\u22EF\u22EF \uB2F9\uAC00\uB97C\u22EF\u22EF.
       \uC81C \uC219\uC9C8\uB4E4\uC744\u22EF\u22EF. \uBD80\uD0C1\u22EF\u22EF."
+    names:
+    - "\uCCAD\uBA85"
+    - "\uB2F9\uBCF4"
+    - "\uCCAD\uBA85"
+    - ' '
+    - "\uB2F9\uBCF4"
+    - ' '
+    - "\uB2F9\uBCF4"
+    - "\uCCAD\uBA85"
+    - "\uB2F9\uBCF4"
+    sprites:
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
+    dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  dialogue_4_2:
+    sentences:
     - "(\uC228\uC774 \uAEBC\uC9C4\uB2E4. \uCC44 \uB208\uB3C4 \uAC10\uC9C0 \uBABB\uD55C
       \uB2F9\uBCF4\uB294 \uC5B8\uC81C \uC2DC\uB044\uB7EC\uC6E0\uB2E4\uB294 \uB4EF
       \uCE68\uBB35\uD588\uB2E4.)"
@@ -9728,45 +9619,18 @@ MonoBehaviour:
       \uBAB8\uC5D0 \uB2E4\uC2DC \uC628\uAE30\uAC00 \uB9F4\uB3CC\uAC70\uB77C \uBBFF\uB294
       \uAC83 \uCC98\uB7FC.)"
     names:
-    - "\uCCAD\uBA85"
-    - "\uB2F9\uBCF4"
-    - "\uCCAD\uBA85"
     - ' '
-    - "\uB2F9\uBCF4"
-    - ' '
-    - "\uB2F9\uBCF4"
-    - "\uCCAD\uBA85"
-    - "\uB2F9\uBCF4"
-    - "\uB2F9\uBCF4"
     - "\uCCAD\uBA85"
     - ' '
     - ' '
     - ' '
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
-    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
-    - {fileID: 1345487238, guid: 467dcaa7ec8f6474ba1118090fd66e6c, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -19821,7 +19685,7 @@ MonoBehaviour:
   targetBound: {fileID: 1160823359}
   gateName: GoToDangBo
   move: 0
-  moveSound: 
+  moveSound: transferMap
   BGMStop: 0
 --- !u!61 &1281951883
 BoxCollider2D:
@@ -20256,9 +20120,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2077228850}
-  - {fileID: 80102270}
-  - {fileID: 2116111672}
-  - {fileID: 600908688}
   m_Father: {fileID: 1780660895}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20371,10 +20232,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 2340ed91edd3d754d839895031645513, type: 3}
-  - {fileID: 8300000, guid: 46dbf1f40d4aa478b9496d00baf858fc, type: 3}
-  - {fileID: 8300000, guid: a828452b20b6a45349875811c113832f, type: 3}
-  - {fileID: 8300000, guid: 3114dceb2289149dcba43042024c2abc, type: 3}
+  - {fileID: 8300000, guid: 39cdf54daa3d64db8affb2da7a2d00d0, type: 3}
+  - {fileID: 8300000, guid: 60c7d397cd1b8b24c91723d7c8738715, type: 3}
+  - {fileID: 8300000, guid: 12d57bce975aa1f4c95e580cb6a6c26c, type: 3}
+  - {fileID: 8300000, guid: 3b8c026ede4a5450cb269f6e6e38521b, type: 3}
+  - {fileID: 8300000, guid: 58e86917eb3fe498fa5e6cb0e5bb9f7a, type: 3}
 --- !u!1 &1380045725
 GameObject:
   m_ObjectHideFlags: 0
@@ -20841,6 +20703,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 830017377}
   playerCollider2: {fileID: 1571586874}
   dashDistance: 150
+  playerStatus: {fileID: 0}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!1 &1459936713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467985756251, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -25013,79 +24880,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusicTrack: 0
   enable: 1
---- !u!1 &2116111671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2116111672}
-  - component: {fileID: 2116111674}
-  - component: {fileID: 2116111673}
-  m_Layer: 0
-  m_Name: BGM3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2116111672
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116111671}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1859, y: -2896, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1369994909}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2116111673
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116111671}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 540.4183, y: -35.81241}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1200.9393, y: 413.72626}
-  m_EdgeRadius: 0
---- !u!114 &2116111674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116111671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playMusicTrack: 2
-  enable: 0
 --- !u!1 &2118380366
 GameObject:
   m_ObjectHideFlags: 0

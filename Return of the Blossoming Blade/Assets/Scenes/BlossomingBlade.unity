@@ -40500,7 +40500,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3d1fc54a2f6df7840a89b832c0c32427, type: 3}
     Volumn: 1
     loop: 0
-  - name: hospitalDoor
+  - name: door
     clip: {fileID: 8300000, guid: 9de40af237a4d4543b7aef8d826802a9, type: 3}
     Volumn: 1
     loop: 0

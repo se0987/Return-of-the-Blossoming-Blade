@@ -34,6 +34,7 @@ public class ChoiceManager : MonoBehaviour
     {
         choice1.text = "";
         choice2.text = "";
+        nowChoice = 1;
         theAudio = FindObjectOfType<AudioManager>();
     }
 
@@ -61,6 +62,7 @@ public class ChoiceManager : MonoBehaviour
         animFlower1.SetBool("Choice", false);
         animFlower2.SetBool("Choice", false);
         PlayerPrefs.SetInt("choice" + saveN.ToString(), nowChoice);
+        nowChoice = 1;//√ ±‚»≠
         PlayerPrefs.Save();
     }
 
@@ -71,7 +73,7 @@ public class ChoiceManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if(nowChoice != 1)
+                if(nowChoice == 2)
                 {
                     theAudio.Play(clickSound);
                     nowChoice = 1;

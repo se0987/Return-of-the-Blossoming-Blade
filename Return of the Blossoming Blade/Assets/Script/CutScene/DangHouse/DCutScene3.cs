@@ -11,6 +11,7 @@ public class DCutScene3 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -23,6 +24,7 @@ public class DCutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +51,8 @@ public class DCutScene3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
+
+        theBGM.Play(2);
 
         theOrder.Move();
     }
