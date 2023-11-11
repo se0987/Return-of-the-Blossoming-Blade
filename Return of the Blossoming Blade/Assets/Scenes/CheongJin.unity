@@ -4778,7 +4778,7 @@ MonoBehaviour:
   targetBound: {fileID: 45836970}
   gateName: GoToCheongJinRoad
   move: 0
-  moveSound: 
+  moveSound: transferMap
   BGMStop: 1
 --- !u!61 &496293180
 BoxCollider2D:
@@ -12002,7 +12002,7 @@ MonoBehaviour:
   targetBound: {fileID: 94676999}
   gateName: GoToMeet
   move: 1
-  moveSound: 
+  moveSound: transferMap
   BGMStop: 1
 --- !u!61 &932952205
 BoxCollider2D:
@@ -19615,7 +19615,7 @@ MonoBehaviour:
   targetBound: {fileID: 917190162}
   gateName: GoToCheongMun
   move: 0
-  moveSound: 
+  moveSound: transferMap
   BGMStop: 1
 --- !u!61 &1797485966
 BoxCollider2D:
@@ -20045,7 +20045,7 @@ MonoBehaviour:
   transferMapName: Chunma
   move: 0
   gateName: GoToChunma
-  doorSound: 
+  doorSound: transferMap
   stop: 1
 --- !u!61 &1857868987
 BoxCollider2D:
