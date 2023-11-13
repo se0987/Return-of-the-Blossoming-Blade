@@ -17,6 +17,8 @@ public class OOMCutScene1 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +41,14 @@ public class OOMCutScene1 : MonoBehaviour
         playerStatus.UpgradeMaxPosion();
 
         theDM.ShowDialogue(dialogue_1);
-        theOrder.Turn("Player", "UP");
-        theOrder.Turn("Player", "UP");
-        theOrder.Turn("Player", "UP");
+        theOrder.Move("Player", "UP");
+        theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
+        theOrder.Move("DangBo2", "UP");
+        theOrder.Move("DangBo2", "UP");
+        theOrder.Move("DangBo2", "UP");
 
         theOrder.Move();
+        arrow.SetActive(true);
     }
 }

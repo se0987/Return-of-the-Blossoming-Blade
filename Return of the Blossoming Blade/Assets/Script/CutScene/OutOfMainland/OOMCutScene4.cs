@@ -16,6 +16,8 @@ public class OOMCutScene4 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +60,20 @@ public class OOMCutScene4 : MonoBehaviour
         theOrder.Move("Master2", "DOWN");//야수궁으로 안내
         theOrder.Move("Master2", "DOWN");
         theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
         theOrder.Move("Master2", "DOWN");
-        theOrder.Appear("Master2", false);
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN"); 
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
         yield return new WaitUntil(() => !theDM.talking);
 
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
@@ -73,5 +87,6 @@ public class OOMCutScene4 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow3.SetActive(true);
     }
 }
