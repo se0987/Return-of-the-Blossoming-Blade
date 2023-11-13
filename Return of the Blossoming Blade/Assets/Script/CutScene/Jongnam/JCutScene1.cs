@@ -18,6 +18,8 @@ public class JCutScene1 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
+    
+    public GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class JCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow.SetActive(false);
 
         int fame = 0;
         int nigritude = 0;

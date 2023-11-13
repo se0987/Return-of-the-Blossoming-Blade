@@ -25,6 +25,7 @@ public class DCutScene5 : MonoBehaviour
     public bool first = true;
 
     public bool enable = false;
+    public GameObject arrow1;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class DCutScene5 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
 
         /*        if (PlayerPrefs.HasKey("ChunSalTime"))
                 {

@@ -20,6 +20,9 @@ public class DCutScene2 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow1;
+    public GameObject arrow2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,7 @@ public class DCutScene2 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
         theAudio.Play(doorSound);
+        arrow1.SetActive(false);
 
         theOrder.Appear("BlackScreen", true);
         yield return new WaitForSeconds(4f);
@@ -100,6 +104,7 @@ public class DCutScene2 : MonoBehaviour
                 break;
             }
         }
+        arrow1.SetActive(true);
 
         theOrder.Move();
     }
