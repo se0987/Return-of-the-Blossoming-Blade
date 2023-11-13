@@ -10,6 +10,8 @@ public class CJCutScene1 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
+    public GameObject arrow1;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
@@ -36,6 +38,8 @@ public class CJCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
+        theOrder.Appear("CheongMun", false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);

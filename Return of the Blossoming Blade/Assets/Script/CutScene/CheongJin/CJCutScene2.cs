@@ -20,6 +20,8 @@ public class CJCutScene2 : MonoBehaviour
     private ChapterManager theChapter;
     private PlayerStatus playerStatus;
 
+    public GameObject arrow1;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
@@ -132,6 +134,8 @@ public class CJCutScene2 : MonoBehaviour
         else
         {
         }
+
+        arrow1.SetActive(true);
 
         theOrder.Move();
     }
