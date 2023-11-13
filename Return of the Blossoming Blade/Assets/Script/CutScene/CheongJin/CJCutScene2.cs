@@ -20,6 +20,8 @@ public class CJCutScene2 : MonoBehaviour
     private ChapterManager theChapter;
     private PlayerStatus playerStatus;
 
+    public GameObject arrow1;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
@@ -51,12 +53,15 @@ public class CJCutScene2 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
-
+        theOrder.Turn("Player", "DOWN");
+        theOrder.Appear("CheongMun", true);
+        theOrder.Turn("CheongMun", "RIGHT");
         theChapter.ShowChapter("Chapter6\nÃ»Áø");
 
         playerStatus.UpgradeMaxPosion();
 
         theDM.ShowDialogue(dialogue_1);
+        theOrder.Turn("CheongMun", "UP");
         yield return new WaitUntil(() => !theDM.talking);
 
         theChoice.ShowChoice(choice_1, 2);
@@ -129,6 +134,8 @@ public class CJCutScene2 : MonoBehaviour
         else
         {
         }
+
+        arrow1.SetActive(true);
 
         theOrder.Move();
     }

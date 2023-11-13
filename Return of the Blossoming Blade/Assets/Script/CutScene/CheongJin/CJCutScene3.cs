@@ -12,6 +12,8 @@ public class CJCutScene3 : MonoBehaviour
     private ChoiceManager theChoice;
     private CJCutScene4 cjCutScene4;
     private BGMManager bgmManager;
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     //private bool flag;
     private bool can = false;
@@ -58,8 +60,9 @@ public class CJCutScene3 : MonoBehaviour
     {
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
-        yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
         bgmManager.Play(2);
+        yield return new WaitForSeconds(0.2f);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
@@ -76,6 +79,7 @@ public class CJCutScene3 : MonoBehaviour
         }
 
         cjCutScene4.enable = true;
+        arrow2.SetActive(true);
 
         theOrder.Move();
     }
