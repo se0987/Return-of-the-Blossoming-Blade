@@ -20,6 +20,8 @@ public class CutScene7 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow7;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class CutScene7 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (one)
+        if (one && enemyCount == 0)
         {
             one = false;
             StartCoroutine(EventCoroutine());
@@ -50,22 +52,17 @@ public class CutScene7 : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
-
+            
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitForSeconds(0.2f);
-        theOrder.Move("DangBo", "DOWN");
-        theOrder.Move("DangBo", "DOWN");
-        theOrder.Move("DangBo", "DOWN");
-        theOrder.Move("DangBo", "DOWN");
-        theOrder.Move("DangBo", "DOWN");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
-        theOrder.Move("DangBo", "DOWN");
-        theOrder.Move("DangBo", "DOWN");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
@@ -84,6 +81,8 @@ public class CutScene7 : MonoBehaviour
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Appear("CheongJin", false);
@@ -102,5 +101,14 @@ public class CutScene7 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow7.SetActive(true);
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
     }
 }

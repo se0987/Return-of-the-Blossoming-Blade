@@ -7,8 +7,9 @@ public class CutScene7_1 : MonoBehaviour
     public Dialogue dialogue_1;
 
     private DialogueManager theDM;
-    private OrderManager theOrder;
-    private PlayerManager thePlayer;
+    public PlayerManager thePlayer;
+    public GameObject forestPointDebug1;
+    public GameObject forestPointDebug2;
 
 
     //private bool flag;
@@ -19,8 +20,6 @@ public class CutScene7_1 : MonoBehaviour
     void Start()
     {
         theDM = FindObjectOfType<DialogueManager>();
-        theOrder = FindObjectOfType<OrderManager>();
-        thePlayer = FindObjectOfType<PlayerManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,13 +33,11 @@ public class CutScene7_1 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
-        theOrder.PreLoadCharacter();
-        theOrder.NotMove();
-        yield return new WaitForSeconds(0.2f);
-
+        PlayerManager.instance.notMove = true;
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        theOrder.Move("Player", "RIGHT");
-        theOrder.Move();
+        PlayerManager.instance.notMove = false;
+        forestPointDebug1.SetActive(false);
+        forestPointDebug2.SetActive(false);
     }
 }
