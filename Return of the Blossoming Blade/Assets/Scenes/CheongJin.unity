@@ -7451,11 +7451,11 @@ MonoBehaviour:
     - ' '
     - ' '
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1675356423, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 9bd19c2a4efbc934ab60d7e4ba3e0c0a, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
@@ -17969,27 +17969,27 @@ MonoBehaviour:
     - "\uCCAD\uBA85"
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
+    - {fileID: 21300000, guid: 7d5580a558fd64244961d3527f10afc6, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -18040,13 +18040,13 @@ MonoBehaviour:
     - "\uCCAD\uBB38"
     sprites:
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -18131,32 +18131,32 @@ MonoBehaviour:
     - "\uCCAD\uBB38"
     - "\uCCAD\uBB38"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
+    - {fileID: 21300000, guid: fc8cdc177fe4b9543a2d4fa5aff364af, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: dc1a56f14fefd6d4c86fee5079dd2f72, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
+    - {fileID: 21300000, guid: 6942915d9f78e6047957ec80e5964492, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -18221,17 +18221,17 @@ MonoBehaviour:
     - ' '
     - "\uCCAD\uBB38"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: 21300000, guid: f4d44df7267d83d41b0c7f0d80fe48fe, type: 3}
+    - {fileID: 21300000, guid: aad40d2bee0efc54d8144bda33580e6d, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 21300000, guid: 80d7f24b44f570b4b917302aff2bd306, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -18277,16 +18277,16 @@ MonoBehaviour:
     - ' '
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1112821486, guid: e9f3ff8b370ec954aa2d66ffc717f0d8, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
+    - {fileID: 21300000, guid: 80d7f24b44f570b4b917302aff2bd306, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 21300000, guid: 5ea82acba4d980245a3bef7707f4eadb, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
