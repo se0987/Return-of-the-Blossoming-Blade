@@ -21,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     public Animator animSprite;
     public Animator animDialogueWindow;
 
+    public Animator animLoading;
+    public Animator animLoadingFlower;
+
     public string typeSound;
     public string CSound;
 
@@ -55,6 +58,18 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
         StartCoroutine(StartDialogueCoroutine());
+    }
+
+    public void ShowLoading()
+    {
+        animLoading.SetBool("Appear", true);
+        animLoadingFlower.SetBool("Appear", true);
+    }
+
+    public void UnShowLoading()
+    {
+        animLoading.SetBool("Appear", false);
+        animLoadingFlower.SetBool("Appear", false);
     }
 
     public void ExitDialogue()

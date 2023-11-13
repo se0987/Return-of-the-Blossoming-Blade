@@ -14,6 +14,8 @@ public class CutScene7 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
+    public int enemyCount = 7;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;

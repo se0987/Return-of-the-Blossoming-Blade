@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool canDash = false;  // 적이 도약(돌진) 할 수 있는지 여부를 결정하는 변수
 
-    public float dashProbability = 0.3f;  // 도약(돌진)할 확률
+    public float dashProbability = 0.4f;  // 도약(돌진)할 확률
 
     public float dashSpeed = 500f;  // 도약(돌진) 속도
 
@@ -165,6 +165,24 @@ public class EnemyAI : MonoBehaviour
 
                 break;
 
+        }
+
+        if (currentState == EnemyState.Aggro || currentState == EnemyState.Moving)
+        {
+            UpdateFacingDirection();
+        }
+    }
+
+    private void UpdateFacingDirection()
+    {
+        // 플레이어가 적보다 오른쪽에 있는지 체크
+        if (playerTransform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);  // 오른쪽을 보도록
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);  // 왼쪽을 보도록
         }
     }
 
