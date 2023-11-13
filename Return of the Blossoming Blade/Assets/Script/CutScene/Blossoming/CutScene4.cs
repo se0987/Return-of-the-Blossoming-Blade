@@ -45,9 +45,9 @@ public class CutScene4 : MonoBehaviour
 
         yield return new WaitUntil(() => !theDM.talking);
 
-        theOrder.Move("CheongJin", "UP");
-        theOrder.Move("CheongJin", "UP");
-        theOrder.Move("CheongJin", "UP");
+        theOrder.Move("CheongJin2", "UP");
+        theOrder.Move("CheongJin2", "UP");
+        theOrder.Move("CheongJin2", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");

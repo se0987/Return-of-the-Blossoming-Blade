@@ -8,12 +8,15 @@ public class DCutScene5 : MonoBehaviour
     public Dialogue dialogue_2;
     public Dialogue dialogue_3;
     public Dialogue dialogue_4;
+    public Dialogue dialogue_4_2;
     public Dialogue dialogue_5;
 
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
+    private AudioManager theAudio;
 
     //private bool flag;
     private bool can = false;
@@ -22,6 +25,7 @@ public class DCutScene5 : MonoBehaviour
     public bool first = true;
 
     public bool enable = false;
+    public GameObject arrow1;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,8 @@ public class DCutScene5 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
+        theAudio = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +63,7 @@ public class DCutScene5 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
 
         /*        if (PlayerPrefs.HasKey("ChunSalTime"))
                 {
@@ -100,6 +107,7 @@ public class DCutScene5 : MonoBehaviour
                 }*/
         if (first)//당보 생존
         {
+            theBGM.Play(4);
             theDM.ShowDialogue(dialogue_1);
             yield return new WaitUntil(() => !theDM.talking);
 
@@ -124,10 +132,15 @@ public class DCutScene5 : MonoBehaviour
         }
         else//당보 죽음
         {
+            theBGM.Play(3);
             theOrder.Appear("Player", false);
             theOrder.Action("DangBo", "NOTDIE");
             theOrder.Action("DangBo", "WAKEUP");
+            theAudio.Play("heart");
             theDM.ShowDialogue(dialogue_4);
+            yield return new WaitUntil(() => !theDM.talking);
+            theAudio.Stop("heart");
+            theDM.ShowDialogue(dialogue_4_2);
             yield return new WaitUntil(() => !theDM.talking);
             theOrder.Appear("Poor2", true);
             theOrder.Move("Poor2", "UP");

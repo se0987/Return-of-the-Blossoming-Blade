@@ -29,6 +29,11 @@ public class CutScene6 : MonoBehaviour
 
     public string sadSound;
 
+    public GameObject arrow5;
+    public GameObject arrow6;
+
+    private bool arrow5Summon = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +56,16 @@ public class CutScene6 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyCount == 0 && !arrow5Summon)
+        {
+            arrow5.SetActive(true);
+            arrow5Summon = true;
+        }
+
         if (can && one && Input.GetKeyDown(KeyCode.C) && enemyCount==0)
         {
             one = false;
+            arrow5.SetActive(false);
             StartCoroutine(EventCoroutine());
         }
     }
@@ -74,8 +86,40 @@ public class CutScene6 : MonoBehaviour
 
                 theDM.ShowDialogue(dialogue_1);
                 yield return new WaitUntil(() => !theDM.talking);
-                theOrder.Move("CheongJin2", "LEFT");
                 theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
                 theAudio.Play(sadSound);
@@ -99,8 +143,6 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("Player", "LEFT", "Running");
                 theOrder.Move("Player", "LEFT", "Running");
                 theOrder.Move("Player", "LEFT", "Running");
-                theOrder.Move("Player", "LEFT", "Running");
-                theOrder.Move("Player", "LEFT", "Running");
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_4);
@@ -112,15 +154,47 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Action("Couple", "COUPLEALONE");
 
                 theDM.ShowDialogue(dialogue_5);
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "LEFT");
+                theOrder.Move("CheongJin2", "UP");
+                theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "RIGHT");
-                theOrder.Move("CheongJin2", "UP");
-                theOrder.Move("CheongJin2", "UP");
-                theOrder.Move("CheongJin2", "UP");
                 yield return new WaitUntil(() => !theDM.talking);
 
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitForSeconds(0.3f);
-                theOrder.Move("Player", "UP");
                 yield return new WaitUntil(() => !theDM.talking);
                 theOrder.Action("Couple", "COUPLEWITH");
 
@@ -164,7 +238,7 @@ public class CutScene6 : MonoBehaviour
         {
             Debug.Log("choice1 값이 없음");
         }
-
+        arrow6.SetActive(true);
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
         for (int i = 0; i < temp.Length; i++)
         {
