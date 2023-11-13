@@ -9,6 +9,7 @@ public class TransferScene : MonoBehaviour
 
     private PlayerManager thePlayer;
     private CameraManager theCamera;
+    private DialogueManager theDialogue;
 
     public bool move = false;
     public string gateName;
@@ -27,6 +28,7 @@ public class TransferScene : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theAudio = FindObjectOfType<AudioManager>();
         bgmManager = FindObjectOfType<BGMManager>();
+        theDialogue = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -34,13 +36,20 @@ public class TransferScene : MonoBehaviour
     {
         if(collision.gameObject.name == "Player" && move)
         {
-            thePlayer.currentMapName = transferMapName;
-            SceneManager.LoadScene(transferMapName);
-            if (stop)
-            {
-                bgmManager.Stop();
-            }
-            theAudio.Play(doorSound);
+            StartCoroutine(LoadingCoroutine());
         }
+    }
+
+    IEnumerator LoadingCoroutine()
+    {
+        theDialogue.ShowLoading();
+        yield return new WaitForSeconds(2f);
+        thePlayer.currentMapName = transferMapName;
+        SceneManager.LoadScene(transferMapName);
+        if (stop)
+        {
+            bgmManager.Stop();
+        }
+        theAudio.Play(doorSound);
     }
 }

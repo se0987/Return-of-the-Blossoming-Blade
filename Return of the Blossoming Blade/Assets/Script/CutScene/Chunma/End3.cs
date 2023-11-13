@@ -11,10 +11,18 @@ public class End3 : MonoBehaviour
     public Dialogue dialogue_5;
     public Dialogue dialogue_6;
 
+    public int playMusicTrack1;
+    public int playMusicTrack2;
+    public string swordSound;
+
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private ChapterManager theChapter;
+
+    private BGMManager bgmManager;
+    private AudioManager theAudio;
 
     //private bool flag;
     private bool can = false;
@@ -29,6 +37,9 @@ public class End3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        bgmManager = FindObjectOfType<BGMManager>();
+        theAudio = FindObjectOfType<AudioManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,6 +66,9 @@ public class End3 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
 
+        bgmManager.Stop();
+        bgmManager.Play(playMusicTrack2);
+
         theOrder.Action("Player", "LAST");
 
         theDM.ShowDialogue(dialogue_1);
@@ -74,6 +88,10 @@ public class End3 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Action("Player", "AttackH");
 
+        bgmManager.Stop();
+        theAudio.Play(swordSound);
+        bgmManager.Play(playMusicTrack2);
+
         theDM.ShowDialogue(dialogue_4);
         yield return new WaitUntil(() => !theDM.talking);
 
@@ -84,6 +102,8 @@ public class End3 : MonoBehaviour
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_6);
         yield return new WaitUntil(() => !theDM.talking);
+
+        theChapter.ShowChapter("결말 3\n천려일득");
 
         theOrder.Move();
     }
