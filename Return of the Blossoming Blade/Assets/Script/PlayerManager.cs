@@ -99,7 +99,7 @@ public class PlayerManager : MovingObject
         }
         if (!notMove && !skillNotMove)
         {
-            if (Input.GetKeyDown(KeyCode.F))//Æ÷¼Ç
+            if (Input.GetKeyDown(KeyCode.F))//ï¿½ï¿½ï¿½ï¿½
             {
                 playerStatus.UsePosion();
             }
