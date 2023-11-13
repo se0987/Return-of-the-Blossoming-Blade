@@ -5571,14 +5571,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743646704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 922, y: 345, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1981949398}
-  m_Father: {fileID: 1966074888}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &743646706
 AudioSource:
@@ -5782,7 +5782,7 @@ MonoBehaviour:
   move: 0
   gateName: GoToDangHouse
   doorSound: 
-  stop: 0
+  stop: 1
 --- !u!61 &758450643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14821,12 +14821,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627021295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 922, y: 345, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1966074888}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1627021297
 MonoBehaviour:
@@ -15994,14 +15994,14 @@ MonoBehaviour:
     sentences:
     - "\uD654\uC0B0\uC758 \uC7A5\uB85C \uCCAD\uBA85\uC774\uB77C \uD558\uC624, \uC544\uBB34\uB3C4
       \uC5C6\uC18C?"
-    - "(\uAD73\uAC74\uD788 \uB2EB\uCE5C \uBB38\uC774 \uC5F4\uB9AC\uBA70 \uD478\uB978
-      \uC885\uB0A8\uC758 \uBB34\uBCF5\uC744 \uC785\uC740 \uC81C\uC790\uAC00 \uB098\uC654\uB2E4.)"
+    - "\uAD73\uAC74\uD788 \uB2EB\uCE5C \uBB38\uC774 \uC5F4\uB9AC\uBA70 \uD478\uB978
+      \uC885\uB0A8\uC758 \uBB34\uBCF5\uC744 \uC785\uC740 \uC81C\uC790\uAC00 \uB098\uC654\uB2E4."
     names:
     - "\uCCAD\uBA85"
-    - "\uC81C\uC790"
+    - ' '
     sprites:
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: 1741575208, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     dialogueWindows:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -16025,12 +16025,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_3:
     sentences:
-    - "(\uC81C\uC790\uC758 \uB4A4\uC5D0\uC11C \uBD88\uC465 \uB098\uD0C0\uB09C \uC7A5\uB85C\uB294
-      \uD55C\uCABD \uC785\uAF2C\uB9AC\uB97C \uB9D0\uC544 \uC62C\uB838\uB2E4.)\uC548\uB155\uD558\uC2DC\uC624,
-      \uD654\uC0B0 \uC7A5\uB85C."
-    - "(\uC81C\uC790\uC758 \uB4A4\uC5D0\uC11C \uBD88\uC465 \uB098\uD0C0\uB09C \uC7A5\uB85C\uB294
-      \uD55C\uCABD \uC785\uAF2C\uB9AC\uB97C \uB9D0\uC544 \uC62C\uB838\uB2E4.)\uC548\uB155\uD558\uC2DC\uC624,
-      \uD654\uC0B0 \uC7A5\uB85C."
+    - "\uC81C\uC790\uC758 \uB4A4\uC5D0\uC11C \uBD88\uC465 \uB098\uD0C0\uB09C \uC7A5\uB85C\uB294
+      \uD55C\uCABD \uC785\uAF2C\uB9AC\uB97C \uB9D0\uC544 \uC62C\uB838\uB2E4."
     - "\uC548\uB155\uD558\uC2DC\uC624, \uD654\uC0B0 \uC7A5\uB85C."
     - "\uD558! \uB09C \uB610 \uB204\uAD6C\uB77C\uACE0 \uD3B8\uC7A5\uB85C\uAD6C\uB9CC"
     - "\uC6B0\uB9AC\uAC00 \uC11C\uB85C \uC5BC\uAD74 \uBD89\uD790 \uC77C\uBC16\uC5D0
@@ -16039,13 +16035,14 @@ MonoBehaviour:
       \uC7A5\uBB38\uC778\uAED8\uC11C \uC11C\uCC30 \uC804\uB2EC\uC744 \uBD80\uD0C1\uB4DC\uB824
       \uC774\uB807\uAC8C \uC654\uC744 \uBFD0."
     - "\uACA8\uC6B0 \uC11C\uCC30 \uC804\uB2EC\uB85C \uB9E4\uD654\uAC80\uC874\uC744
-      \uBCF4\uB0C8\uB2E4\uB77C.(\uD5DB\uC6C3\uC74C\uC744 \uC9C0\uC73C\uBA70 \uCCAD\uBA85\uC774
-      \uB0B4\uBBFC \uC11C\uCC30\uC744 \uBC1B\uB294\uB2E4.)"
+      \uBCF4\uB0C8\uB2E4\uB77C."
+    - "\uD5DB\uC6C3\uC74C\uC744 \uC9C0\uC73C\uBA70 \uCCAD\uBA85\uC774 \uB0B4\uBBFC
+      \uC11C\uCC30\uC744 \uBC1B\uB294\uB2E4."
     - "\uBC14\uB85C \uC7A5\uBB38\uC778\uAED8 \uC804\uB2EC\uD558\uACA0\uC18C. \uB3CC\uC544\uAC00\uC11C
       \uB2F5\uC7A5\uC744 \uAE30\uB2E4\uB9AC\uC2DC\uC624."
-    - "(\uD55C \uBC1C \uBE7C\uB294\uB4EF\uD55C \uB9D0\uC5D0 \uCCAD\uBA85\uC774 \uBBF8\uAC04\uC744
+    - "\uD55C \uBC1C \uBE7C\uB294\uB4EF\uD55C \uB9D0\uC5D0 \uCCAD\uBA85\uC774 \uBBF8\uAC04\uC744
       \uAD6C\uAE30\uBA70 \uC704\uD611\uC801\uC73C\uB85C \uBAA9\uC18C\uB9AC\uB97C
-      \uB192\uC600\uB2E4.)"
+      \uB192\uC600\uB2E4."
     - "\uC544\uB2C8! \uC77C\uC758 \uC911\uC694\uB3C4\uB97C \uBAA8\uB974\uC624?! \uBAA8\uB4E0
       \uBB38\uD30C\uAC00 \uBAA8\uC5EC \uCC9C\uB9C8\uB97C \uCE58\uB7EC\uAC00\uB294\uB370
       \uB2F5\uC7A5\uC744 \uAE30\uB2E4\uB9AC\uB77C?"
@@ -16053,44 +16050,44 @@ MonoBehaviour:
       \uB4E4\uACE0 \uC654\uB294\uC9C0 \uBAA8\uB974\uACA0\uC18C?!"
     - "\uD5C8, \uC798\uB09C \uB9E4\uD654\uAC80\uC874\uC774 \uC624\uBA74 \uC7A5\uBB38\uC778\uAED8\uC11C
       \uBC14\uB85C \uB2F5\uC7A5\uC744 \uC918\uC57C \uD558\uB294 \uAC70\uC694?"
-    - "(\uC774\uB97C \uAF49 \uBB3C\uACE0 \uD314\uC9F1\uC744 \uB07C\uBA70 \uC5C5\uC2E0\uC5EC\uAE30\uB294
-      \uD45C\uC815\uC744 \uC9D3\uB294\uB2E4.)"
+    - "\uC774\uB97C \uAF49 \uB2E4\uBB3C\uACE0 \uD314\uC9F1\uC744 \uB07C\uBA70 \uC5C5\uC2E0\uC5EC\uAE30\uB294
+      \uD45C\uC815\uC744 \uC9D3\uB294\uB2E4."
     - "\uADF8\uB798. \uC5B4\uCC28\uD53C \uC885\uB0A8\uC758 \uD798\uC740 \uD06C\uAC8C
       \uD544\uC694 \uC5C6\uC5C8\uC18C. \uC885\uB0A8\uC758 \uB2F5\uC740 \uC54C\uACA0\uC18C\uC774\uB2E4."
     - "\uBC30\uC6C5\uC740 \uD558\uC9C0 \uC54A\uACA0\uC18C."
     - "\uC885\uB0A8\uC758 \uBC30\uC6C5 \uAC19\uC740 \uAC70 \uBC1B\uC744 \uC0DD\uAC01\uC870\uCC28
       \uC5C6\uC5C8\uC18C."
     names:
-    - "\uC885\uB0A8\uC7A5\uB85C"
-    - "\uC885\uB0A8\uC7A5\uB85C"
-    - "\uC885\uB0A8\uC7A5\uB85C"
-    - "\uCCAD\uBA85"
+    - ' '
     - "\uC885\uB0A8\uC7A5\uB85C"
     - "\uCCAD\uBA85"
     - "\uC885\uB0A8\uC7A5\uB85C"
-    - "\uC885\uB0A8\uC7A5\uB85C"
-    - "\uCCAD\uBA85"
-    - "\uCCAD\uBA85"
     - "\uCCAD\uBA85"
     - "\uC885\uB0A8\uC7A5\uB85C"
+    - ' '
+    - "\uC885\uB0A8\uC7A5\uB85C"
+    - ' '
     - "\uCCAD\uBA85"
+    - "\uCCAD\uBA85"
+    - "\uC885\uB0A8\uC7A5\uB85C"
+    - ' '
     - "\uCCAD\uBA85"
     - "\uC885\uB0A8\uC7A5\uB85C"
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
-    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
-    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
-    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
-    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
+    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
+    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
@@ -16138,8 +16135,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   dialogue_5:
     sentences:
-    - "(\uB9C8\uCE68 \uADFC\uCC98\uB97C \uC9C0\uB098\uAC00\uB358 \uC7A5\uB85C\uAC00
-      \uB2E4\uAC00\uC628\uB2E4)"
+    - "\uB9C8\uCE68 \uADFC\uCC98\uB97C \uC9C0\uB098\uAC00\uB358 \uC7A5\uB85C\uAC00
+      \uB2E4\uAC00\uC628\uB2E4"
     - "\uBA3C \uAE38 \uC624\uC2DC\uB290\uB77C \uACE0\uC0DD\uC774 \uB9CE\uC73C\uC168\uC18C,
       \uC7A5\uB85C. \uC624\uB79C\uB9CC\uC774\uAD70."
     - "\uADF8\uAC04\uC758 \uD65C\uC57D\uC740 \uC775\uD788 \uB4E4\uC5C8\uC18C. \uC12C\uC11C\uB97C
@@ -16156,7 +16153,7 @@ MonoBehaviour:
     - "\uBD80\uB514 \uC870\uC2EC\uD558\uC2DC\uC624, \uAC80\uC874"
     - "\uC2ED\uB9CC\uB300\uC0B0\uC5D0\uC11C \uBD05\uC138."
     names:
-    - "\uC885\uB0A8\uC7A5\uB85C"
+    - ' '
     - "\uC885\uB0A8\uC7A5\uB85C"
     - "\uC885\uB0A8\uC7A5\uB85C"
     - "\uCCAD\uBA85"
@@ -16168,7 +16165,7 @@ MonoBehaviour:
     - "\uC885\uB0A8\uC7A5\uB85C"
     - "\uCCAD\uBA85"
     sprites:
-    - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
+    - {fileID: -201561192, guid: 2b9485f309eb3804eb1c9be49c6c6672, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
@@ -16180,6 +16177,7 @@ MonoBehaviour:
     - {fileID: 1534203030, guid: 237e9a2a5674e7a4f81fb49febfec0e0, type: 3}
     - {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
     dialogueWindows:
+    - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
@@ -19331,10 +19329,8 @@ Transform:
   - {fileID: 573485510}
   - {fileID: 252433962}
   - {fileID: 1177032069}
-  - {fileID: 1627021296}
-  - {fileID: 743646705}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1979384225
 GameObject:
