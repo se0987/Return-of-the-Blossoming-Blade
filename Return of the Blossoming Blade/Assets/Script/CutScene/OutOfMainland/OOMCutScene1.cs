@@ -13,8 +13,6 @@ public class OOMCutScene1 : MonoBehaviour
     private ChapterManager theChapter;
     private PlayerStatus playerStatus;
 
-    //private bool flag;
-    private bool can = false;
     private bool one = true;
 
     public GameObject arrow;
@@ -28,7 +26,15 @@ public class OOMCutScene1 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
-        StartCoroutine(EventCoroutine());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (one)
+        {
+            one = false;
+            StartCoroutine(EventCoroutine());
+        }
     }
 
     IEnumerator EventCoroutine()

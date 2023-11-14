@@ -11,6 +11,7 @@ public class OOMCutScene4 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -25,6 +26,7 @@ public class OOMCutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,6 +52,7 @@ public class OOMCutScene4 : MonoBehaviour
         //theOrder.Move("OOMMaster", "SURPRISE"); //±ôÂ¦ ³î¶ó´Â ¸ð¼Ç
 
         theDM.ShowDialogue(dialogue_2);
+        theBGM.Play(3);
         yield return new WaitForSeconds(1f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "DOWN");
