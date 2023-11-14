@@ -89,10 +89,8 @@ public class Gwanghon : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-
         // rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
         // HideAttackRange();
-
         bossTransform = this.transform;
     }
 
@@ -165,11 +163,11 @@ public class Gwanghon : MonoBehaviour
         }
     }
 
-    // IEnumerator HideAttackRangeAfterDelay(float delay)
-    // {
-    //     yield return new WaitForSeconds(delay);
-    //     HideAttackRange();
-    // }
+    IEnumerator HideAttackRangeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        HideAttackRange();
+    }
 
     void ShowAttackRange(float range, AttackData attackData, Vector2 direction)
     {
@@ -199,10 +197,10 @@ public class Gwanghon : MonoBehaviour
         rangeRenderer.enabled = true;
     }
 
-    // void HideAttackRange()
-    // {
-    //     rangeRenderer.enabled = false;
-    // }
+    void HideAttackRange()
+    {
+        rangeRenderer.enabled = false;
+    }
 
     //void OnTriggerEnter2D(Collider2D other)
     //{
@@ -268,7 +266,7 @@ public class Gwanghon : MonoBehaviour
                 animator.SetInteger(animationsState, (int)States.endTeleportFront);
             }
         }
-        ShowAttackRange(teleportAttack.range, teleportAttack, lookDirection);
+        // ShowAttackRange(teleportAttack.range, teleportAttack, lookDirection);
         Vector2 calculatedOffset = CalculateCenterOffset(lookDirection, teleportAttack.rangeWidth, teleportAttack.rangeHeight);
         teleportAttack.rangeCenterOffset = calculatedOffset;
     }

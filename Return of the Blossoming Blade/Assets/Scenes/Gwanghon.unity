@@ -30151,6 +30151,7 @@ GameObject:
   - component: {fileID: 224795486}
   - component: {fileID: 224795485}
   - component: {fileID: 224795489}
+  - component: {fileID: 224795490}
   m_Layer: 8
   m_Name: Gwanghon
   m_TagString: Untagged
@@ -30171,7 +30172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1644821957}
-  movementSpeed: 80
+  movementSpeed: 100
   attackRangeIndicator: {fileID: 0}
   currentAttack:
     range: 50
@@ -30187,9 +30188,9 @@ MonoBehaviour:
   bossTransform: {fileID: 1378910792}
   rectangleRangeSprite: {fileID: 0}
   slashAttack:
-    range: 1
+    range: 80
     cooldownTime: 2
-    durationTime: 0.8
+    durationTime: 0.5
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 0
@@ -30198,9 +30199,9 @@ MonoBehaviour:
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   swingAttack:
-    range: 1
-    cooldownTime: 2
-    durationTime: 0.8
+    range: 80
+    cooldownTime: 5
+    durationTime: 0.4
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 0
@@ -30209,9 +30210,9 @@ MonoBehaviour:
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
-    range: 1
+    range: 1000
     cooldownTime: 2
-    durationTime: 0.8
+    durationTime: 0.5
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 0
@@ -30220,9 +30221,9 @@ MonoBehaviour:
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   teleportAttack:
-    range: 1
+    range: 10
     cooldownTime: 2
-    durationTime: 0.8
+    durationTime: 0.7
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 0
@@ -30291,7 +30292,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1493439601
   m_SortingLayer: 10
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 949676940, guid: 4bc692da7b3dbd941bcb41a63ce15b06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -30313,7 +30314,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1894, y: -158, z: 0}
   m_LocalScale: {x: 35, y: 35, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -30326,7 +30327,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224795484}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -30339,6 +30340,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &224795490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224795484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.061197847, y: 0.015469432}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.000001, y: 15.000001}
+    newSize: {x: 15.000001, y: 15.000001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9695871, y: 2.298384}
+  m_EdgeRadius: 0
 --- !u!210 &225923408
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -30494,8 +30521,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC120\uD0DD\uC9C01"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -51933,8 +51960,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC120\uD0DD\uC9C02"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -61703,6 +61730,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 1644821953}
   playerCollider2: {fileID: 516485191}
   dashDistance: 150
+  playerStatus: {fileID: 1644821951}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!1 &895933663
 GameObject:
   m_ObjectHideFlags: 0
@@ -66949,8 +66981,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -68934,8 +68966,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB984"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -70781,8 +70813,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD55C\uAE00 \uC65C \uC548\uB3FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -97080,6 +97112,8 @@ MonoBehaviour:
   rendererDialogueWindow: {fileID: 691542008}
   animSprite: {fileID: 167912670}
   animDialogueWindow: {fileID: 691542007}
+  animLoading: {fileID: 0}
+  animLoadingFlower: {fileID: 0}
   typeSound: scritp
   CSound: c
   talking: 0

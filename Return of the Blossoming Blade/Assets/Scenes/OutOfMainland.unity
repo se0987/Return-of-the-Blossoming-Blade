@@ -283,8 +283,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC120\uD0DD\uC9C01"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7086,8 +7086,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD55C\uAE00 \uC65C \uC548\uB3FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8591,6 +8591,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 287530065}
   playerCollider2: {fileID: 263928153}
   dashDistance: 150
+  playerStatus: {fileID: 0}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!1 &309126967
 GameObject:
   m_ObjectHideFlags: 0
@@ -10431,8 +10436,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC120\uD0DD\uC9C02"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15356,8 +15361,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25557,6 +25562,8 @@ MonoBehaviour:
   rendererDialogueWindow: {fileID: 1185865710}
   animSprite: {fileID: 893686893}
   animDialogueWindow: {fileID: 1185865709}
+  animLoading: {fileID: 0}
+  animLoadingFlower: {fileID: 0}
   typeSound: scritp
   CSound: c
   talking: 0
@@ -47613,8 +47620,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB984"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
-  m_sharedMaterial: {fileID: -7629879462507664886, guid: d308a46b6de2d044e9bb7e69e259eb05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
