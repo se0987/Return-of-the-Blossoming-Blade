@@ -42,14 +42,14 @@ public class TransferScene : MonoBehaviour
 
     IEnumerator LoadingCoroutine()
     {
-        theDialogue.ShowLoading();
-        yield return new WaitForSeconds(2f);
-        thePlayer.currentMapName = transferMapName;
-        SceneManager.LoadScene(transferMapName);
         if (stop)
         {
             bgmManager.Stop();
         }
+        theDialogue.ShowLoading();
+        yield return new WaitForSeconds(2f);
+        thePlayer.currentMapName = transferMapName;
+        SceneManager.LoadScene(transferMapName);
         theAudio.Play(doorSound);
     }
 }

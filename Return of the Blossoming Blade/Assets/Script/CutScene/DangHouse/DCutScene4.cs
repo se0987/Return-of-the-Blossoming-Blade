@@ -24,6 +24,8 @@ public class DCutScene4 : MonoBehaviour
     public bool start = false;
     public bool face2 = false;
     public bool end = false;
+    
+    public GameObject arrow1;
 
     public float time = 0f;
 
@@ -90,6 +92,7 @@ public class DCutScene4 : MonoBehaviour
                 dCutScene5.first = false;
             }
             dCutScene5.enable = true;
+            arrow1.SetActive(true);
         }
         theOrder.Move();
     }

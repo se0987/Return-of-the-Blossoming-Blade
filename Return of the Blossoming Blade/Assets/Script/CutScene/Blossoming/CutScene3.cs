@@ -12,6 +12,8 @@ public class CutScene3 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private PlayerStatus playerStatus;
+
 
     //private bool flag;
     private bool can = false;
@@ -29,6 +31,7 @@ public class CutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
         arrow4.SetActive(false);
     }
 
@@ -84,6 +87,7 @@ public class CutScene3 : MonoBehaviour
             }
 
         theOrder.Move();
+        playerStatus.GetPosion(1);
         }
     }
 }

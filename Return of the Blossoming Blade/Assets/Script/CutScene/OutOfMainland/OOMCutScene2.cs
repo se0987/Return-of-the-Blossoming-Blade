@@ -20,6 +20,8 @@ public class OOMCutScene2 : MonoBehaviour
 
     public string fireSound;
 
+    public GameObject arrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class OOMCutScene2 : MonoBehaviour
         if (one && can && Input.GetKeyDown(KeyCode.C))
         {
             one = false;
+            arrow.SetActive(false);
             StartCoroutine(EventCoroutine());
         }
     }
