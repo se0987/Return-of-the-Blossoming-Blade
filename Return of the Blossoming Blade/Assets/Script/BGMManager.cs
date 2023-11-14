@@ -15,9 +15,9 @@ public class BGMManager : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    public void Play(int _playMusicTrack)
+    public void Play(int _playMusicTrack, float volume = 0.5f)
     {
-        source.volume = 1f;
+        source.volume = volume;
         source.clip = clips[_playMusicTrack];
         source.Play();
     }

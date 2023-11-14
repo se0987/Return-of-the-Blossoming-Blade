@@ -60,6 +60,13 @@ public class SkillCooldownManager : MonoBehaviour
 
     private bool isSpaceCooldown = false; // 스페이스바 스킬 쿨다운 상태
 
+    private AudioManager theAudio;
+
+    private void Start()
+    {
+        theAudio = FindObjectOfType<AudioManager>();
+    }
+
     private void Update()
     {
         // 스킬이 활성화 중인지 체크
@@ -67,6 +74,7 @@ public class SkillCooldownManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) && !isAttacking && !anySkillActive)
         {
+            theAudio.Play("A");
             StartCoroutine(Attack());
         }
 
@@ -81,6 +89,7 @@ public class SkillCooldownManager : MonoBehaviour
         {
            if (playerStatus.currentMP >= QSkillMP) // 충분한 MP가 있는지 확인
             {
+                theAudio.Play("Q");
                 playerStatus.UseMP(QSkillMP); // MP 소모
                 StartCoroutine(UseSkill(QCooldownTime, QSkillDuration, QBar, QSkillObject, () => isQActive = true, () => isQActive = false, () => isQCooldown = true, () => isQCooldown = false));
                 StartCoroutine(QSkillEffect());
@@ -93,6 +102,7 @@ public class SkillCooldownManager : MonoBehaviour
         {
             if (playerStatus.currentMP >= WSkillMP)
             {
+                theAudio.Play("W");
                 playerStatus.UseMP(WSkillMP);
                 StartCoroutine(UseSkill(WCooldownTime, WSkillDuration, WBar, WSkillObject, () => isWActive = true, () => isWActive = false, () => isWCooldown = true, () => isWCooldown = false));
                 StartCoroutine(WSkillEffect());
@@ -104,6 +114,7 @@ public class SkillCooldownManager : MonoBehaviour
         {
             if (playerStatus.currentMP >= ESkillMP)
             {
+                theAudio.Play("E");
                 playerStatus.UseMP(ESkillMP);
                 StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
                 StartCoroutine(ESkillEffect());
@@ -112,6 +123,7 @@ public class SkillCooldownManager : MonoBehaviour
         // 스페이스바 사용
         if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove && !isSpaceCooldown)
         {
+            theAudio.Play("Space");
             StartCoroutine(Dash());
             StartCoroutine(SpaceCooldown(SpaceCooldownTime, SpaceBar, () => isSpaceCooldown = true, () => isSpaceCooldown = false));
         }
