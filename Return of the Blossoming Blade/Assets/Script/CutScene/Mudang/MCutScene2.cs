@@ -54,7 +54,7 @@ public class MCutScene2 : MonoBehaviour
         theOrder.Move("Player", "LEFT");
 
         theDM.ShowDialogue(dialogue_1);
-        theBGM.Play(1);
+        theBGM.Play(1, 0.3f);
         yield return new WaitUntil(() => !theDM.talking);
         //청명이 장로 때리기 가능? 불가능
         theDM.ShowDialogue(dialogue_2);

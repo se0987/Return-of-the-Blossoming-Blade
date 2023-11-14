@@ -8,6 +8,7 @@ public class BGMPlayer : MonoBehaviour
     private BGMManager bgmManager;
 
     public bool enable = false;
+    public float volume = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class BGMPlayer : MonoBehaviour
     {
         if (enable)
         {
-            bgmManager.Play(playMusicTrack);
+            bgmManager.Play(playMusicTrack, volume);
             enable = false;
         }
     }

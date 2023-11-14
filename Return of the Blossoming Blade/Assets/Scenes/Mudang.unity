@@ -5588,6 +5588,26 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
     Volumn: 1
     loop: 0
+  - name: A
+    clip: {fileID: 8300000, guid: 419ffb32c2a66034a99d8dde13551d00, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Q
+    clip: {fileID: 8300000, guid: 8ff2a2d7e79f81c40ac447512f879374, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: W
+    clip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: E
+    clip: {fileID: 8300000, guid: 21c4a490b24ba2045bc815f7626a40ef, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Space
+    clip: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+    Volumn: 1
+    loop: 0
 --- !u!1 &202816443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467315842699, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -6412,6 +6432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusicTrack: 0
   enable: 1
+  volume: 0.1
 --- !u!1 &251322246
 GameObject:
   m_ObjectHideFlags: 0
@@ -47144,7 +47165,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
