@@ -11,6 +11,7 @@ public class MCutScene4 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -30,6 +31,7 @@ public class MCutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +39,7 @@ public class MCutScene4 : MonoBehaviour
         if (one && end)
         {
             one = false;
+            theBGM.Play(3);
             StartCoroutine(EventCoroutine());
         }
     }
