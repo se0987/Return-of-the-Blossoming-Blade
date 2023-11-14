@@ -32,7 +32,10 @@ public class CutScene6 : MonoBehaviour
     public GameObject arrow5;
     public GameObject arrow6;
 
+    private BGMManager theBGM;
     private bool arrow5Summon = false;
+
+    public int BGM;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,7 @@ public class CutScene6 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theAudio = FindObjectOfType<AudioManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,6 +64,7 @@ public class CutScene6 : MonoBehaviour
         {
             arrow5.SetActive(true);
             arrow5Summon = true;
+            theBGM.Play(BGM);
         }
 
         if (can && one && Input.GetKeyDown(KeyCode.C) && enemyCount==0)

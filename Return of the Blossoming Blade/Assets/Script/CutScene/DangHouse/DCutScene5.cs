@@ -26,6 +26,7 @@ public class DCutScene5 : MonoBehaviour
 
     public bool enable = false;
     public GameObject arrow1;
+    public GameObject arrow2;
 
     // Start is called before the first frame update
     void Start()
@@ -168,5 +169,6 @@ public class DCutScene5 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow2.SetActive(true);
     }
 }

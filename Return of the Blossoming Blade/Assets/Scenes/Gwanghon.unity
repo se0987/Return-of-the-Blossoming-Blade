@@ -30190,26 +30190,43 @@ MonoBehaviour:
   slashAttack:
     range: 80
     cooldownTime: 2
+<<<<<<< HEAD
     durationTime: 0.8
     nextAttackTime: 0.5
     moveDistance: 0
     afterAttackDuration: 0
     damage: 15
+=======
+    durationTime: 0.5
+    nextAttackTime: 0
+    moveDistance: 0
+    afterAttackDuration: 0
+    damage: 0
+>>>>>>> develop
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   swingAttack:
     range: 80
     cooldownTime: 5
+<<<<<<< HEAD
     durationTime: 0.8
     nextAttackTime: 0.5
     moveDistance: 0
     afterAttackDuration: 0
     damage: 15
+=======
+    durationTime: 0.4
+    nextAttackTime: 0
+    moveDistance: 0
+    afterAttackDuration: 0
+    damage: 0
+>>>>>>> develop
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
+<<<<<<< HEAD
     range: 500
     cooldownTime: 2
     durationTime: 1
@@ -30217,6 +30234,15 @@ MonoBehaviour:
     moveDistance: 200
     afterAttackDuration: 0
     damage: 30
+=======
+    range: 1000
+    cooldownTime: 2
+    durationTime: 0.5
+    nextAttackTime: 0
+    moveDistance: 0
+    afterAttackDuration: 0
+    damage: 0
+>>>>>>> develop
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
@@ -30301,7 +30327,11 @@ SpriteRenderer:
   m_Size: {x: 15.000001, y: 15.000001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> develop
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &224795488
