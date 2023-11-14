@@ -11,6 +11,8 @@ public class CJCutScene5 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private CJCutScene4 cjCutScene4;
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     //private bool flag;
     private bool can = false;
@@ -47,6 +49,7 @@ public class CJCutScene5 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
         theOrder.Appear("CheongJin", false);
+        arrow1.SetActive(false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
@@ -61,6 +64,7 @@ public class CJCutScene5 : MonoBehaviour
             }
         }
         cjCutScene4.enable = true;
+        arrow2.SetActive(true);
         theOrder.Move();
     }
 }

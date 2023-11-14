@@ -16,6 +16,9 @@ public class DCutScene1 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow1;
+    public GameObject arrow2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,7 @@ public class DCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
@@ -51,6 +55,7 @@ public class DCutScene1 : MonoBehaviour
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
 
+        arrow2.SetActive(true);
         theOrder.Move();
     }
 }

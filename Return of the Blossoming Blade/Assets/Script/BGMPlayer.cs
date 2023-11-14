@@ -20,7 +20,7 @@ public class BGMPlayer : MonoBehaviour
         if (enable)
         {
             bgmManager.Play(playMusicTrack);
-            this.gameObject.SetActive(false);
+            enable = false;
         }
     }
 

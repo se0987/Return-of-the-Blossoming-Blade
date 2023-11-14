@@ -12,6 +12,7 @@ public class CJCutScene4 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private BGMManager bgmManager;
+    public GameObject arrow1;
 
     //private bool flag;
     private bool can = false;
@@ -73,6 +74,7 @@ public class CJCutScene4 : MonoBehaviour
                 break;
             }
         }
+        arrow1.SetActive(true);
 
         theOrder.Move();
     }
