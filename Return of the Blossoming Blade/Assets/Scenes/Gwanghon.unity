@@ -30190,33 +30190,33 @@ MonoBehaviour:
   slashAttack:
     range: 80
     cooldownTime: 2
-    durationTime: 0.5
-    nextAttackTime: 0
+    durationTime: 0.8
+    nextAttackTime: 0.5
     moveDistance: 0
     afterAttackDuration: 0
-    damage: 0
+    damage: 15
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   swingAttack:
     range: 80
     cooldownTime: 5
-    durationTime: 0.4
-    nextAttackTime: 0
+    durationTime: 0.8
+    nextAttackTime: 0.5
     moveDistance: 0
     afterAttackDuration: 0
-    damage: 0
+    damage: 15
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
-    range: 1000
+    range: 500
     cooldownTime: 2
-    durationTime: 0.5
-    nextAttackTime: 0
-    moveDistance: 0
+    durationTime: 1
+    nextAttackTime: 1
+    moveDistance: 200
     afterAttackDuration: 0
-    damage: 0
+    damage: 30
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}

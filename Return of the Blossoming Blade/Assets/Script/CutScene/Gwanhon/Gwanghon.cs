@@ -103,8 +103,6 @@ public class Gwanghon : MonoBehaviour
     void Update()
     {
 
-        if (isAttacking || isTeleporting) return;
-
         Vector2 direction = playerTransform.position - transform.position;
         float distance = Vector3.Distance(transform.position, playerTransform.position);
         float currentTime = Time.time;
