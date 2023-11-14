@@ -10,6 +10,7 @@ public class MCutScene3 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -22,6 +23,7 @@ public class MCutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,9 +40,30 @@ public class MCutScene3 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+        theBGM.Play(2);
 
         theOrder.Move();
     }

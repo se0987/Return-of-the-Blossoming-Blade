@@ -11,11 +11,18 @@ public class MCutScene4 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
     private bool one = true;
     public bool end = false;
+
+    public int enemyCount = 8;
+
+    public GameObject arrow1;
+    public GameObject arrow2;
+    public GameObject arrow3;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +31,7 @@ public class MCutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,6 +39,7 @@ public class MCutScene4 : MonoBehaviour
         if (one && end)
         {
             one = false;
+            theBGM.Play(3);
             StartCoroutine(EventCoroutine());
         }
     }
@@ -53,8 +62,18 @@ public class MCutScene4 : MonoBehaviour
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
+        theOrder.Move("Poor", "LEFT"); 
+        theOrder.Move("Poor", "LEFT");
         theOrder.Move("Poor", "LEFT");
         theOrder.Move("DangBo", "DOWN");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
@@ -80,5 +99,8 @@ public class MCutScene4 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow1.SetActive(true);
+        arrow2.SetActive(true);
+        arrow3.SetActive(true);
     }
 }

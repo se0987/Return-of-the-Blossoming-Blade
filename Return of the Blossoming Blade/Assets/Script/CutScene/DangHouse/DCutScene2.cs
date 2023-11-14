@@ -104,7 +104,7 @@ public class DCutScene2 : MonoBehaviour
                 break;
             }
         }
-        arrow1.SetActive(true);
+        arrow2.SetActive(true);
 
         theOrder.Move();
     }
