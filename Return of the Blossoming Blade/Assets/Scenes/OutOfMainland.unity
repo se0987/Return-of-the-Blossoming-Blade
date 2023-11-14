@@ -29021,7 +29021,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -29116,10 +29116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 2340ed91edd3d754d839895031645513, type: 3}
-  - {fileID: 8300000, guid: 46dbf1f40d4aa478b9496d00baf858fc, type: 3}
-  - {fileID: 8300000, guid: a828452b20b6a45349875811c113832f, type: 3}
-  - {fileID: 8300000, guid: 3114dceb2289149dcba43042024c2abc, type: 3}
+  - {fileID: 8300000, guid: 4224f136d3db2ae41aa5c503bd1f588b, type: 3}
+  - {fileID: 8300000, guid: 64d17727e820359439fa19a76c67a7d7, type: 3}
+  - {fileID: 8300000, guid: e2d2da4af0a27444a8a392149ef2f91e, type: 3}
+  - {fileID: 8300000, guid: a72be6dbb33ae1d48b44895f4943bee6, type: 3}
+  - {fileID: 8300000, guid: 20bd0d3e45d282e4dbdb717d5de8b025, type: 3}
 --- !u!1 &685552463
 GameObject:
   m_ObjectHideFlags: 0
@@ -29475,7 +29476,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 891.2505, y: -35.81241}
+  m_Offset: {x: 846.13086, y: -19.615631}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -29486,7 +29487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 977.78467, y: 413.72626}
+  m_Size: {x: 670.0459, y: 381.3327}
   m_EdgeRadius: 0
 --- !u!114 &687189782
 MonoBehaviour:
@@ -29500,7 +29501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc0ec864fc45144f9999a26e9a18a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playMusicTrack: 3
+  playMusicTrack: 4
   enable: 1
 --- !u!1 &692155983
 GameObject:
@@ -37062,7 +37063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playMusicTrack: 2
-  enable: 0
+  enable: 1
 --- !u!1 &1178537578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858468601908241, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -37311,7 +37312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192503996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -117, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38160,7 +38161,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
-  fireSound: "\uBD88"
+  fireSound: fire
   arrow: {fileID: 1159171677}
 --- !u!61 &1254351875
 BoxCollider2D:
@@ -39297,7 +39298,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 105.69339, y: 85.275345}
+  m_Offset: {x: 30.215271, y: 58.858093}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -39308,7 +39309,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 212.3869, y: 171.55078}
+  m_Size: {x: 461.46472, y: 458.36755}
   m_EdgeRadius: 0
 --- !u!114 &1303409359
 MonoBehaviour:
@@ -50790,6 +50791,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
     Volumn: 1
     loop: 0
+  - name: fire
+    clip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+    Volumn: 1
+    loop: 0
 --- !u!1 &1690344585
 GameObject:
   m_ObjectHideFlags: 0
@@ -51621,7 +51626,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -69.46585, y: -266.3178}
+  m_Offset: {x: -69.46582, y: -296.66452}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -51632,7 +51637,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1352.6909, y: 118.30432}
+  m_Size: {x: 1352.6909, y: 178.99786}
   m_EdgeRadius: 0
 --- !u!1 &1732036637 stripped
 GameObject:
@@ -51888,7 +51893,7 @@ MonoBehaviour:
     - "\uB354 \uB9CE\uC774 \uB300\uC811\uD558\uACE0 \uC2F6\uC9C0\uB9CC \uB9C8\uAD50\uC758
       \uCE68\uC785\uC73C\uB85C\u2026 \uC8C4\uC1A1\uD569\uB2C8\uB2E4."
     - "\uB410\uC18C. \uADF8\uAC8C \uADF8\uB300 \uD0D3\uC778\uAC00? \uB9C8\uAD50 \uD0D3\uC774\uC9C0.
-      \uADF8\uB7F0\uB370 \uADF8\uB300\uAC00 \uC57C\uC218\uAD81\uC8FC\uC624?"
+      \uD5CC\uB370 \uADF8\uB300\uAC00 \uC57C\uC218\uAD81\uC8FC\uC624?"
     - "\uC544\uB2D9\uB2C8\uB2E4. \uAD81\uC8FC\uB2D8\uC740 \uBC29\uAE08 \uB9C8\uAD50\uB97C
       \uB9C9\uB2E4 \uB3CC\uC544\uAC00\uC168\uC2B5\uB2C8\uB2E4\u2026"
     - "\uAD81\uB3C4\uAC00 \uB2E4\uAC00\uC640 \uCCAD\uBA85\uACFC \uB2F9\uBCF4\uC758
