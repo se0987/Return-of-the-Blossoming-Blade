@@ -20,6 +20,7 @@ public class JCutScene1 : MonoBehaviour
     private bool one = true;
     
     public GameObject arrow;
+    public GameObject arrow2;
 
     // Start is called before the first frame update
     void Start()
@@ -110,5 +111,6 @@ public class JCutScene1 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow2.SetActive(true);
     }
 }
