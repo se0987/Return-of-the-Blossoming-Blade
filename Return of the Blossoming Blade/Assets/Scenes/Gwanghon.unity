@@ -30188,29 +30188,30 @@ MonoBehaviour:
     rangeCenterOffset: {x: 0, y: 0}
   bossTransform: {fileID: 1378910792}
   rectangleRangeSprite: {fileID: 0}
+  flashDuration: 0.2
   slashAttack:
     range: 80
     minRange: 0
     cooldownTime: 2
     durationTime: 0.8
-    nextAttackTime: 0
+    nextAttackTime: 1
     moveDistance: 0
-    afterAttackDuration: 0
-    damage: 0
-    rangeWidth: 0
-    rangeHeight: 0
+    afterAttackDuration: 1
+    damage: 15
+    rangeWidth: 30
+    rangeHeight: 30
     rangeCenterOffset: {x: 0, y: 0}
   swingAttack:
     range: 80
     minRange: 0
     cooldownTime: 5
     durationTime: 0.8
-    nextAttackTime: 0
+    nextAttackTime: 1
     moveDistance: 0
-    afterAttackDuration: 0
-    damage: 0
-    rangeWidth: 0
-    rangeHeight: 0
+    afterAttackDuration: 2
+    damage: 40
+    rangeWidth: 100
+    rangeHeight: 100
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
     range: 300
@@ -30219,10 +30220,10 @@ MonoBehaviour:
     durationTime: 3
     nextAttackTime: 1.2
     moveDistance: 400
-    afterAttackDuration: 0
-    damage: 0
-    rangeWidth: 0
-    rangeHeight: 0
+    afterAttackDuration: 2
+    damage: 30
+    rangeWidth: 100
+    rangeHeight: 100
     rangeCenterOffset: {x: 0, y: 0}
   teleportAttack:
     range: 10

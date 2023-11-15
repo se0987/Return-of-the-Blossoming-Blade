@@ -21,6 +21,10 @@ public class Gwanghon : MonoBehaviour
     public Transform bossTransform;
     public Sprite rectangleRangeSprite;
 
+    private SpriteRenderer spriteRenderer;
+    public float flashDuration = 0.2f;
+    private Color originalColor;
+
     [System.Serializable]
     public class AttackData
     {
@@ -526,4 +530,5 @@ public class Gwanghon : MonoBehaviour
             animator.SetInteger(animationsState, (int)States.moveFront);
         }
     }
+
 }
