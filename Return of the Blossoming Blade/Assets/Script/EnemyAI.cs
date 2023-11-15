@@ -69,6 +69,7 @@ public class EnemyAI : MonoBehaviour
 
     private bool isDead = false; // 적이 죽었는지를 나타내는 플래그
 
+    private Rigidbody2D rb;
 
     private void Start()
     {
@@ -83,6 +84,8 @@ public class EnemyAI : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();  // 적의 콜라이더를 가져옵니다.
 
         playerManager = PlayerManager.instance; // PlayerManager의 인스턴스를 가져옵니다.
+
+        rb = GetComponent<Rigidbody2D>();
 
     }
 

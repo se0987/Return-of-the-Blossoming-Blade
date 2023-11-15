@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: 7aadeabda68572a4290b7ca84b5485cc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Green Effect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88619dc7b63b0064fa2fab4f732ce97f
+      internalID: -898117409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_1
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 900
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980056a88f1d0814a8d1d5380c64f965
+      internalID: -1249426809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_2
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 900
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4098132cfb09cda4fb66d7ddf9ce4f6d
+      internalID: -1638660369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_3
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 900
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2476721bdcb900d4796629611aaad149
+      internalID: 383303469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8a930e93519c5429c1fa063f335f97
+      internalID: -556120513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_5
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 600
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bc269fee7adc146b58196c1501a22d
+      internalID: 1830033658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_6
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 607
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793143dfba0998e47a46a2d2050334ce
+      internalID: 21645099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_7
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 600
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a6e73d35af89149ad876265f966705
+      internalID: -1050062687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe1f11dc522ec24b8b74a9c61663106
+      internalID: 1302352588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_9
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 300
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f2d8a607c11e14f9fdd69a494d19bb
+      internalID: -1769719853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_10
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 300
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06dc3769c01b6fc43a4cf35170e76535
+      internalID: 377428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Effect_11
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 300
+        width: 1023
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3971193, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1290b1b68442535488a88defe83de84c
+      internalID: -2100979173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Green Effect_0: -898117409
+      Green Effect_1: -1249426809
+      Green Effect_10: 377428
+      Green Effect_11: -2100979173
+      Green Effect_2: -1638660369
+      Green Effect_3: 383303469
+      Green Effect_4: -556120513
+      Green Effect_5: 1830033658
+      Green Effect_6: 21645099
+      Green Effect_7: -1050062687
+      Green Effect_8: 1302352588
+      Green Effect_9: -1769719853
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
