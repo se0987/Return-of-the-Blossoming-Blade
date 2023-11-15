@@ -43,6 +43,7 @@ public class DCutScene0 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         theChapter.ShowChapter("Chapter 5\n´ç°¡");
+        PlayerPrefs.SetInt("chapter", 5);
 
         playerStatus.UpgradeMaxPosion();
 

@@ -16,6 +16,7 @@ public class CutScene1 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
+    private bool stop = false;
 
     public GameObject arrow;
 
@@ -23,6 +24,7 @@ public class CutScene1 : MonoBehaviour
     void Start()
     {
         theDM = FindObjectOfType<DialogueManager>();
+        theDM.OnExitDialogue += HandleExitDialogue;
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChapter = FindObjectOfType<ChapterManager>();
@@ -34,12 +36,20 @@ public class CutScene1 : MonoBehaviour
         StartCoroutine(EventCoroutine());
     }
 
+    void HandleExitDialogue()
+    {
+        Debug.Log("중지");
+        stop = true;
+        StopCoroutine(EventCoroutine());
+    }
+
     IEnumerator EventCoroutine()
     {
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         theOrder.Turn("CheongJin", "LEFT");
         theChapter.ShowChapter("Chapter 1\n시작");
+        PlayerPrefs.SetInt("chapter", 1);
 
         theDM.ShowDialogue(dialogue_1);
 
@@ -49,9 +59,14 @@ public class CutScene1 : MonoBehaviour
         theOrder.Turn("CheongJin", "DOWN");
         theOrder.Move("CheongJin", "DOWN");
 
+        if (stop)
+        {
+            yield break;
+        }
+
         //yield return new WaitUntil(() => thePlayer.queue.Count == 0);
         yield return new WaitForSeconds(0.2f);
-
+        Debug.Log("실행?");
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
 

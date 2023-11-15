@@ -42,9 +42,24 @@ public class TransferMap : MonoBehaviour
                 bgmManager.Stop();
             }
             thePlayer.currentMapName = transferMapName;
+            PlayerPrefs.SetString("playerGateName", gateName);
             theCamera.SetBound(targetBound);
             theCamera.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, theCamera.transform.position.z);
             thePlayer.transform.position = target.transform.position;
         }
+    }
+
+    public void GoToPoint()
+    {
+        theAudio.Play(moveSound);
+        if (BGMStop)
+        {
+            bgmManager.Stop();
+        }
+        thePlayer.currentMapName = transferMapName;
+        PlayerPrefs.SetString("playerGateName", gateName);
+        theCamera.SetBound(targetBound);
+        theCamera.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, theCamera.transform.position.z);
+        thePlayer.transform.position = target.transform.position;
     }
 }

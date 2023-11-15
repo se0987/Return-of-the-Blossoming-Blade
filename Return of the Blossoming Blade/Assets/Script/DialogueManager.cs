@@ -32,6 +32,10 @@ public class DialogueManager : MonoBehaviour
     public bool talking = false;
     private bool keyActivated = false;
 
+    private PlayerManager player;
+    
+    public event System.Action OnExitDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,7 @@ public class DialogueManager : MonoBehaviour
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
         theAudio = FindObjectOfType<AudioManager>();
+        player = FindObjectOfType<PlayerManager>();
     }
 
     public void ShowDialogue(Dialogue dialogue)
@@ -74,8 +79,10 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitDialogue()
     {
-        animSprite.SetBool("Appear", false);
-        animDialogueWindow.SetBool("Appear", false);
+        if (OnExitDialogue != null)
+        {
+            OnExitDialogue.Invoke();
+        }
         listSentences.Clear();
         listName.Clear();
         listSprites.Clear();
@@ -84,6 +91,8 @@ public class DialogueManager : MonoBehaviour
         text.text = "";
         name.text = "";
         talking = false;
+        animSprite.SetBool("Appear", false);
+        animDialogueWindow.SetBool("Appear", false);
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -136,7 +145,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talking && keyActivated)
+        if (talking && keyActivated && !player.allStop)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {

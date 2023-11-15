@@ -1377,7 +1377,7 @@ Transform:
   - {fileID: 594537939}
   - {fileID: 866891687}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &128483364
 SortingGroup:
@@ -14535,91 +14535,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599441952}
   m_CullTransparentMesh: 1
---- !u!1 &630505835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 630505836}
-  - component: {fileID: 630505837}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &630505836
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630505835}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 180, y: -518, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &630505837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630505835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c574fc9b564b8ad4e9ff4edc8d84ffb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: walk
-    clip: {fileID: 8300000, guid: 92b078d5055bae048b8823b3a11fb9f8, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: scritp
-    clip: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: c
-    clip: {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: choiceChange
-    clip: {fileID: 8300000, guid: 3d1fc54a2f6df7840a89b832c0c32427, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: door
-    clip: {fileID: 8300000, guid: 9de40af237a4d4543b7aef8d826802a9, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: transferMap
-    clip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: run
-    clip: {fileID: 8300000, guid: 78ad99fd0a0a5144280b07bbdba84815, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: eat
-    clip: {fileID: 8300000, guid: 65db7c94d2904774781d7cab7629f8fd, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: sad
-    clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
-    Volumn: 1
-    loop: 0
-  - name: heart
-    clip: {fileID: 8300000, guid: 5097d979d10384c48a3741fd4b28b992, type: 3}
-    Volumn: 1.5
-    loop: 1
 --- !u!1 &635909341
 GameObject:
   m_ObjectHideFlags: 0
@@ -26689,6 +26604,107 @@ SortingGroup:
   m_SortingLayerID: 208271681
   m_SortingLayer: 8
   m_SortingOrder: 0
+--- !u!1 &1278243688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278243690}
+  - component: {fileID: 1278243689}
+  m_Layer: 0
+  m_Name: AudioManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1278243689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278243688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c574fc9b564b8ad4e9ff4edc8d84ffb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: walk
+    clip: {fileID: 8300000, guid: 92b078d5055bae048b8823b3a11fb9f8, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: scritp
+    clip: {fileID: 8300000, guid: e5c0b5435124eee4a9bab0e4dc5c16b7, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: c
+    clip: {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: choiceChange
+    clip: {fileID: 8300000, guid: 3d1fc54a2f6df7840a89b832c0c32427, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: door
+    clip: {fileID: 8300000, guid: 9de40af237a4d4543b7aef8d826802a9, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: transferMap
+    clip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: run
+    clip: {fileID: 8300000, guid: 78ad99fd0a0a5144280b07bbdba84815, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: eat
+    clip: {fileID: 8300000, guid: 65db7c94d2904774781d7cab7629f8fd, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: sad
+    clip: {fileID: 8300000, guid: d2c044eff364d9c408634821d3edd2e0, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: A
+    clip: {fileID: 8300000, guid: 419ffb32c2a66034a99d8dde13551d00, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Q
+    clip: {fileID: 8300000, guid: 8ff2a2d7e79f81c40ac447512f879374, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: W
+    clip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: E
+    clip: {fileID: 8300000, guid: 21c4a490b24ba2045bc815f7626a40ef, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Space
+    clip: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+    Volumn: 1
+    loop: 0
+--- !u!4 &1278243690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278243688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1314, y: 190, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280412386
 GameObject:
   m_ObjectHideFlags: 0
@@ -52403,7 +52419,7 @@ Transform:
   m_Children:
   - {fileID: 2077228850}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1369994910
 AudioSource:
@@ -60921,6 +60937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusicTrack: 0
   enable: 1
+  volume: 0.5
 --- !u!1 &2083580041
 GameObject:
   m_ObjectHideFlags: 0

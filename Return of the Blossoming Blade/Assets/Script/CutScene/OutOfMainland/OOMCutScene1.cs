@@ -43,6 +43,7 @@ public class OOMCutScene1 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
         theChapter.ShowChapter("Chpater2\n새외 방문");
+        PlayerPrefs.SetInt("chapter", 2);
 
         playerStatus.UpgradeMaxPosion();
 
