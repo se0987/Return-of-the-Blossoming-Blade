@@ -65,22 +65,4 @@ public class ContinueDialogueManager : MonoBehaviour
             saveDate[i].text = "";
         }
     }
-
-    public void ShowSaveDialogue()
-    {
-        StartCoroutine(ShowSaveCoroutine());
-    }
-
-    IEnumerator ShowSaveCoroutine()
-    {
-        mainDialogue.anim.SetBool("Appear", true);
-        yield return new WaitForSeconds(0.5f);
-        mainDialogue.close.text = "´Ý±â";
-        for (int i = 0; i < 5; i++)
-        {
-            saveChapter[i].text = PlayerPrefs.GetString("save1");
-            saveChapterName[i].text = PlayerPrefs.GetString("save1Name");
-            saveDate[i].text = PlayerPrefs.GetString("save1Date");
-        }
-    }
 }

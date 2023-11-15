@@ -42,6 +42,7 @@ public class JCutScene0 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         theChapter.ShowChapter("Chapter 4\n¡æ≥≤");
+        PlayerPrefs.SetInt("chapter", 4);
 
         playerStatus.UpgradeMaxPosion();
 

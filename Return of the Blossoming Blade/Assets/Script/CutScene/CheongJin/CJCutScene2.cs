@@ -57,6 +57,7 @@ public class CJCutScene2 : MonoBehaviour
         theOrder.Appear("CheongMun", true);
         theOrder.Turn("CheongMun", "RIGHT");
         theChapter.ShowChapter("Chapter6\nÃ»Áø");
+        PlayerPrefs.SetInt("chapter", 6);
 
         playerStatus.UpgradeMaxPosion();
 
@@ -136,6 +137,7 @@ public class CJCutScene2 : MonoBehaviour
         }
 
         arrow1.SetActive(true);
+        PlayerPrefs.SetInt("CJEvent2One", 1);
 
         theOrder.Move();
     }
