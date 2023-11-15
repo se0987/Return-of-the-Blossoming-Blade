@@ -30172,7 +30172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1644821957}
-  movementSpeed: 200
+  movementSpeed: 180
   attackRangeIndicator: {fileID: 0}
   currentAttack:
     range: 50
@@ -30213,12 +30213,12 @@ MonoBehaviour:
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
-    range: 500
+    range: 300
     minRange: 200
     cooldownTime: 2
-    durationTime: 1.2
-    nextAttackTime: 0
-    moveDistance: 200
+    durationTime: 3
+    nextAttackTime: 1.2
+    moveDistance: 400
     afterAttackDuration: 0
     damage: 0
     rangeWidth: 0
@@ -99156,7 +99156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1493439601
   m_SortingLayer: 10
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1599015900, guid: 302ff740a3a9b744a8cc45bf31b3f6f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
