@@ -25,6 +25,7 @@ public class Gwanghon : MonoBehaviour
     public class AttackData
     {
         public float range = 50.0f;
+        public float minRange = 0f;
         public float cooldownTime = 2.0f;
         public float durationTime = 0.8f;
         public float nextAttackTime = 0f;
@@ -102,28 +103,20 @@ public class Gwanghon : MonoBehaviour
 
     void Update()
     {
+        if (isAttacking) return;
 
         Vector2 direction = playerTransform.position - transform.position;
         float distance = Vector3.Distance(transform.position, playerTransform.position);
         float currentTime = Time.time;
 
-        if (AllAttacksOnCooldown() || distance <= (slashAttack.range + 3f) && currentTime <= globalLastAttackTime + globalCooldown)
+        if (AllAttacksOnCooldown() || distance <= (slashAttack.range) && currentTime <= globalLastAttackTime + globalCooldown)
         {
             Idle(direction);
             return;
         }
         else
         {
-            if (distance <= slashAttack.range && Time.time >= slashAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
-            {
-                Slash(direction);
-                currentAttack = slashAttack;
-                slashAttack.nextAttackTime = Time.time + slashAttack.cooldownTime;
-                globalLastAttackTime = currentTime + slashAttack.durationTime;
-                // ShowAttackRange(currentAttack.range, currentAttack, direction);
-                // StartCoroutine(HideAttackRangeAfterDelay(slashAttack.durationTime));
-            }
-            else if (distance <= swingAttack.range && Time.time >= swingAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
+            if (distance <= swingAttack.range && Time.time >= swingAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
             {
                 Swing(direction);
                 currentAttack = swingAttack;
@@ -132,8 +125,10 @@ public class Gwanghon : MonoBehaviour
                 // ShowAttackRange(currentAttack.range, currentAttack, direction);
                 // StartCoroutine(HideAttackRangeAfterDelay(swingAttack.durationTime));
             }
+            
+            
 
-            else if (distance <= dashAttack.range && Time.time >= dashAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
+            else if (distance >= dashAttack.minRange && distance <= dashAttack.range && Time.time >= dashAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
             {
                 Dash(direction);
                 currentAttack = dashAttack;
@@ -142,15 +137,25 @@ public class Gwanghon : MonoBehaviour
                 // ShowAttackRange(currentAttack.range, currentAttack, direction);
                 // StartCoroutine(HideAttackRangeAfterDelay(dashAttack.durationTime));
             }
-            else if (distance <= teleportAttack.range && Time.time >= teleportAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
+
+            else if (distance <= slashAttack.range && Time.time >= slashAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
             {
-                Teleport(direction);
-                currentAttack = teleportAttack;
-                teleportAttack.nextAttackTime = Time.time + teleportAttack.cooldownTime + teleportAttack.afterAttackDuration + 5.0f;
-                globalLastAttackTime = currentTime + teleportAttack.durationTime;
-                StartCoroutine(TeleportMovement(direction));
-                // StartCoroutine(HideAttackRangeAfterDelay(teleportAttack.durationTime));
+                Slash(direction);
+                currentAttack = slashAttack;
+                slashAttack.nextAttackTime = Time.time + slashAttack.cooldownTime;
+                globalLastAttackTime = currentTime + slashAttack.durationTime;
+                // ShowAttackRange(currentAttack.range, currentAttack, direction);
+                // StartCoroutine(HideAttackRangeAfterDelay(slashAttack.durationTime));
             }
+            // else if (distance <= teleportAttack.range && Time.time >= teleportAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
+            // {
+            //     Teleport(direction);
+            //     currentAttack = teleportAttack;
+            //     teleportAttack.nextAttackTime = Time.time + teleportAttack.cooldownTime + teleportAttack.afterAttackDuration + 5.0f;
+            //     globalLastAttackTime = currentTime + teleportAttack.durationTime;
+            //     StartCoroutine(TeleportMovement(direction));
+            //     // StartCoroutine(HideAttackRangeAfterDelay(teleportAttack.durationTime));
+            // }
             else
             {
                 if (!isAttacking)
@@ -425,41 +430,41 @@ public class Gwanghon : MonoBehaviour
     }
 
     void Dash(Vector2 direction)
+{
+    isAttacking = true;
+
+    rigidbody2D.velocity = Vector2.zero;
+
+    // 방향에 따라 애니메이션 상태를 설정합니다.
+    if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
     {
-        isAttacking = true;
-
-        rigidbody2D.velocity = Vector2.zero;
-
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        if (direction.x > 0)
         {
-            if (direction.x > 0)
-            {
-                animator.SetInteger(animationsState, (int)States.dashRight);
-            }
-            else
-            {
-                animator.SetInteger(animationsState, (int)States.dashLeft);
-            }
+            animator.SetInteger(animationsState, (int)States.dashRight);
         }
         else
         {
-            if (direction.y > 0)
-            {
-                animator.SetInteger(animationsState, (int)States.dashBack);
-            }
-            else
-            {
-                animator.SetInteger(animationsState, (int)States.dashFront);
-            }
+            animator.SetInteger(animationsState, (int)States.dashLeft);
         }
-
-        Vector2 calculatedOffset = CalculateCenterOffset(direction, dashAttack.rangeWidth, dashAttack.rangeHeight);
-        dashAttack.rangeCenterOffset = calculatedOffset;
-
-        StartCoroutine(AttackCooldown(dashAttack.durationTime));
-        StartCoroutine(DashMovement(direction));
-
     }
+    else
+    {
+        if (direction.y > 0)
+        {
+            animator.SetInteger(animationsState, (int)States.dashBack);
+        }
+        else
+        {
+            animator.SetInteger(animationsState, (int)States.dashFront);
+        }
+    }
+
+    Vector2 calculatedOffset = CalculateCenterOffset(direction, dashAttack.rangeWidth, dashAttack.rangeHeight);
+    dashAttack.rangeCenterOffset = calculatedOffset;
+
+    StartCoroutine(AttackCooldown(dashAttack.durationTime));
+    StartCoroutine(DashMovement(direction));
+}
 
     void Teleport(Vector2 direction)
     {
