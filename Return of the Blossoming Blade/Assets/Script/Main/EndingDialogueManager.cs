@@ -24,9 +24,9 @@ public class EndingDialogueManager : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             ending[i].text = "";
-            if (!PlayerPrefs.HasKey("ending" + i.ToString()))
+            if (!PlayerPrefs.HasKey("End" + i.ToString()))
             {
-                PlayerPrefs.SetInt("ending" + i.ToString(), 0);
+                PlayerPrefs.SetInt("End" + i.ToString(), 0);
             }
         }
     }
@@ -45,7 +45,7 @@ public class EndingDialogueManager : MonoBehaviour
         mainDialogue.btn4.interactable = false;
         yield return new WaitForSeconds(0.5f);
         mainDialogue.close.text = "´Ý±â";
-        if (PlayerPrefs.GetInt("ending1") == 1)
+        if (PlayerPrefs.GetInt("End1") == 1)
         {
             ending[0].text = end1;
         }
@@ -54,7 +54,7 @@ public class EndingDialogueManager : MonoBehaviour
             ending[0].text = "1";
         }
 
-        if (PlayerPrefs.GetInt("ending2") == 1)
+        if (PlayerPrefs.GetInt("End2") == 1)
         {
             ending[1].text = end2;
         }
@@ -63,7 +63,7 @@ public class EndingDialogueManager : MonoBehaviour
             ending[1].text = "2";
         }
 
-        if (PlayerPrefs.GetInt("ending3") == 1)
+        if (PlayerPrefs.GetInt("End3") == 1)
         {
             ending[2].text = end3;
         }
@@ -72,7 +72,7 @@ public class EndingDialogueManager : MonoBehaviour
             ending[2].text = "3";
         }
 
-        if (PlayerPrefs.GetInt("ending4") == 1)
+        if (PlayerPrefs.GetInt("End4") == 1)
         {
             ending[3].text = end4;
         }
@@ -81,7 +81,7 @@ public class EndingDialogueManager : MonoBehaviour
             ending[3].text = "4";
         }
 
-        if (PlayerPrefs.GetInt("ending5") == 1)
+        if (PlayerPrefs.GetInt("End5") == 1)
         {
             ending[4].text = end5;
         }
@@ -90,7 +90,7 @@ public class EndingDialogueManager : MonoBehaviour
             ending[4].text = "5";
         }
 
-        if (PlayerPrefs.GetInt("ending6") == 1)
+        if (PlayerPrefs.GetInt("End6") == 1)
         {
             ending[5].text = end6;
         }

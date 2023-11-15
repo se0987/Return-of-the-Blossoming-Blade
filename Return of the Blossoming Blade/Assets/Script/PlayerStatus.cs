@@ -138,14 +138,31 @@ public class PlayerStatus : MonoBehaviour
                 PlayerPrefs.SetInt("havePosion", havePosion - 1);
 
                 float playerHP = PlayerPrefs.GetFloat("playerHP");
-                PlayerPrefs.SetFloat("playerHP", playerHP + 30f);
+                if (playerHP + 30f > maxHP)
+                {
+                    PlayerPrefs.SetFloat("playerHP", maxHP);
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("playerHP", playerHP + 30f);
+                }
+
                 playerHP = PlayerPrefs.GetFloat("playerHP");
 
                 currentHP = playerHP;
 
                 float playerMP = PlayerPrefs.GetFloat("playerMP");
-                PlayerPrefs.SetFloat("playerMP", playerMP + 10f);
+                if (playerMP + 10f > maxMP)
+                {
+                    PlayerPrefs.SetFloat("playerMP", maxMP);
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("playerMP", playerMP + 10f);
+                }
+
                 playerMP = PlayerPrefs.GetFloat("playerMP");
+
                 currentMP = playerMP;
             }
         }

@@ -20,6 +20,7 @@ public class PlayerManager : MovingObject
 
     public string walkSound;
     private AudioManager theAudio;
+    private ContinueDialogueManager theContinue;
 
     public void Awake()
     {
@@ -41,6 +42,7 @@ public class PlayerManager : MovingObject
         animator = GetComponent<Animator>();
         playerStatus = FindObjectOfType<PlayerStatus>();
         theAudio = FindObjectOfType<AudioManager>();
+        theContinue = FindObjectOfType<ContinueDialogueManager>();
     }
 
     IEnumerator MoveCoroutine()
@@ -103,6 +105,11 @@ public class PlayerManager : MovingObject
             {
                 playerStatus.UsePosion();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))//ºº¿Ã∫Í
+        {
+            Debug.Log("??");
+            theContinue.ShowSaveDialogue();
         }
     }
 
