@@ -47,6 +47,7 @@ public class MCutScene0 : MonoBehaviour
         theOrder.Move("Player", "LEFT");
 
         theChapter.ShowChapter("Chapter 3\n¹«´ç»ê");
+        PlayerPrefs.SetInt("chapter", 3);
 
         playerStatus.UpgradeMaxPosion();
 

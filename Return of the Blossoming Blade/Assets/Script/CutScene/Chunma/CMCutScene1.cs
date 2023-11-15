@@ -48,6 +48,7 @@ public class CMCutScene1 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         theChapter.ShowChapter("Chapter7\n°áÀü");
+        PlayerPrefs.SetInt("chapter", 7);
 
         theOrder.Appear("BlackScreen", true);
         if (PlayerPrefs.HasKey("choice2"))
