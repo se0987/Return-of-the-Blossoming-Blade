@@ -51,7 +51,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: ChunsalSkill/attack1
+    path: ChunsalSkill/skill1/attack
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
@@ -100,7 +100,7 @@ AnimationClip:
     - time: 1.2333333
       value: {fileID: 773345217, guid: 917eb2c945d97bf4ea16ce596dbdf490, type: 3}
     attribute: m_Sprite
-    path: ChunsalSkill/attack1
+    path: ChunsalSkill/skill1/attack
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -111,7 +111,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2072438859
+      path: 3164115440
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -125,7 +125,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 2072438859
+      path: 3164115440
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -206,7 +206,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: ChunsalSkill/attack1
+    path: ChunsalSkill/skill1/attack
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

@@ -51,7 +51,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: ChunsalSkill/attack2
+    path: ChunsalSkill/skill2/attack
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
@@ -76,7 +76,7 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: -1294834271, guid: 6558c9d3343f98b499f5395b8fadc95f, type: 3}
+      value: {fileID: 0}
     - time: 0.21666667
       value: {fileID: -581128438, guid: 9e70fcc1bb62483488db3f7b720c392b, type: 3}
     - time: 0.26666668
@@ -116,7 +116,7 @@ AnimationClip:
     - time: 1.1666666
       value: {fileID: 1689157846, guid: 9e70fcc1bb62483488db3f7b720c392b, type: 3}
     attribute: m_Sprite
-    path: ChunsalSkill/attack2
+    path: ChunsalSkill/skill2/attack
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -127,7 +127,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3801070065
+      path: 840406547
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -141,7 +141,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 3801070065
+      path: 840406547
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -155,7 +155,7 @@ AnimationClip:
     - {fileID: -1352053309, guid: 89a1cfbbbf2e0c940948b2f1d5d4b15b, type: 3}
     - {fileID: -1937087183, guid: 89a1cfbbbf2e0c940948b2f1d5d4b15b, type: 3}
     - {fileID: 1633370113, guid: 89a1cfbbbf2e0c940948b2f1d5d4b15b, type: 3}
-    - {fileID: -1294834271, guid: 6558c9d3343f98b499f5395b8fadc95f, type: 3}
+    - {fileID: 0}
     - {fileID: -581128438, guid: 9e70fcc1bb62483488db3f7b720c392b, type: 3}
     - {fileID: -200753555, guid: 9e70fcc1bb62483488db3f7b720c392b, type: 3}
     - {fileID: -1493167594, guid: 9e70fcc1bb62483488db3f7b720c392b, type: 3}
@@ -230,7 +230,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: ChunsalSkill/attack2
+    path: ChunsalSkill/skill2/attack
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
