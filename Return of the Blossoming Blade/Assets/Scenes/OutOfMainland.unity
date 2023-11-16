@@ -297,11 +297,10 @@ Transform:
   - {fileID: 1432239163}
   - {fileID: 86078344}
   - {fileID: 1173087134}
-  - {fileID: 1599667088}
   - {fileID: 69628085}
   - {fileID: 673068396}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &23080900
 GameObject:
@@ -1253,7 +1252,7 @@ RectTransform:
   - {fileID: 1251782678}
   - {fileID: 2009088123}
   m_Father: {fileID: 7952081}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -27025,7 +27024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCEE8\uC124\uD134\uD2B8"
+  m_text: "\uC801\uCC9C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d6ae30b6cf9e334484264a21da975c4, type: 2}
   m_sharedMaterial: {fileID: 9022146141806041892, guid: 4d6ae30b6cf9e334484264a21da975c4, type: 2}
@@ -28792,7 +28791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585227736
 GameObject:
@@ -31131,7 +31130,7 @@ RectTransform:
   m_Children:
   - {fileID: 1171372818}
   m_Father: {fileID: 7952081}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -32807,7 +32806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &721279622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42313,7 +42312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dd78f457feffb458f9f964be3b8119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 1432239163}
   movementSpeed: 80
   attackRangeIndicator: {fileID: 789906211}
   currentAttack:
@@ -42330,10 +42329,10 @@ MonoBehaviour:
     damageDelay: 0
   bossTransform: {fileID: 1273060302}
   rectangleRangeSprite: {fileID: 1812547580, guid: 4e5cbd41f40894c41935a18781fb303d, type: 3}
-  slashCollider: {fileID: 0}
-  swingCollider: {fileID: 0}
-  dashCollider: {fileID: 0}
-  teleportCollider: {fileID: 0}
+  slashCollider: {fileID: 1031794590}
+  swingCollider: {fileID: 583678725}
+  dashCollider: {fileID: 1948892391}
+  teleportCollider: {fileID: 241169487}
   slashAttack:
     range: 50
     cooldownTime: 2
@@ -51876,8 +51875,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
   jeokCheon: {fileID: 1273060299}
-  hpGauge: {fileID: 0}
-  bossName: {fileID: 0}
+  hpGauge: {fileID: 717842299}
+  bossName: {fileID: 493468236}
 --- !u!1 &1540482588
 GameObject:
   m_ObjectHideFlags: 0
@@ -52511,7 +52510,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599667087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52525,12 +52524,12 @@ RectTransform:
   - {fileID: 1580802519}
   - {fileID: 717842300}
   - {fileID: 493468237}
-  m_Father: {fileID: 7952081}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1212, y: 234.75}
+  m_AnchoredPosition: {x: 1185, y: 258.75}
   m_SizeDelta: {x: 1015.5, y: 517.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599667089

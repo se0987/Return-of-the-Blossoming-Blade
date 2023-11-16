@@ -62,7 +62,7 @@ public class CheonmaStatus : MonoBehaviour
             GameObject Cheonma = GameObject.Find("Cheonma Bon In");
             if (Cheonma != null)
             {
-                bossHpBar.fillAmount = 0.01f;
+                bossHpBar.fillAmount = 0f;
                 DisableCheonmaBehaviors(Cheonma);
                 ResetCheonmaAnimator(Cheonma);
                 DisableAllClonedSpriteRenderers();
@@ -186,7 +186,7 @@ public class CheonmaStatus : MonoBehaviour
             {
                 StartCoroutine(FlashCoroutine());
                 currentHealth -= weapon.damageAmount;
-                currentHealth = Mathf.Max(currentHealth, 0.01f);
+                currentHealth = Mathf.Max(currentHealth, 0f);
                 if (currentHealth <= 0.01f)
                 {
                     Die();
