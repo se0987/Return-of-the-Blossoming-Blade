@@ -26,6 +26,7 @@ public class End6 : MonoBehaviour
     private bool one = true;
 
     public bool end = false;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,14 @@ public class End6 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        theDM.OnExitDialogue += HandleExitDialogue;
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,6 +78,10 @@ public class End6 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
@@ -80,6 +93,10 @@ public class End6 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_3);

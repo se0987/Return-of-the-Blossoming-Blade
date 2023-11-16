@@ -25,6 +25,7 @@ public class CJCutScene2 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +38,28 @@ public class CJCutScene2 : MonoBehaviour
         playerStatus = FindObjectOfType<PlayerStatus>();
         PlayerPrefs.SetInt("choice2", 0);
         PlayerPrefs.SetInt("choice3", 0);
+        theDM.OnExitDialogue += HandleExitDialogue;
+        if (PlayerPrefs.HasKey("CJEvent2One"))
+        {
+            if (PlayerPrefs.GetInt("CJEvent2One") == 1)
+            {
+                one = false;
+            }
+        }
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (one)
         {
+            PlayerPrefs.SetInt("CJEvent2One", 2);
             one = false;
             StartCoroutine(EventCoroutine());
         }
@@ -64,9 +81,17 @@ public class CJCutScene2 : MonoBehaviour
         theDM.ShowDialogue(dialogue_1);
         theOrder.Turn("CheongMun", "UP");
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theChoice.ShowChoice(choice_1, 2);
         yield return new WaitUntil(() => !theChoice.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         if (PlayerPrefs.HasKey("choice2"))
         {
@@ -75,6 +100,10 @@ public class CJCutScene2 : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitUntil(() => !theDM.talking);
+                if (stop)
+                {
+                    yield break;
+                }
 
                 TransferMap[] temp = FindObjectsOfType<TransferMap>();
                 for (int i = 0; i < temp.Length; i++)
@@ -91,9 +120,17 @@ public class CJCutScene2 : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 theDM.ShowDialogue(dialogue_3);
                 yield return new WaitUntil(() => !theDM.talking);
+                if (stop)
+                {
+                    yield break;
+                }
 
                 theChoice.ShowChoice(choice_2, 3);
                 yield return new WaitUntil(() => !theChoice.talking);
+                if (stop)
+                {
+                    yield break;
+                }
 
                 if (PlayerPrefs.HasKey("choice3"))
                 {
