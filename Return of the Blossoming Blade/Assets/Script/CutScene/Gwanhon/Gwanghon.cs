@@ -38,6 +38,7 @@ public class Gwanghon : MonoBehaviour
         public int damage = 0;
         public float rangeWidth = 0f;
         public float rangeHeight = 0f;
+        public float damageDelay = 0f;
         public Vector2 rangeCenterOffset;
     }
 
@@ -94,8 +95,8 @@ public class Gwanghon : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        // rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
-        // HideAttackRange();
+        rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
+        HideAttackRange();
         bossTransform = this.transform;
     }
 
@@ -126,8 +127,8 @@ public class Gwanghon : MonoBehaviour
                 currentAttack = swingAttack;
                 swingAttack.nextAttackTime = Time.time + swingAttack.cooldownTime;
                 globalLastAttackTime = currentTime + swingAttack.durationTime;
-                // ShowAttackRange(currentAttack.range, currentAttack, direction);
-                // StartCoroutine(HideAttackRangeAfterDelay(swingAttack.durationTime));
+                ShowAttackRange(currentAttack.range, currentAttack, direction);
+                StartCoroutine(HideAttackRangeAfterDelay(swingAttack.durationTime));
             }
             
             
@@ -138,8 +139,8 @@ public class Gwanghon : MonoBehaviour
                 currentAttack = dashAttack;
                 dashAttack.nextAttackTime = Time.time + dashAttack.cooldownTime;
                 globalLastAttackTime = currentTime + dashAttack.durationTime;
-                // ShowAttackRange(currentAttack.range, currentAttack, direction);
-                // StartCoroutine(HideAttackRangeAfterDelay(dashAttack.durationTime));
+                ShowAttackRange(currentAttack.range, currentAttack, direction);
+                StartCoroutine(HideAttackRangeAfterDelay(dashAttack.durationTime));
             }
 
             else if (distance <= slashAttack.range && Time.time >= slashAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
@@ -148,8 +149,8 @@ public class Gwanghon : MonoBehaviour
                 currentAttack = slashAttack;
                 slashAttack.nextAttackTime = Time.time + slashAttack.cooldownTime;
                 globalLastAttackTime = currentTime + slashAttack.durationTime;
-                // ShowAttackRange(currentAttack.range, currentAttack, direction);
-                // StartCoroutine(HideAttackRangeAfterDelay(slashAttack.durationTime));
+                ShowAttackRange(currentAttack.range, currentAttack, direction);
+                StartCoroutine(HideAttackRangeAfterDelay(slashAttack.durationTime));
             }
             // else if (distance <= teleportAttack.range && Time.time >= teleportAttack.nextAttackTime && currentTime >= globalLastAttackTime + globalCooldown)
             // {
@@ -176,7 +177,7 @@ public class Gwanghon : MonoBehaviour
         HideAttackRange();
     }
 
-    void ShowAttackRange(float range, AttackData attackData, Vector2 direction)
+  void ShowAttackRange(float range, AttackData attackData, Vector2 direction)
     {
         Vector3 rangeOffset = attackData.rangeCenterOffset;
 
@@ -202,24 +203,35 @@ public class Gwanghon : MonoBehaviour
 
         attackRangeIndicator.transform.localScale = scale;
         rangeRenderer.enabled = true;
+
+        StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
     }
+
+    IEnumerator DamageAfterDelay(float delay, float damage, Vector3 position, Vector3 scale)
+{
+    yield return new WaitForSeconds(delay);
+
+    // 데미지 판정을 수행하는 로직
+    Collider2D[] hitPlayers = Physics2D.OverlapBoxAll(position, scale, 0);
+    foreach (Collider2D hit in hitPlayers)
+    {
+        if (hit.CompareTag("Player"))
+        {
+            // 플레이어에게 데미지를 주는 코드
+            PlayerStatus playerHealth = hit.GetComponent<PlayerStatus>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+        }
+    }
+}
 
     void HideAttackRange()
     {
         rangeRenderer.enabled = false;
     }
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-     //   if (other.CompareTag("Player") && isAttacking)
-       // {
-         //   PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-           // if (playerHealth != null)
-            //{
-              //  playerHealth.TakeDamage(currentAttack.damage);
-            //}
-       // }
-   // }  
 
     bool AllAttacksOnCooldown()
     {
@@ -287,7 +299,7 @@ private IEnumerator DashMovement(Vector2 dashDistance)
                 animator.SetInteger(animationsState, (int)States.endTeleportFront);
             }
         }
-        // ShowAttackRange(teleportAttack.range, teleportAttack, lookDirection);
+        ShowAttackRange(teleportAttack.range, teleportAttack, lookDirection);
         Vector2 calculatedOffset = CalculateCenterOffset(lookDirection, teleportAttack.rangeWidth, teleportAttack.rangeHeight);
         teleportAttack.rangeCenterOffset = calculatedOffset;
     }

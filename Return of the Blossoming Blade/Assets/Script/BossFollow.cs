@@ -21,11 +21,6 @@ public class BossFollow : MonoBehaviour
     public Transform bossTransform;
     public Sprite rectangleRangeSprite;
 
-    public Collider2D slashCollider;
-    public Collider2D swingCollider;
-    public Collider2D dashCollider;
-    public Collider2D teleportCollider;
-
     [System.Serializable]
     public class AttackData
     {
@@ -39,7 +34,6 @@ public class BossFollow : MonoBehaviour
         public float rangeWidth = 0f;
         public float rangeHeight = 0f;
         public Vector2 rangeCenterOffset;
-        public float damageDelay = 0f;
     }
 
     public AttackData slashAttack;
@@ -203,34 +197,24 @@ public class BossFollow : MonoBehaviour
 
         attackRangeIndicator.transform.localScale = scale;
         rangeRenderer.enabled = true;
-
-        StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
     }
 
-IEnumerator DamageAfterDelay(float delay, float damage, Vector3 position, Vector3 scale)
-{
-    yield return new WaitForSeconds(delay);
-
-    // 데미지 판정을 수행하는 로직
-    Collider2D[] hitPlayers = Physics2D.OverlapBoxAll(position, scale, 0);
-    foreach (Collider2D hit in hitPlayers)
-    {
-        if (hit.CompareTag("Player"))
-        {
-            // 플레이어에게 데미지를 주는 코드
-            PlayerStatus playerHealth = hit.GetComponent<PlayerStatus>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
-        }
-    }
-}
-
-void HideAttackRange()
+    void HideAttackRange()
     {
         rangeRenderer.enabled = false;
     }
+
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+     //   if (other.CompareTag("Player") && isAttacking)
+       // {
+         //   PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+           // if (playerHealth != null)
+            //{
+              //  playerHealth.TakeDamage(currentAttack.damage);
+            //}
+       // }
+   // }
 
     bool AllAttacksOnCooldown()
     {
