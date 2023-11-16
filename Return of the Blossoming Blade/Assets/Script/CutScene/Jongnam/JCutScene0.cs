@@ -24,6 +24,8 @@ public class JCutScene0 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
+        PlayerPrefs.SetFloat("playerHP", playerStatus.maxHP);
+        PlayerPrefs.SetFloat("playerMP", playerStatus.maxMP);
         int saveNum = PlayerPrefs.GetInt("onLoad");
         if (saveNum != 0)
         {

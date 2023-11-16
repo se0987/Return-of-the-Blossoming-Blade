@@ -35,6 +35,8 @@ public class CJCutScene2 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
+        PlayerPrefs.SetFloat("playerHP", playerStatus.maxHP);
+        PlayerPrefs.SetFloat("playerMP", playerStatus.maxMP);
         PlayerPrefs.SetInt("choice2", 0);
         PlayerPrefs.SetInt("choice3", 0);
         int saveNum = PlayerPrefs.GetInt("onLoad");
