@@ -6,12 +6,31 @@ import { Link } from 'react-router-dom';
 
 function App() {
   const url = "http://k9d107.p.ssafy.io/downloads/test.jpg"
+
+  const downloadFile = async () => {
+    try {
+      const response = await fetch(url)
+      const blob = await response.blob()
+      const downloadUrl = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+
+      link.href = downloadUrl
+      link.download = "test.jpg"
+
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } catch (error) {
+      console.error('다운이 안된다고', error)
+    }
+  }
+
   return (
       <ImgContainer>
         <img alt="main_image" src={blossoming}/>
         <div>화산귀환</div>
         <p>알려지지 않은 이야기</p>
-        <h1 onClick={()=>{window.open(url)}}>다운로드</h1>
+        <h1 onClick={downloadFile}>다운로드</h1>
       </ImgContainer>
   );
 }
