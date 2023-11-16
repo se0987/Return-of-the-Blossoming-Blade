@@ -61,7 +61,7 @@ public class Boss3Controller : MonoBehaviour
             bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
 
-        PlayerPrefs.SetInt("havePosion", 100);
+        //PlayerPrefs.SetInt("havePosion", 100);
     }
 
     void Update()
@@ -255,16 +255,17 @@ public class Boss3Controller : MonoBehaviour
     IEnumerator TakeDamageEffect() // 경직 효과를 처리하는 Coroutine
     {
         boss3Moving = false;
-        float waitTime = 1f;
-        float elapsedTime = 0f;
+        //float waitTime = 1f;
+        //float elapsedTime = 0f;
 
-        while (elapsedTime < waitTime)
-        {
-            animator.SetTrigger("IsHit");
-            yield return new WaitForSeconds(1f);
-            elapsedTime += 1f;
-        }
+        //while (elapsedTime < waitTime)
+        //{
+        //    animator.SetTrigger("IsHit");
+        //    yield return new WaitForSeconds(2f);
+        //    elapsedTime += 1f;
+        //}
         animator.SetTrigger("IsHit");
+        yield return new WaitForSeconds(2f);
 
         isHit = false;
         boss3Moving = true;
