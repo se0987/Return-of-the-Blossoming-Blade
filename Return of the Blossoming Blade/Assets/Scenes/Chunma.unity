@@ -4569,7 +4569,7 @@ MonoBehaviour:
   playerCollider1: {fileID: 142517524}
   playerCollider2: {fileID: 1455361277}
   dashDistance: 185
-  playerStatus: {fileID: 0}
+  playerStatus: {fileID: 142517529}
   QSkillMP: 5
   WSkillMP: 5
   ESkillMP: 15
