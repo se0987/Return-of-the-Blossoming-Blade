@@ -31260,7 +31260,7 @@ MonoBehaviour:
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 1
-    damage: 15
+    damage: 10
     rangeWidth: 100
     rangeHeight: 100
     damageDelay: 0.5
@@ -31273,9 +31273,9 @@ MonoBehaviour:
     nextAttackTime: 0
     moveDistance: 0
     afterAttackDuration: 2
-    damage: 40
-    rangeWidth: 250
-    rangeHeight: 250
+    damage: 20
+    rangeWidth: 300
+    rangeHeight: 300
     damageDelay: 0.4
     rangeCenterOffset: {x: 0, y: 0}
   dashAttack:
@@ -31286,9 +31286,9 @@ MonoBehaviour:
     nextAttackTime: 0
     moveDistance: 400
     afterAttackDuration: 1.2
-    damage: 30
+    damage: 20
     rangeWidth: 400
-    rangeHeight: 400
+    rangeHeight: 200
     damageDelay: 1
     rangeCenterOffset: {x: 0, y: 0}
   teleportAttack:
@@ -31451,7 +31451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9248390a5d00af644b877f0d6215e616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 100
   bossHpBar: {fileID: 0}
 --- !u!1 &231659804
 GameObject:
@@ -96042,10 +96042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: de251335e1d7645369bab5cd9afb5834, type: 3}
-  - {fileID: 8300000, guid: 4862e5d7445e08c4db5fa0fc5b940d3e, type: 3}
-  - {fileID: 8300000, guid: bb31431c458c744f59b118da2cf8d490, type: 3}
-  - {fileID: 8300000, guid: e44166eb056e844eeb2746ffa6d954e4, type: 3}
+  - {fileID: 8300000, guid: 5bbd9c7379d36466ab24c470bbdae2e1, type: 3}
 --- !u!4 &1527575836
 Transform:
   m_ObjectHideFlags: 0
@@ -106418,7 +106415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950328260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -269, y: -199, z: 0}
+  m_LocalPosition: {x: -2774, y: -562, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106465,7 +106462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusicTrack: 0
   enable: 1
-  volume: 0.1
+  volume: 2
 --- !u!1 &1950949875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467030357371, guid: e94d767618bcb05439c265f75747caa9, type: 3}

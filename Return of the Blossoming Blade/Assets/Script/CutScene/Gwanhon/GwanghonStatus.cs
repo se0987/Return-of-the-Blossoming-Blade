@@ -12,6 +12,9 @@ public class GwanghonStatus : MonoBehaviour
 
     public Image bossHpBar;
 
+    private bool isDead = false;
+    private bool isInvulnerable = false; // 무적 상태를 추적하는 변수
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,7 +23,6 @@ public class GwanghonStatus : MonoBehaviour
         GameObject hpGaugeObject = GameObject.Find("Boss_HP_Gauge1");
         if (hpGaugeObject)
         {
-
             bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
     }
@@ -30,41 +32,63 @@ public class GwanghonStatus : MonoBehaviour
         if (bossHpBar != null)
         {
             float hpRatio = currentHealth / maxHealth;
-
             bossHpBar.fillAmount = hpRatio;
         }
     }
 
-void Die()
+    void Die()
     {
-        Debug.Log("������ �׾����ϴ�.");
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Weapon"))
+        if (!isDead)
         {
-            WeaponDamage weapon = collision.GetComponent<WeaponDamage>();
-            if (weapon)
+            isDead = true;
+            GameObject Gwanghon = GameObject.Find("Gwanghon");
+            if (Gwanghon != null)
             {
-                StartCoroutine(FlashCoroutine());
-                currentHealth -= weapon.damageAmount;
-            }
-            if (currentHealth <= 0)
-            {
-                Die();
+                Gwanghon.SetActive(false);
+                bossHpBar.fillAmount = 0f;
             }
         }
     }
 
+   private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.CompareTag("Weapon") && !isInvulnerable)
+    {
+        WeaponDamage weapon = collision.GetComponent<WeaponDamage>();
+        if (weapon)
+        {
+            if (currentHealth > 0)
+            {
+                StartCoroutine(FlashCoroutine());
+            }
+
+            currentHealth -= weapon.damageAmount;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+
+            // 활성 상태 확인 후 코루틴 시작
+            if(gameObject.activeInHierarchy) 
+            {
+                StartCoroutine(InvulnerabilityCoroutine());
+            }
+        }
+    }
+}
+
     private IEnumerator FlashCoroutine()
     {
         float flashDuration = 0.1f;
-
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = Color.white;
     }
-}
 
+    private IEnumerator InvulnerabilityCoroutine()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(0.5f); // 0.5초 동안 무적
+        isInvulnerable = false;
+    }
+}
