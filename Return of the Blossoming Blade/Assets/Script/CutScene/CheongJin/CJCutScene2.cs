@@ -70,12 +70,12 @@ public class CJCutScene2 : MonoBehaviour
             PlayerPrefs.SetFloat("GwanghonPlayTime", PlayerPrefs.GetFloat("save" + saveNum + "GwanghonPlayTime"));
             PlayerPrefs.SetFloat("ChunsalPlayTime", PlayerPrefs.GetFloat("save" + saveNum + "ChunsalPlayTime"));
             theDM.StopDialogue();
-        }
-        if (PlayerPrefs.HasKey("CJEvent2One"))
-        {
-            if (PlayerPrefs.GetInt("CJEvent2One") == 1)
+            if (PlayerPrefs.HasKey("CJEvent2One"))
             {
-                one = false;
+                if (PlayerPrefs.GetInt("CJEvent2One") == 1)
+                {
+                    one = false;
+                }
             }
         }
     }
