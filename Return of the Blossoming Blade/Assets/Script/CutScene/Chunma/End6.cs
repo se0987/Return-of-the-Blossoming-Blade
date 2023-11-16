@@ -29,6 +29,8 @@ public class End6 : MonoBehaviour
 
     public static bool end = false;
 
+    public GameObject endingIllustration; // 엔딩 일러스트 GameObject
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +116,8 @@ public class End6 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theOrder.Appear("BlackScreen", true);
+        // 일러스트를 서서히 나타나게 하는 Coroutine 호출
+        StartCoroutine(ShowEndingIllustration());
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
 
@@ -123,6 +127,22 @@ public class End6 : MonoBehaviour
         SceneManager.LoadScene("Main");
 
         theOrder.Move();
+    }
+    IEnumerator ShowEndingIllustration()
+    {
+        Image illustration = endingIllustration.GetComponent<Image>();
+        float duration = 2.0f; // 페이드 인 지속 시간
+        float elapsed = 0f;
+
+        endingIllustration.SetActive(true);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsed / duration);
+            illustration.color = new Color(illustration.color.r, illustration.color.g, illustration.color.b, alpha);
+            yield return null;
+        }
     }
 }
 
