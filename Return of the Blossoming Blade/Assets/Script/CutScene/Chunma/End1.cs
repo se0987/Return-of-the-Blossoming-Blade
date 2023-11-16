@@ -32,6 +32,9 @@ public class End1 : MonoBehaviour
 
     public static bool end = false;
 
+    public GameObject hpBar;
+    public GameObject bossName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +76,8 @@ public class End1 : MonoBehaviour
 
         theOrder.Action("Player", "LAST");
 
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
 
@@ -97,10 +102,17 @@ public class End1 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
+        hpBar.SetActive(true);
+        bossName.SetActive(true);
         theOrder.Action("Player", "AttackH");
+        yield return new WaitForSeconds(5f);
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
         GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
