@@ -15216,10 +15216,14 @@ MonoBehaviour:
     loop: 0
   - name: Jump
     clip: {fileID: 8300000, guid: e9b4bb3dac3ff9c4da69ad21598e5eeb, type: 3}
-    Volumn: 2
+    Volumn: 4
     loop: 0
   - name: Swing
     clip: {fileID: 8300000, guid: 3a51777cd64b0f442ba11e116dd76ab4, type: 3}
+    Volumn: 2
+    loop: 0
+  - name: Attack
+    clip: {fileID: 8300000, guid: 423fcb90bfe7bda4f988f74978949e3f, type: 3}
     Volumn: 2
     loop: 0
 --- !u!4 &435799100

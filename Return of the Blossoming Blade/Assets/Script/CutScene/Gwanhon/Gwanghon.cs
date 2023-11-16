@@ -46,7 +46,7 @@ public class Gwanghon : MonoBehaviour
     public AttackData swingAttack;
     public AttackData dashAttack;
     public AttackData teleportAttack;
-
+    private float startTime;
     Vector2 movement = new Vector2();
     Rigidbody2D rigidbody2D;
 

@@ -20,6 +20,8 @@ public class GwanghonStatus : MonoBehaviour
 
     private MCutScene4 mCutScene4;
 
+    private float startTime; // 게임 시작 시간을 추적하기 위한 변수
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,6 +33,8 @@ public class GwanghonStatus : MonoBehaviour
         {
             bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
+
+        startTime = Time.time; // 게임 시작 시간을 기록
     }
 
     private void Update()
@@ -40,6 +44,15 @@ public class GwanghonStatus : MonoBehaviour
             float hpRatio = currentHealth / maxHealth;
             bossHpBar.fillAmount = hpRatio;
         }
+
+        if (isDead)
+        {
+        float playTime = Time.time - startTime; // 게임 플레이 시간 계산
+        PlayerPrefs.SetFloat("GwanghonPlayTime", playTime); // 플레이 시간 저장
+        PlayerPrefs.Save(); // 변경 사항 적용
+        Debug.Log(playTime); // 플레이 타임을 콘솔에 출력
+        Debug.Log(PlayerPrefs.GetFloat("GwanghonPlayTime"));
+    }
     }
 
     void Die()
@@ -58,6 +71,8 @@ public class GwanghonStatus : MonoBehaviour
             }
         }
     }
+
+
 
    private void OnTriggerEnter2D(Collider2D collision)
 {
