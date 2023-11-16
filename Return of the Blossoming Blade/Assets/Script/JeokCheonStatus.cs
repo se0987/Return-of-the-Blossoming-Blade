@@ -10,6 +10,7 @@ public class JeokCheonStatus : MonoBehaviour
     private float currentHealth;
 
     public Image bossHpBar;
+    public GameObject arrow;
 
     void Start()
     {
@@ -61,6 +62,7 @@ void Die()
             {
                 Debug.LogError("Boss_HP_Gauge1 object not found!");
             }
+            arrow.SetActive(true);
         }
 
         GameObject goToOuter3 = GameObject.Find("GoToOuter3");
