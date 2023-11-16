@@ -15558,7 +15558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77e2eae5696f2145995ff3377c575ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 1000
   bossHpBar: {fileID: 0}
 --- !u!210 &1723783941
 SortingGroup:
