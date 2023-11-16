@@ -12,13 +12,19 @@ public class GwanghonStatus : MonoBehaviour
 
     public Image bossHpBar;
 
+    public GameObject HP;
+    public GameObject Name;
+
     private bool isDead = false;
     private bool isInvulnerable = false; // 무적 상태를 추적하는 변수
+
+    private MCutScene4 mCutScene4;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
+        mCutScene4 = FindObjectOfType<MCutScene4>();
 
         GameObject hpGaugeObject = GameObject.Find("Boss_HP_Gauge1");
         if (hpGaugeObject)
@@ -46,6 +52,9 @@ public class GwanghonStatus : MonoBehaviour
             {
                 Gwanghon.SetActive(false);
                 bossHpBar.fillAmount = 0f;
+                mCutScene4.end = true;
+                HP.SetActive(false);
+                Name.SetActive(false);
             }
         }
     }

@@ -16,6 +16,11 @@ public class MCutScene3 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject Gwanghon;
+    public GameObject Block;
+    public GameObject GwanghonHP;
+    public GameObject GwanghonName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +68,11 @@ public class MCutScene3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        theBGM.Play(2);
+
+        Gwanghon.SetActive(true);
+        Block.SetActive(true);
+        GwanghonHP.SetActive(true);
+        GwanghonName.SetActive(true);
 
         theOrder.Move();
     }
