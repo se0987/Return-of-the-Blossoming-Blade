@@ -66,7 +66,6 @@ public class DCutScene3 : MonoBehaviour
         }
         if (hpGauge != null)
         {
-            Debug.Log("보스게이지");
             hpGauge.SetActive(true);
         }
         if (bossName != null)

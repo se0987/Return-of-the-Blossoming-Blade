@@ -30,7 +30,8 @@ public class Boss3Controller : MonoBehaviour
     public LayerMask layerMask;
     protected Vector2 direction;
 
-    private int playTime = 0;
+    private float playTime = 0;
+    private bool face2 = false;
 
     public List<Skill> skillList;
 
@@ -91,7 +92,7 @@ public class Boss3Controller : MonoBehaviour
         {
             MoveTowardsPlayer(direction);
         }
-        else if (!isAttack) //유지거리 내에서 공격중이 아니면 공격
+        else if (!isAttack && !isHit) //유지거리 내에서 공격중이 아니면 공격
         {
             PerformAttack();
         }
@@ -106,8 +107,9 @@ public class Boss3Controller : MonoBehaviour
         }
 
         // 2페이즈
-        if (currentHP <= 200)
+        if (currentHP <= 200 && !face2)
         {
+            face2 = true;
             dCutScene4.face2 = true;
         }
 
@@ -129,7 +131,8 @@ public class Boss3Controller : MonoBehaviour
 
             PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
             dCutScene4.end = true;
-            dCutScene4.time = playTime;
+            dCutScene4.time = Time.time;
+
             return;
         }
     }

@@ -82,6 +82,7 @@ public class DCutScene4 : MonoBehaviour
         }
         else if(end)
         {
+            Debug.Log("Á×..¾ú³ª?!");
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
