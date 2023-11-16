@@ -22,12 +22,9 @@ public class GoSavePoint1 : MonoBehaviour
 
     public void OnBtnClick()
     {
+        Debug.Log("¹öÆ° Å¬¸¯?");
         theDialogue.ShowLoading();
         theDialogue.StopDialogue();
-        //Ã¢ ´Ý±â
-        player.allStop = false;
-        player.notMove = false;
-        save.CloseSaveDialogue();
 
         //¾À ÀÌµ¿
         TransferScene[] temp1 = FindObjectsOfType<TransferScene>();
@@ -39,6 +36,10 @@ public class GoSavePoint1 : MonoBehaviour
                 break;
             }
         }
+        //Ã¢ ´Ý±â
+        player.allStop = false;
+        player.notMove = false;
+        save.CloseSaveDialogue();
         //Ã»¸í HP, MP
         PlayerPrefs.SetFloat("playerHP", PlayerPrefs.GetFloat("save1PlayerHP"));
         PlayerPrefs.SetFloat("playerMP", PlayerPrefs.GetFloat("save1PlayerMP"));

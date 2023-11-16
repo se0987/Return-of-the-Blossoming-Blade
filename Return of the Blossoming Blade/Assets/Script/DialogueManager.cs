@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -107,52 +109,54 @@ public class DialogueManager : MonoBehaviour
         talking = false;
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
+        StopCoroutine(StartDialogueCoroutine());
     }
 
     IEnumerator StartDialogueCoroutine()
     {
-        if (count > 0)
+        yield return new WaitForSeconds(0.01f);
+        try
         {
-            if (listDialogueWindows[count] != listDialogueWindows[count - 1])
+            if (count > 0)
             {
-                yield return new WaitForSeconds(0.2f);
-                animSprite.SetBool("Change", true);
-                animDialogueWindow.SetBool("Appear", false);
-                rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
-                rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
-                animDialogueWindow.SetBool("Appear", true);
-                animSprite.SetBool("Change", false);
-            }
-            else
-            {
-                if (listSprites[count] != listSprites[count - 1])
+                if (listDialogueWindows[count] != listDialogueWindows[count - 1])
                 {
-                    yield return new WaitForSeconds(0.1f);
                     animSprite.SetBool("Change", true);
+                    animDialogueWindow.SetBool("Appear", false);
+                    rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
                     rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
+                    animDialogueWindow.SetBool("Appear", true);
                     animSprite.SetBool("Change", false);
                 }
                 else
                 {
-                    yield return new WaitForSeconds(0.05f);
+                    if (listSprites[count] != listSprites[count - 1])
+                    {
+                        animSprite.SetBool("Change", true);
+                        rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
+                        animSprite.SetBool("Change", false);
+                    }
+                }
+            }
+            else
+            {
+                rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
+                rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
+            }
+            name.text = listName[count];
+            keyActivated = true;
+            for (int i = 0; i < listSentences[count].Length; i++)
+            {
+                text.text += listSentences[count][i];//1글자씩 출력
+                if (i % 7 == 1)
+                {
+                    theAudio.Play(typeSound);
                 }
             }
         }
-        else
+        catch (Exception e)
         {
-            rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
-            rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
-        }
-        name.text = listName[count];
-        keyActivated = true;
-        for (int i = 0; i < listSentences[count].Length; i++)
-        {
-            text.text += listSentences[count][i];//1글자씩 출력
-            if(i % 7 == 1)
-            {
-                theAudio.Play(typeSound);
-            }
-            yield return new WaitForSeconds(0.01f);
+            Debug.Log("대화가 중지되었습니다.");
         }
     }
 
