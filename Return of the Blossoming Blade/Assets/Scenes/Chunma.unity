@@ -1193,7 +1193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &74053001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCEE8\uC124\uD134\uD2B8"
+  m_text: "\uCC9C\uB9C8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d6ae30b6cf9e334484264a21da975c4, type: 2}
   m_sharedMaterial: {fileID: 9022146141806041892, guid: 4d6ae30b6cf9e334484264a21da975c4, type: 2}
@@ -1996,6 +1996,8 @@ MonoBehaviour:
   playMusicTrack1: 3
   playMusicTrack2: 2
   swordSound: sword
+  hpBar: {fileID: 0}
+  bossName: {fileID: 0}
 --- !u!114 &136386415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2392,6 +2394,8 @@ MonoBehaviour:
   playMusicTrack1: 3
   playMusicTrack2: 4
   swordSound: sword
+  hpBar: {fileID: 0}
+  bossName: {fileID: 0}
 --- !u!114 &163269610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7089,6 +7093,7 @@ MonoBehaviour:
   playMusicTrack1: 6
   playMusicTrack2: 7
   swordSound: sword
+  endingIllustration: {fileID: 0}
 --- !u!1 &577874044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699858467402717573, guid: e94d767618bcb05439c265f75747caa9, type: 3}
@@ -7926,7 +7931,7 @@ PrefabInstance:
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: playerTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1960151858}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: attackRangeIndicator
       value: 
@@ -13155,7 +13160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1323437552
 RectTransform:
   m_ObjectHideFlags: 0

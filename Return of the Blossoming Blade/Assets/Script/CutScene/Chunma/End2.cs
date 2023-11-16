@@ -30,9 +30,6 @@ public class End2 : MonoBehaviour
 
     public static bool end = false;
 
-    public GameObject hpBar;
-    public GameObject bossName;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +62,10 @@ public class End2 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
+        GameObject bossName = GameObject.Find("BossName");
+
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
@@ -74,13 +75,13 @@ public class End2 : MonoBehaviour
 
         theOrder.Action("Player", "LAST");
 
-        hpBar.SetActive(false);
+        bossHpBarObject.SetActive(false);
         bossName.SetActive(false);
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
 
         theDM.ShowDialogue(dialogue_2);
-        hpBar.SetActive(true);
+        bossHpBarObject.SetActive(true);
         bossName.SetActive(true);
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
@@ -102,20 +103,26 @@ public class End2 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(false);
+        bossHpBarObject.SetActive(false);
         bossName.SetActive(false);
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(true);
-        bossName.SetActive(true);
-        theOrder.Action("Player", "AttackH");
-        yield return new WaitForSeconds(1f);
-        hpBar.SetActive(false);
-        bossName.SetActive(false);
 
-        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
-        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
+
+        if (bossHpBarObject != null)
+        {
+            Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
+            if (bossHpBarImage != null)
+            {
+                bossHpBarImage.fillAmount = 0.01f;
+            }
+        }
+
+        theOrder.Action("Player", "AttackH");
+        StartCoroutine(SetFillAmountToZeroAfterDelay(2f));
+
+
         if (bossHpBarObject != null)
         {
             Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
@@ -124,10 +131,12 @@ public class End2 : MonoBehaviour
                 bossHpBarImage.fillAmount = 0;
             }
         }
-            if (Cheonma != null)
+        if (Cheonma != null)
         {
             Cheonma.SetActive(false);
         }
+
+        yield return new WaitForSeconds(1f);
 
         bgmManager.Stop();
         theAudio.Play(swordSound);
@@ -145,6 +154,32 @@ public class End2 : MonoBehaviour
         SceneManager.LoadScene("Main");
 
         theOrder.Move();
+    }
+
+    IEnumerator SetFillAmountToZeroAfterDelay(float delay)
+    {
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
+        GameObject bossName = GameObject.Find("BossName");
+
+        // 지연 시간 대기
+        yield return new WaitForSeconds(delay);
+
+        // 지연 시간 후에 fillAmount를 0으로 설정
+        if (bossHpBarObject != null)
+        {
+            Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
+            if (bossHpBarImage != null)
+            {
+                bossHpBarImage.fillAmount = 0;
+            }
+        }
+
+        // 다른 작업 수행 (예: Cheonma 비활성화)
+        if (Cheonma != null)
+        {
+            Cheonma.SetActive(false);
+        }
     }
 }
 
