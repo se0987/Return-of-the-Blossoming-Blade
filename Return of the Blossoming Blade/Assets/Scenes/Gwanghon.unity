@@ -107840,9 +107840,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 21c4a490b24ba2045bc815f7626a40ef, type: 3}
     Volumn: 1
     loop: 0
-  - name: Space
-    clip: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
-    Volumn: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: e9b4bb3dac3ff9c4da69ad21598e5eeb, type: 3}
+    Volumn: 2
+    loop: 0
+  - name: Swing
+    clip: {fileID: 8300000, guid: 3a51777cd64b0f442ba11e116dd76ab4, type: 3}
+    Volumn: 2
+    loop: 0
+  - name: Attack
+    clip: {fileID: 8300000, guid: 3a51777cd64b0f442ba11e116dd76ab4, type: 3}
+    Volumn: 2
     loop: 0
 --- !u!4 &1991038135
 Transform:

@@ -26980,6 +26980,26 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b4ab2d6bd1b8d054d9ba67addac61003, type: 3}
     Volumn: 0.3
     loop: 0
+  - name: Swing
+    clip: {fileID: 8300000, guid: 20e39e3d963293d4e98803828c715d76, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Attack
+    clip: {fileID: 8300000, guid: 20e39e3d963293d4e98803828c715d76, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: Start
+    clip: {fileID: 8300000, guid: ca063a34996f65b429f1ecb14f8a6d72, type: 3}
+    Volumn: 10
+    loop: 0
+  - name: End
+    clip: {fileID: 8300000, guid: 13692d423e4e2444b813ef4d3830040d, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: DashAttack
+    clip: {fileID: 8300000, guid: bda013c1a34ea324788acbbf5191434f, type: 3}
+    Volumn: 1
+    loop: 0
 --- !u!4 &484034736
 Transform:
   m_ObjectHideFlags: 0
@@ -42439,13 +42459,8 @@ MonoBehaviour:
     rangeWidth: 0
     rangeHeight: 0
     rangeCenterOffset: {x: 0, y: 0}
-    damageDelay: 0
   bossTransform: {fileID: 1273060302}
   rectangleRangeSprite: {fileID: 1812547580, guid: 4e5cbd41f40894c41935a18781fb303d, type: 3}
-  slashCollider: {fileID: 1031794590}
-  swingCollider: {fileID: 583678725}
-  dashCollider: {fileID: 1948892391}
-  teleportCollider: {fileID: 241169487}
   slashAttack:
     range: 50
     cooldownTime: 2
@@ -42457,7 +42472,6 @@ MonoBehaviour:
     rangeWidth: 100
     rangeHeight: 50
     rangeCenterOffset: {x: 0, y: 0}
-    damageDelay: 0.5
   swingAttack:
     range: 100
     cooldownTime: 4
@@ -42469,7 +42483,6 @@ MonoBehaviour:
     rangeWidth: 100
     rangeHeight: 100
     rangeCenterOffset: {x: 0, y: 0}
-    damageDelay: 0.5
   dashAttack:
     range: 200
     cooldownTime: 6
@@ -42481,7 +42494,6 @@ MonoBehaviour:
     rangeWidth: 200
     rangeHeight: 50
     rangeCenterOffset: {x: 0, y: 0}
-    damageDelay: 0.5
   teleportAttack:
     range: 5000
     cooldownTime: 10
@@ -42493,7 +42505,6 @@ MonoBehaviour:
     rangeWidth: 200
     rangeHeight: 200
     rangeCenterOffset: {x: 0, y: 0}
-    damageDelay: 0.5
 --- !u!212 &1273060301
 SpriteRenderer:
   m_ObjectHideFlags: 0

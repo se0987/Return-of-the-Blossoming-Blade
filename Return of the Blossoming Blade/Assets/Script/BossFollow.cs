@@ -8,7 +8,7 @@ public class BossFollow : MonoBehaviour
     public Transform playerTransform;
 
     public float movementSpeed = 3.0f;
-
+    private AudioManager theAudio;
     private bool isAttacking = false;
     private bool isTeleporting = false;
 
@@ -92,7 +92,7 @@ public class BossFollow : MonoBehaviour
 
         rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
         HideAttackRange();
-
+        theAudio = FindObjectOfType<AudioManager>();
         bossTransform = this.transform;
     }
 
@@ -154,6 +154,7 @@ public class BossFollow : MonoBehaviour
                 globalLastAttackTime = currentTime + teleportAttack.durationTime;
                 StartCoroutine(TeleportMovement(direction));
                 StartCoroutine(HideAttackRangeAfterDelay(teleportAttack.durationTime));
+                
             }
             else
             {
@@ -245,7 +246,8 @@ public class BossFollow : MonoBehaviour
     }
 
     private void LookAtPlayer(Vector2 lookDirection)
-    {
+    {   
+        theAudio.Play("End");
         if (Mathf.Abs(lookDirection.x) > Mathf.Abs(lookDirection.y))
         {
             if (lookDirection.x > 0)
@@ -277,7 +279,7 @@ public class BossFollow : MonoBehaviour
     {
         isAttacking = true;
         isTeleporting = true;
-
+        
         yield return new WaitForSeconds(teleportAttack.durationTime);
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -296,7 +298,7 @@ public class BossFollow : MonoBehaviour
         LookAtPlayer(lookDirection);
 
         yield return new WaitForSeconds(teleportAttack.afterAttackDuration);
-
+        
         isTeleporting = false;
     }
 
@@ -359,9 +361,9 @@ public class BossFollow : MonoBehaviour
     void Slash(Vector2 direction)
     {
         isAttacking = true;
-
+        
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Attack");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -397,7 +399,7 @@ public class BossFollow : MonoBehaviour
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Swing");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -433,7 +435,7 @@ public class BossFollow : MonoBehaviour
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("DashAttack");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -470,7 +472,7 @@ public class BossFollow : MonoBehaviour
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Start");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)

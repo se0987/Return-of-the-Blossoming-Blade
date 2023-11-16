@@ -20,7 +20,7 @@ public class Gwanghon : MonoBehaviour
     public AttackData currentAttack = null;
     public Transform bossTransform;
     public Sprite rectangleRangeSprite;
-
+    private AudioManager theAudio;
     private SpriteRenderer spriteRenderer;
     public float flashDuration = 0.2f;
     private Color originalColor;
@@ -96,6 +96,7 @@ public class Gwanghon : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
+        theAudio = FindObjectOfType<AudioManager>();
         HideAttackRange();
         bossTransform = this.transform;
     }
@@ -416,7 +417,7 @@ private IEnumerator DashMovement(Vector2 dashDistance)
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Attack");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -452,7 +453,7 @@ private IEnumerator DashMovement(Vector2 dashDistance)
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Swing");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -489,7 +490,7 @@ private IEnumerator DashMovement(Vector2 dashDistance)
     isAttacking = true;
 
     rigidbody2D.velocity = Vector2.zero;
-
+    theAudio.Play("Jump");
     // 방향에 따라 애니메이션 상태를 설정합니다.
      SetAnimationState(direction);
 
