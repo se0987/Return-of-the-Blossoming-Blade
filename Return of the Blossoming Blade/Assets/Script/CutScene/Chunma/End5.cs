@@ -51,7 +51,7 @@ public class End5 : MonoBehaviour
         StopCoroutine(EventCoroutine());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
         if (one && end)
         {
@@ -62,7 +62,6 @@ public class End5 : MonoBehaviour
                 if (temp[i].gateName.Equals("EndPoint5"))
                 {
                     temp[i].move = false;
-                    Debug.Log(temp[i].move);
                     break;
                 }
             }

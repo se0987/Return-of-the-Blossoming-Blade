@@ -119,7 +119,7 @@ public class CheonmaStatus : MonoBehaviour
              }
             PlayerPrefs.SetFloat("End2", 1);
         }
-        else if (remainHealth < 5 && fame >= 250 && isDangBo == 0)
+        else if (0 < remainHealth && remainHealth < 5 && fame >= 250 && isDangBo == 0)
         {
             End3.end = true;
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
@@ -133,7 +133,7 @@ public class CheonmaStatus : MonoBehaviour
             }
             PlayerPrefs.SetFloat("End3", 1);
         }
-        else if (remainHealth < 5 && fame >= 300 && isDangBo == 1)
+        else if (0 < remainHealth && remainHealth < 5 && fame >= 300 && isDangBo == 1)
         {
             End4.end = true;
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
