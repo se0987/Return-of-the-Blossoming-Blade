@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class End1 : MonoBehaviour
 {
@@ -131,6 +133,9 @@ public class End1 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 1\n동귀어진");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

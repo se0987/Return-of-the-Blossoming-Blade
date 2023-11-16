@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End2 : MonoBehaviour
 {
@@ -125,6 +126,9 @@ public class End2 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 2\n매화검존 청명 생존");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }
