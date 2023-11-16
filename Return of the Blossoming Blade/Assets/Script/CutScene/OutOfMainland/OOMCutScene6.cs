@@ -16,7 +16,6 @@ public class OOMCutScene6 : MonoBehaviour
     private bool one = true;
 
     public bool enable = false;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +24,6 @@ public class OOMCutScene6 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

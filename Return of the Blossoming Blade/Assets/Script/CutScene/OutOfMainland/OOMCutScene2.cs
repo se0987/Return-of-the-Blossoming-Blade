@@ -21,7 +21,6 @@ public class OOMCutScene2 : MonoBehaviour
     public string fireSound;
 
     public GameObject arrow;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +30,6 @@ public class OOMCutScene2 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theAudio = FindObjectOfType<AudioManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("¡ﬂ¡ˆ");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -71,10 +62,6 @@ public class OOMCutScene2 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "UP");
         theOrder.Action("Player", "AttackH");//√ª∏Ì¿Ã ƒÆ¿ª »÷µŒ∏ß

@@ -19,7 +19,6 @@ public class CJCutScene4 : MonoBehaviour
     private bool one = true;
 
     public bool enable = false;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class CJCutScene4 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         bgmManager = FindObjectOfType<BGMManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
         if (PlayerPrefs.HasKey("CJEvent2One"))
         {
             if (PlayerPrefs.GetInt("CJEvent2One") == 1)
@@ -37,13 +35,6 @@ public class CJCutScene4 : MonoBehaviour
                 enable = true;
             }
         }
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -70,10 +61,6 @@ public class CJCutScene4 : MonoBehaviour
                 theDM.ShowDialogue(dialogue_1);
                 yield return new WaitUntil(() => !theDM.talking);
             }
-        }
-        if (stop)
-        {
-            yield break;
         }
         if (PlayerPrefs.HasKey("choice3"))
         {

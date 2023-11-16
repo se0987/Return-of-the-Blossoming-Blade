@@ -15,13 +15,17 @@ public class PlayerStatus : MonoBehaviour
     public int currentPosion;
 
     private AudioManager theAudio;
+    private ChapterManager theChapter;
     public string posionSound;
+    private OrderManager theOrder;
 
     private SpriteRenderer spriteRenderer;
     private void Start()
     {
         theAudio = FindObjectOfType<AudioManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        theOrder = FindObjectOfType<OrderManager>();
+        theChapter = FindObjectOfType<ChapterManager>();
         // 게임 시작시 플레이어의 HP와 MP를 최대치로 설정
         if (!PlayerPrefs.HasKey("playerHP"))
         {
@@ -86,6 +90,7 @@ public class PlayerStatus : MonoBehaviour
             }
 
             StartCoroutine(FlashCoroutine()); // 피해 입은 효과
+            StartCoroutine(DieAfterGo()); // 죽고나서 메인 페이지로 이동
         }
         else
         {
@@ -94,6 +99,15 @@ public class PlayerStatus : MonoBehaviour
             StartCoroutine(FlashCoroutine()); // 피해 입은 효과
         }
     }
+
+    private IEnumerator DieAfterGo()
+    {
+        theOrder.Appear("BlackScreen", true);
+        theChapter.ShowChapter("사망");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Main");
+    }
+
     private IEnumerator FlashCoroutine()
     {
         float flashDuration = 0.1f;
@@ -188,12 +202,6 @@ public class PlayerStatus : MonoBehaviour
         End5.end = true;
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
 
-        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
-
-        DisableCheonmaBehaviors(Cheonma);
-        ResetCheonmaAnimator(Cheonma);
-        DisableAllClonedSpriteRenderers();
-
         for (int i = 0; i < temp.Length; i++)
         {
             if (temp[i].gateName.Equals("EndPoint5"))
@@ -203,6 +211,12 @@ public class PlayerStatus : MonoBehaviour
             }
         }
         PlayerPrefs.SetFloat("End5", 1);
+
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+
+        DisableCheonmaBehaviors(Cheonma);
+        ResetCheonmaAnimator(Cheonma);
+        DisableAllClonedSpriteRenderers();
     }
 
     void DisableCheonmaBehaviors(GameObject cheonma)

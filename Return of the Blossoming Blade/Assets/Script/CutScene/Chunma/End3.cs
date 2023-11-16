@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End3 : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class End3 : MonoBehaviour
     private bool one = true;
 
     public static bool end = false;
-    private bool stop = false;
+
+    public GameObject hpBar;
+    public GameObject bossName;
 
     // Start is called before the first frame update
     void Start()
@@ -42,14 +45,6 @@ public class End3 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("중지");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,12 +76,10 @@ public class End3 : MonoBehaviour
 
         theOrder.Action("Player", "LAST");
 
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
@@ -109,17 +102,8 @@ public class End3 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
-
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Action("Player", "AttackH");
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
@@ -143,24 +127,19 @@ public class End3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_4);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theOrder.Action("Player", "DIE");
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_6);
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 3\n천려일득");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

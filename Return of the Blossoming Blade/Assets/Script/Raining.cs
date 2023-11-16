@@ -14,7 +14,7 @@ public class Raining : MonoBehaviour
             PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
             if (playerStatus != null)
             {
-                playerStatus.TakeDamage(40.0f);
+                playerStatus.TakeDamage(30.0f);
                 hasCollided = true;
             }
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End2 : MonoBehaviour
 {
@@ -28,7 +29,9 @@ public class End2 : MonoBehaviour
     private bool one = true;
 
     public static bool end = false;
-    private bool stop = false;
+
+    public GameObject hpBar;
+    public GameObject bossName;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +43,6 @@ public class End2 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("중지");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,12 +74,10 @@ public class End2 : MonoBehaviour
 
         theOrder.Action("Player", "LAST");
 
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
@@ -107,18 +100,11 @@ public class End2 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Action("Player", "AttackH");
+        yield return new WaitForSeconds(3f);
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
         GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
@@ -141,16 +127,14 @@ public class End2 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_4);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
-
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 2\n매화검존 청명 생존");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

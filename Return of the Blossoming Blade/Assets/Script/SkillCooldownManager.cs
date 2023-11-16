@@ -27,10 +27,10 @@ public class SkillCooldownManager : MonoBehaviour
     private bool isWActive = false;
     private bool isEActive = false;
 
-    public float QSkillDuration = 1.6f;
-    public float WSkillDuration = 1.9f;
-    public float ESkillDuration = 4.4f;
-    public float SpaceDuration = 0.25f;
+    public float QSkillDuration = 0.85f;
+    public float WSkillDuration = 0.9f;
+    public float ESkillDuration = 3.5f;
+    public float SpaceDuration = 0.2f;
 
     public GameObject QSkillCol; // Q의 Skill Col 참조
 
@@ -164,9 +164,9 @@ public class SkillCooldownManager : MonoBehaviour
         for (int i = 0; i < 3; i++) // 3번 반복
         {
             QSkillCol.SetActive(true);  // Skill Col 활성화
-            yield return new WaitForSeconds(0.3f); // 0.1초 대기. 이 값을 조절하여 ON/OFF 간격을 변경할 수 있습니다.
+            yield return new WaitForSeconds(0.2f); // 0.1초 대기. 이 값을 조절하여 ON/OFF 간격을 변경할 수 있습니다.
             QSkillCol.SetActive(false); // Skill Col 비활성화
-            yield return new WaitForSeconds(0.15f); // 0.1초 대기
+            yield return new WaitForSeconds(0.1f); // 0.1초 대기
         }
         playerAnimator.SetBool("SkillQ", false);
     }
@@ -226,10 +226,21 @@ public class SkillCooldownManager : MonoBehaviour
         ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
         ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
 
-        yield return new WaitForSeconds(ESkillDuration); // 4.4초 동안 대기
+        yield return new WaitForSeconds(ESkillDuration/3); 
 
         ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
         ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+        ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
+        ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
+
+        yield return new WaitForSeconds(ESkillDuration / 3);
+
+        ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
+        ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+        ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
+        ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
+
+        yield return new WaitForSeconds(ESkillDuration / 3); 
 
         playerAnimator.SetBool("SkillE", false);
 
@@ -252,7 +263,7 @@ public class SkillCooldownManager : MonoBehaviour
         }
 
         // 공격 애니메이션 시간만큼 대기
-        yield return new WaitForSeconds(1.04f);
+        yield return new WaitForSeconds(0.75f);
 
         // 애니메이션 불린 값을 초기화
         playerAnimator.SetBool("AttackH", false);

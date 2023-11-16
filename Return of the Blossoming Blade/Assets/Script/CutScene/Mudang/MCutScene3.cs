@@ -15,7 +15,6 @@ public class MCutScene3 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +24,6 @@ public class MCutScene3 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         theBGM = FindObjectOfType<BGMManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

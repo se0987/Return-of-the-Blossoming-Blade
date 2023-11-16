@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -62,7 +63,13 @@ public class DialogueManager : MonoBehaviour
         }
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
-        StartCoroutine(StartDialogueCoroutine());
+        try
+        {
+            StartCoroutine(StartDialogueCoroutine());
+        }catch(Exception e)
+        {
+            Debug.Log("대화가 중지됨");
+        }
     }
 
     public void ShowLoading()
@@ -93,10 +100,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StopDialogue()
     {
-        if (OnExitDialogue != null)
-        {
-            OnExitDialogue.Invoke();
-        }
         listSentences.Clear();
         listName.Clear();
         listSprites.Clear();
@@ -107,6 +110,7 @@ public class DialogueManager : MonoBehaviour
         talking = false;
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
+        StopCoroutine(StartDialogueCoroutine());
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -148,7 +152,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];//1글자씩 출력
-            if(i % 7 == 1)
+            if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
             }
