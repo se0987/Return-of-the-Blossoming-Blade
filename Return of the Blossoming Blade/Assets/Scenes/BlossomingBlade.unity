@@ -27765,6 +27765,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
     Volumn: 1
     loop: 0
+  - name: EnemyAttack
+    clip: {fileID: 8300000, guid: 7dc85274120e26d46a1cde110adfd27c, type: 3}
+    Volumn: 0.7
+    loop: 0
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+    Volumn: 0.3
+    loop: 0
 --- !u!4 &958707414
 Transform:
   m_ObjectHideFlags: 0
