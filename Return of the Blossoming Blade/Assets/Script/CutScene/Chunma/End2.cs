@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class End2 : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class End2 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    public bool end = false;
+    public static bool end = false;
     private bool stop = false;
 
     // Start is called before the first frame update
@@ -93,6 +94,18 @@ public class End2 : MonoBehaviour
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
         if (stop)
         {
@@ -106,6 +119,21 @@ public class End2 : MonoBehaviour
             yield break;
         }
         theOrder.Action("Player", "AttackH");
+
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
+        if (bossHpBarObject != null)
+        {
+            Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
+            if (bossHpBarImage != null)
+            {
+                bossHpBarImage.fillAmount = 0;
+            }
+        }
+            if (Cheonma != null)
+        {
+            Cheonma.SetActive(false);
+        }
 
         bgmManager.Stop();
         theAudio.Play(swordSound);
