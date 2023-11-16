@@ -5264,7 +5264,7 @@ GameObject:
   - component: {fileID: 480583093}
   - component: {fileID: 480583095}
   - component: {fileID: 480583094}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17715,7 +17715,7 @@ GameObject:
   - component: {fileID: 1824942310}
   - component: {fileID: 1824942312}
   - component: {fileID: 1824942311}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
