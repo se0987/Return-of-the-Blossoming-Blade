@@ -15,7 +15,7 @@ public class CheonmaMovement : MonoBehaviour
     public GameObject attackRangeIndicator;
     private SpriteRenderer rangeRenderer;
     public Sprite rectangleRangeSprite;
-
+    private AudioManager theAudio;
     public AttackData currentAttack = null;
 
 
@@ -67,7 +67,7 @@ public class CheonmaMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-
+        theAudio = FindObjectOfType<AudioManager>();
         rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
         HideAttackRange();
     }
@@ -192,7 +192,7 @@ public class CheonmaMovement : MonoBehaviour
         isAttacking = true;
 
         animator.SetInteger(animationsState, (int)States.rightHand);
-
+        // theAudio.play("right")
         Vector2 calculatedOffset = CalculateCenterOffset(rightHandAttack.rangeWidth, rightHandAttack.rangeHeight);
         rightHandAttack.rangeCenterOffset = calculatedOffset;
 
@@ -217,9 +217,8 @@ public class CheonmaMovement : MonoBehaviour
     void BothHand()
     {
         isAttacking = true;
-
+        // theAudio.play("twohand")
         animator.SetInteger(animationsState, (int)States.bothHand);
-
         Vector2 calculatedOffset = CalculateCenterOffset(bothHandAttack.rangeWidth, bothHandAttack.rangeHeight);
         bothHandAttack.rangeCenterOffset = calculatedOffset;
 
@@ -237,7 +236,6 @@ public class CheonmaMovement : MonoBehaviour
 
             StartCoroutine(DisableEffect(effectInstance, bothHandAttack.durationTime));
         }));
-
         StartCoroutine(AttackCooldown(bothHandAttack.durationTime));
     }
 

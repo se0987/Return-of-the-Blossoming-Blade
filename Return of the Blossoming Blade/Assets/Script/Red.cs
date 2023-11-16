@@ -12,7 +12,8 @@ public class Red : MonoBehaviour
         {
             PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
             if (playerStatus != null)
-            {
+            {   
+                
                 playerStatus.TakeDamage(5.0f);
                 hasCollided = true;
                 StartCoroutine(ApplyDotDamage(playerStatus, 3.0f, 1.0f, 5));
