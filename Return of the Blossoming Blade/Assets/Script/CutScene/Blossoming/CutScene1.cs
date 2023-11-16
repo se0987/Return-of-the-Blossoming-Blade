@@ -27,8 +27,8 @@ public class CutScene1 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
-        PlayerPrefs.SetInt("havePosion", 0);
-        PlayerPrefs.SetInt("maxPosion", 1);
+        PlayerPrefs.SetInt("havePosion", 2);
+        PlayerPrefs.SetInt("maxPosion", 3);
         PlayerPrefs.SetFloat("playerHP", playerStatus.maxHP-30);
         PlayerPrefs.SetFloat("playerMP", playerStatus.maxMP-10);
         int saveNum = PlayerPrefs.GetInt("onLoad");

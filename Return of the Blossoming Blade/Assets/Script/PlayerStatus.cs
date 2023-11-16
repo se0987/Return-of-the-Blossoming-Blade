@@ -11,7 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public float maxMP = 50f;  // √÷¥Î MP
     public float currentMP;
 
-    public int maxPosion = 1;
+    public int maxPosion = 3;
     public int currentPosion;
 
     private AudioManager theAudio;
