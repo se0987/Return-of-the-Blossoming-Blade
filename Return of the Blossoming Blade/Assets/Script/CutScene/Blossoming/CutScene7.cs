@@ -21,6 +21,7 @@ public class CutScene7 : MonoBehaviour
     private bool one = true;
 
     public GameObject arrow7;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,14 @@ public class CutScene7 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theDM.OnExitDialogue += HandleExitDialogue;
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,7 +61,11 @@ public class CutScene7 : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
-            
+        if (stop)
+        {
+            yield break;
+        }
+
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("DangBo", "LEFT");
@@ -67,9 +80,17 @@ public class CutScene7 : MonoBehaviour
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theDM.ShowDialogue(dialogue_4);
         theOrder.Move("Player", "LEFT");
@@ -85,6 +106,10 @@ public class CutScene7 : MonoBehaviour
         theOrder.Move("Player", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
         theOrder.Appear("CheongJin", false);
 
         theDM.ShowDialogue(dialogue_5);

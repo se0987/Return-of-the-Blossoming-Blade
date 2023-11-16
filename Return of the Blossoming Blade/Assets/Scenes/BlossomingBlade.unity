@@ -48463,7 +48463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476746761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1212.5852, y: -390.53345, z: -90.58099}
+  m_LocalPosition: {x: -13, y: 267, z: -90.58099}
   m_LocalScale: {x: 1006.4553, y: 1006.4553, z: 1.0064517}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50957,7 +50957,7 @@ MonoBehaviour:
   target: {fileID: 1355693695}
   targetBound: {fileID: 1924530232}
   gateName: GoToTown
-  move: 0
+  move: 1
   moveSound: transferMap
   BGMStop: 1
 --- !u!61 &1647962453

@@ -79,6 +79,20 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitDialogue()
     {
+        listSentences.Clear();
+        listName.Clear();
+        listSprites.Clear();
+        listDialogueWindows.Clear();
+        count = 0;
+        text.text = "";
+        name.text = "";
+        talking = false;
+        animSprite.SetBool("Appear", false);
+        animDialogueWindow.SetBool("Appear", false);
+    }
+
+    public void StopDialogue()
+    {
         if (OnExitDialogue != null)
         {
             OnExitDialogue.Invoke();

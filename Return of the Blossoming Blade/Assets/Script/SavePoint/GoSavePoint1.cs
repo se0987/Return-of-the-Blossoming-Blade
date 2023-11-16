@@ -23,7 +23,7 @@ public class GoSavePoint1 : MonoBehaviour
     public void OnBtnClick()
     {
         theDialogue.ShowLoading();
-        theDialogue.ExitDialogue();
+        theDialogue.StopDialogue();
         //Ã¢ ´Ý±â
         player.allStop = false;
         player.notMove = false;

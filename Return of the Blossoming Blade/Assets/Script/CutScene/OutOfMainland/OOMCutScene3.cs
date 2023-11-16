@@ -5,6 +5,9 @@ using UnityEngine;
 public class OOMCutScene3 : MonoBehaviour
 {
     public Dialogue dialogue_1;
+    public GameObject jeokCheon;
+    public GameObject hpGauge;
+    public GameObject bossName;
 
     private DialogueManager theDM;
     private OrderManager theOrder;
@@ -14,6 +17,7 @@ public class OOMCutScene3 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,14 @@ public class OOMCutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theDM.OnExitDialogue += HandleExitDialogue;
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +53,21 @@ public class OOMCutScene3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+
+        if (jeokCheon != null)
+        {
+            jeokCheon.SetActive(true);
+        }
+
+        if (hpGauge != null)
+        {
+            hpGauge.SetActive(true);
+        }
+
+        if (bossName != null)
+        {
+            bossName.SetActive(true);
+        }
 
         theOrder.Move();
     }

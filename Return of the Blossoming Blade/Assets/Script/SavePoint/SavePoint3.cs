@@ -48,6 +48,7 @@ public class SavePoint3 : MonoBehaviour
         PlayerPrefs.SetFloat("save3MaxPosion", PlayerPrefs.GetFloat("maxPosion"));
 
         PlayerPrefs.SetString("save3MapName", PlayerPrefs.GetString("playerMapName"));
+        PlayerPrefs.SetString("save3playerGateName", PlayerPrefs.GetString("playerGateName"));
         PlayerPrefs.SetInt("save3CJEvent2One", PlayerPrefs.GetInt("CJEvent2One"));
         PlayerPrefs.SetInt("save3Choice1", PlayerPrefs.GetInt("choice1"));
         PlayerPrefs.SetInt("save3Choice2", PlayerPrefs.GetInt("choice2"));
