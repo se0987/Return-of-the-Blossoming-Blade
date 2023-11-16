@@ -38,7 +38,7 @@ public class CJCutScene2 : MonoBehaviour
         PlayerPrefs.SetInt("choice2", 0);
         PlayerPrefs.SetInt("choice3", 0);
         int saveNum = PlayerPrefs.GetInt("onLoad");
-        if (saveNum != 0)
+        if (PlayerPrefs.HasKey("onLoad") && saveNum != 0)
         {
             thePlayer.allStop = false;
             thePlayer.notMove = false;
@@ -54,7 +54,7 @@ public class CJCutScene2 : MonoBehaviour
             TransferMap[] temp2 = FindObjectsOfType<TransferMap>();
             for (int i = 0; i < temp2.Length; i++)
             {
-                if (temp2[i].gateName.Equals(PlayerPrefs.GetString("save1playerGateName")))
+                if (temp2[i].gateName.Equals(PlayerPrefs.GetString("save" + saveNum + "playerGateName")))
                 {
                     temp2[i].GoToPoint();
                     break;
