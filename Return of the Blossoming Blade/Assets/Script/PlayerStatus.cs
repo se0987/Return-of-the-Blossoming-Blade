@@ -188,12 +188,6 @@ public class PlayerStatus : MonoBehaviour
         End5.end = true;
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
 
-        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
-
-        DisableCheonmaBehaviors(Cheonma);
-        ResetCheonmaAnimator(Cheonma);
-        DisableAllClonedSpriteRenderers();
-
         for (int i = 0; i < temp.Length; i++)
         {
             if (temp[i].gateName.Equals("EndPoint5"))
@@ -203,6 +197,12 @@ public class PlayerStatus : MonoBehaviour
             }
         }
         PlayerPrefs.SetFloat("End5", 1);
+
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+
+        DisableCheonmaBehaviors(Cheonma);
+        ResetCheonmaAnimator(Cheonma);
+        DisableAllClonedSpriteRenderers();
     }
 
     void DisableCheonmaBehaviors(GameObject cheonma)
