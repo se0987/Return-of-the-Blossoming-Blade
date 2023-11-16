@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End5 : MonoBehaviour
 {
@@ -29,7 +30,9 @@ public class End5 : MonoBehaviour
     private bool one = true;
 
     public static bool end = false;
-    private bool stop = false;
+
+    public GameObject hpBar;
+    public GameObject bossName;
 
     // Start is called before the first frame update
     void Start()
@@ -41,17 +44,9 @@ public class End5 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
     }
 
-    void HandleExitDialogue()
-    {
-        Debug.Log("중지");
-        stop = true;
-        StopCoroutine(EventCoroutine());
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
         if (one && end)
         {
@@ -62,7 +57,6 @@ public class End5 : MonoBehaviour
                 if (temp[i].gateName.Equals("EndPoint5"))
                 {
                     temp[i].move = false;
-                    Debug.Log(temp[i].move);
                     break;
                 }
             }
@@ -80,12 +74,11 @@ public class End5 : MonoBehaviour
 
         theOrder.Action("Player", "LAST");
 
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
+
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
@@ -108,17 +101,8 @@ public class End5 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
-
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Action("Player", "AttackH");
         bgmManager.Stop();
         theAudio.Play(swordSound);
@@ -127,10 +111,6 @@ public class End5 : MonoBehaviour
         theOrder.Action("Player", "DIE");
         bgmManager.Play(playMusicTrack2);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
 
         theOrder.Appear("BlackScreen", true);
@@ -138,6 +118,9 @@ public class End5 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 5\n천마천세 만마앙복");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

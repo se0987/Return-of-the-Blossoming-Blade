@@ -36,7 +36,6 @@ public class CutScene6 : MonoBehaviour
     private bool arrow5Summon = false;
 
     public int BGM;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,14 +45,6 @@ public class CutScene6 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theBGM = FindObjectOfType<BGMManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -100,10 +91,6 @@ public class CutScene6 : MonoBehaviour
 
                 theDM.ShowDialogue(dialogue_1);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "UP");
@@ -144,10 +131,6 @@ public class CutScene6 : MonoBehaviour
 
                 theDM.ShowDialogue(dialogue_2);
                 yield return new WaitForSeconds(2f);
-                if (stop)
-                {
-                    yield break;
-                }
                 theOrder.Appear("Poor", true);
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
@@ -166,10 +149,6 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("Player", "LEFT", "Running");
                 theOrder.Move("Player", "LEFT", "Running");
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
 
                 theDM.ShowDialogue(dialogue_4);
                 yield return new WaitUntil(() => !theDM.talking);
@@ -218,26 +197,14 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("CheongJin2", "UP");
                 theOrder.Move("CheongJin2", "RIGHT");
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
 
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitForSeconds(0.3f);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
                 theOrder.Action("Couple", "COUPLEWITH");
 
                 theDM.ShowDialogue(dialogue_7);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
                 theOrder.Appear("Father", true);
                 yield return new WaitForSeconds(0.3f);
                 theOrder.Move("Father", "RIGHT");
@@ -246,10 +213,6 @@ public class CutScene6 : MonoBehaviour
 
                 theDM.ShowDialogue(dialogue_8);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
 
                 theDM.ShowDialogue(dialogue_9);
                 theOrder.Appear("Poor", true);
@@ -263,10 +226,6 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("Poor", "RIGHT");
                 theOrder.Move("Poor", "RIGHT");
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
 
                 theDM.ShowDialogue(dialogue_3);
                 yield return new WaitUntil(() => !theDM.talking);
@@ -275,10 +234,6 @@ public class CutScene6 : MonoBehaviour
                 theOrder.Move("Player", "LEFT", "Running");
                 theOrder.Move("Player", "LEFT", "Running");
                 theOrder.Move("Player", "LEFT", "Running");
-                if (stop)
-                {
-                    yield break;
-                }
 
                 theDM.ShowDialogue(dialogue_4);
                 yield return new WaitUntil(() => !theDM.talking);

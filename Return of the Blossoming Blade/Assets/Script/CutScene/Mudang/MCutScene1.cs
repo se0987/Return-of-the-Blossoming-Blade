@@ -18,8 +18,6 @@ public class MCutScene1 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
-    private bool stop = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +25,6 @@ public class MCutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,10 +46,6 @@ public class MCutScene1 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Action("Student1", "DIE");
 
         theDM.ShowDialogue(dialogue_2);

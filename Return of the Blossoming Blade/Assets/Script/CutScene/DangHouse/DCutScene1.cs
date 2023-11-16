@@ -18,7 +18,6 @@ public class DCutScene1 : MonoBehaviour
 
     public GameObject arrow1;
     public GameObject arrow2;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +26,6 @@ public class DCutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,10 +46,6 @@ public class DCutScene1 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Move("JoPeong", "DOWN");
         theOrder.Move("JoPeong", "DOWN");
         theOrder.Move("JoPeong", "DOWN");

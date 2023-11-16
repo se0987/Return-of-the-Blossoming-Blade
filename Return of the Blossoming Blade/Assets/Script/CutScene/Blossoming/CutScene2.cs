@@ -30,7 +30,6 @@ public class CutScene2 : MonoBehaviour
     public GameObject arrow2;
     public GameObject arrow3;
     public GameObject arrow4;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +39,6 @@ public class CutScene2 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         cutScene3 = FindObjectOfType<CutScene3>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,10 +69,6 @@ public class CutScene2 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         //yield return new WaitForSeconds(1f);
 
         arrow1.SetActive(false);
@@ -95,19 +82,11 @@ public class CutScene2 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theOrder.Turn("CheongJin", "DOWN");
         
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theChoice.ShowChoice(choice_1, 1);
         yield return new WaitUntil(() => !theChoice.talking);
@@ -119,10 +98,6 @@ public class CutScene2 : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
                 theDM.ShowDialogue(dialogue_4);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
                 theDM.ShowDialogue(dialogue_5);
                 theOrder.Move("CheongJin", "RIGHT");
                 theOrder.Move("CheongJin", "RIGHT");
@@ -137,10 +112,6 @@ public class CutScene2 : MonoBehaviour
                 yield return new WaitForSeconds(3f);
                 theOrder.Appear("BlackScreen", false);
                 yield return new WaitUntil(() => !theDM.talking);
-                if (stop)
-                {
-                    yield break;
-                }
                 theDM.ShowDialogue(dialogue_6);
                 yield return new WaitUntil(() => !theDM.talking);
                 arrow2.SetActive(true);

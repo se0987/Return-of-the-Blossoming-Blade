@@ -101,6 +101,12 @@ public class PlayerManager : MovingObject
                     canMove = false;
                     StartCoroutine(MoveCoroutine());
                 }
+                if (Input.GetKeyDown(KeyCode.Escape))//세이브
+                {
+                    notMove = true;
+                    allStop = true;
+                    theContinue.ShowSaveDialogue();
+                }
             }
             if (!notMove && !skillNotMove)
             {
@@ -108,12 +114,6 @@ public class PlayerManager : MovingObject
                 {
                     playerStatus.UsePosion();
                 }
-            }
-            if (Input.GetKeyDown(KeyCode.Escape))//세이브
-            {
-                notMove = true;
-                allStop = true;
-                theContinue.ShowSaveDialogue();
             }
         }
     }

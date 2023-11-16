@@ -23,7 +23,6 @@ public class CutScene3 : MonoBehaviour
 
     public GameObject arrow3;
     public GameObject arrow4;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +33,6 @@ public class CutScene3 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
         arrow4.SetActive(false);
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,17 +67,8 @@ public class CutScene3 : MonoBehaviour
             theDM.ShowDialogue(dialogue_1);
             theOrder.Turn("CheongMun", "LEFT");
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
-
             theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
             theOrder.Turn("CheongMun", "UP");
 
             theDM.ShowDialogue(dialogue_3);

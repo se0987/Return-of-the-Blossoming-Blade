@@ -19,7 +19,6 @@ public class JeokCheonStatus : MonoBehaviour
         GameObject hpGaugeObject = GameObject.Find("Boss_HP_Gauge1");
         if (hpGaugeObject)
         {
-
             bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
     }
@@ -42,6 +41,26 @@ void Die()
         {
             jeokCheon.SetActive(false);
             bossHpBar.fillAmount = 0;
+
+            GameObject bossName = GameObject.Find("Boss Name");
+            if (bossName != null)
+            {
+                bossName.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("BossName object not found!");
+            }
+
+            GameObject bossHpGauge2 = GameObject.Find("Boss_HP_Gauge2");
+            if (bossHpGauge2 != null)
+            {
+                bossHpGauge2.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("Boss_HP_Gauge1 object not found!");
+            }
         }
 
         GameObject goToOuter3 = GameObject.Find("GoToOuter3");
