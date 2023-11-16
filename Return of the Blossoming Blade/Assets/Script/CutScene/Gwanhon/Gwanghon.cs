@@ -187,24 +187,48 @@ public class Gwanghon : MonoBehaviour
             rangeOffset.y -= downwardAdjustment;
         }
 
-        Vector3 newCenterPosition = bossTransform.position + rangeOffset;
-        rangeRenderer.sprite = rectangleRangeSprite;
-        attackRangeIndicator.transform.position = newCenterPosition;
-
-        Vector3 scale;
-        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+        if (attackData == swingAttack)
         {
-            scale = new Vector3(attackData.rangeHeight, attackData.rangeWidth, 1);
+            Vector3 newCenterPosition = bossTransform.position;
+            rangeRenderer.sprite = rectangleRangeSprite;
+            attackRangeIndicator.transform.position = newCenterPosition;
+
+            Vector3 scale;
+            if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+            {
+                scale = new Vector3(attackData.rangeHeight, attackData.rangeWidth, 1);
+            }
+            else
+            {
+                scale = new Vector3(attackData.rangeWidth, attackData.rangeHeight, 1);
+            }
+
+            attackRangeIndicator.transform.localScale = scale;
+            rangeRenderer.enabled = true;
+
+            StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
         }
         else
         {
-            scale = new Vector3(attackData.rangeWidth, attackData.rangeHeight, 1);
+            Vector3 newCenterPosition = bossTransform.position + rangeOffset;
+            rangeRenderer.sprite = rectangleRangeSprite;
+            attackRangeIndicator.transform.position = newCenterPosition;
+
+            Vector3 scale;
+            if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+            {
+                scale = new Vector3(attackData.rangeHeight, attackData.rangeWidth, 1);
+            }
+            else
+            {
+                scale = new Vector3(attackData.rangeWidth, attackData.rangeHeight, 1);
+            }
+
+            attackRangeIndicator.transform.localScale = scale;
+            rangeRenderer.enabled = true;
+
+            StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
         }
-
-        attackRangeIndicator.transform.localScale = scale;
-        rangeRenderer.enabled = true;
-
-        StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
     }
 
     IEnumerator DamageAfterDelay(float delay, float damage, Vector3 position, Vector3 scale)
