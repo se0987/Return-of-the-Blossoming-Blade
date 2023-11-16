@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class End5 : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class End5 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    public bool end = false;
+    public static bool end = false;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,14 @@ public class End5 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        theDM.OnExitDialogue += HandleExitDialogue;
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,6 +82,10 @@ public class End5 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
@@ -81,10 +95,30 @@ public class End5 : MonoBehaviour
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
         theOrder.Action("Player", "AttackH");
         bgmManager.Stop();
         theAudio.Play(swordSound);
@@ -93,6 +127,10 @@ public class End5 : MonoBehaviour
         theOrder.Action("Player", "DIE");
         bgmManager.Play(playMusicTrack2);
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
 
         theOrder.Appear("BlackScreen", true);

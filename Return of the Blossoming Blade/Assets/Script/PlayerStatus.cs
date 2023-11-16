@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -66,18 +67,32 @@ public class PlayerStatus : MonoBehaviour
     // 데미지를 입었을 때 호출되는 함수
     public void TakeDamage(float damage)
     {
+        // 체력 감소
+        currentHP -= damage;
 
-        // HP가 0 미만이면 0으로 설정
-        if (PlayerPrefs.GetFloat("playerHP") - damage < 0f)
+        // 체력이 0 이하가 되었는지 확인
+        if (currentHP <= 0)
         {
-            PlayerPrefs.SetFloat("playerHP", 0);
-            currentHP = 0;
-            // TODO: 플레이어 사망 로직 구현
-        }
-        currentHP = PlayerPrefs.GetFloat("playerHP") - damage;
-        PlayerPrefs.SetFloat("playerHP", currentHP);
+            currentHP = 0; // 체력을 0으로 설정
+            PlayerPrefs.SetFloat("playerHP", currentHP);
 
-        StartCoroutine(FlashCoroutine()); // 피해 입은 효과
+            // 현재 씬 이름 확인
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            // 'Chunma' 씬인 경우 DieInCheonma 호출
+            if (currentSceneName == "Chunma")
+            {
+                DieInCheonma();
+            }
+
+            StartCoroutine(FlashCoroutine()); // 피해 입은 효과
+        }
+        else
+        {
+            // 체력이 0보다 큰 경우에만 PlayerPrefs에 저장
+            PlayerPrefs.SetFloat("playerHP", currentHP);
+            StartCoroutine(FlashCoroutine()); // 피해 입은 효과
+        }
     }
     private IEnumerator FlashCoroutine()
     {
@@ -164,6 +179,65 @@ public class PlayerStatus : MonoBehaviour
                 playerMP = PlayerPrefs.GetFloat("playerMP");
 
                 currentMP = playerMP;
+            }
+        }
+    }
+
+    void DieInCheonma()
+    {
+        End5.end = true;
+        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+
+        DisableCheonmaBehaviors(Cheonma);
+        ResetCheonmaAnimator(Cheonma);
+        DisableAllClonedSpriteRenderers();
+
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].gateName.Equals("EndPoint5"))
+            {
+                temp[i].GoToPoint();
+                break;
+            }
+        }
+        PlayerPrefs.SetFloat("End5", 1);
+    }
+
+    void DisableCheonmaBehaviors(GameObject cheonma)
+    {
+        foreach (var behavior in cheonma.GetComponents<Behaviour>())
+        {
+            behavior.enabled = false;
+        }
+
+        Animator animator = cheonma.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
+    }
+
+    void ResetCheonmaAnimator(GameObject cheonma)
+    {
+        Animator animator = cheonma.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Rebind();
+            animator.enabled = false;
+        }
+    }
+
+    void DisableAllClonedSpriteRenderers()
+    {
+        SpriteRenderer[] allSpriteRenderers = FindObjectsOfType<SpriteRenderer>();
+
+        foreach (SpriteRenderer renderer in allSpriteRenderers)
+        {
+            if (renderer.gameObject.name.Contains("(Clone)"))
+            {
+                renderer.enabled = false;
             }
         }
     }

@@ -16,6 +16,7 @@ public class OOMCutScene1 : MonoBehaviour
     private bool one = true;
 
     public GameObject arrow;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class OOMCutScene1 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         playerStatus = FindObjectOfType<PlayerStatus>();
+        theDM.OnExitDialogue += HandleExitDialogue;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +37,13 @@ public class OOMCutScene1 : MonoBehaviour
             one = false;
             StartCoroutine(EventCoroutine());
         }
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     IEnumerator EventCoroutine()

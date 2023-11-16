@@ -29,6 +29,7 @@ public class CJCutScene1 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
     }
+
     private void Update()
     {
         if (!enemyCheck)

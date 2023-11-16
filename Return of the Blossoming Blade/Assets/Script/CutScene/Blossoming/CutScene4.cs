@@ -15,7 +15,8 @@ public class CutScene4 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    private CutScene5 cutScene5; 
+    private CutScene5 cutScene5;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,14 @@ public class CutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         cutScene5 = FindObjectOfType<CutScene5>();
+        theDM.OnExitDialogue += HandleExitDialogue;
+    }
+
+    void HandleExitDialogue()
+    {
+        Debug.Log("ÁßÁö");
+        stop = true;
+        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +53,10 @@ public class CutScene4 : MonoBehaviour
         theDM.ShowDialogue(dialogue_0);
 
         yield return new WaitUntil(() => !theDM.talking);
+        if (stop)
+        {
+            yield break;
+        }
 
         theOrder.Move("CheongJin2", "UP");
         theOrder.Move("CheongJin2", "UP");
