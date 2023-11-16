@@ -52,7 +52,7 @@ public class CutScene7 : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
-            
+
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("DangBo", "LEFT");

@@ -67,7 +67,6 @@ public class CutScene3 : MonoBehaviour
             theDM.ShowDialogue(dialogue_1);
             theOrder.Turn("CheongMun", "LEFT");
             yield return new WaitUntil(() => !theDM.talking);
-
             theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
             theOrder.Turn("CheongMun", "UP");

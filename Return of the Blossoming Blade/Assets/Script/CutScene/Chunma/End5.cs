@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End5 : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class End5 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    public bool end = false;
+    public static bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,7 @@ public class End5 : MonoBehaviour
         theChapter = FindObjectOfType<ChapterManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
         if (one && end)
         {
@@ -52,7 +54,6 @@ public class End5 : MonoBehaviour
                 if (temp[i].gateName.Equals("EndPoint5"))
                 {
                     temp[i].move = false;
-                    Debug.Log(temp[i].move);
                     break;
                 }
             }
@@ -81,8 +82,19 @@ public class End5 : MonoBehaviour
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Action("Player", "AttackH");
@@ -100,6 +112,9 @@ public class End5 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 5\n천마천세 만마앙복");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

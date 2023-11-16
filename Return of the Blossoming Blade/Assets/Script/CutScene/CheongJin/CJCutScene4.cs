@@ -28,6 +28,13 @@ public class CJCutScene4 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         bgmManager = FindObjectOfType<BGMManager>();
+        if (PlayerPrefs.HasKey("CJEvent2One"))
+        {
+            if (PlayerPrefs.GetInt("CJEvent2One") == 1)
+            {
+                enable = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

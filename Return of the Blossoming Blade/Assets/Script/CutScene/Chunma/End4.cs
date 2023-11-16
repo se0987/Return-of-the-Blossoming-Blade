@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End4 : MonoBehaviour
 {
@@ -29,7 +31,7 @@ public class End4 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    public bool end = false;
+    public static bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -82,11 +84,38 @@ public class End4 : MonoBehaviour
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
         theOrder.Action("Player", "AttackH");
+
+        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
+        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
+        if (bossHpBarObject != null)
+        {
+            Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
+            if (bossHpBarImage != null)
+            {
+                bossHpBarImage.fillAmount = 0;
+            }
+        }
+        if (Cheonma != null)
+        {
+            Cheonma.SetActive(false);
+        }
 
         bgmManager.Stop();
         theAudio.Play(swordSound);
@@ -104,6 +133,9 @@ public class End4 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 4\n암존 당보 생존");
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Main");
 
         theOrder.Move();
     }

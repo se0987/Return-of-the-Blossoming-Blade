@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class DialogueManager : MonoBehaviour
     public bool talking = false;
     private bool keyActivated = false;
 
+    private PlayerManager player;
+    
+    public event System.Action OnExitDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
         theAudio = FindObjectOfType<AudioManager>();
+        player = FindObjectOfType<PlayerManager>();
     }
 
     public void ShowDialogue(Dialogue dialogue)
@@ -57,7 +63,13 @@ public class DialogueManager : MonoBehaviour
         }
         animSprite.SetBool("Appear", true);
         animDialogueWindow.SetBool("Appear", true);
-        StartCoroutine(StartDialogueCoroutine());
+        try
+        {
+            StartCoroutine(StartDialogueCoroutine());
+        }catch(Exception e)
+        {
+            Debug.Log("대화가 중지됨");
+        }
     }
 
     public void ShowLoading()
@@ -74,8 +86,6 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitDialogue()
     {
-        animSprite.SetBool("Appear", false);
-        animDialogueWindow.SetBool("Appear", false);
         listSentences.Clear();
         listName.Clear();
         listSprites.Clear();
@@ -84,6 +94,23 @@ public class DialogueManager : MonoBehaviour
         text.text = "";
         name.text = "";
         talking = false;
+        animSprite.SetBool("Appear", false);
+        animDialogueWindow.SetBool("Appear", false);
+    }
+
+    public void StopDialogue()
+    {
+        listSentences.Clear();
+        listName.Clear();
+        listSprites.Clear();
+        listDialogueWindows.Clear();
+        count = 0;
+        text.text = "";
+        name.text = "";
+        talking = false;
+        animSprite.SetBool("Appear", false);
+        animDialogueWindow.SetBool("Appear", false);
+        StopCoroutine(StartDialogueCoroutine());
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -125,7 +152,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];//1글자씩 출력
-            if(i % 7 == 1)
+            if (i % 7 == 1)
             {
                 theAudio.Play(typeSound);
             }
@@ -136,7 +163,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talking && keyActivated)
+        if (talking && keyActivated && !player.allStop)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {

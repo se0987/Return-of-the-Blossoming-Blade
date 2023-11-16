@@ -40,6 +40,11 @@ public class TransferScene : MonoBehaviour
         }
     }
 
+    public void GoToScene()
+    {
+        StartCoroutine(LoadingCoroutine());
+    }
+
     IEnumerator LoadingCoroutine()
     {
         if (stop)
@@ -49,6 +54,7 @@ public class TransferScene : MonoBehaviour
         theDialogue.ShowLoading();
         yield return new WaitForSeconds(2f);
         thePlayer.currentMapName = transferMapName;
+        PlayerPrefs.SetString("playerGateName", transferMapName);
         SceneManager.LoadScene(transferMapName);
         theAudio.Play(doorSound);
     }

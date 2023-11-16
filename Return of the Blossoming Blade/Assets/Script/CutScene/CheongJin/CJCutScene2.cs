@@ -37,12 +37,54 @@ public class CJCutScene2 : MonoBehaviour
         playerStatus = FindObjectOfType<PlayerStatus>();
         PlayerPrefs.SetInt("choice2", 0);
         PlayerPrefs.SetInt("choice3", 0);
+        int saveNum = PlayerPrefs.GetInt("onLoad");
+        if (saveNum != 0)
+        {
+            thePlayer.allStop = false;
+            thePlayer.notMove = false;
+            PlayerPrefs.SetInt("onLoad", 0);
+            //청명 HP, MP
+            PlayerPrefs.SetFloat("playerHP", PlayerPrefs.GetFloat("save" + saveNum + "PlayerHP"));
+            PlayerPrefs.SetFloat("playerMP", PlayerPrefs.GetFloat("save" + saveNum + "PlayerMP"));
+            //영약
+            PlayerPrefs.SetFloat("havePosion", PlayerPrefs.GetFloat("save" + saveNum + "HavePosion"));
+            PlayerPrefs.SetFloat("maxPosion", PlayerPrefs.GetFloat("save" + saveNum + "MaxPosion"));
+
+            //맵 이동
+            TransferMap[] temp2 = FindObjectsOfType<TransferMap>();
+            for (int i = 0; i < temp2.Length; i++)
+            {
+                if (temp2[i].gateName.Equals(PlayerPrefs.GetString("save1playerGateName")))
+                {
+                    temp2[i].GoToPoint();
+                    break;
+                }
+            }
+            //각종 데이터 적용
+            PlayerPrefs.SetString("MapName", PlayerPrefs.GetString("save" + saveNum + "MapName"));
+            PlayerPrefs.SetInt("CJEvent2One", PlayerPrefs.GetInt("save" + saveNum + "CJEvent2One"));
+            PlayerPrefs.SetInt("Choice1", PlayerPrefs.GetInt("save" + saveNum + "Choice1"));
+            PlayerPrefs.SetInt("Choice2", PlayerPrefs.GetInt("save" + saveNum + "Choice2"));
+            PlayerPrefs.SetInt("Choice3", PlayerPrefs.GetInt("save" + saveNum + "Choice3"));
+            PlayerPrefs.SetFloat("JeokCheonPlayTime", PlayerPrefs.GetFloat("save" + saveNum + "JeokCheonPlayTime"));
+            PlayerPrefs.SetFloat("GwanghonPlayTime", PlayerPrefs.GetFloat("save" + saveNum + "GwanghonPlayTime"));
+            PlayerPrefs.SetFloat("ChunsalPlayTime", PlayerPrefs.GetFloat("save" + saveNum + "ChunsalPlayTime"));
+            theDM.StopDialogue();
+        }
+        if (PlayerPrefs.HasKey("CJEvent2One"))
+        {
+            if (PlayerPrefs.GetInt("CJEvent2One") == 1)
+            {
+                one = false;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (one)
         {
+            PlayerPrefs.SetInt("CJEvent2One", 2);
             one = false;
             StartCoroutine(EventCoroutine());
         }
@@ -57,6 +99,7 @@ public class CJCutScene2 : MonoBehaviour
         theOrder.Appear("CheongMun", true);
         theOrder.Turn("CheongMun", "RIGHT");
         theChapter.ShowChapter("Chapter6\n청진");
+        PlayerPrefs.SetInt("chapter", 6);
 
         playerStatus.UpgradeMaxPosion();
 
@@ -136,6 +179,7 @@ public class CJCutScene2 : MonoBehaviour
         }
 
         arrow1.SetActive(true);
+        PlayerPrefs.SetInt("CJEvent2One", 1);
 
         theOrder.Move();
     }

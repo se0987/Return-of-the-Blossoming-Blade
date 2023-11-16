@@ -18,7 +18,6 @@ public class MCutScene1 : MonoBehaviour
     //private bool flag;
     private bool can = false;
     private bool one = true;
-
     // Start is called before the first frame update
     void Start()
     {
