@@ -8,7 +8,7 @@ public class BossFollow : MonoBehaviour
     public Transform playerTransform;
 
     public float movementSpeed = 3.0f;
-
+    private AudioManager theAudio;
     private bool isAttacking = false;
     private bool isTeleporting = false;
 
@@ -20,11 +20,6 @@ public class BossFollow : MonoBehaviour
     public AttackData currentAttack = null;
     public Transform bossTransform;
     public Sprite rectangleRangeSprite;
-
-    public Collider2D slashCollider;
-    public Collider2D swingCollider;
-    public Collider2D dashCollider;
-    public Collider2D teleportCollider;
 
     [System.Serializable]
     public class AttackData
@@ -39,7 +34,6 @@ public class BossFollow : MonoBehaviour
         public float rangeWidth = 0f;
         public float rangeHeight = 0f;
         public Vector2 rangeCenterOffset;
-        public float damageDelay = 0f;
     }
 
     public AttackData slashAttack;
@@ -98,7 +92,7 @@ public class BossFollow : MonoBehaviour
 
         rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
         HideAttackRange();
-
+        theAudio = FindObjectOfType<AudioManager>();
         bossTransform = this.transform;
     }
 
@@ -160,6 +154,7 @@ public class BossFollow : MonoBehaviour
                 globalLastAttackTime = currentTime + teleportAttack.durationTime;
                 StartCoroutine(TeleportMovement(direction));
                 StartCoroutine(HideAttackRangeAfterDelay(teleportAttack.durationTime));
+                
             }
             else
             {
@@ -203,34 +198,24 @@ public class BossFollow : MonoBehaviour
 
         attackRangeIndicator.transform.localScale = scale;
         rangeRenderer.enabled = true;
-
-        StartCoroutine(DamageAfterDelay(attackData.damageDelay, attackData.damage, newCenterPosition, scale));
     }
 
-IEnumerator DamageAfterDelay(float delay, float damage, Vector3 position, Vector3 scale)
-{
-    yield return new WaitForSeconds(delay);
-
-    // 데미지 판정을 수행하는 로직
-    Collider2D[] hitPlayers = Physics2D.OverlapBoxAll(position, scale, 0);
-    foreach (Collider2D hit in hitPlayers)
-    {
-        if (hit.CompareTag("Player"))
-        {
-            // 플레이어에게 데미지를 주는 코드
-            PlayerStatus playerHealth = hit.GetComponent<PlayerStatus>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
-        }
-    }
-}
-
-void HideAttackRange()
+    void HideAttackRange()
     {
         rangeRenderer.enabled = false;
     }
+
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+     //   if (other.CompareTag("Player") && isAttacking)
+       // {
+         //   PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+           // if (playerHealth != null)
+            //{
+              //  playerHealth.TakeDamage(currentAttack.damage);
+            //}
+       // }
+   // }
 
     bool AllAttacksOnCooldown()
     {
@@ -261,7 +246,8 @@ void HideAttackRange()
     }
 
     private void LookAtPlayer(Vector2 lookDirection)
-    {
+    {   
+        theAudio.Play("End");
         if (Mathf.Abs(lookDirection.x) > Mathf.Abs(lookDirection.y))
         {
             if (lookDirection.x > 0)
@@ -293,7 +279,7 @@ void HideAttackRange()
     {
         isAttacking = true;
         isTeleporting = true;
-
+        
         yield return new WaitForSeconds(teleportAttack.durationTime);
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -312,7 +298,7 @@ void HideAttackRange()
         LookAtPlayer(lookDirection);
 
         yield return new WaitForSeconds(teleportAttack.afterAttackDuration);
-
+        
         isTeleporting = false;
     }
 
@@ -375,9 +361,9 @@ void HideAttackRange()
     void Slash(Vector2 direction)
     {
         isAttacking = true;
-
+        
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Attack");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -413,7 +399,7 @@ void HideAttackRange()
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Swing");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -449,7 +435,7 @@ void HideAttackRange()
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("DashAttack");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
@@ -486,7 +472,7 @@ void HideAttackRange()
         isAttacking = true;
 
         rigidbody2D.velocity = Vector2.zero;
-
+        theAudio.Play("Start");
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)

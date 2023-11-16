@@ -10,7 +10,7 @@ public class Raining : MonoBehaviour
     {
         if (!hasCollided && other.gameObject.CompareTag("Player"))
         {
-
+            
             PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
             if (playerStatus != null)
             {

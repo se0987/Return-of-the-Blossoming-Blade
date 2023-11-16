@@ -690,6 +690,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
     Volumn: 1
     loop: 0
+  - name: RedAttack
+    clip: {fileID: 8300000, guid: 8b044cbf985ab7543b5db0ec21d20cd1, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: YellowAttack
+    clip: {fileID: 8300000, guid: 158398c96126d6742965177321a871e0, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: RightAttack
+    clip: {fileID: 8300000, guid: 0ded93635de004143a9d29ff5d5d174b, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: LeftAttack
+    clip: {fileID: 8300000, guid: 27e4ad91092b2244fac26eda20eb23f8, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: BothAttack
+    clip: {fileID: 8300000, guid: 8531fc0fbf9fd6f438fd8bba5631cb81, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: GreenAttack
+    clip: {fileID: 8300000, guid: 8531fc0fbf9fd6f438fd8bba5631cb81, type: 3}
+    Volumn: 1
+    loop: 0
+  - name: RainAttack
+    clip: {fileID: 8300000, guid: 303c64e96f00040c7a6db74db55de9b1, type: 3}
+    Volumn: 1
+    loop: 0
 --- !u!4 &33688672
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,7 +2130,7 @@ Transform:
   - {fileID: 357230319}
   - {fileID: 214005437}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160731297 stripped
 GameObject:
@@ -6359,7 +6387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511324299
 GameObject:
@@ -16300,7 +16328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659483544 stripped
 GameObject:

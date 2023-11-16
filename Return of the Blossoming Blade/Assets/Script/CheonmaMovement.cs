@@ -15,7 +15,7 @@ public class CheonmaMovement : MonoBehaviour
     public GameObject attackRangeIndicator;
     private SpriteRenderer rangeRenderer;
     public Sprite rectangleRangeSprite;
-
+    private AudioManager theAudio;
     public AttackData currentAttack = null;
 
 
@@ -67,7 +67,7 @@ public class CheonmaMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-
+        theAudio = FindObjectOfType<AudioManager>();
         rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>();
         HideAttackRange();
     }
@@ -165,7 +165,7 @@ public class CheonmaMovement : MonoBehaviour
         isAttacking = true;
 
         animator.SetInteger(animationsState, (int)States.leftHand);
-
+        theAudio.Play("LeftAttack");
         Vector2 calculatedOffset = CalculateCenterOffset(leftHandAttack.rangeWidth, leftHandAttack.rangeHeight);
         leftHandAttack.rangeCenterOffset = calculatedOffset;
 
@@ -190,9 +190,9 @@ public class CheonmaMovement : MonoBehaviour
     void RightHand()
     {
         isAttacking = true;
-
+        theAudio.Play("RightAttack");
         animator.SetInteger(animationsState, (int)States.rightHand);
-
+        // theAudio.play("right")
         Vector2 calculatedOffset = CalculateCenterOffset(rightHandAttack.rangeWidth, rightHandAttack.rangeHeight);
         rightHandAttack.rangeCenterOffset = calculatedOffset;
 
@@ -217,9 +217,8 @@ public class CheonmaMovement : MonoBehaviour
     void BothHand()
     {
         isAttacking = true;
-
+        theAudio.Play("BothAttack");
         animator.SetInteger(animationsState, (int)States.bothHand);
-
         Vector2 calculatedOffset = CalculateCenterOffset(bothHandAttack.rangeWidth, bothHandAttack.rangeHeight);
         bothHandAttack.rangeCenterOffset = calculatedOffset;
 
@@ -237,14 +236,13 @@ public class CheonmaMovement : MonoBehaviour
 
             StartCoroutine(DisableEffect(effectInstance, bothHandAttack.durationTime));
         }));
-
         StartCoroutine(AttackCooldown(bothHandAttack.durationTime));
     }
 
     void Red()
     {
         isAttacking = true;
-
+        theAudio.Play("LeftAttack");
         animator.SetInteger(animationsState, (int)States.redEnergy);
 
         Vector2 calculatedOffset = CalculateCenterOffset(redAttack.rangeWidth, redAttack.rangeHeight);
@@ -271,7 +269,7 @@ public class CheonmaMovement : MonoBehaviour
     void Yellow()
     {
         isAttacking = true;
-
+        theAudio.Play("YellowAttack");
         animator.SetInteger(animationsState, (int)States.yellowEnergy);
 
         Vector2 calculatedOffset = CalculateCenterOffset(yellowAttack.rangeWidth, yellowAttack.rangeHeight);
@@ -300,7 +298,7 @@ public class CheonmaMovement : MonoBehaviour
         isAttacking = true;
 
         animator.SetInteger(animationsState, (int)States.greenEnergy);
-
+        theAudio.Play("GreenAttack");
         Vector2 calculatedOffset = CalculateCenterOffset(greenAttack.rangeWidth, greenAttack.rangeHeight);
         greenAttack.rangeCenterOffset = calculatedOffset;
 
@@ -374,7 +372,7 @@ public class CheonmaMovement : MonoBehaviour
         isAttacking = true;
 
         animator.SetInteger(animationsState, (int)States.raining);
-
+        theAudio.Play("RainAttack");
         int numberOfAttacks = 50; // 동시에 발생할 공격의 수
         Vector2 mapSize = new Vector2(1000, 700); // 맵의 크기 (가로, 세로)
 
