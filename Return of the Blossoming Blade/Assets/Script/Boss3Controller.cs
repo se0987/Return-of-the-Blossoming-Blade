@@ -18,7 +18,7 @@ public class Boss3Controller : MonoBehaviour
     public float attackDistance;
     public int walkCount;
     public float LastUsedTime; // 마지막 스킬 사용 시간
-    private float maxHP = 600f;
+    private float maxHP = 500f;
     public float currentHP;
 
     public Image bossHpBar;
@@ -37,7 +37,7 @@ public class Boss3Controller : MonoBehaviour
     public Collider2D chunsalCollider;  // 천살 콜라이더 (피격)
 
     private bool isSkillActive = false; // 스킬이 활성화 중인지 여부
-    private bool isAttack = false; // 공격 중인지 여부
+    private bool isAttack = true; // 공격 중인지 여부
     private bool isHit = false; // 피격 중인지 여부
     public bool boss3Moving = false; // 이동 여부
     private DCutScene4 dCutScene4;
@@ -80,6 +80,7 @@ public class Boss3Controller : MonoBehaviour
             dCutScene4.start = true;
             boss3Moving = true;
             searchPlayerMovingOne = false;
+            isAttack = false;
         }
 
         // 범위안에 있고, 공격중이 아닐 때 공격
