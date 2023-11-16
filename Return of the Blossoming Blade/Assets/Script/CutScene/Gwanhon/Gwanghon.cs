@@ -230,24 +230,38 @@ public class Gwanghon : MonoBehaviour
                currentTime < teleportAttack.nextAttackTime;
     }
 
-    private IEnumerator DashMovement(Vector2 direction)
+private IEnumerator DashMovement(Vector2 dashDistance)
+{
+    Vector2 dashStartPos = transform.position;
+    Vector2 dashEndPos = dashStartPos + dashDistance;
+
+    // 대쉬가 거의 끝날 때까지 기다립니다.
+    yield return new WaitForSeconds(dashAttack.durationTime * 0.6f);
+
+    // 대쉬의 마지막 부분에서 목표 위치로 빠르게 이동합니다.
+    float dashEndTime = dashAttack.durationTime * 0.4f;
+    float elapsedTime = 0;
+    while (elapsedTime < dashEndTime)
     {
-        isAttacking = true;
-
-        rigidbody2D.velocity = Vector2.zero;
-        Vector2 dashStartPos = this.transform.position;
-
-        yield return new WaitForSeconds(dashAttack.durationTime);
-
-        Vector2 dashEndPos = dashStartPos + direction * dashAttack.moveDistance;
-        rigidbody2D.MovePosition(dashEndPos);
-
-        rigidbody2D.velocity = Vector2.zero;
-
-        yield return new WaitForSeconds(dashAttack.afterAttackDuration);
-
-        isAttacking = false;
+        transform.position = Vector2.Lerp(dashStartPos, dashEndPos, elapsedTime / dashEndTime);
+        elapsedTime += Time.deltaTime;
+        yield return null;
     }
+
+    transform.position = dashEndPos;
+    isAttacking = false;
+}
+    void SetAnimationState(Vector2 direction)
+{
+    if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+    {
+        animator.SetInteger(animationsState, direction.x > 0 ? (int)States.dashRight : (int)States.dashLeft);
+    }
+    else
+    {
+        animator.SetInteger(animationsState, direction.y > 0 ? (int)States.dashBack : (int)States.dashFront);
+    }
+}
 
     private void LookAtPlayer(Vector2 lookDirection)
     {
@@ -434,40 +448,20 @@ public class Gwanghon : MonoBehaviour
     }
 
     void Dash(Vector2 direction)
-{
+{   
+    
     isAttacking = true;
 
     rigidbody2D.velocity = Vector2.zero;
 
     // 방향에 따라 애니메이션 상태를 설정합니다.
-    if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-    {
-        if (direction.x > 0)
-        {
-            animator.SetInteger(animationsState, (int)States.dashRight);
-        }
-        else
-        {
-            animator.SetInteger(animationsState, (int)States.dashLeft);
-        }
-    }
-    else
-    {
-        if (direction.y > 0)
-        {
-            animator.SetInteger(animationsState, (int)States.dashBack);
-        }
-        else
-        {
-            animator.SetInteger(animationsState, (int)States.dashFront);
-        }
-    }
+     SetAnimationState(direction);
 
     Vector2 calculatedOffset = CalculateCenterOffset(direction, dashAttack.rangeWidth, dashAttack.rangeHeight);
     dashAttack.rangeCenterOffset = calculatedOffset;
 
     StartCoroutine(AttackCooldown(dashAttack.durationTime));
-    StartCoroutine(DashMovement(direction));
+    StartCoroutine(DashMovement(direction.normalized * dashAttack.moveDistance));
 }
 
     void Teleport(Vector2 direction)

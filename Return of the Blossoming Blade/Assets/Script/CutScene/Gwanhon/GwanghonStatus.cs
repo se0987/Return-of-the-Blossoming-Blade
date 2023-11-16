@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GwanghonStatus : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GwanghonStatus : MonoBehaviour
     public float maxHealth = 1f;
     private float currentHealth;
 
-    // public Image bossHpBar;
+    public Image bossHpBar;
 
     void Start()
     {
@@ -20,17 +21,17 @@ public class GwanghonStatus : MonoBehaviour
         if (hpGaugeObject)
         {
 
-            // bossHpBar = hpGaugeObject.GetComponent<Image>();
+            bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
     }
 
     private void Update()
     {
-        // if (bossHpBar != null)
+        if (bossHpBar != null)
         {
             float hpRatio = currentHealth / maxHealth;
 
-            // bossHpBar.fillAmount = hpRatio;
+            bossHpBar.fillAmount = hpRatio;
         }
     }
 
