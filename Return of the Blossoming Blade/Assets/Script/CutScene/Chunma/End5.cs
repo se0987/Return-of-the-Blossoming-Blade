@@ -120,21 +120,6 @@ public class End5 : MonoBehaviour
             yield break;
         }
         theOrder.Action("Player", "AttackH");
-
-        GameObject Cheonma = GameObject.Find("Cheonma Bon In");
-        GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");
-        if (bossHpBarObject != null)
-        {
-            Image bossHpBarImage = bossHpBarObject.GetComponent<Image>();
-            if (bossHpBarImage != null)
-            {
-                bossHpBarImage.fillAmount = 0;
-            }
-        }
-        if (Cheonma != null)
-        {
-            Cheonma.SetActive(false);
-        }
         bgmManager.Stop();
         theAudio.Play(swordSound);
 
