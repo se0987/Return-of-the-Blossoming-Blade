@@ -157,8 +157,8 @@ TextureImporter:
         y: 2
         width: 96
         height: 192
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,8 +178,8 @@ TextureImporter:
         y: 98
         width: 192
         height: 96
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,48 +187,6 @@ TextureImporter:
       bones: []
       spriteID: 1ef6617d11e54864eaec7b7891da53c2
       internalID: 1526193635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uC2A4\uD0AC \uBC94\uC704_3"
-      rect:
-        serializedVersion: 2
-        x: 294
-        y: 2
-        width: 96
-        height: 192
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db6318cfe5735ce4989930d892f5b32a
-      internalID: 1076579907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uC2A4\uD0AC \uBC94\uC704_4"
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 98
-        width: 192
-        height: 96
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0277e3e6bf0974a478e11e7f9b60030b
-      internalID: 1755729921
       vertices: []
       indices: 
       edges: []
@@ -247,8 +205,6 @@ TextureImporter:
       "\uC2A4\uD0AC \uBC94\uC704_0": -904405780
       "\uC2A4\uD0AC \uBC94\uC704_1": -493527013
       "\uC2A4\uD0AC \uBC94\uC704_2": 1526193635
-      "\uC2A4\uD0AC \uBC94\uC704_3": 1076579907
-      "\uC2A4\uD0AC \uBC94\uC704_4": 1755729921
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
