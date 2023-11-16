@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Skill // 스킬 리스트로 추가 가능하도록
@@ -8,7 +9,6 @@ public class Skill // 스킬 리스트로 추가 가능하도록
     public float Cooldown; //쿨타임
     public int Priority;  // 낮을수록 우선순위가 높음
     public float SkillAnimationTime; //애니메이션 실행 시간(스킬 발동 후 대기시간)
-
 }
 
 public class Boss3Controller : MonoBehaviour
@@ -18,8 +18,10 @@ public class Boss3Controller : MonoBehaviour
     public float attackDistance;
     public int walkCount;
     public float LastUsedTime; // 마지막 스킬 사용 시간
-    private float maxHP = 1000f;
+    private float maxHP = 600f;
     public float currentHP;
+
+    public Image bossHpBar;
 
     private Transform player;
     private Animator animator;
@@ -28,19 +30,18 @@ public class Boss3Controller : MonoBehaviour
     public LayerMask layerMask;
     protected Vector2 direction;
 
+    private int playTime = 0;
+
     public List<Skill> skillList;
 
-    //private GameObject attackColliderTest; // 공격 콜라이더 (공격)
     public Collider2D chunsalCollider;  // 천살 콜라이더 (피격)
-    //public GameObject attackRangeIndicator; // 콜라이더 범위 오브젝트
-
 
     private bool isSkillActive = false; // 스킬이 활성화 중인지 여부
     private bool isAttack = false; // 공격 중인지 여부
     private bool isHit = false; // 피격 중인지 여부
     public bool boss3Moving = false; // 이동 여부
     private DCutScene4 dCutScene4;
-    private bool searchPlayerMovingOne = true; //스크립트 진행 중에 멈추도록
+    private bool searchPlayerMovingOne = false; //스크립트 진행 중에 멈추도록
 
     void Start()
     {
@@ -48,21 +49,20 @@ public class Boss3Controller : MonoBehaviour
         animator = GetComponent<Animator>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform; //플레이어 찾기
-
-        //attackColliderTest = transform.Find("Attack Collider").gameObject; //
-        //attackColliderTest.SetActive(false); // 공격 콜라이더 비활성화
+        playerManager = PlayerManager.instance; //플레이어 매니저의 인스턴스 가져오기
 
         chunsalCollider = GetComponent<Collider2D>(); // 천살 콜라이더 가져오기
         
-        playerManager = PlayerManager.instance; //플레이어 매니저의 인스턴스 가져오기
         currentHP = maxHP; // 보스의 현재 피
-        //rangeRenderer = attackRangeIndicator.GetComponent<SpriteRenderer>(); //공격범위
+        GameObject hpGaugeObject = GameObject.Find("Boss_HP_Gauge1");
+        if (hpGaugeObject)
+        {
 
-        LastUsedTime = -2f;
-        ///////////////////////////////수정필요////////////////////합칠때풀기
-        //dCutScene4.Start = true;
-        ///////////////////////////////수정필요////////////////////합칠때 지우기
+            bossHpBar = hpGaugeObject.GetComponent<Image>();
+        }
+
         PlayerPrefs.SetInt("havePosion", 100);
+        LastUsedTime = -2f;
     }
 
     void Update()
@@ -77,12 +77,10 @@ public class Boss3Controller : MonoBehaviour
         // 스크립트 진행 중에 멈추도록
         if (!playerManager.notMove && searchPlayerMovingOne)
         {
-            Debug.Log("스크립트 진행 중 멈추는 부분");
+            dCutScene4.start = true;
             boss3Moving = true;
             searchPlayerMovingOne = false;
         }
-
-        //CheckCollsion(chunsalCollider);
 
         // 범위안에 있고, 공격중이 아닐 때 공격
         if (distanceToPlayer <= attackDistance && !isAttack)
@@ -105,6 +103,17 @@ public class Boss3Controller : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
 
+        // 2페이즈
+        if (currentHP <= 300)
+        {
+            dCutScene4.face2 = true;
+        }
+
+        if (bossHpBar != null && currentHP > 0)
+        {
+            float hpRatio = currentHP / maxHP;
+            bossHpBar.fillAmount = hpRatio;
+        }
     }
 
     // =========================================== (이동) ===========================================
@@ -174,7 +183,7 @@ public class Boss3Controller : MonoBehaviour
         }
     }
 
-    IEnumerator ActivateAttackSkill(Skill skill)// 스킬 스위칭 실행
+    IEnumerator ActivateAttackSkill(Skill skill)// 스킬 스위칭 실행 ===================쿨타임 적용하기!!!
     {
         yield return StartCoroutine(PerformSkill(1, skill));
 
@@ -194,28 +203,23 @@ public class Boss3Controller : MonoBehaviour
         //}
     }
 
+    IEnumerator PerformSkill(int skillNumber, Skill skill) //스킬 실행
+    {
+        isAttack = true;
+        boss3Moving = false;
 
+        animator.SetTrigger("Attack" + skillNumber); // 스킬 애니메이션 활성화
+
+        // 데미지는 콜라이더 스크립트 생성 후 직접 공격
+
+        yield return new WaitForSeconds(skill.SkillAnimationTime);
+
+        isAttack = false;
+        boss3Moving = true;
+    }
 
     private void OnTriggerEnter2D( Collider2D collision) // 피격
-    {
-        //Debug.Log($"천살 현재 체력 {currentHP}");
-
-        if (currentHP <= 0) //현재 체력 0 이하면 죽기
-        {
-            Debug.Log("천살 전투 종료");
-            boss3Moving = false;
-
-            ///////////////////////////////수정필요////////////////////합칠때풀기
-            //PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
-            //dCutScene4.End = true;
-            //dCutScene4.Time = playTime;
-
-            GetComponent<Boss3Controller>().enabled = false;
-            gameObject.SetActive(false);
-
-            return;
-        }
-
+    {        
         if (collision.CompareTag("Weapon") && !isHit) // Weapon의 콜라이더에 부딪힌 경우
         {
             isHit = true; //중복 피격 막기
@@ -224,6 +228,22 @@ public class Boss3Controller : MonoBehaviour
             {
                 currentHP -= weapon.damageAmount; // 무기의 데미지만큼 체력 깎기
             }
+        
+            if (currentHP <= 0) //현재 체력 0 이하면 죽기
+            {
+                Debug.Log("천살 전투 종료");
+                boss3Moving = false;
+
+                PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
+                dCutScene4.end = true;
+                dCutScene4.time = playTime;
+
+                GetComponent<Boss3Controller>().enabled = false;
+                gameObject.SetActive(false);
+
+                return;
+            }
+
             StartCoroutine(TakeDamageEffect()); //피격 후 경직/무적 설정
         }
     }
@@ -246,22 +266,6 @@ public class Boss3Controller : MonoBehaviour
         boss3Moving = true;
     }
 
-
-    IEnumerator PerformSkill(int skillNumber, Skill skill) //스킬 실행
-    {
-        isAttack = true;
-        boss3Moving = false;
-
-        Debug.Log($"스킬 실행 로직         보스 움직일 수 있는지? {boss3Moving}");
-        animator.SetTrigger("Attack" + skillNumber); // 스킬 애니메이션 활성화
-
-        // 데미지는 콜라이더 스크립트 생성 후 직접 공격
-
-        yield return new WaitForSeconds(skill.SkillAnimationTime);
-
-        isAttack = false;
-        boss3Moving = true;
-    }
 
 
 
