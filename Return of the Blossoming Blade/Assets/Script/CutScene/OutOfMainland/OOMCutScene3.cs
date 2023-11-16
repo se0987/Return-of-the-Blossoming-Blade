@@ -5,6 +5,9 @@ using UnityEngine;
 public class OOMCutScene3 : MonoBehaviour
 {
     public Dialogue dialogue_1;
+    public GameObject jeokCheon;
+    public GameObject hpGauge;
+    public GameObject bossName;
 
     private DialogueManager theDM;
     private OrderManager theOrder;
@@ -50,6 +53,21 @@ public class OOMCutScene3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
+
+        if (jeokCheon != null)
+        {
+            jeokCheon.SetActive(true);
+        }
+
+        if (hpGauge != null)
+        {
+            hpGauge.SetActive(true);
+        }
+
+        if (bossName != null)
+        {
+            bossName.SetActive(true);
+        }
 
         theOrder.Move();
     }
