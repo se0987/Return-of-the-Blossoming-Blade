@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Skill // 스킬 리스트로 추가 가능하도록
 {
     public float Cooldown; //쿨타임
+    public float LastUsedTime; //마지막 사용 시간
     public int Priority;  // 낮을수록 우선순위가 높음
     public float SkillAnimationTime; //애니메이션 실행 시간(스킬 발동 후 대기시간)
 }
@@ -17,8 +18,7 @@ public class Boss3Controller : MonoBehaviour
     public float stoppingDistance;
     public float attackDistance;
     public int walkCount;
-    public float LastUsedTime; // 마지막 스킬 사용 시간
-    private float maxHP = 500f;
+    private float maxHP = 400f;
     public float currentHP;
 
     public Image bossHpBar;
@@ -37,7 +37,7 @@ public class Boss3Controller : MonoBehaviour
     public Collider2D chunsalCollider;  // 천살 콜라이더 (피격)
 
     private bool isSkillActive = false; // 스킬이 활성화 중인지 여부
-    private bool isAttack = true; // 공격 중인지 여부
+    private bool isAttack = false; // 공격 중인지 여부
     private bool isHit = false; // 피격 중인지 여부
     public bool boss3Moving = false; // 이동 여부
     private DCutScene4 dCutScene4;
@@ -57,12 +57,10 @@ public class Boss3Controller : MonoBehaviour
         GameObject hpGaugeObject = GameObject.Find("Boss_HP_Gauge1");
         if (hpGaugeObject)
         {
-
             bossHpBar = hpGaugeObject.GetComponent<Image>();
         }
 
         PlayerPrefs.SetInt("havePosion", 100);
-        LastUsedTime = -2f;
     }
 
     void Update()
@@ -80,7 +78,6 @@ public class Boss3Controller : MonoBehaviour
             dCutScene4.start = true;
             boss3Moving = true;
             searchPlayerMovingOne = false;
-            isAttack = false;
         }
 
         // 범위안에 있고, 공격중이 아닐 때 공격
@@ -90,13 +87,17 @@ public class Boss3Controller : MonoBehaviour
         }
 
         // 플레이어 쫒기
-        if (distanceToPlayer > stoppingDistance)
+        if (distanceToPlayer > stoppingDistance) // 유지 거리보다 멀면 쫒고
         {
             MoveTowardsPlayer(direction);
         }
-        else
+        else if (!isAttack) //유지거리 내에서 공격중이 아니면 공격
         {
             PerformAttack();
+        }
+        else
+        {
+            boss3Moving = false;
         }
 
         if (!boss3Moving)
@@ -105,7 +106,7 @@ public class Boss3Controller : MonoBehaviour
         }
 
         // 2페이즈
-        if (currentHP <= 300)
+        if (currentHP <= 200)
         {
             dCutScene4.face2 = true;
         }
@@ -114,6 +115,22 @@ public class Boss3Controller : MonoBehaviour
         {
             float hpRatio = currentHP / maxHP;
             bossHpBar.fillAmount = hpRatio;
+        }
+
+        if (currentHP <= 0) //현재 체력 0 이하면 죽기
+        {
+            bossHpBar.fillAmount = 0.01f;
+
+            Debug.Log("천살 전투 종료");
+            boss3Moving = false;
+
+            GetComponent<Boss3Controller>().enabled = false;
+            gameObject.SetActive(false);
+
+            PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
+            dCutScene4.end = true;
+            dCutScene4.time = playTime;
+            return;
         }
     }
 
@@ -175,9 +192,9 @@ public class Boss3Controller : MonoBehaviour
     {
         foreach (Skill skill in skillList)
         {
-            if (Time.time - LastUsedTime >= 2f)
+            if (Time.time - skill.LastUsedTime >= skill.Cooldown)
             {
-                LastUsedTime = Time.time;
+                skill.LastUsedTime = Time.time;
                 StartCoroutine(ActivateAttackSkill(skill));
                 break;
             }
@@ -186,22 +203,21 @@ public class Boss3Controller : MonoBehaviour
 
     IEnumerator ActivateAttackSkill(Skill skill)// 스킬 스위칭 실행 ===================쿨타임 적용하기!!!
     {
-        yield return StartCoroutine(PerformSkill(1, skill));
-
-        //switch (skill.Priority)
-        //{
-        //    case 0:
-        //        yield return StartCoroutine(PerformSkill(1, skill));
-        //        break;
-        //    case 1:
-        //        yield return StartCoroutine(PerformSkill(2, skill));
-        //        break;
-        //    case 2:
-        //        yield return StartCoroutine(PerformSkill(3, skill));
-        //        break;
-        //    default:
-        //        break;
-        //}
+        switch (skill.Priority)
+        {
+            case 0:
+                yield return StartCoroutine(PerformSkill(1, skill));
+                break;
+            case 1:
+                yield return StartCoroutine(PerformSkill(2, skill));
+                break;
+            case 2:
+                yield return StartCoroutine(PerformSkill(3, skill));
+                break;
+            default:
+                break;
+        }
+        yield return new WaitForSeconds(4f);
     }
 
     IEnumerator PerformSkill(int skillNumber, Skill skill) //스킬 실행
@@ -229,22 +245,6 @@ public class Boss3Controller : MonoBehaviour
             {
                 currentHP -= weapon.damageAmount; // 무기의 데미지만큼 체력 깎기
             }
-        
-            if (currentHP <= 0) //현재 체력 0 이하면 죽기
-            {
-                Debug.Log("천살 전투 종료");
-                boss3Moving = false;
-
-                PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
-                dCutScene4.end = true;
-                dCutScene4.time = playTime;
-
-                GetComponent<Boss3Controller>().enabled = false;
-                gameObject.SetActive(false);
-
-                return;
-            }
-
             StartCoroutine(TakeDamageEffect()); //피격 후 경직/무적 설정
         }
     }
