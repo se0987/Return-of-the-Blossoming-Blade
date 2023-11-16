@@ -30,7 +30,6 @@ public class End3 : MonoBehaviour
     private bool one = true;
 
     public static bool end = false;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,14 +41,6 @@ public class End3 : MonoBehaviour
         bgmManager = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
         theChapter = FindObjectOfType<ChapterManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -83,10 +74,6 @@ public class End3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
@@ -109,17 +96,8 @@ public class End3 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
-
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
         theOrder.Action("Player", "AttackH");
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
@@ -143,18 +121,10 @@ public class End3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_4);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theOrder.Action("Player", "DIE");
         theDM.ShowDialogue(dialogue_5);
         yield return new WaitUntil(() => !theDM.talking);
-        if (stop)
-        {
-            yield break;
-        }
 
         theOrder.Appear("BlackScreen", true);
         theDM.ShowDialogue(dialogue_6);

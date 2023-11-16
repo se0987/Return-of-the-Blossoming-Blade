@@ -27,7 +27,6 @@ public class DCutScene5 : MonoBehaviour
     public bool enable = false;
     public GameObject arrow1;
     public GameObject arrow2;
-    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,14 +37,6 @@ public class DCutScene5 : MonoBehaviour
         theChoice = FindObjectOfType<ChoiceManager>();
         theBGM = FindObjectOfType<BGMManager>();
         theAudio = FindObjectOfType<AudioManager>();
-        theDM.OnExitDialogue += HandleExitDialogue;
-    }
-
-    void HandleExitDialogue()
-    {
-        Debug.Log("ÁßÁö");
-        stop = true;
-        StopCoroutine(EventCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -120,10 +111,6 @@ public class DCutScene5 : MonoBehaviour
             theBGM.Play(4);
             theDM.ShowDialogue(dialogue_1);
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
 
             theOrder.Appear("Poor2", true);
             theOrder.Move("Poor2", "UP");
@@ -135,10 +122,6 @@ public class DCutScene5 : MonoBehaviour
 
             theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
 
             theOrder.Move("Player", "DOWN");
             theOrder.Move("Player", "DOWN");
@@ -157,17 +140,9 @@ public class DCutScene5 : MonoBehaviour
             theAudio.Play("heart");
             theDM.ShowDialogue(dialogue_4);
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
             theAudio.Stop("heart");
             theDM.ShowDialogue(dialogue_4_2);
             yield return new WaitUntil(() => !theDM.talking);
-            if (stop)
-            {
-                yield break;
-            }
             theOrder.Appear("Poor2", true);
             theOrder.Move("Poor2", "UP");
             theOrder.Move("Poor2", "UP");
