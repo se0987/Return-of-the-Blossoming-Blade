@@ -1714,7 +1714,7 @@ MonoBehaviour:
   target: {fileID: 677764623}
   targetBound: {fileID: 531101694}
   gateName: GoToOuter3
-  move: 1
+  move: 0
   moveSound: 
   BGMStop: 0
 --- !u!61 &106399511
@@ -29196,7 +29196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &633073611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34324,7 +34324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &868018891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41995,7 +41995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf2f6003d2028f4f965967cab135a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 300
   bossHpBar: {fileID: 0}
 --- !u!1 &1275571335
 GameObject:
@@ -51702,6 +51702,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
     - {fileID: 21300000, guid: d9b7265ccf69a5c4db8fbb79b0621790, type: 3}
+  jeokCheon: {fileID: 1273060299}
+  hpGauge: {fileID: 633073610}
+  bossName: {fileID: 868018890}
 --- !u!1 &1540482588
 GameObject:
   m_ObjectHideFlags: 0

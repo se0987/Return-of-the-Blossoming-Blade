@@ -36,8 +36,23 @@ public class JeokCheonStatus : MonoBehaviour
 
 void Die()
     {
-        Debug.Log("보스가 죽었습니다.");
-        
+        GameObject jeokCheon = GameObject.Find("JeokCheon");
+
+        if (jeokCheon != null)
+        {
+            jeokCheon.SetActive(false);
+            bossHpBar.fillAmount = 0;
+        }
+
+        GameObject goToOuter3 = GameObject.Find("GoToOuter3");
+        if (goToOuter3 != null)
+        {
+            TransferMap transferMap = goToOuter3.GetComponent<TransferMap>();
+            if (transferMap != null)
+            {
+                transferMap.move = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

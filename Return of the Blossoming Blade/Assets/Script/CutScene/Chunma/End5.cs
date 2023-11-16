@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class End5 : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class End5 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    public bool end = false;
+    public static bool end = false;
     private bool stop = false;
 
     // Start is called before the first frame update
@@ -87,6 +88,18 @@ public class End5 : MonoBehaviour
         }
 
         theDM.ShowDialogue(dialogue_2);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
+        theOrder.Move("Player", "UP");
+        yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
