@@ -71,6 +71,8 @@ public class EnemyAI : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private AudioManager theAudio;
+
     private void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -86,6 +88,8 @@ public class EnemyAI : MonoBehaviour
         playerManager = PlayerManager.instance; // PlayerManager의 인스턴스를 가져옵니다.
 
         rb = GetComponent<Rigidbody2D>();
+
+        theAudio = FindObjectOfType<AudioManager>();
 
     }
 
@@ -210,6 +214,7 @@ public class EnemyAI : MonoBehaviour
         isAttacking = true;
 
         yield return new WaitForSeconds(0.4f);  // 애니메이션 실행 후 0.4초 대기
+        theAudio.Play("EnemyAttack");
         attackCollider.SetActive(true);  // 콜라이더 활성화
         yield return new WaitForSeconds(0.3f);  // 0.3초 동안 유지
         attackCollider.SetActive(false);  // 다시 비활성화
