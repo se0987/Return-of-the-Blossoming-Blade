@@ -102,17 +102,11 @@ public class End1 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(false);
-        bossName.SetActive(false);
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(true);
-        bossName.SetActive(true);
         theOrder.Action("Player", "AttackH");
-        yield return new WaitForSeconds(5f);
-        hpBar.SetActive(false);
-        bossName.SetActive(false);
+        yield return new WaitForSeconds(3f);
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
         GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");

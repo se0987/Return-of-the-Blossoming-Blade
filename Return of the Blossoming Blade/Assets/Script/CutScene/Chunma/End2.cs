@@ -80,8 +80,6 @@ public class End2 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theDM.ShowDialogue(dialogue_2);
-        hpBar.SetActive(true);
-        bossName.SetActive(true);
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
@@ -102,17 +100,11 @@ public class End2 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "UP");
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(false);
-        bossName.SetActive(false);
 
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
-        hpBar.SetActive(true);
-        bossName.SetActive(true);
         theOrder.Action("Player", "AttackH");
-        yield return new WaitForSeconds(1f);
-        hpBar.SetActive(false);
-        bossName.SetActive(false);
+        yield return new WaitForSeconds(3f);
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
         GameObject bossHpBarObject = GameObject.Find("Boss_HP_Gauge1");

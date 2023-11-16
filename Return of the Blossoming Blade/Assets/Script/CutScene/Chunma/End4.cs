@@ -33,6 +33,9 @@ public class End4 : MonoBehaviour
 
     public static bool end = false;
 
+    public GameObject hpBar;
+    public GameObject bossName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +76,13 @@ public class End4 : MonoBehaviour
         bgmManager.Stop();
         bgmManager.Play(playMusicTrack1);
 
+        theOrder.Action("Player", "LAST");
+
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
+
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
-
         theDM.ShowDialogue(dialogue_2);
         theOrder.Move("Player", "UP");
         yield return new WaitForSeconds(0.2f);

@@ -30,6 +30,10 @@ public class End6 : MonoBehaviour
     public static bool end = false;
 
     public GameObject endingIllustration; // 엔딩 일러스트 GameObject
+    public GameObject posionManagerOff;
+
+    public GameObject hpBar;
+    public GameObject bossName;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +74,10 @@ public class End6 : MonoBehaviour
         bgmManager.Play(playMusicTrack1);
 
         theOrder.Action("Player", "LAST");
+
+
+        hpBar.SetActive(false);
+        bossName.SetActive(false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);
@@ -116,13 +124,14 @@ public class End6 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theOrder.Appear("BlackScreen", true);
+        posionManagerOff.SetActive(false);
         // 일러스트를 서서히 나타나게 하는 Coroutine 호출
         StartCoroutine(ShowEndingIllustration());
         theDM.ShowDialogue(dialogue_3);
         yield return new WaitUntil(() => !theDM.talking);
 
         theChapter.ShowChapter("결말 6\n천하제일검문");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
 
         SceneManager.LoadScene("Main");
 
