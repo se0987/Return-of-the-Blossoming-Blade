@@ -49,7 +49,7 @@ public class CMCutScene1 : MonoBehaviour
             TransferMap[] temp2 = FindObjectsOfType<TransferMap>();
             for (int i = 0; i < temp2.Length; i++)
             {
-                if (temp2[i].gateName.Equals(PlayerPrefs.GetString("save1playerGateName")))
+                if (temp2[i].gateName.Equals(PlayerPrefs.GetString("save" + saveNum + "playerGateName")))
                 {
                     temp2[i].GoToPoint();
                     break;
