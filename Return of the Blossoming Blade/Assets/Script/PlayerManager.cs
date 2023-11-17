@@ -20,6 +20,8 @@ public class PlayerManager : MovingObject
 
     public string walkSound;
     private AudioManager theAudio;
+    private SaveContinueDialogueManager theContinue;
+    public bool allStop = false;
 
     public void Awake()
     {
@@ -41,6 +43,7 @@ public class PlayerManager : MovingObject
         animator = GetComponent<Animator>();
         playerStatus = FindObjectOfType<PlayerStatus>();
         theAudio = FindObjectOfType<AudioManager>();
+        theContinue = FindObjectOfType<SaveContinueDialogueManager>();
     }
 
     IEnumerator MoveCoroutine()
@@ -89,19 +92,28 @@ public class PlayerManager : MovingObject
     // Update is called once per frame
     void Update()
     {
-        if (canMove && !notMove && !skillNotMove)
+        if (!allStop)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+            if (canMove && !notMove && !skillNotMove)
             {
-                canMove = false;
-                StartCoroutine(MoveCoroutine());
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    canMove = false;
+                    StartCoroutine(MoveCoroutine());
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))//세이브
+                {
+                    notMove = true;
+                    allStop = true;
+                    theContinue.ShowSaveDialogue();
+                }
             }
-        }
-        if (!notMove && !skillNotMove)
-        {
-            if (Input.GetKeyDown(KeyCode.F))//포션
+            if (!notMove && !skillNotMove)
             {
-                playerStatus.UsePosion();
+                if (Input.GetKeyDown(KeyCode.F))//포션
+                {
+                    playerStatus.UsePosion();
+                }
             }
         }
     }

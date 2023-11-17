@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool canDash = false;  // 적이 도약(돌진) 할 수 있는지 여부를 결정하는 변수
 
-    public float dashProbability = 0.3f;  // 도약(돌진)할 확률
+    public float dashProbability = 0.4f;  // 도약(돌진)할 확률
 
     public float dashSpeed = 500f;  // 도약(돌진) 속도
 
@@ -69,6 +69,9 @@ public class EnemyAI : MonoBehaviour
 
     private bool isDead = false; // 적이 죽었는지를 나타내는 플래그
 
+    private Rigidbody2D rb;
+
+    private AudioManager theAudio;
 
     private void Start()
     {
@@ -83,6 +86,10 @@ public class EnemyAI : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();  // 적의 콜라이더를 가져옵니다.
 
         playerManager = PlayerManager.instance; // PlayerManager의 인스턴스를 가져옵니다.
+
+        rb = GetComponent<Rigidbody2D>();
+
+        theAudio = FindObjectOfType<AudioManager>();
 
     }
 
@@ -166,6 +173,24 @@ public class EnemyAI : MonoBehaviour
                 break;
 
         }
+
+        if (currentState == EnemyState.Aggro || currentState == EnemyState.Moving)
+        {
+            UpdateFacingDirection();
+        }
+    }
+
+    private void UpdateFacingDirection()
+    {
+        // 플레이어가 적보다 오른쪽에 있는지 체크
+        if (playerTransform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);  // 오른쪽을 보도록
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);  // 왼쪽을 보도록
+        }
     }
 
     IEnumerator MoveAfterDelay()
@@ -189,6 +214,7 @@ public class EnemyAI : MonoBehaviour
         isAttacking = true;
 
         yield return new WaitForSeconds(0.4f);  // 애니메이션 실행 후 0.4초 대기
+        theAudio.Play("EnemyAttack");
         attackCollider.SetActive(true);  // 콜라이더 활성화
         yield return new WaitForSeconds(0.3f);  // 0.3초 동안 유지
         attackCollider.SetActive(false);  // 다시 비활성화

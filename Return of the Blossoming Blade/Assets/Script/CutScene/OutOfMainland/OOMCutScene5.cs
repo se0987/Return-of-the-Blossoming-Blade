@@ -19,6 +19,8 @@ public class OOMCutScene5 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
+    public GameObject arrow2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,6 @@ public class OOMCutScene5 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         oomCutScene6 = FindObjectOfType<OOMCutScene6>();
-        theOrder.Turn("DangBo", "LEFT");
-        theOrder.Turn("Master3", "DOWN");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +44,7 @@ public class OOMCutScene5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (one && can && Input.GetKeyDown(KeyCode.C))
+        if (one && can)
         {
             one = false;
             StartCoroutine(EventCoroutine());
@@ -57,14 +57,7 @@ public class OOMCutScene5 : MonoBehaviour
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
         theDM.ShowDialogue(dialogue_1);
-        theOrder.Move("Master3", "DOWN");
-        theOrder.Move("Master3", "DOWN");
-        theOrder.Move("Master3", "DOWN");
         yield return new WaitForSeconds(0.2f);
-        theOrder.Appear("Sit", true);
-        theOrder.Appear("Master3", false);
-        theOrder.Appear("DangBo", false);
-        theOrder.Appear("Player", false);
         yield return new WaitUntil(() => !theDM.talking);
 
         if (PlayerPrefs.HasKey("duringTime1"))
@@ -90,11 +83,8 @@ public class OOMCutScene5 : MonoBehaviour
             Debug.Log("duringTime1 값이 없음");
         }
         oomCutScene6.enable = true;
-        theOrder.Appear("Sit", false);
-        theOrder.Appear("Player", true);
-        theOrder.Appear("DangBo", true);
-        theOrder.Appear("Master3", true);
 
         theOrder.Move();
+        arrow2.SetActive(true);
     }
 }

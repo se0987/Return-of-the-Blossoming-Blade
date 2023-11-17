@@ -14,6 +14,9 @@ public class DCutScene4 : MonoBehaviour
     private ChoiceManager theChoice;
     private DCutScene5 dCutScene5;
 
+    public GameObject hpBar;
+    public GameObject bossName;
+
     //private bool flag;
     private bool can = false;
 
@@ -24,6 +27,8 @@ public class DCutScene4 : MonoBehaviour
     public bool start = false;
     public bool face2 = false;
     public bool end = false;
+    
+    public GameObject arrow1;
 
     public float time = 0f;
 
@@ -80,6 +85,8 @@ public class DCutScene4 : MonoBehaviour
         }
         else if(end)
         {
+            hpBar.SetActive(false);
+            bossName.SetActive(false); 
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
@@ -90,6 +97,7 @@ public class DCutScene4 : MonoBehaviour
                 dCutScene5.first = false;
             }
             dCutScene5.enable = true;
+            arrow1.SetActive(true);
         }
         theOrder.Move();
     }

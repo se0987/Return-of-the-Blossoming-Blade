@@ -11,6 +11,9 @@ public class CJCutScene3 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
     private CJCutScene4 cjCutScene4;
+    private BGMManager bgmManager;
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     //private bool flag;
     private bool can = false;
@@ -24,6 +27,7 @@ public class CJCutScene3 : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
         cjCutScene4 = FindObjectOfType<CJCutScene4>();
+        bgmManager = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,6 +60,8 @@ public class CJCutScene3 : MonoBehaviour
     {
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
+        arrow1.SetActive(false);
+        bgmManager.Play(2);
         yield return new WaitForSeconds(0.2f);
 
         theDM.ShowDialogue(dialogue_1);
@@ -73,6 +79,7 @@ public class CJCutScene3 : MonoBehaviour
         }
 
         cjCutScene4.enable = true;
+        arrow2.SetActive(true);
 
         theOrder.Move();
     }

@@ -11,6 +11,7 @@ public class MCutScene2 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -23,6 +24,7 @@ public class MCutScene2 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,55 +40,35 @@ public class MCutScene2 : MonoBehaviour
     {
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
-        yield return new WaitForSeconds(0.2f);
 
-        theOrder.Move("Student2", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Student2", "LEFT");
-        theOrder.Move("Student2", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Student2", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Student2", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "DOWN");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Student2", "LEFT");
-        yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "DOWN");
-        theOrder.Move("Player", "DOWN");
-        yield return new WaitForSeconds(0.2f);
-
-        theDM.ShowDialogue(dialogue_1);
-        yield return new WaitUntil(() => !theDM.talking);
-        //청명이 장로 때리기 가능?
-        theDM.ShowDialogue(dialogue_2);
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         theOrder.Move("DangBo", "LEFT");
         yield return new WaitForSeconds(1f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
+
+        theDM.ShowDialogue(dialogue_1);
+        theBGM.Play(1, 0.7f);
+        yield return new WaitUntil(() => !theDM.talking);
+        //청명이 장로 때리기 가능? 불가능
+        theDM.ShowDialogue(dialogue_2);
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        yield return new WaitForSeconds(1f);
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
+        theOrder.Move("Player", "LEFT");
         yield return new WaitForSeconds(0.2f);
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
-        theOrder.Move("Player", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
         yield return new WaitForSeconds(0.2f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "LEFT");

@@ -41570,6 +41570,7 @@ MonoBehaviour:
   dashDuration: 0.8
   enemyCollider: {fileID: 0}
   knockbackForce: 9
+  targetScript: {fileID: 0}
 --- !u!61 &365579325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56984,6 +56985,7 @@ MonoBehaviour:
   currentMP: 0
   maxPosion: 1
   currentPosion: 0
+  posionSound: 
 --- !u!95 &709948119
 Animator:
   serializedVersion: 5
@@ -57074,6 +57076,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   currentMapName: 
   notMove: 0
+  skillNotMove: 0
+  walkSound: 
 --- !u!212 &709948123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59517,6 +59521,7 @@ MonoBehaviour:
   dashDuration: 0.5
   enemyCollider: {fileID: 0}
   knockbackForce: 9
+  targetScript: {fileID: 0}
 --- !u!61 &870162567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61185,6 +61190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b564187a9bbe0d408c75f10f1dfb835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!1 &975031710
 GameObject:
   m_ObjectHideFlags: 0
@@ -61637,6 +61643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b564187a9bbe0d408c75f10f1dfb835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!1 &1001466757
 GameObject:
   m_ObjectHideFlags: 0
@@ -63643,6 +63650,11 @@ MonoBehaviour:
   playerCollider1: {fileID: 709948120}
   playerCollider2: {fileID: 2066901995}
   dashDistance: 150
+  playerStatus: {fileID: 0}
+  QSkillMP: 5
+  WSkillMP: 5
+  ESkillMP: 15
+  SpaceCooldownTime: 3
 --- !u!1 &1013354903
 GameObject:
   m_ObjectHideFlags: 0
@@ -66479,6 +66491,7 @@ MonoBehaviour:
   dashDuration: 0.8
   enemyCollider: {fileID: 0}
   knockbackForce: 9
+  targetScript: {fileID: 0}
 --- !u!61 &1135471064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69333,6 +69346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b564187a9bbe0d408c75f10f1dfb835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!1 &1285534201
 GameObject:
   m_ObjectHideFlags: 0
@@ -95724,6 +95738,7 @@ MonoBehaviour:
   dashDuration: 0.8
   enemyCollider: {fileID: 0}
   knockbackForce: 9
+  targetScript: {fileID: 0}
 --- !u!61 &1513732534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105410,6 +105425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b564187a9bbe0d408c75f10f1dfb835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!1 &1955281675
 GameObject:
   m_ObjectHideFlags: 0

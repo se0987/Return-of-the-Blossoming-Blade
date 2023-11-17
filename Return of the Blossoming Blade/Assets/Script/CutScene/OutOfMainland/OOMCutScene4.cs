@@ -11,10 +11,13 @@ public class OOMCutScene4 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
     private bool one = true;
+
+    public GameObject arrow3;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,7 @@ public class OOMCutScene4 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,6 +52,7 @@ public class OOMCutScene4 : MonoBehaviour
         //theOrder.Move("OOMMaster", "SURPRISE"); //±ôÂ¦ ³î¶ó´Â ¸ð¼Ç
 
         theDM.ShowDialogue(dialogue_2);
+        theBGM.Play(3);
         yield return new WaitForSeconds(1f);
         theOrder.Move("Player", "LEFT");
         theOrder.Move("Player", "DOWN");
@@ -58,8 +63,20 @@ public class OOMCutScene4 : MonoBehaviour
         theOrder.Move("Master2", "DOWN");//¾ß¼ö±ÃÀ¸·Î ¾È³»
         theOrder.Move("Master2", "DOWN");
         theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
         theOrder.Move("Master2", "DOWN");
-        theOrder.Appear("Master2", false);
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN"); 
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("Master2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
+        theOrder.Move("DangBo2", "DOWN");
         yield return new WaitUntil(() => !theDM.talking);
 
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
@@ -73,5 +90,6 @@ public class OOMCutScene4 : MonoBehaviour
         }
 
         theOrder.Move();
+        arrow3.SetActive(true);
     }
 }

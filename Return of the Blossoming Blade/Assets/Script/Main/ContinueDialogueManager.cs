@@ -9,6 +9,7 @@ public class ContinueDialogueManager : MonoBehaviour
     public List<TextMeshProUGUI> saveChapter;
     public List<TextMeshProUGUI> saveChapterName;
     public List<TextMeshProUGUI> saveDate;
+    public List<GameObject> goSavePoint;
 
     public MainDialogue mainDialogue;
 
@@ -21,6 +22,7 @@ public class ContinueDialogueManager : MonoBehaviour
             saveChapter[i].text = "";
             saveChapterName[i].text = "";
             saveDate[i].text = "";
+            goSavePoint[i].SetActive(false);
             if (!PlayerPrefs.HasKey("save" + i.ToString()))
             {
                 PlayerPrefs.SetString("save" + i.ToString(), "");
@@ -44,9 +46,13 @@ public class ContinueDialogueManager : MonoBehaviour
         mainDialogue.close.text = "´Ý±â";
         for (int i = 0; i < 5; i++)
         {
-            saveChapter[i].text = PlayerPrefs.GetString("save1");
-            saveChapterName[i].text = PlayerPrefs.GetString("save1Name");
-            saveDate[i].text = PlayerPrefs.GetString("save1Date");
+            saveChapter[i].text = PlayerPrefs.GetString("save" + (i + 1).ToString());
+            saveChapterName[i].text = PlayerPrefs.GetString("save" + (i + 1).ToString() + "Name");
+            saveDate[i].text = PlayerPrefs.GetString("save" + (i + 1).ToString() + "Date");
+            if (saveChapter[i].text != "")
+            {
+                goSavePoint[i].SetActive(true);
+            }
         }
     }
 
@@ -63,6 +69,7 @@ public class ContinueDialogueManager : MonoBehaviour
             saveChapter[i].text = "";
             saveChapterName[i].text = "";
             saveDate[i].text = "";
+            goSavePoint[i].SetActive(false);
         }
     }
 }

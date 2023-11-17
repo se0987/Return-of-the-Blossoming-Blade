@@ -7,14 +7,21 @@ public class DCutScene2 : MonoBehaviour
     public Dialogue dialogue_1;
     public Dialogue dialogue_2;
 
+    public string doorSound;
+
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private AudioManager theAudio;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
     private bool one = true;
+
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +30,8 @@ public class DCutScene2 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theAudio = FindObjectOfType<AudioManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +60,8 @@ public class DCutScene2 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        theAudio.Play(doorSound);
+        arrow1.SetActive(false);
 
         theOrder.Appear("BlackScreen", true);
         yield return new WaitForSeconds(4f);
@@ -60,6 +71,7 @@ public class DCutScene2 : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         theOrder.Appear("BlackScreen", false);
+        theAudio.Play(doorSound);
         theOrder.Move("Player", "RIGHT");
         theOrder.Move("Player", "RIGHT");
         theOrder.Move("Player", "RIGHT");
@@ -81,6 +93,8 @@ public class DCutScene2 : MonoBehaviour
         theOrder.Move("Poor", "LEFT");
         yield return new WaitUntil(() => !theDM.talking);
 
+        theBGM.Play(1);
+
         TransferMap[] temp = FindObjectsOfType<TransferMap>();
         for (int i = 0; i < temp.Length; i++)
         {
@@ -90,6 +104,7 @@ public class DCutScene2 : MonoBehaviour
                 break;
             }
         }
+        arrow2.SetActive(true);
 
         theOrder.Move();
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class EnemyAttack : MonoBehaviour
 {
-    private EnemyAI enemyAI;  // 부모 오브젝트의 EnemyAI 스크립트에 대한 참조
+    public EnemyAI enemyAI;  // 부모 오브젝트의 EnemyAI 스크립트에 대한 참조
 
     private void Start()
     {

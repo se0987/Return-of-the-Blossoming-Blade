@@ -7,10 +7,16 @@ public class DCutScene3 : MonoBehaviour
     public Dialogue dialogue_1;
     public Dialogue dialogue_2;
 
+    // 보스 체력바
+    public GameObject chunSal;
+    public GameObject hpGauge;
+    public GameObject bossName;
+
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private BGMManager theBGM;
 
     //private bool flag;
     private bool can = false;
@@ -23,6 +29,7 @@ public class DCutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        theBGM = FindObjectOfType<BGMManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +56,22 @@ public class DCutScene3 : MonoBehaviour
 
         theDM.ShowDialogue(dialogue_2);
         yield return new WaitUntil(() => !theDM.talking);
+
+        theBGM.Play(2);
+
+        // 보스 체력바
+        if (chunSal != null)
+        {
+            chunSal.SetActive(true);
+        }
+        if (hpGauge != null)
+        {
+            hpGauge.SetActive(true);
+        }
+        if (bossName != null)
+        {
+            bossName.SetActive(true);
+        }
 
         theOrder.Move();
     }
