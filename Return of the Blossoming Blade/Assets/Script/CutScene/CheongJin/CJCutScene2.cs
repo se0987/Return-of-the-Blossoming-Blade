@@ -163,7 +163,7 @@ public class CJCutScene2 : MonoBehaviour
                         theDM.ShowDialogue(dialogue_5);
                         yield return new WaitUntil(() => !theDM.talking);
 
-                        TransferMap[] temp = FindObjectsOfType<TransferMap>();
+                        TransferScene[] temp = FindObjectsOfType<TransferScene>();
                         for (int i = 0; i < temp.Length; i++)
                         {
                             if (temp[i].gateName.Equals("GoToChunma"))
