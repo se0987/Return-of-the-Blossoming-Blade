@@ -117,7 +117,7 @@ public class CheonmaStatus : MonoBehaviour
                       break;
                   }
              }
-            PlayerPrefs.SetFloat("End2", 1);
+            PlayerPrefs.SetInt("End2", 1);
         }
         else if (0 < remainHealth && remainHealth < 5 && fame >= 250 && isDangBo == 0)
         {
@@ -131,7 +131,7 @@ public class CheonmaStatus : MonoBehaviour
                     break;
                 }
             }
-            PlayerPrefs.SetFloat("End3", 1);
+            PlayerPrefs.SetInt("End3", 1);
         }
         else if (0 < remainHealth && remainHealth < 5 && fame >= 300 && isDangBo == 1)
         {
@@ -145,7 +145,7 @@ public class CheonmaStatus : MonoBehaviour
                     break;
                 }
             }
-            PlayerPrefs.SetFloat("End4", 1);
+            PlayerPrefs.SetInt("End4", 1);
         }
         else if (remainHealth >= 90 && fame >= 325 && isDangBo == 1)
         {
@@ -159,7 +159,7 @@ public class CheonmaStatus : MonoBehaviour
                     break;
                 }
             }
-            PlayerPrefs.SetFloat("End6", 1);
+            PlayerPrefs.SetInt("End6", 1);
         }
         else
         {
@@ -173,7 +173,7 @@ public class CheonmaStatus : MonoBehaviour
                     break;
                 }
             }
-            PlayerPrefs.SetFloat("End1", 1);
+            PlayerPrefs.SetInt("End1", 1);
         }
     }
 

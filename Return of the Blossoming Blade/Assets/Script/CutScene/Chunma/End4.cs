@@ -53,6 +53,7 @@ public class End4 : MonoBehaviour
         if (one && end)
         {
             one = false;
+            end = false;
 
             theOrder.Action("Player", "LAST");
             TransferMap[] temp = FindObjectsOfType<TransferMap>();

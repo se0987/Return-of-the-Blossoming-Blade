@@ -74,9 +74,11 @@ public class PlayerStatus : MonoBehaviour
             {
                 DieInCheonma();
             }
-
+            else
+            {
+                StartCoroutine(DieAfterGo()); // 죽고나서 메인 페이지로 이동
+            }
             StartCoroutine(FlashCoroutine()); // 피해 입은 효과
-            StartCoroutine(DieAfterGo()); // 죽고나서 메인 페이지로 이동
         }
         else
         {
@@ -196,7 +198,7 @@ public class PlayerStatus : MonoBehaviour
                 break;
             }
         }
-        PlayerPrefs.SetFloat("End5", 1);
+        PlayerPrefs.SetInt("End5", 1);
 
         GameObject Cheonma = GameObject.Find("Cheonma Bon In");
 

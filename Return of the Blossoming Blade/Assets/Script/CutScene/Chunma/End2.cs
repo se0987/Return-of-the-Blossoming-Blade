@@ -50,6 +50,7 @@ public class End2 : MonoBehaviour
         if (one && end)
         {
             one = false;
+            end = false;
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
             for (int i = 0; i < temp.Length; i++)
             {
