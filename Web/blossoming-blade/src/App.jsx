@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 
 function App() {
-  const url = "http://k9d107.p.ssafy.io/downloads/aaa.zip"
+  const url = "http://k9d107.p.ssafy.io/downloads/ReturnOfTheBlossomingBlade.zip"
 
   return (
     <>
