@@ -10,6 +10,14 @@ public class CJCutScene1 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
+    public TransferMap transferMapToActivate; // 활성화할 TransferMap 참조
+
+    public GameObject arrow1;
+
+    public int enemyCount = 18;
+
+    private bool enemyCheck = false;
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
@@ -20,6 +28,20 @@ public class CJCutScene1 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+    }
+
+    private void Update()
+    {
+        if (!enemyCheck)
+        {
+            if (enemyCount <= 0 && transferMapToActivate != null)
+            {
+                // 모든 적이 제거되었을 때 TransferMap의 move를 true로 설정
+                Debug.Log("모든 적이 제거되었습니다.");
+                transferMapToActivate.move = true;
+                enemyCheck = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +58,8 @@ public class CJCutScene1 : MonoBehaviour
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
+        arrow1.SetActive(false);
+        theOrder.Appear("CheongMun", false);
 
         theDM.ShowDialogue(dialogue_1);
         yield return new WaitUntil(() => !theDM.talking);

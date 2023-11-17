@@ -15,7 +15,7 @@ public class CutScene4 : MonoBehaviour
     private bool can = false;
     private bool one = true;
 
-    private CutScene5 cutScene5; 
+    private CutScene5 cutScene5;
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +44,9 @@ public class CutScene4 : MonoBehaviour
         theDM.ShowDialogue(dialogue_0);
 
         yield return new WaitUntil(() => !theDM.talking);
-
-        theOrder.Move("CheongJin", "UP");
-        theOrder.Move("CheongJin", "UP");
-        theOrder.Move("CheongJin", "UP");
+        theOrder.Move("CheongJin2", "UP");
+        theOrder.Move("CheongJin2", "UP");
+        theOrder.Move("CheongJin2", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");
         theOrder.Move("Player", "UP");

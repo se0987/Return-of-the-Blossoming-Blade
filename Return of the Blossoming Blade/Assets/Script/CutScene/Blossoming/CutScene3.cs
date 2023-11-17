@@ -12,12 +12,17 @@ public class CutScene3 : MonoBehaviour
     private OrderManager theOrder;
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
+    private PlayerStatus playerStatus;
+
 
     //private bool flag;
     private bool can = false;
     private bool one = true;
 
     public bool enable = true;
+
+    public GameObject arrow3;
+    public GameObject arrow4;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +31,8 @@ public class CutScene3 : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
         theChoice = FindObjectOfType<ChoiceManager>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
+        arrow4.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +51,7 @@ public class CutScene3 : MonoBehaviour
         if (one && can && Input.GetKeyDown(KeyCode.C))
         {
             one = false;
+            arrow3.SetActive(false);
             StartCoroutine(EventCoroutine());
         }
     }
@@ -59,13 +67,13 @@ public class CutScene3 : MonoBehaviour
             theDM.ShowDialogue(dialogue_1);
             theOrder.Turn("CheongMun", "LEFT");
             yield return new WaitUntil(() => !theDM.talking);
-
             theDM.ShowDialogue(dialogue_2);
             yield return new WaitUntil(() => !theDM.talking);
             theOrder.Turn("CheongMun", "UP");
 
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
+            arrow4.SetActive(true);
 
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
             for (int i = 0; i < temp.Length; i++)
@@ -78,6 +86,7 @@ public class CutScene3 : MonoBehaviour
             }
 
         theOrder.Move();
+        playerStatus.GetPosion(1);
         }
     }
 }

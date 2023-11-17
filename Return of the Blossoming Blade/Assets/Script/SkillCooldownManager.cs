@@ -27,10 +27,10 @@ public class SkillCooldownManager : MonoBehaviour
     private bool isWActive = false;
     private bool isEActive = false;
 
-    public float QSkillDuration = 1.6f;
-    public float WSkillDuration = 1.9f;
-    public float ESkillDuration = 4.4f;
-    public float SpaceDuration = 0.25f;
+    public float QSkillDuration = 0.85f;
+    public float WSkillDuration = 0.9f;
+    public float ESkillDuration = 3.5f;
+    public float SpaceDuration = 0.2f;
 
     public GameObject QSkillCol; // Q의 Skill Col 참조
 
@@ -48,8 +48,24 @@ public class SkillCooldownManager : MonoBehaviour
     public Collider2D playerCollider1; // 플레이어 콜라이더 참조
     public Collider2D playerCollider2; // 플레이어 콜라이더 참조
 
-    public float dashDistance = 150f; // 대쉬 거리
+    public float dashDistance = 185f; // 대쉬 거리
 
+    public PlayerStatus playerStatus; // PlayerStatus 참조
+
+    public float QSkillMP = 5f;
+    public float WSkillMP = 5f;
+    public float ESkillMP = 15f;
+
+    public float SpaceCooldownTime = 3f; // 스페이스바 스킬의 쿨다운 시간
+
+    private bool isSpaceCooldown = false; // 스페이스바 스킬 쿨다운 상태
+
+    private AudioManager theAudio;
+
+    private void Start()
+    {
+        theAudio = FindObjectOfType<AudioManager>();
+    }
 
     private void Update()
     {
@@ -58,6 +74,7 @@ public class SkillCooldownManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) && !isAttacking && !anySkillActive)
         {
+            theAudio.Play("A");
             StartCoroutine(Attack());
         }
 
@@ -70,28 +87,45 @@ public class SkillCooldownManager : MonoBehaviour
         // Q 스킬 사용
         if (Input.GetKeyDown(KeyCode.Q) && !isQCooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(QCooldownTime, QSkillDuration, QBar, QSkillObject, () => isQActive = true, () => isQActive = false, () => isQCooldown = true, () => isQCooldown = false));
-            StartCoroutine(QSkillEffect()); // QSkillEffect 코루틴 호출
+           if (playerStatus.currentMP >= QSkillMP) // 충분한 MP가 있는지 확인
+            {
+                theAudio.Play("Q");
+                playerStatus.UseMP(QSkillMP); // MP 소모
+                StartCoroutine(UseSkill(QCooldownTime, QSkillDuration, QBar, QSkillObject, () => isQActive = true, () => isQActive = false, () => isQCooldown = true, () => isQCooldown = false));
+                StartCoroutine(QSkillEffect());
+            }
 
         }
 
         // W 스킬 사용
         if (Input.GetKeyDown(KeyCode.W) && !isWCooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(WCooldownTime, WSkillDuration, WBar, WSkillObject, () => isWActive = true, () => isWActive = false, () => isWCooldown = true, () => isWCooldown = false));
-            StartCoroutine(WSkillEffect());  // 파티클 효과 코루틴 호출
+            if (playerStatus.currentMP >= WSkillMP)
+            {
+                theAudio.Play("W");
+                playerStatus.UseMP(WSkillMP);
+                StartCoroutine(UseSkill(WCooldownTime, WSkillDuration, WBar, WSkillObject, () => isWActive = true, () => isWActive = false, () => isWCooldown = true, () => isWCooldown = false));
+                StartCoroutine(WSkillEffect());
+            }
         }
 
         // E 스킬 사용
         if (Input.GetKeyDown(KeyCode.E) && !isECooldown && !anySkillActive)
         {
-            StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
-            StartCoroutine(ESkillEffect());
+            if (playerStatus.currentMP >= ESkillMP)
+            {
+                theAudio.Play("E");
+                playerStatus.UseMP(ESkillMP);
+                StartCoroutine(UseSkill(ECooldownTime, ESkillDuration, EBar, ESkillObject, () => isEActive = true, () => isEActive = false, () => isECooldown = true, () => isECooldown = false));
+                StartCoroutine(ESkillEffect());
+            }
         }
         // 스페이스바 사용
-        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove)
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking && !anySkillActive && !PlayerManager.instance.skillNotMove && !PlayerManager.instance.notMove && !isSpaceCooldown)
         {
+            theAudio.Play("Space");
             StartCoroutine(Dash());
+            StartCoroutine(SpaceCooldown(SpaceCooldownTime, SpaceBar, () => isSpaceCooldown = true, () => isSpaceCooldown = false));
         }
     }
 
@@ -130,9 +164,9 @@ public class SkillCooldownManager : MonoBehaviour
         for (int i = 0; i < 3; i++) // 3번 반복
         {
             QSkillCol.SetActive(true);  // Skill Col 활성화
-            yield return new WaitForSeconds(0.3f); // 0.1초 대기. 이 값을 조절하여 ON/OFF 간격을 변경할 수 있습니다.
+            yield return new WaitForSeconds(0.2f); // 0.1초 대기. 이 값을 조절하여 ON/OFF 간격을 변경할 수 있습니다.
             QSkillCol.SetActive(false); // Skill Col 비활성화
-            yield return new WaitForSeconds(0.15f); // 0.1초 대기
+            yield return new WaitForSeconds(0.1f); // 0.1초 대기
         }
         playerAnimator.SetBool("SkillQ", false);
     }
@@ -192,10 +226,21 @@ public class SkillCooldownManager : MonoBehaviour
         ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
         ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
 
-        yield return new WaitForSeconds(ESkillDuration); // 4.4초 동안 대기
+        yield return new WaitForSeconds(ESkillDuration/3); 
 
         ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
         ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+        ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
+        ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
+
+        yield return new WaitForSeconds(ESkillDuration / 3);
+
+        ESkillCol.SetActive(false); // 첫 번째 콜라이더 비활성화
+        ESkillCol2.SetActive(false); // 두 번째 콜라이더 비활성화
+        ESkillCol.SetActive(true); // 첫 번째 콜라이더 활성화
+        ESkillCol2.SetActive(true); // 두 번째 콜라이더 활성화
+
+        yield return new WaitForSeconds(ESkillDuration / 3); 
 
         playerAnimator.SetBool("SkillE", false);
 
@@ -218,7 +263,7 @@ public class SkillCooldownManager : MonoBehaviour
         }
 
         // 공격 애니메이션 시간만큼 대기
-        yield return new WaitForSeconds(1.04f);
+        yield return new WaitForSeconds(0.75f);
 
         // 애니메이션 불린 값을 초기화
         playerAnimator.SetBool("AttackH", false);
@@ -257,5 +302,19 @@ public class SkillCooldownManager : MonoBehaviour
         PlayerManager.instance.skillNotMove = false; // 이동 잠금 해제
         playerAnimator.SetBool("Dash", false); // Dash 애니메이션 비활성화
 
+    }
+    private IEnumerator SpaceCooldown(float cooldownTime, LoadingBarSegments bar, Action onStartCooldown, Action onEndCooldown)
+    {
+        onStartCooldown?.Invoke();
+        float timeElapsed = 0;
+        while (timeElapsed < cooldownTime)
+        {
+            timeElapsed += Time.deltaTime;
+            float percentage = timeElapsed / cooldownTime;
+            bar.SetPercentage(percentage);
+            yield return null;
+        }
+        bar.SetPercentage(0);
+        onEndCooldown?.Invoke();
     }
 }

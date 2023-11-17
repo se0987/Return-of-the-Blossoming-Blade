@@ -12,10 +12,12 @@ public class MCutScene1 : MonoBehaviour
     private PlayerManager thePlayer;
     private ChoiceManager theChoice;
 
+    public CameraManager theCamera; // 카메라 매니저 참조 추가
+
+
     //private bool flag;
     private bool can = false;
     private bool one = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class MCutScene1 : MonoBehaviour
 
     IEnumerator EventCoroutine()
     {
+        theCamera.SetCutsceneMode(true, new Vector3(-1384f, -276f, theCamera.transform.position.z)); // 컷신 위치로 이동
+
         theOrder.PreLoadCharacter();
         theOrder.NotMove();
         yield return new WaitForSeconds(0.2f);
@@ -48,5 +52,13 @@ public class MCutScene1 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         theOrder.Move();
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+        theOrder.Move("DangBo", "LEFT");
+
+        theCamera.SetCutsceneMode(false, Vector3.zero); // 컷신 종료 후 원래 모드로 돌아가기
     }
 }
