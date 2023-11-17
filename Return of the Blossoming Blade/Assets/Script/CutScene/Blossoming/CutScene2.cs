@@ -54,7 +54,7 @@ public class CutScene2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (one && can && Input.GetKeyDown(KeyCode.C) && PlayerPrefs.GetInt("havePosion") == 0)
+        if (one && can && Input.GetKeyDown(KeyCode.C) && PlayerPrefs.GetInt("havePosion") == 2)
         {
             one = false;
             StartCoroutine(EventCoroutine());

@@ -30,6 +30,8 @@ public class CMCutScene1 : MonoBehaviour
         playerStatus = FindObjectOfType<PlayerStatus>();
         bgmManager = FindObjectOfType<BGMManager>();
         theChapter = FindObjectOfType<ChapterManager>();
+        PlayerPrefs.SetFloat("playerHP", playerStatus.maxHP);
+        PlayerPrefs.SetFloat("playerMP", playerStatus.maxMP);
         int saveNum = PlayerPrefs.GetInt("onLoad");
         if (saveNum != 0)
         {
