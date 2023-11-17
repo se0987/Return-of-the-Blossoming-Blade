@@ -10,6 +10,7 @@ public class Skill // 스킬 리스트로 추가 가능하도록
     public float LastUsedTime; //마지막 사용 시간
     public int Priority;  // 낮을수록 우선순위가 높음
     public float SkillAnimationTime; //애니메이션 실행 시간(스킬 발동 후 대기시간)
+    public string skillSound;
 }
 
 public class Boss3Controller : MonoBehaviour
@@ -18,7 +19,7 @@ public class Boss3Controller : MonoBehaviour
     public float stoppingDistance;
     public float attackDistance;
     public int walkCount;
-    private float maxHP = 400f;
+    private float maxHP = 500f;
     public float currentHP;
 
     public Image bossHpBar;
@@ -37,6 +38,9 @@ public class Boss3Controller : MonoBehaviour
 
     public Collider2D chunsalCollider;  // 천살 콜라이더 (피격)
 
+    public string walkSound;
+    private AudioManager theAudio;
+
     private bool isSkillActive = false; // 스킬이 활성화 중인지 여부
     private bool isAttack = false; // 공격 중인지 여부
     private bool isHit = false; // 피격 중인지 여부
@@ -48,6 +52,7 @@ public class Boss3Controller : MonoBehaviour
     {
         dCutScene4 = FindObjectOfType<DCutScene4>();
         animator = GetComponent<Animator>();
+        theAudio = FindObjectOfType<AudioManager>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform; //플레이어 찾기
         playerManager = PlayerManager.instance; //플레이어 매니저의 인스턴스 가져오기
@@ -126,13 +131,12 @@ public class Boss3Controller : MonoBehaviour
             Debug.Log("천살 전투 종료");
             boss3Moving = false;
 
-            GetComponent<Boss3Controller>().enabled = false;
-            gameObject.SetActive(false);
-
             PlayerPrefs.SetFloat("ChunsalPlayTime", playTime);
             dCutScene4.end = true;
             dCutScene4.time = Time.time;
 
+            GetComponent<Boss3Controller>().enabled = false;
+            gameObject.SetActive(false);
             return;
         }
     }
@@ -229,6 +233,7 @@ public class Boss3Controller : MonoBehaviour
         boss3Moving = false;
 
         animator.SetTrigger("Attack" + skillNumber); // 스킬 애니메이션 활성화
+        theAudio.Play(skill.skillSound);
 
         // 데미지는 콜라이더 스크립트 생성 후 직접 공격
 
@@ -265,7 +270,7 @@ public class Boss3Controller : MonoBehaviour
         //    elapsedTime += 1f;
         //}
         animator.SetTrigger("IsHit");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         isHit = false;
         boss3Moving = true;
