@@ -44,8 +44,8 @@ public class SavePoint3 : MonoBehaviour
         PlayerPrefs.SetString("save3SceneName", GetSceneName());
         PlayerPrefs.SetFloat("save3PlayerHP", PlayerPrefs.GetFloat("playerHP"));
         PlayerPrefs.SetFloat("save3PlayerMP", PlayerPrefs.GetFloat("playerMP"));
-        PlayerPrefs.SetFloat("save3HavePosion", PlayerPrefs.GetFloat("havePosion"));
-        PlayerPrefs.SetFloat("save3MaxPosion", PlayerPrefs.GetFloat("maxPosion"));
+        PlayerPrefs.SetInt("save3HavePosion", PlayerPrefs.GetInt("havePosion"));
+        PlayerPrefs.SetInt("save3MaxPosion", PlayerPrefs.GetInt("maxPosion"));
 
         PlayerPrefs.SetString("save3MapName", PlayerPrefs.GetString("playerMapName"));
         PlayerPrefs.SetString("save3playerGateName", PlayerPrefs.GetString("playerGateName"));

@@ -44,8 +44,8 @@ public class SavePoint5 : MonoBehaviour
         PlayerPrefs.SetString("save5SceneName", GetSceneName());
         PlayerPrefs.SetFloat("save5PlayerHP", PlayerPrefs.GetFloat("playerHP"));
         PlayerPrefs.SetFloat("save5PlayerMP", PlayerPrefs.GetFloat("playerMP"));
-        PlayerPrefs.SetFloat("save5HavePosion", PlayerPrefs.GetFloat("havePosion"));
-        PlayerPrefs.SetFloat("save5MaxPosion", PlayerPrefs.GetFloat("maxPosion"));
+        PlayerPrefs.SetInt("save5HavePosion", PlayerPrefs.GetInt("havePosion"));
+        PlayerPrefs.SetInt("save5MaxPosion", PlayerPrefs.GetInt("maxPosion"));
 
         PlayerPrefs.SetString("save5MapName", PlayerPrefs.GetString("playerMapName"));
         PlayerPrefs.SetString("save5playerGateName", PlayerPrefs.GetString("playerGateName"));

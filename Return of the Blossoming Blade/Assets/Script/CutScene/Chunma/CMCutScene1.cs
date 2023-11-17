@@ -42,8 +42,8 @@ public class CMCutScene1 : MonoBehaviour
             PlayerPrefs.SetFloat("playerHP", PlayerPrefs.GetFloat("save" + saveNum + "PlayerHP"));
             PlayerPrefs.SetFloat("playerMP", PlayerPrefs.GetFloat("save" + saveNum + "PlayerMP"));
             //øµæ‡
-            PlayerPrefs.SetFloat("havePosion", PlayerPrefs.GetFloat("save" + saveNum + "HavePosion"));
-            PlayerPrefs.SetFloat("maxPosion", PlayerPrefs.GetFloat("save" + saveNum + "MaxPosion"));
+            PlayerPrefs.SetInt("havePosion", PlayerPrefs.GetInt("save" + saveNum + "HavePosion"));
+            PlayerPrefs.SetInt("maxPosion", PlayerPrefs.GetInt("save" + saveNum + "MaxPosion"));
 
             //∏  ¿Ãµø
             TransferMap[] temp2 = FindObjectsOfType<TransferMap>();
