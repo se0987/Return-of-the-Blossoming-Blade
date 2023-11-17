@@ -8066,13 +8066,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1960151858}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: redAttack.damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: greenAttack.damage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: yellowAttack.damage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: attackRangeIndicator
       value: 
       objectReference: {fileID: 1658959514}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: currentAttack.damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: rainingAttack.damage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: bothHandAttack.damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: leftHandAttack.damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: redAttack.effectPrefab
       value: 
       objectReference: {fileID: 1114082020}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: rightHandAttack.damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: glowingEyeAttack.damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: greenAttack.cooldownTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: greenAttack.effectPrefab
       value: 
@@ -8082,9 +8122,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 498080832}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: rainingAttack.cooldownTime
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: rainingAttack.effectPrefab
       value: 
       objectReference: {fileID: 2108185227}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: bothHandAttack.cooldownTime
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: bothHandAttack.effectPrefab
       value: 
@@ -8097,6 +8145,10 @@ PrefabInstance:
       propertyPath: rightHandAttack.effectPrefab
       value: 
       objectReference: {fileID: 85032968}
+    - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
+      propertyPath: glowingEyeAttack.cooldownTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 512272396182421178, guid: fded234ec50c4d341b54029811bbd1d5, type: 3}
       propertyPath: glowingEyeAttack.effectPrefab
       value: 
