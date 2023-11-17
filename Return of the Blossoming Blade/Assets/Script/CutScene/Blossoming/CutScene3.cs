@@ -73,6 +73,8 @@ public class CutScene3 : MonoBehaviour
 
             theDM.ShowDialogue(dialogue_3);
             yield return new WaitUntil(() => !theDM.talking);
+            playerStatus.UpgradeMaxPosion();
+            playerStatus.GetPosion(1);
             arrow4.SetActive(true);
 
             TransferMap[] temp = FindObjectsOfType<TransferMap>();
