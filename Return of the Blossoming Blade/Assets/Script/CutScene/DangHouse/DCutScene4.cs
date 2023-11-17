@@ -91,7 +91,7 @@ public class DCutScene4 : MonoBehaviour
             yield return new WaitUntil(() => !theDM.talking);
             end = false;
             PlayerPrefs.SetFloat("ChunSalTime", time);
-            if(time > 10)
+            if(time > 100)
             {
                 theOrder.Action("DangBo", "DIE");
                 dCutScene5.first = false;
