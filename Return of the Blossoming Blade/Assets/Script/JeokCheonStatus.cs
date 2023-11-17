@@ -12,6 +12,8 @@ public class JeokCheonStatus : MonoBehaviour
     public Image bossHpBar;
     public GameObject arrow;
 
+    private bool isAttacked = false;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -78,12 +80,18 @@ void Die()
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Weapon"))
+        if (isAttacked) return;
+
+        if (collision.CompareTag("Weapon") && !isAttacked)
         {
+            isAttacked = true;
+
             WeaponDamage weapon = collision.GetComponent<WeaponDamage>();
             if (weapon)
             {
                 StartCoroutine(FlashCoroutine());
+                StartCoroutine(AttackReset());
+        
                 currentHealth -= weapon.damageAmount;
             }
             if (currentHealth <= 0)
@@ -99,6 +107,13 @@ void Die()
 
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(flashDuration);
+        isAttacked = false;
         spriteRenderer.color = Color.white;
+    }
+
+    private IEnumerator AttackReset()
+    {
+        yield return new WaitForSeconds(1.5f);
+        isAttacked = false;
     }
 }

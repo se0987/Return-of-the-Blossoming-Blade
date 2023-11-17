@@ -27,25 +27,11 @@ public class PlayerStatus : MonoBehaviour
         theOrder = FindObjectOfType<OrderManager>();
         theChapter = FindObjectOfType<ChapterManager>();
         // 게임 시작시 플레이어의 HP와 MP를 최대치로 설정
-        if (!PlayerPrefs.HasKey("playerHP"))
-        {
-            PlayerPrefs.SetFloat("playerHP", maxHP);
-            currentHP = maxHP;
-        }
-        else
-        {
-            currentHP = PlayerPrefs.GetFloat("playerHP");
-        }
+        PlayerPrefs.SetFloat("playerHP", maxHP);
+        currentHP = maxHP;
 
-        if (!PlayerPrefs.HasKey("playerMP"))
-        {
-            PlayerPrefs.SetFloat("playerMP", maxMP);
-            currentMP = maxMP;
-        }
-        else
-        {
-            currentMP = PlayerPrefs.GetFloat("playerMP");
-        }
+        PlayerPrefs.SetFloat("playerMP", maxMP);
+        currentMP = maxMP;
 
         if (!PlayerPrefs.HasKey("havePosion"))
         {
