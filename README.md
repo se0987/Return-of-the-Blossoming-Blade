@@ -34,40 +34,34 @@
 </table>
 
 
-<!--
 ## 게임 미리보기
 
+게임의 시작화면 입니다. 처음부터/이어하기/결말/조작법 이 있습니다.  </br>
+<img src="./Images/start.png" width="800" height="600"/>
+ </br>
 
-![image.png](./images/1.png)
+게임의 조작 키를 확인할 수 있습니다. </br>
+<img src="./Images/0001.png" width="800" height="600"/>
+ </br>
+ 
 
-게임의 시작화면 입니다. 처음부터/이어하기/결말/조작법 이 있습니다. 
 
-![image.png](./images/2.png)
+게임을 이어할 수 있습니다. </br>
+<img src="./Images/0002.png" width="800" height="600"/>
+</br>
 
-게임의 조작 키를 확인할 수 있습니다.
-
-![image.png](./images/3.png)
-
-게임을 이어할 수 있습니다.
-
-![image.png](./images/4.png)
-
-게임의 엔딩을 저장할 수 있습니다.
-
-![image.png](./images/5.png)
-
-컷씬을 통해 게임의 몰입감을 높여줍니다.
-
-![image.png](./images/6.png)
-
-선택지에 따라 다른 대사를 보여줍니다.
-
-![image.png](./images/7.png)
-
-전투에 대한 튜토리얼을 진행합니다.
-
-![image.png](./images/8.png)
-
-다양한 보스들이 등장하며, 각각의 보스마다 다른 패턴이 등장합니다.
-
--->
+컷씬을 통해 게임의 몰입감을 높여줍니다. </br>
+![image.png](./Images/cutscene1.gif)
+ </br>
+ 
+선택지에 따라 다른 대사를 보여줍니다. </br>
+![image.png](./Images/cutscene2.gif)
+ </br>
+ 
+전투에 대한 튜토리얼을 진행합니다. </br>
+![image.png](./Images/tutorial.gif)
+ </br>
+ 
+다양한 보스들이 등장하며, 각각의 보스마다 다른 패턴이 등장합니다. </br>
+![image.png](./Images/boss1.gif)
+ </br>
